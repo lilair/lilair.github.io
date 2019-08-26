@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="1 事务管理1.1 事务回顾事务简介一组业务ABCD操作，要么全部成功，要么全部不成功。 事务特性：ACIDØ  原子性：整体 【原子性是指事务包含的所有操作要么全部成功，要么全部失败】 Ø  一致性：数据 【一个事务执行之前和执行之后都必须处于一致性状态】 Ø  隔离性：并发 【对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring框架学习（三）">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/spring框架学习（三）/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="1 事务管理1.1 事务回顾事务简介一组业务ABCD操作，要么全部成功，要么全部不成功。 事务特性：ACIDØ  原子性：整体 【原子性是指事务包含的所有操作要么全部成功，要么全部失败】 Ø  一致性：数据 【一个事务执行之前和执行之后都必须处于一致性状态】 Ø  隔离性：并发 【对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image062.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image064.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image070.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image082.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image084.jpg">
+<meta property="og:updated_time" content="2019-08-26T14:42:45.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring框架学习（三）">
+<meta name="twitter:description" content="1 事务管理1.1 事务回顾事务简介一组业务ABCD操作，要么全部成功，要么全部不成功。 事务特性：ACIDØ  原子性：整体 【原子性是指事务包含的所有操作要么全部成功，要么全部失败】 Ø  一致性：数据 【一个事务执行之前和执行之后都必须处于一致性状态】 Ø  隔离性：并发 【对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个">
+<meta name="twitter:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg">
+  <link rel="canonical" href="http://yoursite.com/2019/08/05/spring框架学习（三）/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>spring框架学习（三） | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">2</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">22</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/spring框架学习（三）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">spring框架学习（三）
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-05 22:40:45" itemprop="dateCreated datePublished" datetime="2019-08-05T22:40:45+08:00">2019-08-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-26 22:42:45" itemprop="dateModified" datetime="2019-08-26T22:42:45+08:00">2019-08-26</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-事务管理"><a href="#1-事务管理" class="headerlink" title="1 事务管理"></a>1 事务管理</h1><h2 id="1-1-事务回顾"><a href="#1-1-事务回顾" class="headerlink" title="1.1 事务回顾"></a>1.1 事务回顾</h2><h3 id="事务简介"><a href="#事务简介" class="headerlink" title="事务简介"></a>事务简介</h3><p>一组业务ABCD操作，要么全部成功，要么全部不成功。</p>
+<h3 id="事务特性：ACID"><a href="#事务特性：ACID" class="headerlink" title="事务特性：ACID"></a>事务特性：ACID</h3><p>Ø  原子性：整体 【原子性是指事务包含的所有操作要么全部成功，要么全部失败】</p>
+<p>Ø  一致性：数据 【一个事务执行之前和执行之后都必须处于一致性状态】</p>
+<p>Ø  隔离性：并发 【对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。】</p>
+<p>Ø  持久性：结果 【持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的】</p>
+<h3 id="隔离问题"><a href="#隔离问题" class="headerlink" title="隔离问题"></a>隔离问题</h3><p>Ø  脏读：一个事务读到另一个事务未提交的内容<strong>【读取未提交内容】</strong></p>
+<p>在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。<strong>本隔离级别很少用于实际应用，因为它的性能也不比其他级别好多少。</strong></p>
+<p>Ø  不可重复读：一个事务读到另一个事务已提交的内容（insert）<strong>【读取提交内容】</strong></p>
+<p>这是大多数数据库系统的默认隔离级别（但不是MySQL默认的）。它满足了隔离的简单定义：一个事务只能看见已经提交事务所做的改变。</p>
+<p>Ø  虚读（幻读）：一个事务读到另一个事务已提交的内容（update）</p>
+<p>这是MySQL的默认事务隔离级别，它确保同一事务的多个实例在并发读取数据时，会看到同样的数据行。不过理论上，这会导致另一个棘手的问题：幻读 （Phantom Read）。简单的说，幻读指当用户读取某一范围的数据行时，另一个事务又在该范围内插入了新行，当用户再读取该范围的数据行时，会发现有新的“幻影” 行。</p>
+<p>Ø  Serializable（可串行化）</p>
+<p>这是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突，从而解决幻读问题。简言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超时现象和锁竞争。</p>
+<h3 id="隔离级别–解决问题"><a href="#隔离级别–解决问题" class="headerlink" title="隔离级别–解决问题"></a>隔离级别–解决问题</h3><p>Ø  read uncommittd，读未提交。存在3个问题。</p>
+<p>Ø  read committed，读已提交。解决：脏读。存在2个问题。</p>
+<p>Ø  repeatable read ，可重复读。解决：脏读、不可重复读。存在1个问题。</p>
+<p>Ø  serializable，串行化。单事务。没有问题。</p>
+<h3 id="mysql-事务操作–简单"><a href="#mysql-事务操作–简单" class="headerlink" title="mysql 事务操作–简单"></a>mysql 事务操作–简单</h3><h3 id="mysql-事务操作–Savepoint"><a href="#mysql-事务操作–Savepoint" class="headerlink" title="mysql 事务操作–Savepoint"></a>mysql 事务操作–Savepoint</h3><h2 id="1-2-Spring事务管理介绍"><a href="#1-2-Spring事务管理介绍" class="headerlink" title="1.2 Spring事务管理介绍"></a>1.2 Spring事务管理介绍</h2><h3 id="1-2-1-Spring提供的事务jar包"><a href="#1-2-1-Spring提供的事务jar包" class="headerlink" title="1.2.1 Spring提供的事务jar包"></a>1.2.1 Spring提供的事务jar包</h3><p>transaction = tx</p>
+<h3 id="1-2-2-Jar中的三个顶级接口"><a href="#1-2-2-Jar中的三个顶级接口" class="headerlink" title="1.2.2 Jar中的三个顶级接口"></a>1.2.2 Jar中的三个顶级接口</h3><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>PlatformTransactionManager**</strong>：**   平台事务管理器，spring要管理事务，必须使用事务管理器,进行事务配置时，必须<strong>配置事务管理器</strong></td>
+</tr>
+<tr>
+<td><strong>TransactionDefinition**</strong>：**   事务详情（事务定义、事务属性），spring用于确定事务具体详情，   例如：隔离级别、是否只读、超时时间   等   进行事务配置时，<strong>必须配置详情</strong>。spring将配置项封装到该对象实例。</td>
+</tr>
+<tr>
+<td><strong>TransactionStatus**</strong>：**   事务状态，spring用于记录当前事务运行状态。例如：是否有保存点，事务是否完成。   spring底层根据状态进行相应操作。</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-3-PlatformTransactionManager-事务管理器"><a href="#1-2-3-PlatformTransactionManager-事务管理器" class="headerlink" title="1.2.3 PlatformTransactionManager 事务管理器"></a>1.2.3 PlatformTransactionManager 事务管理器</h3><h4 id="先导入两个包"><a href="#先导入两个包" class="headerlink" title="先导入两个包"></a>先导入两个包</h4><h4 id="常用的两个事务管理器"><a href="#常用的两个事务管理器" class="headerlink" title="常用的两个事务管理器"></a>常用的两个事务管理器</h4><h3 id="1-2-4-TransactionStatus-事务状态"><a href="#1-2-4-TransactionStatus-事务状态" class="headerlink" title="1.2.4 TransactionStatus 事务状态"></a>1.2.4 TransactionStatus 事务状态</h3><h3 id="1-2-5-TransactionDefinition"><a href="#1-2-5-TransactionDefinition" class="headerlink" title="1.2.5 TransactionDefinition"></a>1.2.5 TransactionDefinition</h3><p><strong>传播行为：在两个业务之间如何共享事务</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>PROPAGATION_REQUIRED</strong>   required , 必须  【默认值】</th>
+<th>支持当前事务，A如果有事务，B将使用该事务。   如果A没有事务，B将创建一个新的事务。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>PROPAGATION_SUPPORTS</strong>   supports ，支持</td>
+<td>支持当前事务，A如果有事务，B将使用该事务。   如果A没有事务，B将以非事务执行。</td>
+</tr>
+<tr>
+<td><strong>PROPAGATION_MANDATORY</strong>   mandatory ，强制</td>
+<td>支持当前事务，A如果有事务，B将使用该事务。   如果A没有事务，B将抛异常。</td>
+</tr>
+<tr>
+<td><strong>PROPAGATION_REQUIRES_NEW</strong>    requires_new ，必须新的</td>
+<td>如果A有事务，将A的事务挂起，B创建一个新的事务   如果A没有事务，B创建一个新的事务</td>
+</tr>
+<tr>
+<td><strong>PROPAGATION_NOT_SUPPORTED</strong>   not_supported ,不支持</td>
+<td>如果A有事务，将A的事务挂起，B将以非事务执行   如果A没有事务，B将以非事务执行</td>
+</tr>
+<tr>
+<td><strong>PROPAGATION_NEVER</strong>   never，从不</td>
+<td>如果A有事务，B将抛异常   如果A没有事务，B将以非事务执行</td>
+</tr>
+<tr>
+<td><strong>PROPAGATION_NESTED</strong>   nested ，嵌套</td>
+<td>A和B底层采用保存点机制，形成嵌套事务。</td>
+</tr>
+</tbody></table>
+<p>掌握：PROPAGATION_REQUIRED、PROPAGATION_REQUIRES_NEW、PROPAGATION_NESTED </p>
+<h2 id="1-3-案例：转帐"><a href="#1-3-案例：转帐" class="headerlink" title="1.3 案例：转帐"></a>1.3 案例：转帐</h2><p>​         </p>
+<h3 id="1-3-1-环境搭建"><a href="#1-3-1-环境搭建" class="headerlink" title="1.3.1 环境搭建"></a>1.3.1 环境搭建</h3><h4 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h4><h4 id="导入jar包"><a href="#导入jar包" class="headerlink" title="导入jar包"></a>导入jar包</h4><p>l  核心：4+1</p>
+<p>l  aop ： 4 (aop联盟、spring aop、aspectj规范、spring aspect)</p>
+<p>l  数据库：2  （jdbc/tx）</p>
+<p>l  驱动：mysql</p>
+<p>l  连接池：c3p0</p>
+<h4 id="Dao层"><a href="#Dao层" class="headerlink" title="Dao层"></a>Dao层</h4><h4 id="Service层"><a href="#Service层" class="headerlink" title="Service层"></a>Service层</h4><h4 id="Spring的配置"><a href="#Spring的配置" class="headerlink" title="Spring的配置"></a>Spring的配置</h4><p>配置c3p0数据源-&gt;dao -&gt; service</p>
+<h4 id="测试转帐"><a href="#测试转帐" class="headerlink" title="测试转帐"></a>测试转帐</h4><h3 id="1-3-2-手动管理事务【了解】"><a href="#1-3-2-手动管理事务【了解】" class="headerlink" title="1.3.2 手动管理事务【了解】"></a>1.3.2 手动管理事务【了解】</h3><p><strong>spring**</strong>底层使用 TransactionTemplate** <strong>事务模板进行操作。</strong></p>
+<p><strong>操作</strong></p>
+<p>1.service 需要获得 TransactionTemplate </p>
+<p>2.spring 配置模板，并注入给service</p>
+<p>3.模板需要注入事务管理器</p>
+<p>4.配置事务管理器：DataSourceTransactionManager ，需要注入DataSource</p>
+<p><strong>了解底层即可，因为以后都是通过aop**</strong>来配置事务**</p>
+<h4 id="修改Service"><a href="#修改Service" class="headerlink" title="修改Service"></a>修改Service</h4><h4 id="修改spring的配置文件"><a href="#修改spring的配置文件" class="headerlink" title="修改spring的配置文件"></a>修改spring的配置文件</h4><h3 id="1-3-3-工厂bean生成代理：半自动"><a href="#1-3-3-工厂bean生成代理：半自动" class="headerlink" title="1.3.3 工厂bean生成代理：半自动"></a>1.3.3 工厂bean生成代理：半自动</h3><p>Spring提供 管理事务的代理工厂bean <strong>TransactionProxyFactoryBean</strong></p>
+<h4 id="修改spring配置文件"><a href="#修改spring配置文件" class="headerlink" title="修改spring配置文件"></a>修改spring配置文件</h4><h4 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h4><h3 id="1-3-4-基本AOP的事务配置【掌握】"><a href="#1-3-4-基本AOP的事务配置【掌握】" class="headerlink" title="1.3.4 基本AOP的事务配置【掌握】"></a>1.3.4 基本AOP的事务配置【掌握】</h3><h4 id="Spring的配置文件"><a href="#Spring的配置文件" class="headerlink" title="Spring的配置文件"></a>Spring的配置文件</h4><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h4 id="测试同上"><a href="#测试同上" class="headerlink" title="测试同上"></a>测试同上</h4><h3 id="1-3-5-基本于注解的事务"><a href="#1-3-5-基本于注解的事务" class="headerlink" title="1.3.5 基本于注解的事务"></a>1.3.5 基本于注解的事务</h3><h4 id="spring配置"><a href="#spring配置" class="headerlink" title="spring配置"></a>spring配置</h4><h3 id="1-3-5-整合Junit"><a href="#1-3-5-整合Junit" class="headerlink" title="1.3.5 整合Junit"></a>1.3.5 整合Junit</h3><p>目的：少写一些代码<img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg" alt="img"></p>
+<p>导入一个spring-test包</p>
+<h1 id="2-SSH整合"><a href="#2-SSH整合" class="headerlink" title="2.   SSH整合"></a>2.   SSH整合</h1><h2 id="2-1-web-整合spring"><a href="#2-1-web-整合spring" class="headerlink" title="2.1 web 整合spring"></a>2.1 web 整合spring</h2><p>配置tomcat加载spring的配置文件</p>
+<p>第一步：需要添加<img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg" alt="img"></p>
+<p>第二步：在web.xml配置spring的监听</p>
+<table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>出现下面的错误是配置文件加载位置不对，在web.xml改成classpath目录下</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg" alt="img"></td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<p>第三步：创建Servlet获取Spring的应用上下文件ApplicationContext</p>
+<h2 id="2-2-web整合struts-hibernate-spring"><a href="#2-2-web整合struts-hibernate-spring" class="headerlink" title="2.2 web整合struts+hibernate+spring"></a>2.2 web整合struts+hibernate+spring</h2><h3 id="整合版本"><a href="#整合版本" class="headerlink" title="整合版本"></a>整合版本</h3><p><strong>struts-2.3.33-all</strong></p>
+<p><strong>spring-framework-3.0.2.RELEASE</strong></p>
+<p><strong>hibernate-distribution-3.6.10.Final-dist</strong></p>
+<h3 id="第一步：jar包整合"><a href="#第一步：jar包整合" class="headerlink" title="第一步：jar包整合"></a>第一步：jar包整合</h3><h4 id="Struts的jar包"><a href="#Struts的jar包" class="headerlink" title="Struts的jar包"></a>Struts的jar包</h4><h4 id="Spring的jar包"><a href="#Spring的jar包" class="headerlink" title="Spring的jar包"></a>Spring的jar包</h4><h4 id="Hibernate的jar包"><a href="#Hibernate的jar包" class="headerlink" title="Hibernate的jar包"></a>Hibernate的jar包</h4><table>
+<thead>
+<tr>
+<th>核心包   <img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>required包下的介绍   <img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image062.jpg" alt="img">   <strong>jpa**</strong>用于注解开发<strong>**@Entity @Id</strong></td>
+</tr>
+</tbody></table>
+<h4 id="整合log4j"><a href="#整合log4j" class="headerlink" title="整合log4j"></a>整合log4j</h4><p>导入 log4j…jar (struts已经导入)</p>
+<p><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image064.jpg" alt="img"></p>
+<p>整合（过渡）：slf4j-log4j12-1.7.2.jar</p>
+<h4 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h4><p>Commons-loggin.jar已经存在</p>
+<h4 id="整合包"><a href="#整合包" class="headerlink" title="整合包"></a>整合包</h4><p>spring整合hibernate： spring orm</p>
+<p>struts 整合spring：struts2-spring-plugin-2.3.15.3.jar</p>
+<h4 id="删除重复jar包"><a href="#删除重复jar包" class="headerlink" title="删除重复jar包"></a>删除重复jar包</h4><p><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image070.jpg" alt="img"></p>
+<h3 id="第二步：spring整合hibernate的单元测试"><a href="#第二步：spring整合hibernate的单元测试" class="headerlink" title="第二步：spring整合hibernate的单元测试"></a>第二步：spring整合hibernate的单元测试</h3><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><h4 id="po类和映射文件"><a href="#po类和映射文件" class="headerlink" title="po类和映射文件"></a>po类和映射文件</h4><table>
+<thead>
+<tr>
+<th><strong>public</strong> <strong>class</strong> User {      <strong>private</strong> Integer id;      <strong>private</strong> String username;      <strong>private</strong> String password;      <strong>private</strong> Integer age;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><?xml version=*"1.0"* encoding=*"UTF-8"*?>   <!DOCTYPE hibernate-mapping   PUBLIC        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"       "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">   <hibernate-mapping>       &lt;class name=*”com.gyf.borrowsys.domain.User”* table=*”t_user”<em>&gt;           &lt;id name=</em>“id”<em>&gt;               &lt;generator class=</em>“native”<em>&gt;                                 &lt;property name=</em>“username”<em>&gt;           &lt;property name=</em>“password”<em>&gt;           &lt;property name=</em>“age”*&gt;          </hibernate-mapping></td>
+</tr>
+</tbody></table>
+<h4 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h4><h4 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h4><h4 id="hibernate-cfg-xml"><a href="#hibernate-cfg-xml" class="headerlink" title="hibernate.cfg.xml"></a>hibernate.cfg.xml</h4><h4 id="applicationContext-xml"><a href="#applicationContext-xml" class="headerlink" title="applicationContext.xml"></a>applicationContext.xml</h4><h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><h4 id="配置Hibrenate的事务"><a href="#配置Hibrenate的事务" class="headerlink" title="配置Hibrenate的事务"></a>配置Hibrenate的事务</h4><h4 id="简化：去除hibernate-cfg-xml文件"><a href="#简化：去除hibernate-cfg-xml文件" class="headerlink" title="简化：去除hibernate.cfg.xml文件"></a>简化：去除hibernate.cfg.xml文件</h4><h3 id="第三步：spring整合struts"><a href="#第三步：spring整合struts" class="headerlink" title="第三步：spring整合struts"></a>第三步：spring整合struts</h3><p>编写action类，并将其配置给spring ，spring可以注入service</p>
+<p>编写struts.xml </p>
+<p>表单jsp页面</p>
+<h4 id="web-xml-配置"><a href="#web-xml-配置" class="headerlink" title="web.xml 配置"></a>web.xml 配置</h4><p>1.确定配置文件contextConfigLocation</p>
+<p>2.配置监听器 ContextLoaderListener</p>
+<p>3.配置前端控制器 StrutsPrepareAndExecuteFitler</p>
+<h4 id="action和spring配置文件"><a href="#action和spring配置文件" class="headerlink" title="action和spring配置文件"></a>action和spring配置文件</h4><table>
+<thead>
+<tr>
+<th><strong>action**</strong>中service<strong>**默认会根据名称注入</strong>   <strong>默认情况下框架使用的自动装配策略是name**</strong>，也就是说框架会去 Spring<strong><strong>中寻找与action</strong></strong>属性名字相同的bean**</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image082.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h4 id="actoin对象由spring创建"><a href="#actoin对象由spring创建" class="headerlink" title="actoin对象由spring创建"></a>actoin对象由spring创建</h4><p><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image084.jpg" alt="img"></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/04/spring框架学习（二）/" rel="next" title="spring框架学习（二）">
+                  <i class="fa fa-chevron-left"></i> spring框架学习（二）
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/hello-world/" rel="prev" title="Hello World">
+                  Hello World <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-事务管理"><span class="nav-number">1.</span> <span class="nav-text">1 事务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-事务回顾"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 事务回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务简介"><span class="nav-number">1.1.1.</span> <span class="nav-text">事务简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务特性：ACID"><span class="nav-number">1.1.2.</span> <span class="nav-text">事务特性：ACID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隔离问题"><span class="nav-number">1.1.3.</span> <span class="nav-text">隔离问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隔离级别–解决问题"><span class="nav-number">1.1.4.</span> <span class="nav-text">隔离级别–解决问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-事务操作–简单"><span class="nav-number">1.1.5.</span> <span class="nav-text">mysql 事务操作–简单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-事务操作–Savepoint"><span class="nav-number">1.1.6.</span> <span class="nav-text">mysql 事务操作–Savepoint</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Spring事务管理介绍"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Spring事务管理介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Spring提供的事务jar包"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 Spring提供的事务jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Jar中的三个顶级接口"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 Jar中的三个顶级接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-PlatformTransactionManager-事务管理器"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3 PlatformTransactionManager 事务管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#先导入两个包"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">先导入两个包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的两个事务管理器"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">常用的两个事务管理器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-TransactionStatus-事务状态"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.4 TransactionStatus 事务状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-5-TransactionDefinition"><span class="nav-number">1.2.5.</span> <span class="nav-text">1.2.5 TransactionDefinition</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-案例：转帐"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 案例：转帐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-环境搭建"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库表"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">创建数据库表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入jar包"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">导入jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dao层"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Dao层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service层"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">Service层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring的配置"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">Spring的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试转帐"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">测试转帐</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-手动管理事务【了解】"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 手动管理事务【了解】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改Service"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">修改Service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改spring的配置文件"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">修改spring的配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-工厂bean生成代理：半自动"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 工厂bean生成代理：半自动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改spring配置文件"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">修改spring配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试："><span class="nav-number">1.3.3.2.</span> <span class="nav-text">测试：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-基本AOP的事务配置【掌握】"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.3.4 基本AOP的事务配置【掌握】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring的配置文件"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">Spring的配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试同上"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">测试同上</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-基本于注解的事务"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.3.5 基本于注解的事务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#spring配置"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">spring配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-整合Junit"><span class="nav-number">1.3.6.</span> <span class="nav-text">1.3.5 整合Junit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-SSH整合"><span class="nav-number">2.</span> <span class="nav-text">2.   SSH整合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-web-整合spring"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 web 整合spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-web整合struts-hibernate-spring"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 web整合struts+hibernate+spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整合版本"><span class="nav-number">2.2.1.</span> <span class="nav-text">整合版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：jar包整合"><span class="nav-number">2.2.2.</span> <span class="nav-text">第一步：jar包整合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Struts的jar包"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Struts的jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring的jar包"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Spring的jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate的jar包"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">Hibernate的jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整合log4j"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">整合log4j</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二级缓存"><span class="nav-number">2.2.2.5.</span> <span class="nav-text">二级缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整合包"><span class="nav-number">2.2.2.6.</span> <span class="nav-text">整合包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除重复jar包"><span class="nav-number">2.2.2.7.</span> <span class="nav-text">删除重复jar包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：spring整合hibernate的单元测试"><span class="nav-number">2.2.3.</span> <span class="nav-text">第二步：spring整合hibernate的单元测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#po类和映射文件"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">po类和映射文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dao"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">dao</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service"><span class="nav-number">2.2.3.4.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hibernate-cfg-xml"><span class="nav-number">2.2.3.5.</span> <span class="nav-text">hibernate.cfg.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#applicationContext-xml"><span class="nav-number">2.2.3.6.</span> <span class="nav-text">applicationContext.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单元测试"><span class="nav-number">2.2.3.7.</span> <span class="nav-text">单元测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Hibrenate的事务"><span class="nav-number">2.2.3.8.</span> <span class="nav-text">配置Hibrenate的事务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简化：去除hibernate-cfg-xml文件"><span class="nav-number">2.2.3.9.</span> <span class="nav-text">简化：去除hibernate.cfg.xml文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：spring整合struts"><span class="nav-number">2.2.4.</span> <span class="nav-text">第三步：spring整合struts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#web-xml-配置"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">web.xml 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#action和spring配置文件"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">action和spring配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#actoin对象由spring创建"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">actoin对象由spring创建</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
