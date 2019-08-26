@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/converters/AbstractConverter/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2010-03-24T09:14:04.454Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/converters/AbstractConverter/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/converters/AbstractConverter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:22" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:22+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:14:04" itemprop="dateModified" datetime="2010-03-24T17:14:04+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html>
+<body bgcolor="white">
+<pre>
+<font color="green">001</font>    /*<a name="line.1"></a>
+<font color="green">002</font>     * Licensed to the Apache Software Foundation (ASF) under one or more<a name="line.2"></a>
+<font color="green">003</font>     * contributor license agreements.  See the NOTICE file distributed with<a name="line.3"></a>
+<font color="green">004</font>     * this work for additional information regarding copyright ownership.<a name="line.4"></a>
+<font color="green">005</font>     * The ASF licenses this file to You under the Apache License, Version 2.0<a name="line.5"></a>
+<font color="green">006</font>     * (the "License"); you may not use this file except in compliance with<a name="line.6"></a>
+<font color="green">007</font>     * the License.  You may obtain a copy of the License at<a name="line.7"></a>
+<font color="green">008</font>     *<a name="line.8"></a>
+<font color="green">009</font>     *      http://www.apache.org/licenses/LICENSE-2.0<a name="line.9"></a>
+<font color="green">010</font>     *<a name="line.10"></a>
+<font color="green">011</font>     * Unless required by applicable law or agreed to in writing, software<a name="line.11"></a>
+<font color="green">012</font>     * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.12"></a>
+<font color="green">013</font>     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<a name="line.13"></a>
+<font color="green">014</font>     * See the License for the specific language governing permissions and<a name="line.14"></a>
+<font color="green">015</font>     * limitations under the License.<a name="line.15"></a>
+<font color="green">016</font>     */<a name="line.16"></a>
+<font color="green">017</font>    package org.apache.commons.beanutils.converters;<a name="line.17"></a>
+<font color="green">018</font>    <a name="line.18"></a>
+<font color="green">019</font>    import java.lang.reflect.Array;<a name="line.19"></a>
+<font color="green">020</font>    import java.util.Collection;<a name="line.20"></a>
+<font color="green">021</font>    import org.apache.commons.logging.Log;<a name="line.21"></a>
+<font color="green">022</font>    import org.apache.commons.logging.LogFactory;<a name="line.22"></a>
+<font color="green">023</font>    import org.apache.commons.beanutils.BeanUtils;<a name="line.23"></a>
+<font color="green">024</font>    import org.apache.commons.beanutils.ConversionException;<a name="line.24"></a>
+<font color="green">025</font>    import org.apache.commons.beanutils.Converter;<a name="line.25"></a>
+<font color="green">026</font>    <a name="line.26"></a>
+<font color="green">027</font>    /**<a name="line.27"></a>
+<font color="green">028</font>     * Base {@link Converter} implementation that provides the structure<a name="line.28"></a>
+<font color="green">029</font>     * for handling conversion &lt;b&gt;to&lt;/b&gt; and &lt;b&gt;from&lt;/b&gt; a specified type.<a name="line.29"></a>
+<font color="green">030</font>     * &lt;p&gt;<a name="line.30"></a>
+<font color="green">031</font>     * This implementation provides the basic structure for<a name="line.31"></a>
+<font color="green">032</font>     * converting to/from a specified type optionally using a default<a name="line.32"></a>
+<font color="green">033</font>     * value or throwing a {@link ConversionException} if a<a name="line.33"></a>
+<font color="green">034</font>     * conversion error occurs.<a name="line.34"></a>
+<font color="green">035</font>     * &lt;p&gt;<a name="line.35"></a>
+<font color="green">036</font>     * Implementations should provide conversion to the specified<a name="line.36"></a>
+<font color="green">037</font>     * type and from the specified type to a &lt;code&gt;String&lt;/code&gt; value<a name="line.37"></a>
+<font color="green">038</font>     * by implementing the following methods:<a name="line.38"></a>
+<font color="green">039</font>     * &lt;ul&gt;<a name="line.39"></a>
+<font color="green">040</font>     *     &lt;li&gt;&lt;code&gt;convertToString(value)&lt;/code&gt; - convert to a String<a name="line.40"></a>
+<font color="green">041</font>     *        (default implementation uses the objects &lt;code&gt;toString()&lt;/code&gt;<a name="line.41"></a>
+<font color="green">042</font>     *        method).&lt;/li&gt;<a name="line.42"></a>
+<font color="green">043</font>     *     &lt;li&gt;&lt;code&gt;convertToType(Class, value)&lt;/code&gt; - convert<a name="line.43"></a>
+<font color="green">044</font>     *         to the specified type&lt;/li&gt;<a name="line.44"></a>
+<font color="green">045</font>     * &lt;/ul&gt;<a name="line.45"></a>
+<font color="green">046</font>     *<a name="line.46"></a>
+<font color="green">047</font>     * @version $Revision: 640131 $ $Date: 2008-03-23 02:10:31 +0000 (Sun, 23 Mar 2008) $<a name="line.47"></a>
+<font color="green">048</font>     * @since 1.8.0<a name="line.48"></a>
+<font color="green">049</font>     */<a name="line.49"></a>
+<font color="green">050</font>    public abstract class AbstractConverter implements Converter {<a name="line.50"></a>
+<font color="green">051</font>    <a name="line.51"></a>
+<font color="green">052</font>        /** Debug logging message to indicate default value configuration */<a name="line.52"></a>
+<font color="green">053</font>        private static final String DEFAULT_CONFIG_MSG =<a name="line.53"></a>
+<font color="green">054</font>            "(N.B. Converters can be configured to use default values to avoid throwing exceptions)";<a name="line.54"></a>
+<font color="green">055</font>    <a name="line.55"></a>
+<font color="green">056</font>        /** Current package name */<a name="line.56"></a>
+<font color="green">057</font>        //    getPackage() below returns null on some platforms/jvm versions during the unit tests.<a name="line.57"></a>
+<font color="green">058</font>    //    private static final String PACKAGE = AbstractConverter.class.getPackage().getName() + ".";<a name="line.58"></a>
+<font color="green">059</font>        private static final String PACKAGE = "org.apache.commons.beanutils.converters.";<a name="line.59"></a>
+<font color="green">060</font>    <a name="line.60"></a>
+<font color="green">061</font>        /**<a name="line.61"></a>
+<font color="green">062</font>         * Logging for this instance.<a name="line.62"></a>
+<font color="green">063</font>         */<a name="line.63"></a>
+<font color="green">064</font>        private transient Log log;<a name="line.64"></a>
+<font color="green">065</font>    <a name="line.65"></a>
+<font color="green">066</font>        /**<a name="line.66"></a>
+<font color="green">067</font>         * Should we return the default value on conversion errors?<a name="line.67"></a>
+<font color="green">068</font>         */<a name="line.68"></a>
+<font color="green">069</font>        private boolean useDefault = false;<a name="line.69"></a>
+<font color="green">070</font>    <a name="line.70"></a>
+<font color="green">071</font>        /**<a name="line.71"></a>
+<font color="green">072</font>         * The default value specified to our Constructor, if any.<a name="line.72"></a>
+<font color="green">073</font>         */<a name="line.73"></a>
+<font color="green">074</font>        private Object defaultValue = null;<a name="line.74"></a>
+<font color="green">075</font>    <a name="line.75"></a>
+<font color="green">076</font>        // ----------------------------------------------------------- Constructors<a name="line.76"></a>
+<font color="green">077</font>    <a name="line.77"></a>
+<font color="green">078</font>        /**<a name="line.78"></a>
+<font color="green">079</font>         * Construct a &lt;i&gt;Converter&lt;/i&gt; that throws a<a name="line.79"></a>
+<font color="green">080</font>         * &lt;code&gt;ConversionException&lt;/code&gt; if an error occurs.<a name="line.80"></a>
+<font color="green">081</font>         */<a name="line.81"></a>
+<font color="green">082</font>        public AbstractConverter() {<a name="line.82"></a>
+<font color="green">083</font>        }<a name="line.83"></a>
+<font color="green">084</font>    <a name="line.84"></a>
+<font color="green">085</font>        /**<a name="line.85"></a>
+<font color="green">086</font>         * Construct a &lt;i&gt;Converter&lt;/i&gt; that returns a default<a name="line.86"></a>
+<font color="green">087</font>         * value if an error occurs.<a name="line.87"></a>
+<font color="green">088</font>         *<a name="line.88"></a>
+<font color="green">089</font>         * @param defaultValue The default value to be returned<a name="line.89"></a>
+<font color="green">090</font>         * if the value to be converted is missing or an error<a name="line.90"></a>
+<font color="green">091</font>         * occurs converting the value.<a name="line.91"></a>
+<font color="green">092</font>         */<a name="line.92"></a>
+<font color="green">093</font>        public AbstractConverter(Object defaultValue) {<a name="line.93"></a>
+<font color="green">094</font>            setDefaultValue(defaultValue);<a name="line.94"></a>
+<font color="green">095</font>        }<a name="line.95"></a>
+<font color="green">096</font>    <a name="line.96"></a>
+<font color="green">097</font>        // --------------------------------------------------------- Public Methods<a name="line.97"></a>
+<font color="green">098</font>    <a name="line.98"></a>
+<font color="green">099</font>        /**<a name="line.99"></a>
+<font color="green">100</font>         * Indicates whether a default value will be returned or exception<a name="line.100"></a>
+<font color="green">101</font>         * thrown in the event of a conversion error.<a name="line.101"></a>
+<font color="green">102</font>         *<a name="line.102"></a>
+<font color="green">103</font>         * @return &lt;code&gt;true&lt;/code&gt; if a default value will be returned for<a name="line.103"></a>
+<font color="green">104</font>         * conversion errors or &lt;code&gt;false&lt;/code&gt; if a {@link ConversionException}<a name="line.104"></a>
+<font color="green">105</font>         * will be thrown.<a name="line.105"></a>
+<font color="green">106</font>         */<a name="line.106"></a>
+<font color="green">107</font>        public boolean isUseDefault() {<a name="line.107"></a>
+<font color="green">108</font>            return useDefault;<a name="line.108"></a>
+<font color="green">109</font>        }<a name="line.109"></a>
+<font color="green">110</font>    <a name="line.110"></a>
+<font color="green">111</font>        /**<a name="line.111"></a>
+<font color="green">112</font>         * Convert the input object into an output object of the<a name="line.112"></a>
+<font color="green">113</font>         * specified type.<a name="line.113"></a>
+<font color="green">114</font>         *<a name="line.114"></a>
+<font color="green">115</font>         * @param type Data type to which this value should be converted<a name="line.115"></a>
+<font color="green">116</font>         * @param value The input value to be converted<a name="line.116"></a>
+<font color="green">117</font>         * @return The converted value.<a name="line.117"></a>
+<font color="green">118</font>         * @throws ConversionException if conversion cannot be performed<a name="line.118"></a>
+<font color="green">119</font>         * successfully and no default is specified.<a name="line.119"></a>
+<font color="green">120</font>         */<a name="line.120"></a>
+<font color="green">121</font>        public Object convert(Class type, Object value) {<a name="line.121"></a>
+<font color="green">122</font>    <a name="line.122"></a>
+<font color="green">123</font>            Class sourceType  = value == null ? null : value.getClass();<a name="line.123"></a>
+<font color="green">124</font>            Class targetType  = primitive(type  == null ? getDefaultType() : type);<a name="line.124"></a>
+<font color="green">125</font>    <a name="line.125"></a>
+<font color="green">126</font>            if (log().isDebugEnabled()) {<a name="line.126"></a>
+<font color="green">127</font>                log().debug("Converting"<a name="line.127"></a>
+<font color="green">128</font>                        + (value == null ? "" : " '" + toString(sourceType) + "'")<a name="line.128"></a>
+<font color="green">129</font>                        + " value '" + value + "' to type '" + toString(targetType) + "'");<a name="line.129"></a>
+<font color="green">130</font>            }<a name="line.130"></a>
+<font color="green">131</font>    <a name="line.131"></a>
+<font color="green">132</font>            value = convertArray(value);<a name="line.132"></a>
+<font color="green">133</font>    <a name="line.133"></a>
+<font color="green">134</font>            // Missing Value<a name="line.134"></a>
+<font color="green">135</font>            if (value == null) {<a name="line.135"></a>
+<font color="green">136</font>                return handleMissing(targetType);<a name="line.136"></a>
+<font color="green">137</font>            }<a name="line.137"></a>
+<font color="green">138</font>    <a name="line.138"></a>
+<font color="green">139</font>            sourceType = value.getClass();<a name="line.139"></a>
+<font color="green">140</font>    <a name="line.140"></a>
+<font color="green">141</font>            try {<a name="line.141"></a>
+<font color="green">142</font>                // Convert --&gt; String<a name="line.142"></a>
+<font color="green">143</font>                if (targetType.equals(String.class)) {<a name="line.143"></a>
+<font color="green">144</font>                    return convertToString(value);<a name="line.144"></a>
+<font color="green">145</font>    <a name="line.145"></a>
+<font color="green">146</font>                // No conversion necessary<a name="line.146"></a>
+<font color="green">147</font>                } else if (targetType.equals(sourceType)) {<a name="line.147"></a>
+<font color="green">148</font>                    if (log().isDebugEnabled()) {<a name="line.148"></a>
+<font color="green">149</font>                        log().debug("    No conversion required, value is already a "<a name="line.149"></a>
+<font color="green">150</font>                                        + toString(targetType));<a name="line.150"></a>
+<font color="green">151</font>                    }<a name="line.151"></a>
+<font color="green">152</font>                    return value;<a name="line.152"></a>
+<font color="green">153</font>    <a name="line.153"></a>
+<font color="green">154</font>                // Convert --&gt; Type<a name="line.154"></a>
+<font color="green">155</font>                } else {<a name="line.155"></a>
+<font color="green">156</font>                    Object result = convertToType(targetType, value);<a name="line.156"></a>
+<font color="green">157</font>                    if (log().isDebugEnabled()) {<a name="line.157"></a>
+<font color="green">158</font>                        log().debug("    Converted to " + toString(targetType) +<a name="line.158"></a>
+<font color="green">159</font>                                       " value '" + result + "'");<a name="line.159"></a>
+<font color="green">160</font>                    }<a name="line.160"></a>
+<font color="green">161</font>                    return result;<a name="line.161"></a>
+<font color="green">162</font>                }<a name="line.162"></a>
+<font color="green">163</font>            } catch (Throwable t) {<a name="line.163"></a>
+<font color="green">164</font>                return handleError(targetType, value, t);<a name="line.164"></a>
+<font color="green">165</font>            }<a name="line.165"></a>
+<font color="green">166</font>    <a name="line.166"></a>
+<font color="green">167</font>        }<a name="line.167"></a>
+<font color="green">168</font>    <a name="line.168"></a>
+<font color="green">169</font>        /**<a name="line.169"></a>
+<font color="green">170</font>         * Convert the input object into a String.<a name="line.170"></a>
+<font color="green">171</font>         * &lt;p&gt;<a name="line.171"></a>
+<font color="green">172</font>         * &lt;b&gt;N.B.&lt;/b&gt;This implementation simply uses the value's<a name="line.172"></a>
+<font color="green">173</font>         * &lt;code&gt;toString()&lt;/code&gt; method and should be overriden if a<a name="line.173"></a>
+<font color="green">174</font>         * more sophisticated mechanism for &lt;i&gt;conversion to a String&lt;/i&gt;<a name="line.174"></a>
+<font color="green">175</font>         * is required.<a name="line.175"></a>
+<font color="green">176</font>         *<a name="line.176"></a>
+<font color="green">177</font>         * @param value The input value to be converted.<a name="line.177"></a>
+<font color="green">178</font>         * @return the converted String value.<a name="line.178"></a>
+<font color="green">179</font>         * @throws Throwable if an error occurs converting to a String<a name="line.179"></a>
+<font color="green">180</font>         */<a name="line.180"></a>
+<font color="green">181</font>        protected String convertToString(Object value) throws Throwable {<a name="line.181"></a>
+<font color="green">182</font>            return value.toString();<a name="line.182"></a>
+<font color="green">183</font>        }<a name="line.183"></a>
+<font color="green">184</font>    <a name="line.184"></a>
+<font color="green">185</font>        /**<a name="line.185"></a>
+<font color="green">186</font>         * Convert the input object into an output object of the<a name="line.186"></a>
+<font color="green">187</font>         * specified type.<a name="line.187"></a>
+<font color="green">188</font>         * &lt;p&gt;<a name="line.188"></a>
+<font color="green">189</font>         * Typical implementations will provide a minimum of<a name="line.189"></a>
+<font color="green">190</font>         * &lt;code&gt;String --&gt; type&lt;/code&gt; conversion.<a name="line.190"></a>
+<font color="green">191</font>         *<a name="line.191"></a>
+<font color="green">192</font>         * @param type Data type to which this value should be converted.<a name="line.192"></a>
+<font color="green">193</font>         * @param value The input value to be converted.<a name="line.193"></a>
+<font color="green">194</font>         * @return The converted value.<a name="line.194"></a>
+<font color="green">195</font>         * @throws Throwable if an error occurs converting to the specified type<a name="line.195"></a>
+<font color="green">196</font>         */<a name="line.196"></a>
+<font color="green">197</font>        protected abstract Object convertToType(Class type, Object value) throws Throwable;<a name="line.197"></a>
+<font color="green">198</font>    <a name="line.198"></a>
+<font color="green">199</font>        /**<a name="line.199"></a>
+<font color="green">200</font>         * Return the first element from an Array (or Collection)<a name="line.200"></a>
+<font color="green">201</font>         * or the value unchanged if not an Array (or Collection).<a name="line.201"></a>
+<font color="green">202</font>         *<a name="line.202"></a>
+<font color="green">203</font>         * N.B. This needs to be overriden for array/Collection converters.<a name="line.203"></a>
+<font color="green">204</font>         *<a name="line.204"></a>
+<font color="green">205</font>         * @param value The value to convert<a name="line.205"></a>
+<font color="green">206</font>         * @return The first element in an Array (or Collection)<a name="line.206"></a>
+<font color="green">207</font>         * or the value unchanged if not an Array (or Collection)<a name="line.207"></a>
+<font color="green">208</font>         */<a name="line.208"></a>
+<font color="green">209</font>        protected Object convertArray(Object value) {<a name="line.209"></a>
+<font color="green">210</font>            if (value == null) {<a name="line.210"></a>
+<font color="green">211</font>                return null;<a name="line.211"></a>
+<font color="green">212</font>            }<a name="line.212"></a>
+<font color="green">213</font>            if (value.getClass().isArray()) {<a name="line.213"></a>
+<font color="green">214</font>                if (Array.getLength(value) &gt; 0) {<a name="line.214"></a>
+<font color="green">215</font>                    return Array.get(value, 0);<a name="line.215"></a>
+<font color="green">216</font>                } else {<a name="line.216"></a>
+<font color="green">217</font>                    return null;<a name="line.217"></a>
+<font color="green">218</font>                }<a name="line.218"></a>
+<font color="green">219</font>            }<a name="line.219"></a>
+<font color="green">220</font>            if (value instanceof Collection) {<a name="line.220"></a>
+<font color="green">221</font>                Collection collection = (Collection)value;<a name="line.221"></a>
+<font color="green">222</font>                if (collection.size() &gt; 0) {<a name="line.222"></a>
+<font color="green">223</font>                    return collection.iterator().next();<a name="line.223"></a>
+<font color="green">224</font>                } else {<a name="line.224"></a>
+<font color="green">225</font>                    return null;<a name="line.225"></a>
+<font color="green">226</font>                }<a name="line.226"></a>
+<font color="green">227</font>            }<a name="line.227"></a>
+<font color="green">228</font>            return value;<a name="line.228"></a>
+<font color="green">229</font>        }<a name="line.229"></a>
+<font color="green">230</font>    <a name="line.230"></a>
+<font color="green">231</font>        /**<a name="line.231"></a>
+<font color="green">232</font>         * Handle Conversion Errors.<a name="line.232"></a>
+<font color="green">233</font>         * &lt;p&gt;<a name="line.233"></a>
+<font color="green">234</font>         * If a default value has been specified then it is returned<a name="line.234"></a>
+<font color="green">235</font>         * otherwise a ConversionException is thrown.<a name="line.235"></a>
+<font color="green">236</font>         *<a name="line.236"></a>
+<font color="green">237</font>         * @param type Data type to which this value should be converted.<a name="line.237"></a>
+<font color="green">238</font>         * @param value The input value to be converted<a name="line.238"></a>
+<font color="green">239</font>         * @param cause The exception thrown by the &lt;code&gt;convert&lt;/code&gt; method<a name="line.239"></a>
+<font color="green">240</font>         * @return The default value.<a name="line.240"></a>
+<font color="green">241</font>         * @throws ConversionException if no default value has been<a name="line.241"></a>
+<font color="green">242</font>         * specified for this {@link Converter}.<a name="line.242"></a>
+<font color="green">243</font>         */<a name="line.243"></a>
+<font color="green">244</font>        protected Object handleError(Class type, Object value, Throwable cause) {<a name="line.244"></a>
+<font color="green">245</font>            if (log().isDebugEnabled()) {<a name="line.245"></a>
+<font color="green">246</font>                if (cause instanceof ConversionException) {<a name="line.246"></a>
+<font color="green">247</font>                    log().debug("    Conversion threw ConversionException: " + cause.getMessage());<a name="line.247"></a>
+<font color="green">248</font>                } else {<a name="line.248"></a>
+<font color="green">249</font>                    log().debug("    Conversion threw " + cause);<a name="line.249"></a>
+<font color="green">250</font>                }<a name="line.250"></a>
+<font color="green">251</font>            }<a name="line.251"></a>
+<font color="green">252</font>    <a name="line.252"></a>
+<font color="green">253</font>            if (useDefault) {<a name="line.253"></a>
+<font color="green">254</font>                return handleMissing(type);<a name="line.254"></a>
+<font color="green">255</font>            }<a name="line.255"></a>
+<font color="green">256</font>    <a name="line.256"></a>
+<font color="green">257</font>            ConversionException cex = null;<a name="line.257"></a>
+<font color="green">258</font>            if (cause instanceof ConversionException) {<a name="line.258"></a>
+<font color="green">259</font>                cex = (ConversionException)cause;<a name="line.259"></a>
+<font color="green">260</font>                if (log().isDebugEnabled()) {<a name="line.260"></a>
+<font color="green">261</font>                    log().debug("    Re-throwing ConversionException: " + cex.getMessage());<a name="line.261"></a>
+<font color="green">262</font>                    log().debug("    " + DEFAULT_CONFIG_MSG);<a name="line.262"></a>
+<font color="green">263</font>                }<a name="line.263"></a>
+<font color="green">264</font>            } else {<a name="line.264"></a>
+<font color="green">265</font>                String msg = "Error converting from '" + toString(value.getClass()) +<a name="line.265"></a>
+<font color="green">266</font>                        "' to '" + toString(type) + "' " + cause.getMessage();<a name="line.266"></a>
+<font color="green">267</font>                cex = new ConversionException(msg, cause);<a name="line.267"></a>
+<font color="green">268</font>                if (log().isDebugEnabled()) {<a name="line.268"></a>
+<font color="green">269</font>                    log().debug("    Throwing ConversionException: " + msg);<a name="line.269"></a>
+<font color="green">270</font>                    log().debug("    " + DEFAULT_CONFIG_MSG);<a name="line.270"></a>
+<font color="green">271</font>                }<a name="line.271"></a>
+<font color="green">272</font>                BeanUtils.initCause(cex, cause);<a name="line.272"></a>
+<font color="green">273</font>            }<a name="line.273"></a>
+<font color="green">274</font>    <a name="line.274"></a>
+<font color="green">275</font>            throw cex;<a name="line.275"></a>
+<font color="green">276</font>    <a name="line.276"></a>
+<font color="green">277</font>        }<a name="line.277"></a>
+<font color="green">278</font>    <a name="line.278"></a>
+<font color="green">279</font>        /**<a name="line.279"></a>
+<font color="green">280</font>         * Handle missing values.<a name="line.280"></a>
+<font color="green">281</font>         * &lt;p&gt;<a name="line.281"></a>
+<font color="green">282</font>         * If a default value has been specified then it is returned<a name="line.282"></a>
+<font color="green">283</font>         * otherwise a ConversionException is thrown.<a name="line.283"></a>
+<font color="green">284</font>         *<a name="line.284"></a>
+<font color="green">285</font>         * @param type Data type to which this value should be converted.<a name="line.285"></a>
+<font color="green">286</font>         * @return The default value.<a name="line.286"></a>
+<font color="green">287</font>         * @throws ConversionException if no default value has been<a name="line.287"></a>
+<font color="green">288</font>         * specified for this {@link Converter}.<a name="line.288"></a>
+<font color="green">289</font>         */<a name="line.289"></a>
+<font color="green">290</font>        protected Object handleMissing(Class type) {<a name="line.290"></a>
+<font color="green">291</font>    <a name="line.291"></a>
+<font color="green">292</font>            if (useDefault || type.equals(String.class)) {<a name="line.292"></a>
+<font color="green">293</font>                Object value = getDefault(type);<a name="line.293"></a>
+<font color="green">294</font>                if (useDefault &amp;&amp; value != null &amp;&amp; !(type.equals(value.getClass()))) {<a name="line.294"></a>
+<font color="green">295</font>                    try {<a name="line.295"></a>
+<font color="green">296</font>                        value = convertToType(type, defaultValue);<a name="line.296"></a>
+<font color="green">297</font>                    } catch (Throwable t) {<a name="line.297"></a>
+<font color="green">298</font>                        log().error("    Default conversion to " + toString(type)<a name="line.298"></a>
+<font color="green">299</font>                                + "failed: " + t);<a name="line.299"></a>
+<font color="green">300</font>                    }<a name="line.300"></a>
+<font color="green">301</font>                }<a name="line.301"></a>
+<font color="green">302</font>                if (log().isDebugEnabled()) {<a name="line.302"></a>
+<font color="green">303</font>                    log().debug("    Using default "<a name="line.303"></a>
+<font color="green">304</font>                            + (value == null ? "" : toString(value.getClass()) + " ")<a name="line.304"></a>
+<font color="green">305</font>                            + "value '" + defaultValue + "'");<a name="line.305"></a>
+<font color="green">306</font>                }<a name="line.306"></a>
+<font color="green">307</font>                return value;<a name="line.307"></a>
+<font color="green">308</font>            }<a name="line.308"></a>
+<font color="green">309</font>    <a name="line.309"></a>
+<font color="green">310</font>            ConversionException cex =  new ConversionException("No value specified for '" +<a name="line.310"></a>
+<font color="green">311</font>                    toString(type) + "'");<a name="line.311"></a>
+<font color="green">312</font>            if (log().isDebugEnabled()) {<a name="line.312"></a>
+<font color="green">313</font>                log().debug("    Throwing ConversionException: " + cex.getMessage());<a name="line.313"></a>
+<font color="green">314</font>                log().debug("    " + DEFAULT_CONFIG_MSG);<a name="line.314"></a>
+<font color="green">315</font>            }<a name="line.315"></a>
+<font color="green">316</font>            throw cex;<a name="line.316"></a>
+<font color="green">317</font>    <a name="line.317"></a>
+<font color="green">318</font>        }<a name="line.318"></a>
+<font color="green">319</font>    <a name="line.319"></a>
+<font color="green">320</font>        /**<a name="line.320"></a>
+<font color="green">321</font>         * Set the default value, converting as required.<a name="line.321"></a>
+<font color="green">322</font>         * &lt;p&gt;<a name="line.322"></a>
+<font color="green">323</font>         * If the default value is different from the type the<a name="line.323"></a>
+<font color="green">324</font>         * &lt;code&gt;Converter&lt;/code&gt; handles, it will be converted<a name="line.324"></a>
+<font color="green">325</font>         * to the handled type.<a name="line.325"></a>
+<font color="green">326</font>         *<a name="line.326"></a>
+<font color="green">327</font>         * @param defaultValue The default value to be returned<a name="line.327"></a>
+<font color="green">328</font>         * if the value to be converted is missing or an error<a name="line.328"></a>
+<font color="green">329</font>         * occurs converting the value.<a name="line.329"></a>
+<font color="green">330</font>         * @throws ConversionException if an error occurs converting<a name="line.330"></a>
+<font color="green">331</font>         * the default value<a name="line.331"></a>
+<font color="green">332</font>         */<a name="line.332"></a>
+<font color="green">333</font>        protected void setDefaultValue(Object defaultValue) {<a name="line.333"></a>
+<font color="green">334</font>            useDefault = false;<a name="line.334"></a>
+<font color="green">335</font>            if (log().isDebugEnabled()) {<a name="line.335"></a>
+<font color="green">336</font>                log().debug("Setting default value: " + defaultValue);<a name="line.336"></a>
+<font color="green">337</font>            }<a name="line.337"></a>
+<font color="green">338</font>            if (defaultValue == null) {<a name="line.338"></a>
+<font color="green">339</font>               this.defaultValue  = null;<a name="line.339"></a>
+<font color="green">340</font>            } else {<a name="line.340"></a>
+<font color="green">341</font>               this.defaultValue  = convert(getDefaultType(), defaultValue);<a name="line.341"></a>
+<font color="green">342</font>            }<a name="line.342"></a>
+<font color="green">343</font>            useDefault = true;<a name="line.343"></a>
+<font color="green">344</font>        }<a name="line.344"></a>
+<font color="green">345</font>    <a name="line.345"></a>
+<font color="green">346</font>        /**<a name="line.346"></a>
+<font color="green">347</font>         * Return the default type this &lt;code&gt;Converter&lt;/code&gt; handles.<a name="line.347"></a>
+<font color="green">348</font>         *<a name="line.348"></a>
+<font color="green">349</font>         * @return The default type this &lt;code&gt;Converter&lt;/code&gt; handles.<a name="line.349"></a>
+<font color="green">350</font>         */<a name="line.350"></a>
+<font color="green">351</font>        protected abstract Class getDefaultType();<a name="line.351"></a>
+<font color="green">352</font>    <a name="line.352"></a>
+<font color="green">353</font>        /**<a name="line.353"></a>
+<font color="green">354</font>         * Return the default value for conversions to the specified<a name="line.354"></a>
+<font color="green">355</font>         * type.<a name="line.355"></a>
+<font color="green">356</font>         * @param type Data type to which this value should be converted.<a name="line.356"></a>
+<font color="green">357</font>         * @return The default value for the specified type.<a name="line.357"></a>
+<font color="green">358</font>         */<a name="line.358"></a>
+<font color="green">359</font>        protected Object getDefault(Class type) {<a name="line.359"></a>
+<font color="green">360</font>            if (type.equals(String.class)) {<a name="line.360"></a>
+<font color="green">361</font>                return null;<a name="line.361"></a>
+<font color="green">362</font>            } else {<a name="line.362"></a>
+<font color="green">363</font>                return defaultValue;<a name="line.363"></a>
+<font color="green">364</font>            }<a name="line.364"></a>
+<font color="green">365</font>        }<a name="line.365"></a>
+<font color="green">366</font>        <a name="line.366"></a>
+<font color="green">367</font>        /**<a name="line.367"></a>
+<font color="green">368</font>         * Provide a String representation of this converter.<a name="line.368"></a>
+<font color="green">369</font>         *<a name="line.369"></a>
+<font color="green">370</font>         * @return A String representation of this converter<a name="line.370"></a>
+<font color="green">371</font>         */<a name="line.371"></a>
+<font color="green">372</font>        public String toString() {<a name="line.372"></a>
+<font color="green">373</font>            return toString(getClass()) + "[UseDefault=" + useDefault + "]";<a name="line.373"></a>
+<font color="green">374</font>        }<a name="line.374"></a>
+<font color="green">375</font>    <a name="line.375"></a>
+<font color="green">376</font>        // ----------------------------------------------------------- Package Methods<a name="line.376"></a>
+<font color="green">377</font>    <a name="line.377"></a>
+<font color="green">378</font>        /**<a name="line.378"></a>
+<font color="green">379</font>         * Accessor method for Log instance.<a name="line.379"></a>
+<font color="green">380</font>         * &lt;p&gt;<a name="line.380"></a>
+<font color="green">381</font>         * The Log instance variable is transient and<a name="line.381"></a>
+<font color="green">382</font>         * accessing it through this method ensures it<a name="line.382"></a>
+<font color="green">383</font>         * is re-initialized when this instance is<a name="line.383"></a>
+<font color="green">384</font>         * de-serialized.<a name="line.384"></a>
+<font color="green">385</font>         *<a name="line.385"></a>
+<font color="green">386</font>         * @return The Log instance.<a name="line.386"></a>
+<font color="green">387</font>         */<a name="line.387"></a>
+<font color="green">388</font>        Log log() {<a name="line.388"></a>
+<font color="green">389</font>            if (log == null) {<a name="line.389"></a>
+<font color="green">390</font>                log = LogFactory.getLog(getClass());<a name="line.390"></a>
+<font color="green">391</font>            }<a name="line.391"></a>
+<font color="green">392</font>            return log;<a name="line.392"></a>
+<font color="green">393</font>        }<a name="line.393"></a>
+<font color="green">394</font>    <a name="line.394"></a>
+<font color="green">395</font>        /**<a name="line.395"></a>
+<font color="green">396</font>         * Change primitve Class types to the associated wrapper class.<a name="line.396"></a>
+<font color="green">397</font>         * @param type The class type to check.<a name="line.397"></a>
+<font color="green">398</font>         * @return The converted type.<a name="line.398"></a>
+<font color="green">399</font>         */<a name="line.399"></a>
+<font color="green">400</font>         Class primitive(Class type) {<a name="line.400"></a>
+<font color="green">401</font>            if (type == null || !type.isPrimitive()) {<a name="line.401"></a>
+<font color="green">402</font>                return type;<a name="line.402"></a>
+<font color="green">403</font>            }<a name="line.403"></a>
+<font color="green">404</font>    <a name="line.404"></a>
+<font color="green">405</font>            if (type == Integer.TYPE) {<a name="line.405"></a>
+<font color="green">406</font>                return Integer.class;<a name="line.406"></a>
+<font color="green">407</font>            } else if (type == Double.TYPE) {<a name="line.407"></a>
+<font color="green">408</font>                return Double.class;<a name="line.408"></a>
+<font color="green">409</font>            } else if (type == Long.TYPE) {<a name="line.409"></a>
+<font color="green">410</font>                return Long.class;<a name="line.410"></a>
+<font color="green">411</font>            } else if (type == Boolean.TYPE) {<a name="line.411"></a>
+<font color="green">412</font>                return Boolean.class;<a name="line.412"></a>
+<font color="green">413</font>            } else if (type == Float.TYPE) {<a name="line.413"></a>
+<font color="green">414</font>                return Float.class;<a name="line.414"></a>
+<font color="green">415</font>            } else if (type == Short.TYPE) {<a name="line.415"></a>
+<font color="green">416</font>                return Short.class;<a name="line.416"></a>
+<font color="green">417</font>            } else if (type == Byte.TYPE) {<a name="line.417"></a>
+<font color="green">418</font>                return Byte.class;<a name="line.418"></a>
+<font color="green">419</font>            } else if (type == Character.TYPE) {<a name="line.419"></a>
+<font color="green">420</font>                return Character.class;<a name="line.420"></a>
+<font color="green">421</font>            } else {<a name="line.421"></a>
+<font color="green">422</font>                return type;<a name="line.422"></a>
+<font color="green">423</font>            }<a name="line.423"></a>
+<font color="green">424</font>        }<a name="line.424"></a>
+<font color="green">425</font>    <a name="line.425"></a>
+<font color="green">426</font>        /**<a name="line.426"></a>
+<font color="green">427</font>         * Provide a String representation of a &lt;code&gt;java.lang.Class&lt;/code&gt;.<a name="line.427"></a>
+<font color="green">428</font>         * @param type The &lt;code&gt;java.lang.Class&lt;/code&gt;.<a name="line.428"></a>
+<font color="green">429</font>         * @return The String representation.<a name="line.429"></a>
+<font color="green">430</font>         */<a name="line.430"></a>
+<font color="green">431</font>        String toString(Class type) {<a name="line.431"></a>
+<font color="green">432</font>            String typeName = null;<a name="line.432"></a>
+<font color="green">433</font>            if (type == null) {<a name="line.433"></a>
+<font color="green">434</font>                typeName = "null";<a name="line.434"></a>
+<font color="green">435</font>            } else if (type.isArray()) {<a name="line.435"></a>
+<font color="green">436</font>                Class elementType = type.getComponentType();<a name="line.436"></a>
+<font color="green">437</font>                int count = 1;<a name="line.437"></a>
+<font color="green">438</font>                while (elementType.isArray()) {<a name="line.438"></a>
+<font color="green">439</font>                    elementType = elementType .getComponentType();<a name="line.439"></a>
+<font color="green">440</font>                    count++;<a name="line.440"></a>
+<font color="green">441</font>                }<a name="line.441"></a>
+<font color="green">442</font>                typeName = elementType.getName();<a name="line.442"></a>
+<font color="green">443</font>                for (int i = 0; i &lt; count; i++) {<a name="line.443"></a>
+<font color="green">444</font>                    typeName += "[]";<a name="line.444"></a>
+<font color="green">445</font>                }<a name="line.445"></a>
+<font color="green">446</font>            } else {<a name="line.446"></a>
+<font color="green">447</font>                typeName = type.getName();<a name="line.447"></a>
+<font color="green">448</font>            }<a name="line.448"></a>
+<font color="green">449</font>            if (typeName.startsWith("java.lang.") ||<a name="line.449"></a>
+<font color="green">450</font>                typeName.startsWith("java.util.") ||<a name="line.450"></a>
+<font color="green">451</font>                typeName.startsWith("java.math.")) {<a name="line.451"></a>
+<font color="green">452</font>                typeName = typeName.substring("java.lang.".length());<a name="line.452"></a>
+<font color="green">453</font>            } else if (typeName.startsWith(PACKAGE)) {<a name="line.453"></a>
+<font color="green">454</font>                typeName = typeName.substring(PACKAGE.length());<a name="line.454"></a>
+<font color="green">455</font>            }<a name="line.455"></a>
+<font color="green">456</font>            return typeName;<a name="line.456"></a>
+<font color="green">457</font>        }<a name="line.457"></a>
+<font color="green">458</font>    }<a name="line.458"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/converters/AbstractArrayConverter/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/converters/ArrayConverter/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

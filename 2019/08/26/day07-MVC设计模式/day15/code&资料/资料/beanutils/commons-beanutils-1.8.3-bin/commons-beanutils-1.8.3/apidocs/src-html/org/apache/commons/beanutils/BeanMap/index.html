@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/BeanMap/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2010-03-24T09:14:02.132Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/BeanMap/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/BeanMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:22" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:22+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:14:02" itemprop="dateModified" datetime="2010-03-24T17:14:02+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html>
+<body bgcolor="white">
+<pre>
+<font color="green">001</font>    /*<a name="line.1"></a>
+<font color="green">002</font>     * Licensed to the Apache Software Foundation (ASF) under one or more<a name="line.2"></a>
+<font color="green">003</font>     * contributor license agreements.  See the NOTICE file distributed with<a name="line.3"></a>
+<font color="green">004</font>     * this work for additional information regarding copyright ownership.<a name="line.4"></a>
+<font color="green">005</font>     * The ASF licenses this file to You under the Apache License, Version 2.0<a name="line.5"></a>
+<font color="green">006</font>     * (the "License"); you may not use this file except in compliance with<a name="line.6"></a>
+<font color="green">007</font>     * the License.  You may obtain a copy of the License at<a name="line.7"></a>
+<font color="green">008</font>     *<a name="line.8"></a>
+<font color="green">009</font>     *      http://www.apache.org/licenses/LICENSE-2.0<a name="line.9"></a>
+<font color="green">010</font>     *<a name="line.10"></a>
+<font color="green">011</font>     * Unless required by applicable law or agreed to in writing, software<a name="line.11"></a>
+<font color="green">012</font>     * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.12"></a>
+<font color="green">013</font>     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<a name="line.13"></a>
+<font color="green">014</font>     * See the License for the specific language governing permissions and<a name="line.14"></a>
+<font color="green">015</font>     * limitations under the License.<a name="line.15"></a>
+<font color="green">016</font>     */<a name="line.16"></a>
+<font color="green">017</font>    package org.apache.commons.beanutils;<a name="line.17"></a>
+<font color="green">018</font>    <a name="line.18"></a>
+<font color="green">019</font>    import java.beans.BeanInfo;<a name="line.19"></a>
+<font color="green">020</font>    import java.beans.IntrospectionException;<a name="line.20"></a>
+<font color="green">021</font>    import java.beans.Introspector;<a name="line.21"></a>
+<font color="green">022</font>    import java.beans.PropertyDescriptor;<a name="line.22"></a>
+<font color="green">023</font>    import java.lang.reflect.Constructor;<a name="line.23"></a>
+<font color="green">024</font>    import java.lang.reflect.InvocationTargetException;<a name="line.24"></a>
+<font color="green">025</font>    import java.lang.reflect.Method;<a name="line.25"></a>
+<font color="green">026</font>    import java.util.AbstractMap;<a name="line.26"></a>
+<font color="green">027</font>    import java.util.AbstractSet;<a name="line.27"></a>
+<font color="green">028</font>    import java.util.ArrayList;<a name="line.28"></a>
+<font color="green">029</font>    import java.util.Collection;<a name="line.29"></a>
+<font color="green">030</font>    import java.util.Collections;<a name="line.30"></a>
+<font color="green">031</font>    import java.util.HashMap;<a name="line.31"></a>
+<font color="green">032</font>    import java.util.Iterator;<a name="line.32"></a>
+<font color="green">033</font>    import java.util.Map;<a name="line.33"></a>
+<font color="green">034</font>    import java.util.Set;<a name="line.34"></a>
+<font color="green">035</font>    <a name="line.35"></a>
+<font color="green">036</font>    import org.apache.commons.collections.list.UnmodifiableList;<a name="line.36"></a>
+<font color="green">037</font>    import org.apache.commons.collections.keyvalue.AbstractMapEntry;<a name="line.37"></a>
+<font color="green">038</font>    import org.apache.commons.collections.set.UnmodifiableSet;<a name="line.38"></a>
+<font color="green">039</font>    import org.apache.commons.collections.Transformer;<a name="line.39"></a>
+<font color="green">040</font>    <a name="line.40"></a>
+<font color="green">041</font>    /** <a name="line.41"></a>
+<font color="green">042</font>     * An implementation of Map for JavaBeans which uses introspection to<a name="line.42"></a>
+<font color="green">043</font>     * get and put properties in the bean.<a name="line.43"></a>
+<font color="green">044</font>     * &lt;p&gt;<a name="line.44"></a>
+<font color="green">045</font>     * If an exception occurs during attempts to get or set a property then the<a name="line.45"></a>
+<font color="green">046</font>     * property is considered non existent in the Map<a name="line.46"></a>
+<font color="green">047</font>     *<a name="line.47"></a>
+<font color="green">048</font>     * @version $Revision: 812176 $ $Date: 2009-09-07 15:59:25 +0100 (Mon, 07 Sep 2009) $<a name="line.48"></a>
+<font color="green">049</font>     * <a name="line.49"></a>
+<font color="green">050</font>     * @author James Strachan<a name="line.50"></a>
+<font color="green">051</font>     * @author Stephen Colebourne<a name="line.51"></a>
+<font color="green">052</font>     */<a name="line.52"></a>
+<font color="green">053</font>    public class BeanMap extends AbstractMap implements Cloneable {<a name="line.53"></a>
+<font color="green">054</font>    <a name="line.54"></a>
+<font color="green">055</font>        private transient Object bean;<a name="line.55"></a>
+<font color="green">056</font>    <a name="line.56"></a>
+<font color="green">057</font>        private transient HashMap readMethods = new HashMap();<a name="line.57"></a>
+<font color="green">058</font>        private transient HashMap writeMethods = new HashMap();<a name="line.58"></a>
+<font color="green">059</font>        private transient HashMap types = new HashMap();<a name="line.59"></a>
+<font color="green">060</font>    <a name="line.60"></a>
+<font color="green">061</font>        /**<a name="line.61"></a>
+<font color="green">062</font>         * An empty array.  Used to invoke accessors via reflection.<a name="line.62"></a>
+<font color="green">063</font>         */<a name="line.63"></a>
+<font color="green">064</font>        public static final Object[] NULL_ARGUMENTS = {};<a name="line.64"></a>
+<font color="green">065</font>    <a name="line.65"></a>
+<font color="green">066</font>        /**<a name="line.66"></a>
+<font color="green">067</font>         * Maps primitive Class types to transformers.  The transformer<a name="line.67"></a>
+<font color="green">068</font>         * transform strings into the appropriate primitive wrapper.<a name="line.68"></a>
+<font color="green">069</font>         *<a name="line.69"></a>
+<font color="green">070</font>         * N.B. private &amp; unmodifiable replacement for the (public &amp; static) defaultTransformers instance.<a name="line.70"></a>
+<font color="green">071</font>         */<a name="line.71"></a>
+<font color="green">072</font>        private static final Map typeTransformers = Collections.unmodifiableMap(createTypeTransformers());<a name="line.72"></a>
+<font color="green">073</font>    <a name="line.73"></a>
+<font color="green">074</font>        /**<a name="line.74"></a>
+<font color="green">075</font>         * This HashMap has been made unmodifiable to prevent issues when<a name="line.75"></a>
+<font color="green">076</font>         * loaded in a shared ClassLoader enviroment.<a name="line.76"></a>
+<font color="green">077</font>         *<a name="line.77"></a>
+<font color="green">078</font>         * @see "http://issues.apache.org/jira/browse/BEANUTILS-112"<a name="line.78"></a>
+<font color="green">079</font>         * @deprecated Use {@link BeanMap#getTypeTransformer(Class)} method<a name="line.79"></a>
+<font color="green">080</font>         */<a name="line.80"></a>
+<font color="green">081</font>        public static HashMap defaultTransformers = new HashMap() {<a name="line.81"></a>
+<font color="green">082</font>            public void clear() {<a name="line.82"></a>
+<font color="green">083</font>                throw new UnsupportedOperationException();<a name="line.83"></a>
+<font color="green">084</font>            }<a name="line.84"></a>
+<font color="green">085</font>            public boolean containsKey(Object key) {<a name="line.85"></a>
+<font color="green">086</font>                return typeTransformers.containsKey(key);<a name="line.86"></a>
+<font color="green">087</font>            }<a name="line.87"></a>
+<font color="green">088</font>            public boolean containsValue(Object value) {<a name="line.88"></a>
+<font color="green">089</font>                return typeTransformers.containsValue(value);<a name="line.89"></a>
+<font color="green">090</font>            }<a name="line.90"></a>
+<font color="green">091</font>            public Set entrySet() {<a name="line.91"></a>
+<font color="green">092</font>                return typeTransformers.entrySet();<a name="line.92"></a>
+<font color="green">093</font>            }<a name="line.93"></a>
+<font color="green">094</font>            public Object get(Object key) {<a name="line.94"></a>
+<font color="green">095</font>                return typeTransformers.get(key);<a name="line.95"></a>
+<font color="green">096</font>            }<a name="line.96"></a>
+<font color="green">097</font>            public boolean isEmpty() {<a name="line.97"></a>
+<font color="green">098</font>                return false;<a name="line.98"></a>
+<font color="green">099</font>            }<a name="line.99"></a>
+<font color="green">100</font>            public Set keySet() {<a name="line.100"></a>
+<font color="green">101</font>                return typeTransformers.keySet();<a name="line.101"></a>
+<font color="green">102</font>            }<a name="line.102"></a>
+<font color="green">103</font>            public Object put(Object key, Object value) {<a name="line.103"></a>
+<font color="green">104</font>                throw new UnsupportedOperationException();<a name="line.104"></a>
+<font color="green">105</font>            }<a name="line.105"></a>
+<font color="green">106</font>            public void putAll(Map m) {<a name="line.106"></a>
+<font color="green">107</font>                throw new UnsupportedOperationException();<a name="line.107"></a>
+<font color="green">108</font>            }<a name="line.108"></a>
+<font color="green">109</font>            public Object remove(Object key) {<a name="line.109"></a>
+<font color="green">110</font>                throw new UnsupportedOperationException();<a name="line.110"></a>
+<font color="green">111</font>            }<a name="line.111"></a>
+<font color="green">112</font>            public int size() {<a name="line.112"></a>
+<font color="green">113</font>                return typeTransformers.size();<a name="line.113"></a>
+<font color="green">114</font>            }<a name="line.114"></a>
+<font color="green">115</font>            public Collection values() {<a name="line.115"></a>
+<font color="green">116</font>                return typeTransformers.values();<a name="line.116"></a>
+<font color="green">117</font>            }<a name="line.117"></a>
+<font color="green">118</font>        };<a name="line.118"></a>
+<font color="green">119</font>        <a name="line.119"></a>
+<font color="green">120</font>        private static Map createTypeTransformers() {<a name="line.120"></a>
+<font color="green">121</font>            Map defaultTransformers = new HashMap();<a name="line.121"></a>
+<font color="green">122</font>            defaultTransformers.put( <a name="line.122"></a>
+<font color="green">123</font>                Boolean.TYPE, <a name="line.123"></a>
+<font color="green">124</font>                new Transformer() {<a name="line.124"></a>
+<font color="green">125</font>                    public Object transform( Object input ) {<a name="line.125"></a>
+<font color="green">126</font>                        return Boolean.valueOf( input.toString() );<a name="line.126"></a>
+<font color="green">127</font>                    }<a name="line.127"></a>
+<font color="green">128</font>                }<a name="line.128"></a>
+<font color="green">129</font>            );<a name="line.129"></a>
+<font color="green">130</font>            defaultTransformers.put( <a name="line.130"></a>
+<font color="green">131</font>                Character.TYPE, <a name="line.131"></a>
+<font color="green">132</font>                new Transformer() {<a name="line.132"></a>
+<font color="green">133</font>                    public Object transform( Object input ) {<a name="line.133"></a>
+<font color="green">134</font>                        return new Character( input.toString().charAt( 0 ) );<a name="line.134"></a>
+<font color="green">135</font>                    }<a name="line.135"></a>
+<font color="green">136</font>                }<a name="line.136"></a>
+<font color="green">137</font>            );<a name="line.137"></a>
+<font color="green">138</font>            defaultTransformers.put( <a name="line.138"></a>
+<font color="green">139</font>                Byte.TYPE, <a name="line.139"></a>
+<font color="green">140</font>                new Transformer() {<a name="line.140"></a>
+<font color="green">141</font>                    public Object transform( Object input ) {<a name="line.141"></a>
+<font color="green">142</font>                        return Byte.valueOf( input.toString() );<a name="line.142"></a>
+<font color="green">143</font>                    }<a name="line.143"></a>
+<font color="green">144</font>                }<a name="line.144"></a>
+<font color="green">145</font>            );<a name="line.145"></a>
+<font color="green">146</font>            defaultTransformers.put( <a name="line.146"></a>
+<font color="green">147</font>                Short.TYPE, <a name="line.147"></a>
+<font color="green">148</font>                new Transformer() {<a name="line.148"></a>
+<font color="green">149</font>                    public Object transform( Object input ) {<a name="line.149"></a>
+<font color="green">150</font>                        return Short.valueOf( input.toString() );<a name="line.150"></a>
+<font color="green">151</font>                    }<a name="line.151"></a>
+<font color="green">152</font>                }<a name="line.152"></a>
+<font color="green">153</font>            );<a name="line.153"></a>
+<font color="green">154</font>            defaultTransformers.put( <a name="line.154"></a>
+<font color="green">155</font>                Integer.TYPE, <a name="line.155"></a>
+<font color="green">156</font>                new Transformer() {<a name="line.156"></a>
+<font color="green">157</font>                    public Object transform( Object input ) {<a name="line.157"></a>
+<font color="green">158</font>                        return Integer.valueOf( input.toString() );<a name="line.158"></a>
+<font color="green">159</font>                    }<a name="line.159"></a>
+<font color="green">160</font>                }<a name="line.160"></a>
+<font color="green">161</font>            );<a name="line.161"></a>
+<font color="green">162</font>            defaultTransformers.put( <a name="line.162"></a>
+<font color="green">163</font>                Long.TYPE, <a name="line.163"></a>
+<font color="green">164</font>                new Transformer() {<a name="line.164"></a>
+<font color="green">165</font>                    public Object transform( Object input ) {<a name="line.165"></a>
+<font color="green">166</font>                        return Long.valueOf( input.toString() );<a name="line.166"></a>
+<font color="green">167</font>                    }<a name="line.167"></a>
+<font color="green">168</font>                }<a name="line.168"></a>
+<font color="green">169</font>            );<a name="line.169"></a>
+<font color="green">170</font>            defaultTransformers.put( <a name="line.170"></a>
+<font color="green">171</font>                Float.TYPE, <a name="line.171"></a>
+<font color="green">172</font>                new Transformer() {<a name="line.172"></a>
+<font color="green">173</font>                    public Object transform( Object input ) {<a name="line.173"></a>
+<font color="green">174</font>                        return Float.valueOf( input.toString() );<a name="line.174"></a>
+<font color="green">175</font>                    }<a name="line.175"></a>
+<font color="green">176</font>                }<a name="line.176"></a>
+<font color="green">177</font>            );<a name="line.177"></a>
+<font color="green">178</font>            defaultTransformers.put( <a name="line.178"></a>
+<font color="green">179</font>                Double.TYPE, <a name="line.179"></a>
+<font color="green">180</font>                new Transformer() {<a name="line.180"></a>
+<font color="green">181</font>                    public Object transform( Object input ) {<a name="line.181"></a>
+<font color="green">182</font>                        return Double.valueOf( input.toString() );<a name="line.182"></a>
+<font color="green">183</font>                    }<a name="line.183"></a>
+<font color="green">184</font>                }<a name="line.184"></a>
+<font color="green">185</font>            );<a name="line.185"></a>
+<font color="green">186</font>            return defaultTransformers;<a name="line.186"></a>
+<font color="green">187</font>        }<a name="line.187"></a>
+<font color="green">188</font>        <a name="line.188"></a>
+<font color="green">189</font>        <a name="line.189"></a>
+<font color="green">190</font>        // Constructors<a name="line.190"></a>
+<font color="green">191</font>        //-------------------------------------------------------------------------<a name="line.191"></a>
+<font color="green">192</font>    <a name="line.192"></a>
+<font color="green">193</font>        /**<a name="line.193"></a>
+<font color="green">194</font>         * Constructs a new empty &lt;code&gt;BeanMap&lt;/code&gt;.<a name="line.194"></a>
+<font color="green">195</font>         */<a name="line.195"></a>
+<font color="green">196</font>        public BeanMap() {<a name="line.196"></a>
+<font color="green">197</font>        }<a name="line.197"></a>
+<font color="green">198</font>    <a name="line.198"></a>
+<font color="green">199</font>        /**<a name="line.199"></a>
+<font color="green">200</font>         * Constructs a new &lt;code&gt;BeanMap&lt;/code&gt; that operates on the <a name="line.200"></a>
+<font color="green">201</font>         * specified bean.  If the given bean is &lt;code&gt;null&lt;/code&gt;, then<a name="line.201"></a>
+<font color="green">202</font>         * this map will be empty.<a name="line.202"></a>
+<font color="green">203</font>         *<a name="line.203"></a>
+<font color="green">204</font>         * @param bean  the bean for this map to operate on<a name="line.204"></a>
+<font color="green">205</font>         */<a name="line.205"></a>
+<font color="green">206</font>        public BeanMap(Object bean) {<a name="line.206"></a>
+<font color="green">207</font>            this.bean = bean;<a name="line.207"></a>
+<font color="green">208</font>            initialise();<a name="line.208"></a>
+<font color="green">209</font>        }<a name="line.209"></a>
+<font color="green">210</font>    <a name="line.210"></a>
+<font color="green">211</font>        // Map interface<a name="line.211"></a>
+<font color="green">212</font>        //-------------------------------------------------------------------------<a name="line.212"></a>
+<font color="green">213</font>    <a name="line.213"></a>
+<font color="green">214</font>        /**<a name="line.214"></a>
+<font color="green">215</font>         * Renders a string representation of this object.<a name="line.215"></a>
+<font color="green">216</font>         * @return a &lt;code&gt;String&lt;/code&gt; representation of this object<a name="line.216"></a>
+<font color="green">217</font>         */<a name="line.217"></a>
+<font color="green">218</font>        public String toString() {<a name="line.218"></a>
+<font color="green">219</font>            return "BeanMap&lt;" + String.valueOf(bean) + "&gt;";<a name="line.219"></a>
+<font color="green">220</font>        }<a name="line.220"></a>
+<font color="green">221</font>        <a name="line.221"></a>
+<font color="green">222</font>        /**<a name="line.222"></a>
+<font color="green">223</font>         * Clone this bean map using the following process: <a name="line.223"></a>
+<font color="green">224</font>         *<a name="line.224"></a>
+<font color="green">225</font>         * &lt;ul&gt;<a name="line.225"></a>
+<font color="green">226</font>         * &lt;li&gt;If there is no underlying bean, return a cloned BeanMap without a<a name="line.226"></a>
+<font color="green">227</font>         * bean.<a name="line.227"></a>
+<font color="green">228</font>         *<a name="line.228"></a>
+<font color="green">229</font>         * &lt;li&gt;Since there is an underlying bean, try to instantiate a new bean of<a name="line.229"></a>
+<font color="green">230</font>         * the same type using Class.newInstance().<a name="line.230"></a>
+<font color="green">231</font>         * <a name="line.231"></a>
+<font color="green">232</font>         * &lt;li&gt;If the instantiation fails, throw a CloneNotSupportedException<a name="line.232"></a>
+<font color="green">233</font>         *<a name="line.233"></a>
+<font color="green">234</font>         * &lt;li&gt;Clone the bean map and set the newly instantiated bean as the<a name="line.234"></a>
+<font color="green">235</font>         * underlying bean for the bean map.<a name="line.235"></a>
+<font color="green">236</font>         *<a name="line.236"></a>
+<font color="green">237</font>         * &lt;li&gt;Copy each property that is both readable and writable from the<a name="line.237"></a>
+<font color="green">238</font>         * existing object to a cloned bean map.  <a name="line.238"></a>
+<font color="green">239</font>         *<a name="line.239"></a>
+<font color="green">240</font>         * &lt;li&gt;If anything fails along the way, throw a<a name="line.240"></a>
+<font color="green">241</font>         * CloneNotSupportedException.<a name="line.241"></a>
+<font color="green">242</font>         *<a name="line.242"></a>
+<font color="green">243</font>         * &lt;ul&gt;<a name="line.243"></a>
+<font color="green">244</font>         *<a name="line.244"></a>
+<font color="green">245</font>         * @return a cloned instance of this bean map<a name="line.245"></a>
+<font color="green">246</font>         * @throws CloneNotSupportedException if the underlying bean<a name="line.246"></a>
+<font color="green">247</font>         * cannot be cloned<a name="line.247"></a>
+<font color="green">248</font>         */<a name="line.248"></a>
+<font color="green">249</font>        public Object clone() throws CloneNotSupportedException {<a name="line.249"></a>
+<font color="green">250</font>            BeanMap newMap = (BeanMap)super.clone();<a name="line.250"></a>
+<font color="green">251</font>    <a name="line.251"></a>
+<font color="green">252</font>            if(bean == null) {<a name="line.252"></a>
+<font color="green">253</font>                // no bean, just an empty bean map at the moment.  return a newly<a name="line.253"></a>
+<font color="green">254</font>                // cloned and empty bean map.<a name="line.254"></a>
+<font color="green">255</font>                return newMap;<a name="line.255"></a>
+<font color="green">256</font>            }<a name="line.256"></a>
+<font color="green">257</font>    <a name="line.257"></a>
+<font color="green">258</font>            Object newBean = null;            <a name="line.258"></a>
+<font color="green">259</font>            Class beanClass = bean.getClass(); // Cannot throw Exception<a name="line.259"></a>
+<font color="green">260</font>            try {<a name="line.260"></a>
+<font color="green">261</font>                newBean = beanClass.newInstance();<a name="line.261"></a>
+<font color="green">262</font>            } catch (Exception e) {<a name="line.262"></a>
+<font color="green">263</font>                // unable to instantiate<a name="line.263"></a>
+<font color="green">264</font>                throw new CloneNotSupportedException<a name="line.264"></a>
+<font color="green">265</font>                    ("Unable to instantiate the underlying bean \"" +<a name="line.265"></a>
+<font color="green">266</font>                     beanClass.getName() + "\": " + e);<a name="line.266"></a>
+<font color="green">267</font>            }<a name="line.267"></a>
+<font color="green">268</font>                <a name="line.268"></a>
+<font color="green">269</font>            try {<a name="line.269"></a>
+<font color="green">270</font>                newMap.setBean(newBean);<a name="line.270"></a>
+<font color="green">271</font>            } catch (Exception exception) {<a name="line.271"></a>
+<font color="green">272</font>                throw new CloneNotSupportedException<a name="line.272"></a>
+<font color="green">273</font>                    ("Unable to set bean in the cloned bean map: " + <a name="line.273"></a>
+<font color="green">274</font>                     exception);<a name="line.274"></a>
+<font color="green">275</font>            }<a name="line.275"></a>
+<font color="green">276</font>                <a name="line.276"></a>
+<font color="green">277</font>            try {<a name="line.277"></a>
+<font color="green">278</font>                // copy only properties that are readable and writable.  If its<a name="line.278"></a>
+<font color="green">279</font>                // not readable, we can't get the value from the old map.  If<a name="line.279"></a>
+<font color="green">280</font>                // its not writable, we can't write a value into the new map.<a name="line.280"></a>
+<font color="green">281</font>                Iterator readableKeys = readMethods.keySet().iterator();<a name="line.281"></a>
+<font color="green">282</font>                while(readableKeys.hasNext()) {<a name="line.282"></a>
+<font color="green">283</font>                    Object key = readableKeys.next();<a name="line.283"></a>
+<font color="green">284</font>                    if(getWriteMethod(key) != null) {<a name="line.284"></a>
+<font color="green">285</font>                        newMap.put(key, get(key));<a name="line.285"></a>
+<font color="green">286</font>                    }<a name="line.286"></a>
+<font color="green">287</font>                }<a name="line.287"></a>
+<font color="green">288</font>            } catch (Exception exception) {<a name="line.288"></a>
+<font color="green">289</font>                throw new CloneNotSupportedException<a name="line.289"></a>
+<font color="green">290</font>                    ("Unable to copy bean values to cloned bean map: " +<a name="line.290"></a>
+<font color="green">291</font>                     exception);<a name="line.291"></a>
+<font color="green">292</font>            }<a name="line.292"></a>
+<font color="green">293</font>    <a name="line.293"></a>
+<font color="green">294</font>            return newMap;<a name="line.294"></a>
+<font color="green">295</font>        }<a name="line.295"></a>
+<font color="green">296</font>    <a name="line.296"></a>
+<font color="green">297</font>        /**<a name="line.297"></a>
+<font color="green">298</font>         * Puts all of the writable properties from the given BeanMap into this<a name="line.298"></a>
+<font color="green">299</font>         * BeanMap. Read-only and Write-only properties will be ignored.<a name="line.299"></a>
+<font color="green">300</font>         *<a name="line.300"></a>
+<font color="green">301</font>         * @param map  the BeanMap whose properties to put<a name="line.301"></a>
+<font color="green">302</font>         */<a name="line.302"></a>
+<font color="green">303</font>        public void putAllWriteable(BeanMap map) {<a name="line.303"></a>
+<font color="green">304</font>            Iterator readableKeys = map.readMethods.keySet().iterator();<a name="line.304"></a>
+<font color="green">305</font>            while (readableKeys.hasNext()) {<a name="line.305"></a>
+<font color="green">306</font>                Object key = readableKeys.next();<a name="line.306"></a>
+<font color="green">307</font>                if (getWriteMethod(key) != null) {<a name="line.307"></a>
+<font color="green">308</font>                    this.put(key, map.get(key));<a name="line.308"></a>
+<font color="green">309</font>                }<a name="line.309"></a>
+<font color="green">310</font>            }<a name="line.310"></a>
+<font color="green">311</font>        }<a name="line.311"></a>
+<font color="green">312</font>    <a name="line.312"></a>
+<font color="green">313</font>    <a name="line.313"></a>
+<font color="green">314</font>        /**<a name="line.314"></a>
+<font color="green">315</font>         * This method reinitializes the bean map to have default values for the<a name="line.315"></a>
+<font color="green">316</font>         * bean's properties.  This is accomplished by constructing a new instance<a name="line.316"></a>
+<font color="green">317</font>         * of the bean which the map uses as its underlying data source.  This<a name="line.317"></a>
+<font color="green">318</font>         * behavior for &lt;code&gt;clear()&lt;/code&gt; differs from the Map contract in that<a name="line.318"></a>
+<font color="green">319</font>         * the mappings are not actually removed from the map (the mappings for a<a name="line.319"></a>
+<font color="green">320</font>         * BeanMap are fixed).<a name="line.320"></a>
+<font color="green">321</font>         */<a name="line.321"></a>
+<font color="green">322</font>        public void clear() {<a name="line.322"></a>
+<font color="green">323</font>            if(bean == null) {<a name="line.323"></a>
+<font color="green">324</font>                return;<a name="line.324"></a>
+<font color="green">325</font>            }<a name="line.325"></a>
+<font color="green">326</font>    <a name="line.326"></a>
+<font color="green">327</font>            Class beanClass = null;<a name="line.327"></a>
+<font color="green">328</font>            try {<a name="line.328"></a>
+<font color="green">329</font>                beanClass = bean.getClass();<a name="line.329"></a>
+<font color="green">330</font>                bean = beanClass.newInstance();<a name="line.330"></a>
+<font color="green">331</font>            }<a name="line.331"></a>
+<font color="green">332</font>            catch (Exception e) {<a name="line.332"></a>
+<font color="green">333</font>                throw new UnsupportedOperationException( "Could not create new instance of class: " + beanClass );<a name="line.333"></a>
+<font color="green">334</font>            }<a name="line.334"></a>
+<font color="green">335</font>        }<a name="line.335"></a>
+<font color="green">336</font>    <a name="line.336"></a>
+<font color="green">337</font>        /**<a name="line.337"></a>
+<font color="green">338</font>         * Returns true if the bean defines a property with the given name.<a name="line.338"></a>
+<font color="green">339</font>         * &lt;p&gt;<a name="line.339"></a>
+<font color="green">340</font>         * The given name must be a &lt;code&gt;String&lt;/code&gt;; if not, this method<a name="line.340"></a>
+<font color="green">341</font>         * returns false. This method will also return false if the bean<a name="line.341"></a>
+<font color="green">342</font>         * does not define a property with that name.<a name="line.342"></a>
+<font color="green">343</font>         * &lt;p&gt;<a name="line.343"></a>
+<font color="green">344</font>         * Write-only properties will not be matched as the test operates against<a name="line.344"></a>
+<font color="green">345</font>         * property read methods.<a name="line.345"></a>
+<font color="green">346</font>         *<a name="line.346"></a>
+<font color="green">347</font>         * @param name  the name of the property to check<a name="line.347"></a>
+<font color="green">348</font>         * @return false if the given name is null or is not a &lt;code&gt;String&lt;/code&gt;;<a name="line.348"></a>
+<font color="green">349</font>         *   false if the bean does not define a property with that name; or<a name="line.349"></a>
+<font color="green">350</font>         *   true if the bean does define a property with that name<a name="line.350"></a>
+<font color="green">351</font>         */<a name="line.351"></a>
+<font color="green">352</font>        public boolean containsKey(Object name) {<a name="line.352"></a>
+<font color="green">353</font>            Method method = getReadMethod(name);<a name="line.353"></a>
+<font color="green">354</font>            return method != null;<a name="line.354"></a>
+<font color="green">355</font>        }<a name="line.355"></a>
+<font color="green">356</font>    <a name="line.356"></a>
+<font color="green">357</font>        /**<a name="line.357"></a>
+<font color="green">358</font>         * Returns true if the bean defines a property whose current value is<a name="line.358"></a>
+<font color="green">359</font>         * the given object.<a name="line.359"></a>
+<font color="green">360</font>         *<a name="line.360"></a>
+<font color="green">361</font>         * @param value  the value to check<a name="line.361"></a>
+<font color="green">362</font>         * @return false  true if the bean has at least one property whose <a name="line.362"></a>
+<font color="green">363</font>         *   current value is that object, false otherwise<a name="line.363"></a>
+<font color="green">364</font>         */<a name="line.364"></a>
+<font color="green">365</font>        public boolean containsValue(Object value) {<a name="line.365"></a>
+<font color="green">366</font>            // use default implementation<a name="line.366"></a>
+<font color="green">367</font>            return super.containsValue(value);<a name="line.367"></a>
+<font color="green">368</font>        }<a name="line.368"></a>
+<font color="green">369</font>    <a name="line.369"></a>
+<font color="green">370</font>        /**<a name="line.370"></a>
+<font color="green">371</font>         * Returns the value of the bean's property with the given name.<a name="line.371"></a>
+<font color="green">372</font>         * &lt;p&gt;<a name="line.372"></a>
+<font color="green">373</font>         * The given name must be a {@link String} and must not be <a name="line.373"></a>
+<font color="green">374</font>         * null; otherwise, this method returns &lt;code&gt;null&lt;/code&gt;.<a name="line.374"></a>
+<font color="green">375</font>         * If the bean defines a property with the given name, the value of<a name="line.375"></a>
+<font color="green">376</font>         * that property is returned.  Otherwise, &lt;code&gt;null&lt;/code&gt; is <a name="line.376"></a>
+<font color="green">377</font>         * returned.<a name="line.377"></a>
+<font color="green">378</font>         * &lt;p&gt;<a name="line.378"></a>
+<font color="green">379</font>         * Write-only properties will not be matched as the test operates against<a name="line.379"></a>
+<font color="green">380</font>         * property read methods.<a name="line.380"></a>
+<font color="green">381</font>         *<a name="line.381"></a>
+<font color="green">382</font>         * @param name  the name of the property whose value to return<a name="line.382"></a>
+<font color="green">383</font>         * @return  the value of the property with that name<a name="line.383"></a>
+<font color="green">384</font>         */<a name="line.384"></a>
+<font color="green">385</font>        public Object get(Object name) {<a name="line.385"></a>
+<font color="green">386</font>            if ( bean != null ) {<a name="line.386"></a>
+<font color="green">387</font>                Method method = getReadMethod( name );<a name="line.387"></a>
+<font color="green">388</font>                if ( method != null ) {<a name="line.388"></a>
+<font color="green">389</font>                    try {<a name="line.389"></a>
+<font color="green">390</font>                        return method.invoke( bean, NULL_ARGUMENTS );<a name="line.390"></a>
+<font color="green">391</font>                    }<a name="line.391"></a>
+<font color="green">392</font>                    catch (  IllegalAccessException e ) {<a name="line.392"></a>
+<font color="green">393</font>                        logWarn( e );<a name="line.393"></a>
+<font color="green">394</font>                    }<a name="line.394"></a>
+<font color="green">395</font>                    catch ( IllegalArgumentException e ) {<a name="line.395"></a>
+<font color="green">396</font>                        logWarn(  e );<a name="line.396"></a>
+<font color="green">397</font>                    }<a name="line.397"></a>
+<font color="green">398</font>                    catch ( InvocationTargetException e ) {<a name="line.398"></a>
+<font color="green">399</font>                        logWarn(  e );<a name="line.399"></a>
+<font color="green">400</font>                    }<a name="line.400"></a>
+<font color="green">401</font>                    catch ( NullPointerException e ) {<a name="line.401"></a>
+<font color="green">402</font>                        logWarn(  e );<a name="line.402"></a>
+<font color="green">403</font>                    }<a name="line.403"></a>
+<font color="green">404</font>                }<a name="line.404"></a>
+<font color="green">405</font>            }<a name="line.405"></a>
+<font color="green">406</font>            return null;<a name="line.406"></a>
+<font color="green">407</font>        }<a name="line.407"></a>
+<font color="green">408</font>    <a name="line.408"></a>
+<font color="green">409</font>        /**<a name="line.409"></a>
+<font color="green">410</font>         * Sets the bean property with the given name to the given value.<a name="line.410"></a>
+<font color="green">411</font>         *<a name="line.411"></a>
+<font color="green">412</font>         * @param name  the name of the property to set<a name="line.412"></a>
+<font color="green">413</font>         * @param value  the value to set that property to<a name="line.413"></a>
+<font color="green">414</font>         * @return  the previous value of that property<a name="line.414"></a>
+<font color="green">415</font>         * @throws IllegalArgumentException  if the given name is null;<a name="line.415"></a>
+<font color="green">416</font>         *   if the given name is not a {@link String}; if the bean doesn't<a name="line.416"></a>
+<font color="green">417</font>         *   define a property with that name; or if the bean property with<a name="line.417"></a>
+<font color="green">418</font>         *   that name is read-only<a name="line.418"></a>
+<font color="green">419</font>         * @throws ClassCastException if an error occurs creating the method args<a name="line.419"></a>
+<font color="green">420</font>         */<a name="line.420"></a>
+<font color="green">421</font>        public Object put(Object name, Object value) throws IllegalArgumentException, ClassCastException {<a name="line.421"></a>
+<font color="green">422</font>            if ( bean != null ) {<a name="line.422"></a>
+<font color="green">423</font>                Object oldValue = get( name );<a name="line.423"></a>
+<font color="green">424</font>                Method method = getWriteMethod( name );<a name="line.424"></a>
+<font color="green">425</font>                if ( method == null ) {<a name="line.425"></a>
+<font color="green">426</font>                    throw new IllegalArgumentException( "The bean of type: "+ <a name="line.426"></a>
+<font color="green">427</font>                            bean.getClass().getName() + " has no property called: " + name );<a name="line.427"></a>
+<font color="green">428</font>                }<a name="line.428"></a>
+<font color="green">429</font>                try {<a name="line.429"></a>
+<font color="green">430</font>                    Object[] arguments = createWriteMethodArguments( method, value );<a name="line.430"></a>
+<font color="green">431</font>                    method.invoke( bean, arguments );<a name="line.431"></a>
+<font color="green">432</font>    <a name="line.432"></a>
+<font color="green">433</font>                    Object newValue = get( name );<a name="line.433"></a>
+<font color="green">434</font>                    firePropertyChange( name, oldValue, newValue );<a name="line.434"></a>
+<font color="green">435</font>                }<a name="line.435"></a>
+<font color="green">436</font>                catch ( InvocationTargetException e ) {<a name="line.436"></a>
+<font color="green">437</font>                    logInfo( e );<a name="line.437"></a>
+<font color="green">438</font>                    throw new IllegalArgumentException( e.getMessage() );<a name="line.438"></a>
+<font color="green">439</font>                }<a name="line.439"></a>
+<font color="green">440</font>                catch ( IllegalAccessException e ) {<a name="line.440"></a>
+<font color="green">441</font>                    logInfo( e );<a name="line.441"></a>
+<font color="green">442</font>                    throw new IllegalArgumentException( e.getMessage() );<a name="line.442"></a>
+<font color="green">443</font>                }<a name="line.443"></a>
+<font color="green">444</font>                return oldValue;<a name="line.444"></a>
+<font color="green">445</font>            }<a name="line.445"></a>
+<font color="green">446</font>            return null;<a name="line.446"></a>
+<font color="green">447</font>        }<a name="line.447"></a>
+<font color="green">448</font>                        <a name="line.448"></a>
+<font color="green">449</font>        /**<a name="line.449"></a>
+<font color="green">450</font>         * Returns the number of properties defined by the bean.<a name="line.450"></a>
+<font color="green">451</font>         *<a name="line.451"></a>
+<font color="green">452</font>         * @return  the number of properties defined by the bean<a name="line.452"></a>
+<font color="green">453</font>         */<a name="line.453"></a>
+<font color="green">454</font>        public int size() {<a name="line.454"></a>
+<font color="green">455</font>            return readMethods.size();<a name="line.455"></a>
+<font color="green">456</font>        }<a name="line.456"></a>
+<font color="green">457</font>    <a name="line.457"></a>
+<font color="green">458</font>        <a name="line.458"></a>
+<font color="green">459</font>        /**<a name="line.459"></a>
+<font color="green">460</font>         * Get the keys for this BeanMap.<a name="line.460"></a>
+<font color="green">461</font>         * &lt;p&gt;<a name="line.461"></a>
+<font color="green">462</font>         * Write-only properties are &lt;b&gt;not&lt;/b&gt; included in the returned set of<a name="line.462"></a>
+<font color="green">463</font>         * property names, although it is possible to set their value and to get <a name="line.463"></a>
+<font color="green">464</font>         * their type.<a name="line.464"></a>
+<font color="green">465</font>         * <a name="line.465"></a>
+<font color="green">466</font>         * @return BeanMap keys.  The Set returned by this method is not<a name="line.466"></a>
+<font color="green">467</font>         *        modifiable.<a name="line.467"></a>
+<font color="green">468</font>         */<a name="line.468"></a>
+<font color="green">469</font>        public Set keySet() {<a name="line.469"></a>
+<font color="green">470</font>            return UnmodifiableSet.decorate(readMethods.keySet());<a name="line.470"></a>
+<font color="green">471</font>        }<a name="line.471"></a>
+<font color="green">472</font>    <a name="line.472"></a>
+<font color="green">473</font>        /**<a name="line.473"></a>
+<font color="green">474</font>         * Gets a Set of MapEntry objects that are the mappings for this BeanMap.<a name="line.474"></a>
+<font color="green">475</font>         * &lt;p&gt;<a name="line.475"></a>
+<font color="green">476</font>         * Each MapEntry can be set but not removed.<a name="line.476"></a>
+<font color="green">477</font>         * <a name="line.477"></a>
+<font color="green">478</font>         * @return the unmodifiable set of mappings<a name="line.478"></a>
+<font color="green">479</font>         */<a name="line.479"></a>
+<font color="green">480</font>        public Set entrySet() {<a name="line.480"></a>
+<font color="green">481</font>            return UnmodifiableSet.decorate(new AbstractSet() {<a name="line.481"></a>
+<font color="green">482</font>                public Iterator iterator() {<a name="line.482"></a>
+<font color="green">483</font>                    return entryIterator();<a name="line.483"></a>
+<font color="green">484</font>                }<a name="line.484"></a>
+<font color="green">485</font>                public int size() {<a name="line.485"></a>
+<font color="green">486</font>                  return BeanMap.this.readMethods.size();<a name="line.486"></a>
+<font color="green">487</font>                }<a name="line.487"></a>
+<font color="green">488</font>            });<a name="line.488"></a>
+<font color="green">489</font>        }<a name="line.489"></a>
+<font color="green">490</font>    <a name="line.490"></a>
+<font color="green">491</font>        /**<a name="line.491"></a>
+<font color="green">492</font>         * Returns the values for the BeanMap.<a name="line.492"></a>
+<font color="green">493</font>         * <a name="line.493"></a>
+<font color="green">494</font>         * @return values for the BeanMap.  The returned collection is not<a name="line.494"></a>
+<font color="green">495</font>         *        modifiable.<a name="line.495"></a>
+<font color="green">496</font>         */<a name="line.496"></a>
+<font color="green">497</font>        public Collection values() {<a name="line.497"></a>
+<font color="green">498</font>            ArrayList answer = new ArrayList( readMethods.size() );<a name="line.498"></a>
+<font color="green">499</font>            for ( Iterator iter = valueIterator(); iter.hasNext(); ) {<a name="line.499"></a>
+<font color="green">500</font>                answer.add( iter.next() );<a name="line.500"></a>
+<font color="green">501</font>            }<a name="line.501"></a>
+<font color="green">502</font>            return UnmodifiableList.decorate(answer);<a name="line.502"></a>
+<font color="green">503</font>        }<a name="line.503"></a>
+<font color="green">504</font>    <a name="line.504"></a>
+<font color="green">505</font>    <a name="line.505"></a>
+<font color="green">506</font>        // Helper methods<a name="line.506"></a>
+<font color="green">507</font>        //-------------------------------------------------------------------------<a name="line.507"></a>
+<font color="green">508</font>    <a name="line.508"></a>
+<font color="green">509</font>        /**<a name="line.509"></a>
+<font color="green">510</font>         * Returns the type of the property with the given name.<a name="line.510"></a>
+<font color="green">511</font>         *<a name="line.511"></a>
+<font color="green">512</font>         * @param name  the name of the property<a name="line.512"></a>
+<font color="green">513</font>         * @return  the type of the property, or &lt;code&gt;null&lt;/code&gt; if no such<a name="line.513"></a>
+<font color="green">514</font>         *  property exists<a name="line.514"></a>
+<font color="green">515</font>         */<a name="line.515"></a>
+<font color="green">516</font>        public Class getType(String name) {<a name="line.516"></a>
+<font color="green">517</font>            return (Class) types.get( name );<a name="line.517"></a>
+<font color="green">518</font>        }<a name="line.518"></a>
+<font color="green">519</font>    <a name="line.519"></a>
+<font color="green">520</font>        /**<a name="line.520"></a>
+<font color="green">521</font>         * Convenience method for getting an iterator over the keys.<a name="line.521"></a>
+<font color="green">522</font>         * &lt;p&gt;<a name="line.522"></a>
+<font color="green">523</font>         * Write-only properties will not be returned in the iterator.<a name="line.523"></a>
+<font color="green">524</font>         *<a name="line.524"></a>
+<font color="green">525</font>         * @return an iterator over the keys<a name="line.525"></a>
+<font color="green">526</font>         */<a name="line.526"></a>
+<font color="green">527</font>        public Iterator keyIterator() {<a name="line.527"></a>
+<font color="green">528</font>            return readMethods.keySet().iterator();<a name="line.528"></a>
+<font color="green">529</font>        }<a name="line.529"></a>
+<font color="green">530</font>    <a name="line.530"></a>
+<font color="green">531</font>        /**<a name="line.531"></a>
+<font color="green">532</font>         * Convenience method for getting an iterator over the values.<a name="line.532"></a>
+<font color="green">533</font>         *<a name="line.533"></a>
+<font color="green">534</font>         * @return an iterator over the values<a name="line.534"></a>
+<font color="green">535</font>         */<a name="line.535"></a>
+<font color="green">536</font>        public Iterator valueIterator() {<a name="line.536"></a>
+<font color="green">537</font>            final Iterator iter = keyIterator();<a name="line.537"></a>
+<font color="green">538</font>            return new Iterator() {            <a name="line.538"></a>
+<font color="green">539</font>                public boolean hasNext() {<a name="line.539"></a>
+<font color="green">540</font>                    return iter.hasNext();<a name="line.540"></a>
+<font color="green">541</font>                }<a name="line.541"></a>
+<font color="green">542</font>                public Object next() {<a name="line.542"></a>
+<font color="green">543</font>                    Object key = iter.next();<a name="line.543"></a>
+<font color="green">544</font>                    return get(key);<a name="line.544"></a>
+<font color="green">545</font>                }<a name="line.545"></a>
+<font color="green">546</font>                public void remove() {<a name="line.546"></a>
+<font color="green">547</font>                    throw new UnsupportedOperationException( "remove() not supported for BeanMap" );<a name="line.547"></a>
+<font color="green">548</font>                }<a name="line.548"></a>
+<font color="green">549</font>            };<a name="line.549"></a>
+<font color="green">550</font>        }<a name="line.550"></a>
+<font color="green">551</font>    <a name="line.551"></a>
+<font color="green">552</font>        /**<a name="line.552"></a>
+<font color="green">553</font>         * Convenience method for getting an iterator over the entries.<a name="line.553"></a>
+<font color="green">554</font>         *<a name="line.554"></a>
+<font color="green">555</font>         * @return an iterator over the entries<a name="line.555"></a>
+<font color="green">556</font>         */<a name="line.556"></a>
+<font color="green">557</font>        public Iterator entryIterator() {<a name="line.557"></a>
+<font color="green">558</font>            final Iterator iter = keyIterator();<a name="line.558"></a>
+<font color="green">559</font>            return new Iterator() {            <a name="line.559"></a>
+<font color="green">560</font>                public boolean hasNext() {<a name="line.560"></a>
+<font color="green">561</font>                    return iter.hasNext();<a name="line.561"></a>
+<font color="green">562</font>                }            <a name="line.562"></a>
+<font color="green">563</font>                public Object next() {<a name="line.563"></a>
+<font color="green">564</font>                    Object key = iter.next();<a name="line.564"></a>
+<font color="green">565</font>                    Object value = get(key);<a name="line.565"></a>
+<font color="green">566</font>                    return new Entry( BeanMap.this, key, value );<a name="line.566"></a>
+<font color="green">567</font>                }            <a name="line.567"></a>
+<font color="green">568</font>                public void remove() {<a name="line.568"></a>
+<font color="green">569</font>                    throw new UnsupportedOperationException( "remove() not supported for BeanMap" );<a name="line.569"></a>
+<font color="green">570</font>                }<a name="line.570"></a>
+<font color="green">571</font>            };<a name="line.571"></a>
+<font color="green">572</font>        }<a name="line.572"></a>
+<font color="green">573</font>    <a name="line.573"></a>
+<font color="green">574</font>    <a name="line.574"></a>
+<font color="green">575</font>        // Properties<a name="line.575"></a>
+<font color="green">576</font>        //-------------------------------------------------------------------------<a name="line.576"></a>
+<font color="green">577</font>    <a name="line.577"></a>
+<font color="green">578</font>        /**<a name="line.578"></a>
+<font color="green">579</font>         * Returns the bean currently being operated on.  The return value may<a name="line.579"></a>
+<font color="green">580</font>         * be null if this map is empty.<a name="line.580"></a>
+<font color="green">581</font>         *<a name="line.581"></a>
+<font color="green">582</font>         * @return the bean being operated on by this map<a name="line.582"></a>
+<font color="green">583</font>         */<a name="line.583"></a>
+<font color="green">584</font>        public Object getBean() {<a name="line.584"></a>
+<font color="green">585</font>            return bean;<a name="line.585"></a>
+<font color="green">586</font>        }<a name="line.586"></a>
+<font color="green">587</font>    <a name="line.587"></a>
+<font color="green">588</font>        /**<a name="line.588"></a>
+<font color="green">589</font>         * Sets the bean to be operated on by this map.  The given value may<a name="line.589"></a>
+<font color="green">590</font>         * be null, in which case this map will be empty.<a name="line.590"></a>
+<font color="green">591</font>         *<a name="line.591"></a>
+<font color="green">592</font>         * @param newBean  the new bean to operate on<a name="line.592"></a>
+<font color="green">593</font>         */<a name="line.593"></a>
+<font color="green">594</font>        public void setBean( Object newBean ) {<a name="line.594"></a>
+<font color="green">595</font>            bean = newBean;<a name="line.595"></a>
+<font color="green">596</font>            reinitialise();<a name="line.596"></a>
+<font color="green">597</font>        }<a name="line.597"></a>
+<font color="green">598</font>    <a name="line.598"></a>
+<font color="green">599</font>        /**<a name="line.599"></a>
+<font color="green">600</font>         * Returns the accessor for the property with the given name.<a name="line.600"></a>
+<font color="green">601</font>         *<a name="line.601"></a>
+<font color="green">602</font>         * @param name  the name of the property <a name="line.602"></a>
+<font color="green">603</font>         * @return the accessor method for the property, or null<a name="line.603"></a>
+<font color="green">604</font>         */<a name="line.604"></a>
+<font color="green">605</font>        public Method getReadMethod(String name) {<a name="line.605"></a>
+<font color="green">606</font>            return (Method) readMethods.get(name);<a name="line.606"></a>
+<font color="green">607</font>        }<a name="line.607"></a>
+<font color="green">608</font>    <a name="line.608"></a>
+<font color="green">609</font>        /**<a name="line.609"></a>
+<font color="green">610</font>         * Returns the mutator for the property with the given name.<a name="line.610"></a>
+<font color="green">611</font>         *<a name="line.611"></a>
+<font color="green">612</font>         * @param name  the name of the property<a name="line.612"></a>
+<font color="green">613</font>         * @return the mutator method for the property, or null<a name="line.613"></a>
+<font color="green">614</font>         */<a name="line.614"></a>
+<font color="green">615</font>        public Method getWriteMethod(String name) {<a name="line.615"></a>
+<font color="green">616</font>            return (Method) writeMethods.get(name);<a name="line.616"></a>
+<font color="green">617</font>        }<a name="line.617"></a>
+<font color="green">618</font>    <a name="line.618"></a>
+<font color="green">619</font>    <a name="line.619"></a>
+<font color="green">620</font>        // Implementation methods<a name="line.620"></a>
+<font color="green">621</font>        //-------------------------------------------------------------------------<a name="line.621"></a>
+<font color="green">622</font>    <a name="line.622"></a>
+<font color="green">623</font>        /**<a name="line.623"></a>
+<font color="green">624</font>         * Returns the accessor for the property with the given name.<a name="line.624"></a>
+<font color="green">625</font>         *<a name="line.625"></a>
+<font color="green">626</font>         * @param name  the name of the property <a name="line.626"></a>
+<font color="green">627</font>         * @return null if the name is null; null if the name is not a <a name="line.627"></a>
+<font color="green">628</font>         * {@link String}; null if no such property exists; or the accessor<a name="line.628"></a>
+<font color="green">629</font>         *  method for that property<a name="line.629"></a>
+<font color="green">630</font>         */<a name="line.630"></a>
+<font color="green">631</font>        protected Method getReadMethod( Object name ) {<a name="line.631"></a>
+<font color="green">632</font>            return (Method) readMethods.get( name );<a name="line.632"></a>
+<font color="green">633</font>        }<a name="line.633"></a>
+<font color="green">634</font>    <a name="line.634"></a>
+<font color="green">635</font>        /**<a name="line.635"></a>
+<font color="green">636</font>         * Returns the mutator for the property with the given name.<a name="line.636"></a>
+<font color="green">637</font>         *<a name="line.637"></a>
+<font color="green">638</font>         * @param name  the name of the <a name="line.638"></a>
+<font color="green">639</font>         * @return null if the name is null; null if the name is not a <a name="line.639"></a>
+<font color="green">640</font>         * {@link String}; null if no such property exists; null if the <a name="line.640"></a>
+<font color="green">641</font>         * property is read-only; or the mutator method for that property<a name="line.641"></a>
+<font color="green">642</font>         */<a name="line.642"></a>
+<font color="green">643</font>        protected Method getWriteMethod( Object name ) {<a name="line.643"></a>
+<font color="green">644</font>            return (Method) writeMethods.get( name );<a name="line.644"></a>
+<font color="green">645</font>        }<a name="line.645"></a>
+<font color="green">646</font>    <a name="line.646"></a>
+<font color="green">647</font>        /**<a name="line.647"></a>
+<font color="green">648</font>         * Reinitializes this bean.  Called during {@link #setBean(Object)}.<a name="line.648"></a>
+<font color="green">649</font>         * Does introspection to find properties.<a name="line.649"></a>
+<font color="green">650</font>         */<a name="line.650"></a>
+<font color="green">651</font>        protected void reinitialise() {<a name="line.651"></a>
+<font color="green">652</font>            readMethods.clear();<a name="line.652"></a>
+<font color="green">653</font>            writeMethods.clear();<a name="line.653"></a>
+<font color="green">654</font>            types.clear();<a name="line.654"></a>
+<font color="green">655</font>            initialise();<a name="line.655"></a>
+<font color="green">656</font>        }<a name="line.656"></a>
+<font color="green">657</font>    <a name="line.657"></a>
+<font color="green">658</font>        private void initialise() {<a name="line.658"></a>
+<font color="green">659</font>            if(getBean() == null) {<a name="line.659"></a>
+<font color="green">660</font>                return;<a name="line.660"></a>
+<font color="green">661</font>            }<a name="line.661"></a>
+<font color="green">662</font>    <a name="line.662"></a>
+<font color="green">663</font>            Class  beanClass = getBean().getClass();<a name="line.663"></a>
+<font color="green">664</font>            try {<a name="line.664"></a>
+<font color="green">665</font>                //BeanInfo beanInfo = Introspector.getBeanInfo( bean, null );<a name="line.665"></a>
+<font color="green">666</font>                BeanInfo beanInfo = Introspector.getBeanInfo( beanClass );<a name="line.666"></a>
+<font color="green">667</font>                PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();<a name="line.667"></a>
+<font color="green">668</font>                if ( propertyDescriptors != null ) {<a name="line.668"></a>
+<font color="green">669</font>                    for ( int i = 0; i &lt; propertyDescriptors.length; i++ ) {<a name="line.669"></a>
+<font color="green">670</font>                        PropertyDescriptor propertyDescriptor = propertyDescriptors[i];<a name="line.670"></a>
+<font color="green">671</font>                        if ( propertyDescriptor != null ) {<a name="line.671"></a>
+<font color="green">672</font>                            String name = propertyDescriptor.getName();<a name="line.672"></a>
+<font color="green">673</font>                            Method readMethod = propertyDescriptor.getReadMethod();<a name="line.673"></a>
+<font color="green">674</font>                            Method writeMethod = propertyDescriptor.getWriteMethod();<a name="line.674"></a>
+<font color="green">675</font>                            Class aType = propertyDescriptor.getPropertyType();<a name="line.675"></a>
+<font color="green">676</font>    <a name="line.676"></a>
+<font color="green">677</font>                            if ( readMethod != null ) {<a name="line.677"></a>
+<font color="green">678</font>                                readMethods.put( name, readMethod );<a name="line.678"></a>
+<font color="green">679</font>                            }<a name="line.679"></a>
+<font color="green">680</font>                            if ( writeMethod != null ) {<a name="line.680"></a>
+<font color="green">681</font>                                writeMethods.put( name, writeMethod );<a name="line.681"></a>
+<font color="green">682</font>                            }<a name="line.682"></a>
+<font color="green">683</font>                            types.put( name, aType );<a name="line.683"></a>
+<font color="green">684</font>                        }<a name="line.684"></a>
+<font color="green">685</font>                    }<a name="line.685"></a>
+<font color="green">686</font>                }<a name="line.686"></a>
+<font color="green">687</font>            }<a name="line.687"></a>
+<font color="green">688</font>            catch ( IntrospectionException e ) {<a name="line.688"></a>
+<font color="green">689</font>                logWarn(  e );<a name="line.689"></a>
+<font color="green">690</font>            }<a name="line.690"></a>
+<font color="green">691</font>        }<a name="line.691"></a>
+<font color="green">692</font>    <a name="line.692"></a>
+<font color="green">693</font>        /**<a name="line.693"></a>
+<font color="green">694</font>         * Called during a successful {@link #put(Object,Object)} operation.<a name="line.694"></a>
+<font color="green">695</font>         * Default implementation does nothing.  Override to be notified of<a name="line.695"></a>
+<font color="green">696</font>         * property changes in the bean caused by this map.<a name="line.696"></a>
+<font color="green">697</font>         *<a name="line.697"></a>
+<font color="green">698</font>         * @param key  the name of the property that changed<a name="line.698"></a>
+<font color="green">699</font>         * @param oldValue  the old value for that property<a name="line.699"></a>
+<font color="green">700</font>         * @param newValue  the new value for that property<a name="line.700"></a>
+<font color="green">701</font>         */<a name="line.701"></a>
+<font color="green">702</font>        protected void firePropertyChange( Object key, Object oldValue, Object newValue ) {<a name="line.702"></a>
+<font color="green">703</font>        }<a name="line.703"></a>
+<font color="green">704</font>    <a name="line.704"></a>
+<font color="green">705</font>        // Implementation classes<a name="line.705"></a>
+<font color="green">706</font>        //-------------------------------------------------------------------------<a name="line.706"></a>
+<font color="green">707</font>    <a name="line.707"></a>
+<font color="green">708</font>        /**<a name="line.708"></a>
+<font color="green">709</font>         * Map entry used by {@link BeanMap}.<a name="line.709"></a>
+<font color="green">710</font>         */<a name="line.710"></a>
+<font color="green">711</font>        protected static class Entry extends AbstractMapEntry {        <a name="line.711"></a>
+<font color="green">712</font>            private BeanMap owner;<a name="line.712"></a>
+<font color="green">713</font>            <a name="line.713"></a>
+<font color="green">714</font>            /**<a name="line.714"></a>
+<font color="green">715</font>             * Constructs a new &lt;code&gt;Entry&lt;/code&gt;.<a name="line.715"></a>
+<font color="green">716</font>             *<a name="line.716"></a>
+<font color="green">717</font>             * @param owner  the BeanMap this entry belongs to<a name="line.717"></a>
+<font color="green">718</font>             * @param key  the key for this entry<a name="line.718"></a>
+<font color="green">719</font>             * @param value  the value for this entry<a name="line.719"></a>
+<font color="green">720</font>             */<a name="line.720"></a>
+<font color="green">721</font>            protected Entry( BeanMap owner, Object key, Object value ) {<a name="line.721"></a>
+<font color="green">722</font>                super( key, value );<a name="line.722"></a>
+<font color="green">723</font>                this.owner = owner;<a name="line.723"></a>
+<font color="green">724</font>            }<a name="line.724"></a>
+<font color="green">725</font>    <a name="line.725"></a>
+<font color="green">726</font>            /**<a name="line.726"></a>
+<font color="green">727</font>             * Sets the value.<a name="line.727"></a>
+<font color="green">728</font>             *<a name="line.728"></a>
+<font color="green">729</font>             * @param value  the new value for the entry<a name="line.729"></a>
+<font color="green">730</font>             * @return the old value for the entry<a name="line.730"></a>
+<font color="green">731</font>             */<a name="line.731"></a>
+<font color="green">732</font>            public Object setValue(Object value) {<a name="line.732"></a>
+<font color="green">733</font>                Object key = getKey();<a name="line.733"></a>
+<font color="green">734</font>                Object oldValue = owner.get( key );<a name="line.734"></a>
+<font color="green">735</font>    <a name="line.735"></a>
+<font color="green">736</font>                owner.put( key, value );<a name="line.736"></a>
+<font color="green">737</font>                Object newValue = owner.get( key );<a name="line.737"></a>
+<font color="green">738</font>                super.setValue( newValue );<a name="line.738"></a>
+<font color="green">739</font>                return oldValue;<a name="line.739"></a>
+<font color="green">740</font>            }<a name="line.740"></a>
+<font color="green">741</font>        }<a name="line.741"></a>
+<font color="green">742</font>    <a name="line.742"></a>
+<font color="green">743</font>        /**<a name="line.743"></a>
+<font color="green">744</font>         * Creates an array of parameters to pass to the given mutator method.<a name="line.744"></a>
+<font color="green">745</font>         * If the given object is not the right type to pass to the method <a name="line.745"></a>
+<font color="green">746</font>         * directly, it will be converted using {@link #convertType(Class,Object)}.<a name="line.746"></a>
+<font color="green">747</font>         *<a name="line.747"></a>
+<font color="green">748</font>         * @param method  the mutator method<a name="line.748"></a>
+<font color="green">749</font>         * @param value  the value to pass to the mutator method<a name="line.749"></a>
+<font color="green">750</font>         * @return an array containing one object that is either the given value<a name="line.750"></a>
+<font color="green">751</font>         *   or a transformed value<a name="line.751"></a>
+<font color="green">752</font>         * @throws IllegalAccessException if {@link #convertType(Class,Object)}<a name="line.752"></a>
+<font color="green">753</font>         *   raises it<a name="line.753"></a>
+<font color="green">754</font>         * @throws IllegalArgumentException if any other exception is raised<a name="line.754"></a>
+<font color="green">755</font>         *   by {@link #convertType(Class,Object)}<a name="line.755"></a>
+<font color="green">756</font>         * @throws ClassCastException if an error occurs creating the method args<a name="line.756"></a>
+<font color="green">757</font>         */<a name="line.757"></a>
+<font color="green">758</font>        protected Object[] createWriteMethodArguments( Method method, Object value ) <a name="line.758"></a>
+<font color="green">759</font>            throws IllegalAccessException, ClassCastException {            <a name="line.759"></a>
+<font color="green">760</font>            try {<a name="line.760"></a>
+<font color="green">761</font>                if ( value != null ) {<a name="line.761"></a>
+<font color="green">762</font>                    Class[] types = method.getParameterTypes();<a name="line.762"></a>
+<font color="green">763</font>                    if ( types != null &amp;&amp; types.length &gt; 0 ) {<a name="line.763"></a>
+<font color="green">764</font>                        Class paramType = types[0];<a name="line.764"></a>
+<font color="green">765</font>                        if ( ! paramType.isAssignableFrom( value.getClass() ) ) {<a name="line.765"></a>
+<font color="green">766</font>                            value = convertType( paramType, value );<a name="line.766"></a>
+<font color="green">767</font>                        }<a name="line.767"></a>
+<font color="green">768</font>                    }<a name="line.768"></a>
+<font color="green">769</font>                }<a name="line.769"></a>
+<font color="green">770</font>                Object[] answer = { value };<a name="line.770"></a>
+<font color="green">771</font>                return answer;<a name="line.771"></a>
+<font color="green">772</font>            }<a name="line.772"></a>
+<font color="green">773</font>            catch ( InvocationTargetException e ) {<a name="line.773"></a>
+<font color="green">774</font>                logInfo( e );<a name="line.774"></a>
+<font color="green">775</font>                throw new IllegalArgumentException( e.getMessage() );<a name="line.775"></a>
+<font color="green">776</font>            }<a name="line.776"></a>
+<font color="green">777</font>            catch ( InstantiationException e ) {<a name="line.777"></a>
+<font color="green">778</font>                logInfo( e );<a name="line.778"></a>
+<font color="green">779</font>                throw new IllegalArgumentException( e.getMessage() );<a name="line.779"></a>
+<font color="green">780</font>            }<a name="line.780"></a>
+<font color="green">781</font>        }<a name="line.781"></a>
+<font color="green">782</font>    <a name="line.782"></a>
+<font color="green">783</font>        /**<a name="line.783"></a>
+<font color="green">784</font>         * Converts the given value to the given type.  First, reflection is<a name="line.784"></a>
+<font color="green">785</font>         * is used to find a public constructor declared by the given class <a name="line.785"></a>
+<font color="green">786</font>         * that takes one argument, which must be the precise type of the <a name="line.786"></a>
+<font color="green">787</font>         * given value.  If such a constructor is found, a new object is<a name="line.787"></a>
+<font color="green">788</font>         * created by passing the given value to that constructor, and the<a name="line.788"></a>
+<font color="green">789</font>         * newly constructed object is returned.&lt;P&gt;<a name="line.789"></a>
+<font color="green">790</font>         *<a name="line.790"></a>
+<font color="green">791</font>         * If no such constructor exists, and the given type is a primitive<a name="line.791"></a>
+<font color="green">792</font>         * type, then the given value is converted to a string using its <a name="line.792"></a>
+<font color="green">793</font>         * {@link Object#toString() toString()} method, and that string is<a name="line.793"></a>
+<font color="green">794</font>         * parsed into the correct primitive type using, for instance, <a name="line.794"></a>
+<font color="green">795</font>         * {@link Integer#valueOf(String)} to convert the string into an<a name="line.795"></a>
+<font color="green">796</font>         * &lt;code&gt;int&lt;/code&gt;.&lt;P&gt;<a name="line.796"></a>
+<font color="green">797</font>         *<a name="line.797"></a>
+<font color="green">798</font>         * If no special constructor exists and the given type is not a <a name="line.798"></a>
+<font color="green">799</font>         * primitive type, this method returns the original value.<a name="line.799"></a>
+<font color="green">800</font>         *<a name="line.800"></a>
+<font color="green">801</font>         * @param newType  the type to convert the value to<a name="line.801"></a>
+<font color="green">802</font>         * @param value  the value to convert<a name="line.802"></a>
+<font color="green">803</font>         * @return the converted value<a name="line.803"></a>
+<font color="green">804</font>         * @throws NumberFormatException if newType is a primitive type, and <a name="line.804"></a>
+<font color="green">805</font>         *  the string representation of the given value cannot be converted<a name="line.805"></a>
+<font color="green">806</font>         *  to that type<a name="line.806"></a>
+<font color="green">807</font>         * @throws InstantiationException  if the constructor found with <a name="line.807"></a>
+<font color="green">808</font>         *  reflection raises it<a name="line.808"></a>
+<font color="green">809</font>         * @throws InvocationTargetException  if the constructor found with<a name="line.809"></a>
+<font color="green">810</font>         *  reflection raises it<a name="line.810"></a>
+<font color="green">811</font>         * @throws IllegalAccessException  never<a name="line.811"></a>
+<font color="green">812</font>         * @throws IllegalArgumentException  never<a name="line.812"></a>
+<font color="green">813</font>         */<a name="line.813"></a>
+<font color="green">814</font>        protected Object convertType( Class newType, Object value ) <a name="line.814"></a>
+<font color="green">815</font>            throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {<a name="line.815"></a>
+<font color="green">816</font>            <a name="line.816"></a>
+<font color="green">817</font>            // try call constructor<a name="line.817"></a>
+<font color="green">818</font>            Class[] types = { value.getClass() };<a name="line.818"></a>
+<font color="green">819</font>            try {<a name="line.819"></a>
+<font color="green">820</font>                Constructor constructor = newType.getConstructor( types );        <a name="line.820"></a>
+<font color="green">821</font>                Object[] arguments = { value };<a name="line.821"></a>
+<font color="green">822</font>                return constructor.newInstance( arguments );<a name="line.822"></a>
+<font color="green">823</font>            }<a name="line.823"></a>
+<font color="green">824</font>            catch ( NoSuchMethodException e ) {<a name="line.824"></a>
+<font color="green">825</font>                // try using the transformers<a name="line.825"></a>
+<font color="green">826</font>                Transformer transformer = getTypeTransformer( newType );<a name="line.826"></a>
+<font color="green">827</font>                if ( transformer != null ) {<a name="line.827"></a>
+<font color="green">828</font>                    return transformer.transform( value );<a name="line.828"></a>
+<font color="green">829</font>                }<a name="line.829"></a>
+<font color="green">830</font>                return value;<a name="line.830"></a>
+<font color="green">831</font>            }<a name="line.831"></a>
+<font color="green">832</font>        }<a name="line.832"></a>
+<font color="green">833</font>    <a name="line.833"></a>
+<font color="green">834</font>        /**<a name="line.834"></a>
+<font color="green">835</font>         * Returns a transformer for the given primitive type.<a name="line.835"></a>
+<font color="green">836</font>         *<a name="line.836"></a>
+<font color="green">837</font>         * @param aType  the primitive type whose transformer to return<a name="line.837"></a>
+<font color="green">838</font>         * @return a transformer that will convert strings into that type,<a name="line.838"></a>
+<font color="green">839</font>         *  or null if the given type is not a primitive type<a name="line.839"></a>
+<font color="green">840</font>         */<a name="line.840"></a>
+<font color="green">841</font>        protected Transformer getTypeTransformer( Class aType ) {<a name="line.841"></a>
+<font color="green">842</font>            return (Transformer) typeTransformers.get( aType );<a name="line.842"></a>
+<font color="green">843</font>        }<a name="line.843"></a>
+<font color="green">844</font>    <a name="line.844"></a>
+<font color="green">845</font>        /**<a name="line.845"></a>
+<font color="green">846</font>         * Logs the given exception to &lt;code&gt;System.out&lt;/code&gt;.  Used to display<a name="line.846"></a>
+<font color="green">847</font>         * warnings while accessing/mutating the bean.<a name="line.847"></a>
+<font color="green">848</font>         *<a name="line.848"></a>
+<font color="green">849</font>         * @param ex  the exception to log<a name="line.849"></a>
+<font color="green">850</font>         */<a name="line.850"></a>
+<font color="green">851</font>        protected void logInfo(Exception ex) {<a name="line.851"></a>
+<font color="green">852</font>            // Deliberately do not use LOG4J or Commons Logging to avoid dependencies<a name="line.852"></a>
+<font color="green">853</font>            System.out.println( "INFO: Exception: " + ex );<a name="line.853"></a>
+<font color="green">854</font>        }<a name="line.854"></a>
+<font color="green">855</font>    <a name="line.855"></a>
+<font color="green">856</font>        /**<a name="line.856"></a>
+<font color="green">857</font>         * Logs the given exception to &lt;code&gt;System.err&lt;/code&gt;.  Used to display<a name="line.857"></a>
+<font color="green">858</font>         * errors while accessing/mutating the bean.<a name="line.858"></a>
+<font color="green">859</font>         *<a name="line.859"></a>
+<font color="green">860</font>         * @param ex  the exception to log<a name="line.860"></a>
+<font color="green">861</font>         */<a name="line.861"></a>
+<font color="green">862</font>        protected void logWarn(Exception ex) {<a name="line.862"></a>
+<font color="green">863</font>            // Deliberately do not use LOG4J or Commons Logging to avoid dependencies<a name="line.863"></a>
+<font color="green">864</font>            System.out.println( "WARN: Exception: " + ex );<a name="line.864"></a>
+<font color="green">865</font>            ex.printStackTrace();<a name="line.865"></a>
+<font color="green">866</font>        }<a name="line.866"></a>
+<font color="green">867</font>    }<a name="line.867"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/BeanMap.Entry/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/BeanPredicate/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

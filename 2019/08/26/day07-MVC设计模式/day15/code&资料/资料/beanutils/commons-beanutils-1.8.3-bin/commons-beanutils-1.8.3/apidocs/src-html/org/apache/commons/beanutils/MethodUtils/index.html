@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/MethodUtils/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2010-03-24T09:14:01.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/MethodUtils/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/MethodUtils/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:22" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:22+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:14:01" itemprop="dateModified" datetime="2010-03-24T17:14:01+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html>
+<body bgcolor="white">
+<pre>
+<font color="green">001</font>    /*<a name="line.1"></a>
+<font color="green">002</font>     * Licensed to the Apache Software Foundation (ASF) under one or more<a name="line.2"></a>
+<font color="green">003</font>     * contributor license agreements.  See the NOTICE file distributed with<a name="line.3"></a>
+<font color="green">004</font>     * this work for additional information regarding copyright ownership.<a name="line.4"></a>
+<font color="green">005</font>     * The ASF licenses this file to You under the Apache License, Version 2.0<a name="line.5"></a>
+<font color="green">006</font>     * (the "License"); you may not use this file except in compliance with<a name="line.6"></a>
+<font color="green">007</font>     * the License.  You may obtain a copy of the License at<a name="line.7"></a>
+<font color="green">008</font>     *<a name="line.8"></a>
+<font color="green">009</font>     *      http://www.apache.org/licenses/LICENSE-2.0<a name="line.9"></a>
+<font color="green">010</font>     *<a name="line.10"></a>
+<font color="green">011</font>     * Unless required by applicable law or agreed to in writing, software<a name="line.11"></a>
+<font color="green">012</font>     * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.12"></a>
+<font color="green">013</font>     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<a name="line.13"></a>
+<font color="green">014</font>     * See the License for the specific language governing permissions and<a name="line.14"></a>
+<font color="green">015</font>     * limitations under the License.<a name="line.15"></a>
+<font color="green">016</font>     */<a name="line.16"></a>
+<font color="green">017</font>    <a name="line.17"></a>
+<font color="green">018</font>    package org.apache.commons.beanutils;<a name="line.18"></a>
+<font color="green">019</font>    <a name="line.19"></a>
+<font color="green">020</font>    <a name="line.20"></a>
+<font color="green">021</font>    import java.lang.ref.Reference;<a name="line.21"></a>
+<font color="green">022</font>    import java.lang.ref.WeakReference;<a name="line.22"></a>
+<font color="green">023</font>    import java.lang.reflect.InvocationTargetException;<a name="line.23"></a>
+<font color="green">024</font>    import java.lang.reflect.Method;<a name="line.24"></a>
+<font color="green">025</font>    import java.lang.reflect.Modifier;<a name="line.25"></a>
+<font color="green">026</font>    import java.util.Collections;<a name="line.26"></a>
+<font color="green">027</font>    import java.util.Map;<a name="line.27"></a>
+<font color="green">028</font>    import java.util.WeakHashMap;<a name="line.28"></a>
+<font color="green">029</font>    <a name="line.29"></a>
+<font color="green">030</font>    import org.apache.commons.logging.Log;<a name="line.30"></a>
+<font color="green">031</font>    import org.apache.commons.logging.LogFactory;<a name="line.31"></a>
+<font color="green">032</font>    <a name="line.32"></a>
+<font color="green">033</font>    <a name="line.33"></a>
+<font color="green">034</font>    /**<a name="line.34"></a>
+<font color="green">035</font>     * &lt;p&gt; Utility reflection methods focussed on methods in general rather than properties in particular. &lt;/p&gt;<a name="line.35"></a>
+<font color="green">036</font>     *<a name="line.36"></a>
+<font color="green">037</font>     * &lt;h3&gt;Known Limitations&lt;/h3&gt;<a name="line.37"></a>
+<font color="green">038</font>     * &lt;h4&gt;Accessing Public Methods In A Default Access Superclass&lt;/h4&gt;<a name="line.38"></a>
+<font color="green">039</font>     * &lt;p&gt;There is an issue when invoking public methods contained in a default access superclass.<a name="line.39"></a>
+<font color="green">040</font>     * Reflection locates these methods fine and correctly assigns them as public.<a name="line.40"></a>
+<font color="green">041</font>     * However, an &lt;code&gt;IllegalAccessException&lt;/code&gt; is thrown if the method is invoked.&lt;/p&gt;<a name="line.41"></a>
+<font color="green">042</font>     *<a name="line.42"></a>
+<font color="green">043</font>     * &lt;p&gt;&lt;code&gt;MethodUtils&lt;/code&gt; contains a workaround for this situation. <a name="line.43"></a>
+<font color="green">044</font>     * It will attempt to call &lt;code&gt;setAccessible&lt;/code&gt; on this method.<a name="line.44"></a>
+<font color="green">045</font>     * If this call succeeds, then the method can be invoked as normal.<a name="line.45"></a>
+<font color="green">046</font>     * This call will only succeed when the application has sufficient security privilages. <a name="line.46"></a>
+<font color="green">047</font>     * If this call fails then a warning will be logged and the method may fail.&lt;/p&gt;<a name="line.47"></a>
+<font color="green">048</font>     *<a name="line.48"></a>
+<font color="green">049</font>     * @author Craig R. McClanahan<a name="line.49"></a>
+<font color="green">050</font>     * @author Ralph Schaer<a name="line.50"></a>
+<font color="green">051</font>     * @author Chris Audley<a name="line.51"></a>
+<font color="green">052</font>     * @author Rey Fran&amp;#231;ois<a name="line.52"></a>
+<font color="green">053</font>     * @author Gregor Ra&amp;#253;man<a name="line.53"></a>
+<font color="green">054</font>     * @author Jan Sorensen<a name="line.54"></a>
+<font color="green">055</font>     * @author Robert Burrell Donkin<a name="line.55"></a>
+<font color="green">056</font>     */<a name="line.56"></a>
+<font color="green">057</font>    <a name="line.57"></a>
+<font color="green">058</font>    public class MethodUtils {<a name="line.58"></a>
+<font color="green">059</font>    <a name="line.59"></a>
+<font color="green">060</font>        // --------------------------------------------------------- Private Methods<a name="line.60"></a>
+<font color="green">061</font>        <a name="line.61"></a>
+<font color="green">062</font>        /** <a name="line.62"></a>
+<font color="green">063</font>         * Only log warning about accessibility work around once.<a name="line.63"></a>
+<font color="green">064</font>         * &lt;p&gt;<a name="line.64"></a>
+<font color="green">065</font>         * Note that this is broken when this class is deployed via a shared<a name="line.65"></a>
+<font color="green">066</font>         * classloader in a container, as the warning message will be emitted<a name="line.66"></a>
+<font color="green">067</font>         * only once, not once per webapp. However making the warning appear<a name="line.67"></a>
+<font color="green">068</font>         * once per webapp means having a map keyed by context classloader<a name="line.68"></a>
+<font color="green">069</font>         * which introduces nasty memory-leak problems. As this warning is<a name="line.69"></a>
+<font color="green">070</font>         * really optional we can ignore this problem; only one of the webapps<a name="line.70"></a>
+<font color="green">071</font>         * will get the warning in its logs but that should be good enough.<a name="line.71"></a>
+<font color="green">072</font>         */<a name="line.72"></a>
+<font color="green">073</font>        private static boolean loggedAccessibleWarning = false;<a name="line.73"></a>
+<font color="green">074</font>        <a name="line.74"></a>
+<font color="green">075</font>        /** <a name="line.75"></a>
+<font color="green">076</font>         * Indicates whether methods should be cached for improved performance.<a name="line.76"></a>
+<font color="green">077</font>         * &lt;p&gt;<a name="line.77"></a>
+<font color="green">078</font>         * Note that when this class is deployed via a shared classloader in<a name="line.78"></a>
+<font color="green">079</font>         * a container, this will affect all webapps. However making this<a name="line.79"></a>
+<font color="green">080</font>         * configurable per webapp would mean having a map keyed by context classloader<a name="line.80"></a>
+<font color="green">081</font>         * which may introduce memory-leak problems.<a name="line.81"></a>
+<font color="green">082</font>         */<a name="line.82"></a>
+<font color="green">083</font>        private static boolean CACHE_METHODS = true;<a name="line.83"></a>
+<font color="green">084</font>    <a name="line.84"></a>
+<font color="green">085</font>        /** An empty class array */<a name="line.85"></a>
+<font color="green">086</font>        private static final Class[] EMPTY_CLASS_PARAMETERS = new Class[0];<a name="line.86"></a>
+<font color="green">087</font>        /** An empty object array */<a name="line.87"></a>
+<font color="green">088</font>        private static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];<a name="line.88"></a>
+<font color="green">089</font>    <a name="line.89"></a>
+<font color="green">090</font>        /**<a name="line.90"></a>
+<font color="green">091</font>         * Stores a cache of MethodDescriptor -&gt; Method in a WeakHashMap.<a name="line.91"></a>
+<font color="green">092</font>         * &lt;p&gt;<a name="line.92"></a>
+<font color="green">093</font>         * The keys into this map only ever exist as temporary variables within<a name="line.93"></a>
+<font color="green">094</font>         * methods of this class, and are never exposed to users of this class.<a name="line.94"></a>
+<font color="green">095</font>         * This means that the WeakHashMap is used only as a mechanism for <a name="line.95"></a>
+<font color="green">096</font>         * limiting the size of the cache, ie a way to tell the garbage collector<a name="line.96"></a>
+<font color="green">097</font>         * that the contents of the cache can be completely garbage-collected <a name="line.97"></a>
+<font color="green">098</font>         * whenever it needs the memory. Whether this is a good approach to<a name="line.98"></a>
+<font color="green">099</font>         * this problem is doubtful; something like the commons-collections<a name="line.99"></a>
+<font color="green">100</font>         * LRUMap may be more appropriate (though of course selecting an<a name="line.100"></a>
+<font color="green">101</font>         * appropriate size is an issue).<a name="line.101"></a>
+<font color="green">102</font>         * &lt;p&gt;<a name="line.102"></a>
+<font color="green">103</font>         * This static variable is safe even when this code is deployed via a<a name="line.103"></a>
+<font color="green">104</font>         * shared classloader because it is keyed via a MethodDescriptor object<a name="line.104"></a>
+<font color="green">105</font>         * which has a Class as one of its members and that member is used in<a name="line.105"></a>
+<font color="green">106</font>         * the MethodDescriptor.equals method. So two components that load the same<a name="line.106"></a>
+<font color="green">107</font>         * class via different classloaders will generate non-equal MethodDescriptor<a name="line.107"></a>
+<font color="green">108</font>         * objects and hence end up with different entries in the map.<a name="line.108"></a>
+<font color="green">109</font>         */<a name="line.109"></a>
+<font color="green">110</font>        private static final Map cache = Collections.synchronizedMap(new WeakHashMap());<a name="line.110"></a>
+<font color="green">111</font>        <a name="line.111"></a>
+<font color="green">112</font>        // --------------------------------------------------------- Public Methods<a name="line.112"></a>
+<font color="green">113</font>    <a name="line.113"></a>
+<font color="green">114</font>        /**<a name="line.114"></a>
+<font color="green">115</font>         * Set whether methods should be cached for greater performance or not,<a name="line.115"></a>
+<font color="green">116</font>         * default is &lt;code&gt;true&lt;/code&gt;.<a name="line.116"></a>
+<font color="green">117</font>         *<a name="line.117"></a>
+<font color="green">118</font>         * @param cacheMethods &lt;code&gt;true&lt;/code&gt; if methods should be<a name="line.118"></a>
+<font color="green">119</font>         * cached for greater performance, otherwise &lt;code&gt;false&lt;/code&gt;<a name="line.119"></a>
+<font color="green">120</font>         * @since 1.8.0<a name="line.120"></a>
+<font color="green">121</font>         */<a name="line.121"></a>
+<font color="green">122</font>        public static synchronized void setCacheMethods(boolean cacheMethods) {<a name="line.122"></a>
+<font color="green">123</font>            CACHE_METHODS = cacheMethods;<a name="line.123"></a>
+<font color="green">124</font>            if (!CACHE_METHODS) {<a name="line.124"></a>
+<font color="green">125</font>                clearCache();<a name="line.125"></a>
+<font color="green">126</font>            }<a name="line.126"></a>
+<font color="green">127</font>        }<a name="line.127"></a>
+<font color="green">128</font>    <a name="line.128"></a>
+<font color="green">129</font>        /**<a name="line.129"></a>
+<font color="green">130</font>         * Clear the method cache.<a name="line.130"></a>
+<font color="green">131</font>         * @return the number of cached methods cleared<a name="line.131"></a>
+<font color="green">132</font>         * @since 1.8.0<a name="line.132"></a>
+<font color="green">133</font>         */<a name="line.133"></a>
+<font color="green">134</font>        public static synchronized int clearCache() {<a name="line.134"></a>
+<font color="green">135</font>            int size = cache.size();<a name="line.135"></a>
+<font color="green">136</font>            cache.clear();<a name="line.136"></a>
+<font color="green">137</font>            return size;<a name="line.137"></a>
+<font color="green">138</font>        }<a name="line.138"></a>
+<font color="green">139</font>        <a name="line.139"></a>
+<font color="green">140</font>        /**<a name="line.140"></a>
+<font color="green">141</font>         * &lt;p&gt;Invoke a named method whose parameter type matches the object type.&lt;/p&gt;<a name="line.141"></a>
+<font color="green">142</font>         *<a name="line.142"></a>
+<font color="green">143</font>         * &lt;p&gt;The behaviour of this method is less deterministic <a name="line.143"></a>
+<font color="green">144</font>         * than &lt;code&gt;invokeExactMethod()&lt;/code&gt;.<a name="line.144"></a>
+<font color="green">145</font>         * It loops through all methods with names that match<a name="line.145"></a>
+<font color="green">146</font>         * and then executes the first it finds with compatable parameters.&lt;/p&gt;<a name="line.146"></a>
+<font color="green">147</font>         *<a name="line.147"></a>
+<font color="green">148</font>         * &lt;p&gt;This method supports calls to methods taking primitive parameters <a name="line.148"></a>
+<font color="green">149</font>         * via passing in wrapping classes. So, for example, a &lt;code&gt;Boolean&lt;/code&gt; class<a name="line.149"></a>
+<font color="green">150</font>         * would match a &lt;code&gt;boolean&lt;/code&gt; primitive.&lt;/p&gt;<a name="line.150"></a>
+<font color="green">151</font>         *<a name="line.151"></a>
+<font color="green">152</font>         * &lt;p&gt; This is a convenient wrapper for<a name="line.152"></a>
+<font color="green">153</font>         * {@link #invokeMethod(Object object,String methodName,Object [] args)}.<a name="line.153"></a>
+<font color="green">154</font>         * &lt;/p&gt;<a name="line.154"></a>
+<font color="green">155</font>         *<a name="line.155"></a>
+<font color="green">156</font>         * @param object invoke method on this object<a name="line.156"></a>
+<font color="green">157</font>         * @param methodName get method with this name<a name="line.157"></a>
+<font color="green">158</font>         * @param arg use this argument<a name="line.158"></a>
+<font color="green">159</font>         * @return The value returned by the invoked method<a name="line.159"></a>
+<font color="green">160</font>         *<a name="line.160"></a>
+<font color="green">161</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.161"></a>
+<font color="green">162</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.162"></a>
+<font color="green">163</font>         *  method invoked<a name="line.163"></a>
+<font color="green">164</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.164"></a>
+<font color="green">165</font>         *  via reflection<a name="line.165"></a>
+<font color="green">166</font>         */<a name="line.166"></a>
+<font color="green">167</font>        public static Object invokeMethod(<a name="line.167"></a>
+<font color="green">168</font>                Object object,<a name="line.168"></a>
+<font color="green">169</font>                String methodName,<a name="line.169"></a>
+<font color="green">170</font>                Object arg)<a name="line.170"></a>
+<font color="green">171</font>                throws<a name="line.171"></a>
+<font color="green">172</font>                NoSuchMethodException,<a name="line.172"></a>
+<font color="green">173</font>                IllegalAccessException,<a name="line.173"></a>
+<font color="green">174</font>                InvocationTargetException {<a name="line.174"></a>
+<font color="green">175</font>    <a name="line.175"></a>
+<font color="green">176</font>            Object[] args = {arg};<a name="line.176"></a>
+<font color="green">177</font>            return invokeMethod(object, methodName, args);<a name="line.177"></a>
+<font color="green">178</font>    <a name="line.178"></a>
+<font color="green">179</font>        }<a name="line.179"></a>
+<font color="green">180</font>    <a name="line.180"></a>
+<font color="green">181</font>    <a name="line.181"></a>
+<font color="green">182</font>        /**<a name="line.182"></a>
+<font color="green">183</font>         * &lt;p&gt;Invoke a named method whose parameter type matches the object type.&lt;/p&gt;<a name="line.183"></a>
+<font color="green">184</font>         *<a name="line.184"></a>
+<font color="green">185</font>         * &lt;p&gt;The behaviour of this method is less deterministic <a name="line.185"></a>
+<font color="green">186</font>         * than {@link #invokeExactMethod(Object object,String methodName,Object [] args)}. <a name="line.186"></a>
+<font color="green">187</font>         * It loops through all methods with names that match<a name="line.187"></a>
+<font color="green">188</font>         * and then executes the first it finds with compatable parameters.&lt;/p&gt;<a name="line.188"></a>
+<font color="green">189</font>         *<a name="line.189"></a>
+<font color="green">190</font>         * &lt;p&gt;This method supports calls to methods taking primitive parameters <a name="line.190"></a>
+<font color="green">191</font>         * via passing in wrapping classes. So, for example, a &lt;code&gt;Boolean&lt;/code&gt; class<a name="line.191"></a>
+<font color="green">192</font>         * would match a &lt;code&gt;boolean&lt;/code&gt; primitive.&lt;/p&gt;<a name="line.192"></a>
+<font color="green">193</font>         *<a name="line.193"></a>
+<font color="green">194</font>         * &lt;p&gt; This is a convenient wrapper for<a name="line.194"></a>
+<font color="green">195</font>         * {@link #invokeMethod(Object object,String methodName,Object [] args,Class[] parameterTypes)}.<a name="line.195"></a>
+<font color="green">196</font>         * &lt;/p&gt;<a name="line.196"></a>
+<font color="green">197</font>         *<a name="line.197"></a>
+<font color="green">198</font>         * @param object invoke method on this object<a name="line.198"></a>
+<font color="green">199</font>         * @param methodName get method with this name<a name="line.199"></a>
+<font color="green">200</font>         * @param args use these arguments - treat null as empty array<a name="line.200"></a>
+<font color="green">201</font>         * @return The value returned by the invoked method<a name="line.201"></a>
+<font color="green">202</font>         *<a name="line.202"></a>
+<font color="green">203</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.203"></a>
+<font color="green">204</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.204"></a>
+<font color="green">205</font>         *  method invoked<a name="line.205"></a>
+<font color="green">206</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.206"></a>
+<font color="green">207</font>         *  via reflection<a name="line.207"></a>
+<font color="green">208</font>         */<a name="line.208"></a>
+<font color="green">209</font>        public static Object invokeMethod(<a name="line.209"></a>
+<font color="green">210</font>                Object object,<a name="line.210"></a>
+<font color="green">211</font>                String methodName,<a name="line.211"></a>
+<font color="green">212</font>                Object[] args)<a name="line.212"></a>
+<font color="green">213</font>                throws<a name="line.213"></a>
+<font color="green">214</font>                NoSuchMethodException,<a name="line.214"></a>
+<font color="green">215</font>                IllegalAccessException,<a name="line.215"></a>
+<font color="green">216</font>                InvocationTargetException {<a name="line.216"></a>
+<font color="green">217</font>            <a name="line.217"></a>
+<font color="green">218</font>            if (args == null) {<a name="line.218"></a>
+<font color="green">219</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.219"></a>
+<font color="green">220</font>            }  <a name="line.220"></a>
+<font color="green">221</font>            int arguments = args.length;<a name="line.221"></a>
+<font color="green">222</font>            Class[] parameterTypes = new Class[arguments];<a name="line.222"></a>
+<font color="green">223</font>            for (int i = 0; i &lt; arguments; i++) {<a name="line.223"></a>
+<font color="green">224</font>                parameterTypes[i] = args[i].getClass();<a name="line.224"></a>
+<font color="green">225</font>            }<a name="line.225"></a>
+<font color="green">226</font>            return invokeMethod(object, methodName, args, parameterTypes);<a name="line.226"></a>
+<font color="green">227</font>    <a name="line.227"></a>
+<font color="green">228</font>        }<a name="line.228"></a>
+<font color="green">229</font>    <a name="line.229"></a>
+<font color="green">230</font>    <a name="line.230"></a>
+<font color="green">231</font>        /**<a name="line.231"></a>
+<font color="green">232</font>         * &lt;p&gt;Invoke a named method whose parameter type matches the object type.&lt;/p&gt;<a name="line.232"></a>
+<font color="green">233</font>         *<a name="line.233"></a>
+<font color="green">234</font>         * &lt;p&gt;The behaviour of this method is less deterministic <a name="line.234"></a>
+<font color="green">235</font>         * than {@link <a name="line.235"></a>
+<font color="green">236</font>         * #invokeExactMethod(Object object,String methodName,Object [] args,Class[] parameterTypes)}. <a name="line.236"></a>
+<font color="green">237</font>         * It loops through all methods with names that match<a name="line.237"></a>
+<font color="green">238</font>         * and then executes the first it finds with compatable parameters.&lt;/p&gt;<a name="line.238"></a>
+<font color="green">239</font>         *<a name="line.239"></a>
+<font color="green">240</font>         * &lt;p&gt;This method supports calls to methods taking primitive parameters <a name="line.240"></a>
+<font color="green">241</font>         * via passing in wrapping classes. So, for example, a &lt;code&gt;Boolean&lt;/code&gt; class<a name="line.241"></a>
+<font color="green">242</font>         * would match a &lt;code&gt;boolean&lt;/code&gt; primitive.&lt;/p&gt;<a name="line.242"></a>
+<font color="green">243</font>         *<a name="line.243"></a>
+<font color="green">244</font>         *<a name="line.244"></a>
+<font color="green">245</font>         * @param object invoke method on this object<a name="line.245"></a>
+<font color="green">246</font>         * @param methodName get method with this name<a name="line.246"></a>
+<font color="green">247</font>         * @param args use these arguments - treat null as empty array<a name="line.247"></a>
+<font color="green">248</font>         * @param parameterTypes match these parameters - treat null as empty array<a name="line.248"></a>
+<font color="green">249</font>         * @return The value returned by the invoked method<a name="line.249"></a>
+<font color="green">250</font>         *<a name="line.250"></a>
+<font color="green">251</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.251"></a>
+<font color="green">252</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.252"></a>
+<font color="green">253</font>         *  method invoked<a name="line.253"></a>
+<font color="green">254</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.254"></a>
+<font color="green">255</font>         *  via reflection<a name="line.255"></a>
+<font color="green">256</font>         */<a name="line.256"></a>
+<font color="green">257</font>        public static Object invokeMethod(<a name="line.257"></a>
+<font color="green">258</font>                Object object,<a name="line.258"></a>
+<font color="green">259</font>                String methodName,<a name="line.259"></a>
+<font color="green">260</font>                Object[] args,<a name="line.260"></a>
+<font color="green">261</font>                Class[] parameterTypes)<a name="line.261"></a>
+<font color="green">262</font>                    throws<a name="line.262"></a>
+<font color="green">263</font>                        NoSuchMethodException,<a name="line.263"></a>
+<font color="green">264</font>                        IllegalAccessException,<a name="line.264"></a>
+<font color="green">265</font>                        InvocationTargetException {<a name="line.265"></a>
+<font color="green">266</font>                        <a name="line.266"></a>
+<font color="green">267</font>            if (parameterTypes == null) {<a name="line.267"></a>
+<font color="green">268</font>                parameterTypes = EMPTY_CLASS_PARAMETERS;<a name="line.268"></a>
+<font color="green">269</font>            }        <a name="line.269"></a>
+<font color="green">270</font>            if (args == null) {<a name="line.270"></a>
+<font color="green">271</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.271"></a>
+<font color="green">272</font>            }  <a name="line.272"></a>
+<font color="green">273</font>    <a name="line.273"></a>
+<font color="green">274</font>            Method method = getMatchingAccessibleMethod(<a name="line.274"></a>
+<font color="green">275</font>                    object.getClass(),<a name="line.275"></a>
+<font color="green">276</font>                    methodName,<a name="line.276"></a>
+<font color="green">277</font>                    parameterTypes);<a name="line.277"></a>
+<font color="green">278</font>            if (method == null) {<a name="line.278"></a>
+<font color="green">279</font>                throw new NoSuchMethodException("No such accessible method: " +<a name="line.279"></a>
+<font color="green">280</font>                        methodName + "() on object: " + object.getClass().getName());<a name="line.280"></a>
+<font color="green">281</font>            }<a name="line.281"></a>
+<font color="green">282</font>            return method.invoke(object, args);<a name="line.282"></a>
+<font color="green">283</font>        }<a name="line.283"></a>
+<font color="green">284</font>    <a name="line.284"></a>
+<font color="green">285</font>    <a name="line.285"></a>
+<font color="green">286</font>        /**<a name="line.286"></a>
+<font color="green">287</font>         * &lt;p&gt;Invoke a method whose parameter type matches exactly the object<a name="line.287"></a>
+<font color="green">288</font>         * type.&lt;/p&gt;<a name="line.288"></a>
+<font color="green">289</font>         *<a name="line.289"></a>
+<font color="green">290</font>         * &lt;p&gt; This is a convenient wrapper for<a name="line.290"></a>
+<font color="green">291</font>         * {@link #invokeExactMethod(Object object,String methodName,Object [] args)}.<a name="line.291"></a>
+<font color="green">292</font>         * &lt;/p&gt;<a name="line.292"></a>
+<font color="green">293</font>         *<a name="line.293"></a>
+<font color="green">294</font>         * @param object invoke method on this object<a name="line.294"></a>
+<font color="green">295</font>         * @param methodName get method with this name<a name="line.295"></a>
+<font color="green">296</font>         * @param arg use this argument<a name="line.296"></a>
+<font color="green">297</font>         * @return The value returned by the invoked method<a name="line.297"></a>
+<font color="green">298</font>         *<a name="line.298"></a>
+<font color="green">299</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.299"></a>
+<font color="green">300</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.300"></a>
+<font color="green">301</font>         *  method invoked<a name="line.301"></a>
+<font color="green">302</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.302"></a>
+<font color="green">303</font>         *  via reflection<a name="line.303"></a>
+<font color="green">304</font>         */<a name="line.304"></a>
+<font color="green">305</font>        public static Object invokeExactMethod(<a name="line.305"></a>
+<font color="green">306</font>                Object object,<a name="line.306"></a>
+<font color="green">307</font>                String methodName,<a name="line.307"></a>
+<font color="green">308</font>                Object arg)<a name="line.308"></a>
+<font color="green">309</font>                throws<a name="line.309"></a>
+<font color="green">310</font>                NoSuchMethodException,<a name="line.310"></a>
+<font color="green">311</font>                IllegalAccessException,<a name="line.311"></a>
+<font color="green">312</font>                InvocationTargetException {<a name="line.312"></a>
+<font color="green">313</font>    <a name="line.313"></a>
+<font color="green">314</font>            Object[] args = {arg};<a name="line.314"></a>
+<font color="green">315</font>            return invokeExactMethod(object, methodName, args);<a name="line.315"></a>
+<font color="green">316</font>    <a name="line.316"></a>
+<font color="green">317</font>        }<a name="line.317"></a>
+<font color="green">318</font>    <a name="line.318"></a>
+<font color="green">319</font>    <a name="line.319"></a>
+<font color="green">320</font>        /**<a name="line.320"></a>
+<font color="green">321</font>         * &lt;p&gt;Invoke a method whose parameter types match exactly the object<a name="line.321"></a>
+<font color="green">322</font>         * types.&lt;/p&gt;<a name="line.322"></a>
+<font color="green">323</font>         *<a name="line.323"></a>
+<font color="green">324</font>         * &lt;p&gt; This uses reflection to invoke the method obtained from a call to<a name="line.324"></a>
+<font color="green">325</font>         * &lt;code&gt;getAccessibleMethod()&lt;/code&gt;.&lt;/p&gt;<a name="line.325"></a>
+<font color="green">326</font>         *<a name="line.326"></a>
+<font color="green">327</font>         * @param object invoke method on this object<a name="line.327"></a>
+<font color="green">328</font>         * @param methodName get method with this name<a name="line.328"></a>
+<font color="green">329</font>         * @param args use these arguments - treat null as empty array<a name="line.329"></a>
+<font color="green">330</font>         * @return The value returned by the invoked method<a name="line.330"></a>
+<font color="green">331</font>         *<a name="line.331"></a>
+<font color="green">332</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.332"></a>
+<font color="green">333</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.333"></a>
+<font color="green">334</font>         *  method invoked<a name="line.334"></a>
+<font color="green">335</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.335"></a>
+<font color="green">336</font>         *  via reflection<a name="line.336"></a>
+<font color="green">337</font>         */<a name="line.337"></a>
+<font color="green">338</font>        public static Object invokeExactMethod(<a name="line.338"></a>
+<font color="green">339</font>                Object object,<a name="line.339"></a>
+<font color="green">340</font>                String methodName,<a name="line.340"></a>
+<font color="green">341</font>                Object[] args)<a name="line.341"></a>
+<font color="green">342</font>                throws<a name="line.342"></a>
+<font color="green">343</font>                NoSuchMethodException,<a name="line.343"></a>
+<font color="green">344</font>                IllegalAccessException,<a name="line.344"></a>
+<font color="green">345</font>                InvocationTargetException {<a name="line.345"></a>
+<font color="green">346</font>            if (args == null) {<a name="line.346"></a>
+<font color="green">347</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.347"></a>
+<font color="green">348</font>            }  <a name="line.348"></a>
+<font color="green">349</font>            int arguments = args.length;<a name="line.349"></a>
+<font color="green">350</font>            Class[] parameterTypes = new Class[arguments];<a name="line.350"></a>
+<font color="green">351</font>            for (int i = 0; i &lt; arguments; i++) {<a name="line.351"></a>
+<font color="green">352</font>                parameterTypes[i] = args[i].getClass();<a name="line.352"></a>
+<font color="green">353</font>            }<a name="line.353"></a>
+<font color="green">354</font>            return invokeExactMethod(object, methodName, args, parameterTypes);<a name="line.354"></a>
+<font color="green">355</font>    <a name="line.355"></a>
+<font color="green">356</font>        }<a name="line.356"></a>
+<font color="green">357</font>    <a name="line.357"></a>
+<font color="green">358</font>    <a name="line.358"></a>
+<font color="green">359</font>        /**<a name="line.359"></a>
+<font color="green">360</font>         * &lt;p&gt;Invoke a method whose parameter types match exactly the parameter<a name="line.360"></a>
+<font color="green">361</font>         * types given.&lt;/p&gt;<a name="line.361"></a>
+<font color="green">362</font>         *<a name="line.362"></a>
+<font color="green">363</font>         * &lt;p&gt;This uses reflection to invoke the method obtained from a call to<a name="line.363"></a>
+<font color="green">364</font>         * &lt;code&gt;getAccessibleMethod()&lt;/code&gt;.&lt;/p&gt;<a name="line.364"></a>
+<font color="green">365</font>         *<a name="line.365"></a>
+<font color="green">366</font>         * @param object invoke method on this object<a name="line.366"></a>
+<font color="green">367</font>         * @param methodName get method with this name<a name="line.367"></a>
+<font color="green">368</font>         * @param args use these arguments - treat null as empty array<a name="line.368"></a>
+<font color="green">369</font>         * @param parameterTypes match these parameters - treat null as empty array<a name="line.369"></a>
+<font color="green">370</font>         * @return The value returned by the invoked method<a name="line.370"></a>
+<font color="green">371</font>         *<a name="line.371"></a>
+<font color="green">372</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.372"></a>
+<font color="green">373</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.373"></a>
+<font color="green">374</font>         *  method invoked<a name="line.374"></a>
+<font color="green">375</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.375"></a>
+<font color="green">376</font>         *  via reflection<a name="line.376"></a>
+<font color="green">377</font>         */<a name="line.377"></a>
+<font color="green">378</font>        public static Object invokeExactMethod(<a name="line.378"></a>
+<font color="green">379</font>                Object object,<a name="line.379"></a>
+<font color="green">380</font>                String methodName,<a name="line.380"></a>
+<font color="green">381</font>                Object[] args,<a name="line.381"></a>
+<font color="green">382</font>                Class[] parameterTypes)<a name="line.382"></a>
+<font color="green">383</font>                throws<a name="line.383"></a>
+<font color="green">384</font>                NoSuchMethodException,<a name="line.384"></a>
+<font color="green">385</font>                IllegalAccessException,<a name="line.385"></a>
+<font color="green">386</font>                InvocationTargetException {<a name="line.386"></a>
+<font color="green">387</font>            <a name="line.387"></a>
+<font color="green">388</font>            if (args == null) {<a name="line.388"></a>
+<font color="green">389</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.389"></a>
+<font color="green">390</font>            }  <a name="line.390"></a>
+<font color="green">391</font>                    <a name="line.391"></a>
+<font color="green">392</font>            if (parameterTypes == null) {<a name="line.392"></a>
+<font color="green">393</font>                parameterTypes = EMPTY_CLASS_PARAMETERS;<a name="line.393"></a>
+<font color="green">394</font>            }<a name="line.394"></a>
+<font color="green">395</font>    <a name="line.395"></a>
+<font color="green">396</font>            Method method = getAccessibleMethod(<a name="line.396"></a>
+<font color="green">397</font>                    object.getClass(),<a name="line.397"></a>
+<font color="green">398</font>                    methodName,<a name="line.398"></a>
+<font color="green">399</font>                    parameterTypes);<a name="line.399"></a>
+<font color="green">400</font>            if (method == null) {<a name="line.400"></a>
+<font color="green">401</font>                throw new NoSuchMethodException("No such accessible method: " +<a name="line.401"></a>
+<font color="green">402</font>                        methodName + "() on object: " + object.getClass().getName());<a name="line.402"></a>
+<font color="green">403</font>            }<a name="line.403"></a>
+<font color="green">404</font>            return method.invoke(object, args);<a name="line.404"></a>
+<font color="green">405</font>    <a name="line.405"></a>
+<font color="green">406</font>        }<a name="line.406"></a>
+<font color="green">407</font>    <a name="line.407"></a>
+<font color="green">408</font>        /**<a name="line.408"></a>
+<font color="green">409</font>         * &lt;p&gt;Invoke a static method whose parameter types match exactly the parameter<a name="line.409"></a>
+<font color="green">410</font>         * types given.&lt;/p&gt;<a name="line.410"></a>
+<font color="green">411</font>         *<a name="line.411"></a>
+<font color="green">412</font>         * &lt;p&gt;This uses reflection to invoke the method obtained from a call to<a name="line.412"></a>
+<font color="green">413</font>         * {@link #getAccessibleMethod(Class, String, Class[])}.&lt;/p&gt;<a name="line.413"></a>
+<font color="green">414</font>         *<a name="line.414"></a>
+<font color="green">415</font>         * @param objectClass invoke static method on this class<a name="line.415"></a>
+<font color="green">416</font>         * @param methodName get method with this name<a name="line.416"></a>
+<font color="green">417</font>         * @param args use these arguments - treat null as empty array<a name="line.417"></a>
+<font color="green">418</font>         * @param parameterTypes match these parameters - treat null as empty array<a name="line.418"></a>
+<font color="green">419</font>         * @return The value returned by the invoked method<a name="line.419"></a>
+<font color="green">420</font>         *<a name="line.420"></a>
+<font color="green">421</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.421"></a>
+<font color="green">422</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.422"></a>
+<font color="green">423</font>         *  method invoked<a name="line.423"></a>
+<font color="green">424</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.424"></a>
+<font color="green">425</font>         *  via reflection<a name="line.425"></a>
+<font color="green">426</font>         * @since 1.8.0<a name="line.426"></a>
+<font color="green">427</font>         */<a name="line.427"></a>
+<font color="green">428</font>        public static Object invokeExactStaticMethod(<a name="line.428"></a>
+<font color="green">429</font>                Class objectClass,<a name="line.429"></a>
+<font color="green">430</font>                String methodName,<a name="line.430"></a>
+<font color="green">431</font>                Object[] args,<a name="line.431"></a>
+<font color="green">432</font>                Class[] parameterTypes)<a name="line.432"></a>
+<font color="green">433</font>                throws<a name="line.433"></a>
+<font color="green">434</font>                NoSuchMethodException,<a name="line.434"></a>
+<font color="green">435</font>                IllegalAccessException,<a name="line.435"></a>
+<font color="green">436</font>                InvocationTargetException {<a name="line.436"></a>
+<font color="green">437</font>            <a name="line.437"></a>
+<font color="green">438</font>            if (args == null) {<a name="line.438"></a>
+<font color="green">439</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.439"></a>
+<font color="green">440</font>            }  <a name="line.440"></a>
+<font color="green">441</font>                    <a name="line.441"></a>
+<font color="green">442</font>            if (parameterTypes == null) {<a name="line.442"></a>
+<font color="green">443</font>                parameterTypes = EMPTY_CLASS_PARAMETERS;<a name="line.443"></a>
+<font color="green">444</font>            }<a name="line.444"></a>
+<font color="green">445</font>    <a name="line.445"></a>
+<font color="green">446</font>            Method method = getAccessibleMethod(<a name="line.446"></a>
+<font color="green">447</font>                    objectClass,<a name="line.447"></a>
+<font color="green">448</font>                    methodName,<a name="line.448"></a>
+<font color="green">449</font>                    parameterTypes);<a name="line.449"></a>
+<font color="green">450</font>            if (method == null) {<a name="line.450"></a>
+<font color="green">451</font>                throw new NoSuchMethodException("No such accessible method: " +<a name="line.451"></a>
+<font color="green">452</font>                        methodName + "() on class: " + objectClass.getName());<a name="line.452"></a>
+<font color="green">453</font>            }<a name="line.453"></a>
+<font color="green">454</font>            return method.invoke(null, args);<a name="line.454"></a>
+<font color="green">455</font>    <a name="line.455"></a>
+<font color="green">456</font>        }<a name="line.456"></a>
+<font color="green">457</font>    <a name="line.457"></a>
+<font color="green">458</font>        /**<a name="line.458"></a>
+<font color="green">459</font>         * &lt;p&gt;Invoke a named static method whose parameter type matches the object type.&lt;/p&gt;<a name="line.459"></a>
+<font color="green">460</font>         *<a name="line.460"></a>
+<font color="green">461</font>         * &lt;p&gt;The behaviour of this method is less deterministic <a name="line.461"></a>
+<font color="green">462</font>         * than {@link #invokeExactMethod(Object, String, Object[], Class[])}. <a name="line.462"></a>
+<font color="green">463</font>         * It loops through all methods with names that match<a name="line.463"></a>
+<font color="green">464</font>         * and then executes the first it finds with compatable parameters.&lt;/p&gt;<a name="line.464"></a>
+<font color="green">465</font>         *<a name="line.465"></a>
+<font color="green">466</font>         * &lt;p&gt;This method supports calls to methods taking primitive parameters <a name="line.466"></a>
+<font color="green">467</font>         * via passing in wrapping classes. So, for example, a &lt;code&gt;Boolean&lt;/code&gt; class<a name="line.467"></a>
+<font color="green">468</font>         * would match a &lt;code&gt;boolean&lt;/code&gt; primitive.&lt;/p&gt;<a name="line.468"></a>
+<font color="green">469</font>         *<a name="line.469"></a>
+<font color="green">470</font>         * &lt;p&gt; This is a convenient wrapper for<a name="line.470"></a>
+<font color="green">471</font>         * {@link #invokeStaticMethod(Class objectClass,String methodName,Object [] args)}.<a name="line.471"></a>
+<font color="green">472</font>         * &lt;/p&gt;<a name="line.472"></a>
+<font color="green">473</font>         *<a name="line.473"></a>
+<font color="green">474</font>         * @param objectClass invoke static method on this class<a name="line.474"></a>
+<font color="green">475</font>         * @param methodName get method with this name<a name="line.475"></a>
+<font color="green">476</font>         * @param arg use this argument<a name="line.476"></a>
+<font color="green">477</font>         * @return The value returned by the invoked method<a name="line.477"></a>
+<font color="green">478</font>         *<a name="line.478"></a>
+<font color="green">479</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.479"></a>
+<font color="green">480</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.480"></a>
+<font color="green">481</font>         *  method invoked<a name="line.481"></a>
+<font color="green">482</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.482"></a>
+<font color="green">483</font>         *  via reflection<a name="line.483"></a>
+<font color="green">484</font>         * @since 1.8.0<a name="line.484"></a>
+<font color="green">485</font>         */<a name="line.485"></a>
+<font color="green">486</font>        public static Object invokeStaticMethod(<a name="line.486"></a>
+<font color="green">487</font>                Class objectClass,<a name="line.487"></a>
+<font color="green">488</font>                String methodName,<a name="line.488"></a>
+<font color="green">489</font>                Object arg)<a name="line.489"></a>
+<font color="green">490</font>                throws<a name="line.490"></a>
+<font color="green">491</font>                NoSuchMethodException,<a name="line.491"></a>
+<font color="green">492</font>                IllegalAccessException,<a name="line.492"></a>
+<font color="green">493</font>                InvocationTargetException {<a name="line.493"></a>
+<font color="green">494</font>    <a name="line.494"></a>
+<font color="green">495</font>            Object[] args = {arg};<a name="line.495"></a>
+<font color="green">496</font>            return invokeStaticMethod (objectClass, methodName, args);<a name="line.496"></a>
+<font color="green">497</font>    <a name="line.497"></a>
+<font color="green">498</font>        }<a name="line.498"></a>
+<font color="green">499</font>    <a name="line.499"></a>
+<font color="green">500</font>    <a name="line.500"></a>
+<font color="green">501</font>        /**<a name="line.501"></a>
+<font color="green">502</font>         * &lt;p&gt;Invoke a named static method whose parameter type matches the object type.&lt;/p&gt;<a name="line.502"></a>
+<font color="green">503</font>         *<a name="line.503"></a>
+<font color="green">504</font>         * &lt;p&gt;The behaviour of this method is less deterministic <a name="line.504"></a>
+<font color="green">505</font>         * than {@link #invokeExactMethod(Object object,String methodName,Object [] args)}. <a name="line.505"></a>
+<font color="green">506</font>         * It loops through all methods with names that match<a name="line.506"></a>
+<font color="green">507</font>         * and then executes the first it finds with compatable parameters.&lt;/p&gt;<a name="line.507"></a>
+<font color="green">508</font>         *<a name="line.508"></a>
+<font color="green">509</font>         * &lt;p&gt;This method supports calls to methods taking primitive parameters <a name="line.509"></a>
+<font color="green">510</font>         * via passing in wrapping classes. So, for example, a &lt;code&gt;Boolean&lt;/code&gt; class<a name="line.510"></a>
+<font color="green">511</font>         * would match a &lt;code&gt;boolean&lt;/code&gt; primitive.&lt;/p&gt;<a name="line.511"></a>
+<font color="green">512</font>         *<a name="line.512"></a>
+<font color="green">513</font>         * &lt;p&gt; This is a convenient wrapper for<a name="line.513"></a>
+<font color="green">514</font>         * {@link #invokeStaticMethod(Class objectClass,String methodName,Object [] args,Class[] parameterTypes)}.<a name="line.514"></a>
+<font color="green">515</font>         * &lt;/p&gt;<a name="line.515"></a>
+<font color="green">516</font>         *<a name="line.516"></a>
+<font color="green">517</font>         * @param objectClass invoke static method on this class<a name="line.517"></a>
+<font color="green">518</font>         * @param methodName get method with this name<a name="line.518"></a>
+<font color="green">519</font>         * @param args use these arguments - treat null as empty array<a name="line.519"></a>
+<font color="green">520</font>         * @return The value returned by the invoked method<a name="line.520"></a>
+<font color="green">521</font>         *<a name="line.521"></a>
+<font color="green">522</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.522"></a>
+<font color="green">523</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.523"></a>
+<font color="green">524</font>         *  method invoked<a name="line.524"></a>
+<font color="green">525</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.525"></a>
+<font color="green">526</font>         *  via reflection<a name="line.526"></a>
+<font color="green">527</font>         * @since 1.8.0<a name="line.527"></a>
+<font color="green">528</font>         */<a name="line.528"></a>
+<font color="green">529</font>        public static Object invokeStaticMethod(<a name="line.529"></a>
+<font color="green">530</font>                Class objectClass,<a name="line.530"></a>
+<font color="green">531</font>                String methodName,<a name="line.531"></a>
+<font color="green">532</font>                Object[] args)<a name="line.532"></a>
+<font color="green">533</font>                throws<a name="line.533"></a>
+<font color="green">534</font>                NoSuchMethodException,<a name="line.534"></a>
+<font color="green">535</font>                IllegalAccessException,<a name="line.535"></a>
+<font color="green">536</font>                InvocationTargetException {<a name="line.536"></a>
+<font color="green">537</font>            <a name="line.537"></a>
+<font color="green">538</font>            if (args == null) {<a name="line.538"></a>
+<font color="green">539</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.539"></a>
+<font color="green">540</font>            }  <a name="line.540"></a>
+<font color="green">541</font>            int arguments = args.length;<a name="line.541"></a>
+<font color="green">542</font>            Class[] parameterTypes = new Class[arguments];<a name="line.542"></a>
+<font color="green">543</font>            for (int i = 0; i &lt; arguments; i++) {<a name="line.543"></a>
+<font color="green">544</font>                parameterTypes[i] = args[i].getClass();<a name="line.544"></a>
+<font color="green">545</font>            }<a name="line.545"></a>
+<font color="green">546</font>            return invokeStaticMethod (objectClass, methodName, args, parameterTypes);<a name="line.546"></a>
+<font color="green">547</font>    <a name="line.547"></a>
+<font color="green">548</font>        }<a name="line.548"></a>
+<font color="green">549</font>    <a name="line.549"></a>
+<font color="green">550</font>    <a name="line.550"></a>
+<font color="green">551</font>        /**<a name="line.551"></a>
+<font color="green">552</font>         * &lt;p&gt;Invoke a named static method whose parameter type matches the object type.&lt;/p&gt;<a name="line.552"></a>
+<font color="green">553</font>         *<a name="line.553"></a>
+<font color="green">554</font>         * &lt;p&gt;The behaviour of this method is less deterministic <a name="line.554"></a>
+<font color="green">555</font>         * than {@link <a name="line.555"></a>
+<font color="green">556</font>         * #invokeExactStaticMethod(Class objectClass,String methodName,Object [] args,Class[] parameterTypes)}. <a name="line.556"></a>
+<font color="green">557</font>         * It loops through all methods with names that match<a name="line.557"></a>
+<font color="green">558</font>         * and then executes the first it finds with compatable parameters.&lt;/p&gt;<a name="line.558"></a>
+<font color="green">559</font>         *<a name="line.559"></a>
+<font color="green">560</font>         * &lt;p&gt;This method supports calls to methods taking primitive parameters <a name="line.560"></a>
+<font color="green">561</font>         * via passing in wrapping classes. So, for example, a &lt;code&gt;Boolean&lt;/code&gt; class<a name="line.561"></a>
+<font color="green">562</font>         * would match a &lt;code&gt;boolean&lt;/code&gt; primitive.&lt;/p&gt;<a name="line.562"></a>
+<font color="green">563</font>         *<a name="line.563"></a>
+<font color="green">564</font>         *<a name="line.564"></a>
+<font color="green">565</font>         * @param objectClass invoke static method on this class<a name="line.565"></a>
+<font color="green">566</font>         * @param methodName get method with this name<a name="line.566"></a>
+<font color="green">567</font>         * @param args use these arguments - treat null as empty array<a name="line.567"></a>
+<font color="green">568</font>         * @param parameterTypes match these parameters - treat null as empty array<a name="line.568"></a>
+<font color="green">569</font>         * @return The value returned by the invoked method<a name="line.569"></a>
+<font color="green">570</font>         *<a name="line.570"></a>
+<font color="green">571</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.571"></a>
+<font color="green">572</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.572"></a>
+<font color="green">573</font>         *  method invoked<a name="line.573"></a>
+<font color="green">574</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.574"></a>
+<font color="green">575</font>         *  via reflection<a name="line.575"></a>
+<font color="green">576</font>         * @since 1.8.0<a name="line.576"></a>
+<font color="green">577</font>         */<a name="line.577"></a>
+<font color="green">578</font>        public static Object invokeStaticMethod(<a name="line.578"></a>
+<font color="green">579</font>                Class objectClass,<a name="line.579"></a>
+<font color="green">580</font>                String methodName,<a name="line.580"></a>
+<font color="green">581</font>                Object[] args,<a name="line.581"></a>
+<font color="green">582</font>                Class[] parameterTypes)<a name="line.582"></a>
+<font color="green">583</font>                    throws<a name="line.583"></a>
+<font color="green">584</font>                        NoSuchMethodException,<a name="line.584"></a>
+<font color="green">585</font>                        IllegalAccessException,<a name="line.585"></a>
+<font color="green">586</font>                        InvocationTargetException {<a name="line.586"></a>
+<font color="green">587</font>                        <a name="line.587"></a>
+<font color="green">588</font>            if (parameterTypes == null) {<a name="line.588"></a>
+<font color="green">589</font>                parameterTypes = EMPTY_CLASS_PARAMETERS;<a name="line.589"></a>
+<font color="green">590</font>            }        <a name="line.590"></a>
+<font color="green">591</font>            if (args == null) {<a name="line.591"></a>
+<font color="green">592</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.592"></a>
+<font color="green">593</font>            }  <a name="line.593"></a>
+<font color="green">594</font>    <a name="line.594"></a>
+<font color="green">595</font>            Method method = getMatchingAccessibleMethod(<a name="line.595"></a>
+<font color="green">596</font>                    objectClass,<a name="line.596"></a>
+<font color="green">597</font>                    methodName,<a name="line.597"></a>
+<font color="green">598</font>                    parameterTypes);<a name="line.598"></a>
+<font color="green">599</font>            if (method == null) {<a name="line.599"></a>
+<font color="green">600</font>                throw new NoSuchMethodException("No such accessible method: " +<a name="line.600"></a>
+<font color="green">601</font>                        methodName + "() on class: " + objectClass.getName());<a name="line.601"></a>
+<font color="green">602</font>            }<a name="line.602"></a>
+<font color="green">603</font>            return method.invoke(null, args);<a name="line.603"></a>
+<font color="green">604</font>        }<a name="line.604"></a>
+<font color="green">605</font>    <a name="line.605"></a>
+<font color="green">606</font>    <a name="line.606"></a>
+<font color="green">607</font>        /**<a name="line.607"></a>
+<font color="green">608</font>         * &lt;p&gt;Invoke a static method whose parameter type matches exactly the object<a name="line.608"></a>
+<font color="green">609</font>         * type.&lt;/p&gt;<a name="line.609"></a>
+<font color="green">610</font>         *<a name="line.610"></a>
+<font color="green">611</font>         * &lt;p&gt; This is a convenient wrapper for<a name="line.611"></a>
+<font color="green">612</font>         * {@link #invokeExactStaticMethod(Class objectClass,String methodName,Object [] args)}.<a name="line.612"></a>
+<font color="green">613</font>         * &lt;/p&gt;<a name="line.613"></a>
+<font color="green">614</font>         *<a name="line.614"></a>
+<font color="green">615</font>         * @param objectClass invoke static method on this class<a name="line.615"></a>
+<font color="green">616</font>         * @param methodName get method with this name<a name="line.616"></a>
+<font color="green">617</font>         * @param arg use this argument<a name="line.617"></a>
+<font color="green">618</font>         * @return The value returned by the invoked method<a name="line.618"></a>
+<font color="green">619</font>         *<a name="line.619"></a>
+<font color="green">620</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.620"></a>
+<font color="green">621</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.621"></a>
+<font color="green">622</font>         *  method invoked<a name="line.622"></a>
+<font color="green">623</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.623"></a>
+<font color="green">624</font>         *  via reflection<a name="line.624"></a>
+<font color="green">625</font>         * @since 1.8.0<a name="line.625"></a>
+<font color="green">626</font>         */<a name="line.626"></a>
+<font color="green">627</font>        public static Object invokeExactStaticMethod(<a name="line.627"></a>
+<font color="green">628</font>                Class objectClass,<a name="line.628"></a>
+<font color="green">629</font>                String methodName,<a name="line.629"></a>
+<font color="green">630</font>                Object arg)<a name="line.630"></a>
+<font color="green">631</font>                throws<a name="line.631"></a>
+<font color="green">632</font>                NoSuchMethodException,<a name="line.632"></a>
+<font color="green">633</font>                IllegalAccessException,<a name="line.633"></a>
+<font color="green">634</font>                InvocationTargetException {<a name="line.634"></a>
+<font color="green">635</font>    <a name="line.635"></a>
+<font color="green">636</font>            Object[] args = {arg};<a name="line.636"></a>
+<font color="green">637</font>            return invokeExactStaticMethod (objectClass, methodName, args);<a name="line.637"></a>
+<font color="green">638</font>    <a name="line.638"></a>
+<font color="green">639</font>        }<a name="line.639"></a>
+<font color="green">640</font>    <a name="line.640"></a>
+<font color="green">641</font>    <a name="line.641"></a>
+<font color="green">642</font>        /**<a name="line.642"></a>
+<font color="green">643</font>         * &lt;p&gt;Invoke a static method whose parameter types match exactly the object<a name="line.643"></a>
+<font color="green">644</font>         * types.&lt;/p&gt;<a name="line.644"></a>
+<font color="green">645</font>         *<a name="line.645"></a>
+<font color="green">646</font>         * &lt;p&gt; This uses reflection to invoke the method obtained from a call to<a name="line.646"></a>
+<font color="green">647</font>         * {@link #getAccessibleMethod(Class, String, Class[])}.&lt;/p&gt;<a name="line.647"></a>
+<font color="green">648</font>         *<a name="line.648"></a>
+<font color="green">649</font>         * @param objectClass invoke static method on this class<a name="line.649"></a>
+<font color="green">650</font>         * @param methodName get method with this name<a name="line.650"></a>
+<font color="green">651</font>         * @param args use these arguments - treat null as empty array<a name="line.651"></a>
+<font color="green">652</font>         * @return The value returned by the invoked method<a name="line.652"></a>
+<font color="green">653</font>         *<a name="line.653"></a>
+<font color="green">654</font>         * @throws NoSuchMethodException if there is no such accessible method<a name="line.654"></a>
+<font color="green">655</font>         * @throws InvocationTargetException wraps an exception thrown by the<a name="line.655"></a>
+<font color="green">656</font>         *  method invoked<a name="line.656"></a>
+<font color="green">657</font>         * @throws IllegalAccessException if the requested method is not accessible<a name="line.657"></a>
+<font color="green">658</font>         *  via reflection<a name="line.658"></a>
+<font color="green">659</font>         * @since 1.8.0<a name="line.659"></a>
+<font color="green">660</font>         */<a name="line.660"></a>
+<font color="green">661</font>        public static Object invokeExactStaticMethod(<a name="line.661"></a>
+<font color="green">662</font>                Class objectClass,<a name="line.662"></a>
+<font color="green">663</font>                String methodName,<a name="line.663"></a>
+<font color="green">664</font>                Object[] args)<a name="line.664"></a>
+<font color="green">665</font>                throws<a name="line.665"></a>
+<font color="green">666</font>                NoSuchMethodException,<a name="line.666"></a>
+<font color="green">667</font>                IllegalAccessException,<a name="line.667"></a>
+<font color="green">668</font>                InvocationTargetException {<a name="line.668"></a>
+<font color="green">669</font>            if (args == null) {<a name="line.669"></a>
+<font color="green">670</font>                args = EMPTY_OBJECT_ARRAY;<a name="line.670"></a>
+<font color="green">671</font>            }  <a name="line.671"></a>
+<font color="green">672</font>            int arguments = args.length;<a name="line.672"></a>
+<font color="green">673</font>            Class[] parameterTypes = new Class[arguments];<a name="line.673"></a>
+<font color="green">674</font>            for (int i = 0; i &lt; arguments; i++) {<a name="line.674"></a>
+<font color="green">675</font>                parameterTypes[i] = args[i].getClass();<a name="line.675"></a>
+<font color="green">676</font>            }<a name="line.676"></a>
+<font color="green">677</font>            return invokeExactStaticMethod(objectClass, methodName, args, parameterTypes);<a name="line.677"></a>
+<font color="green">678</font>    <a name="line.678"></a>
+<font color="green">679</font>        }<a name="line.679"></a>
+<font color="green">680</font>    <a name="line.680"></a>
+<font color="green">681</font>    <a name="line.681"></a>
+<font color="green">682</font>        /**<a name="line.682"></a>
+<font color="green">683</font>         * &lt;p&gt;Return an accessible method (that is, one that can be invoked via<a name="line.683"></a>
+<font color="green">684</font>         * reflection) with given name and a single parameter.  If no such method<a name="line.684"></a>
+<font color="green">685</font>         * can be found, return &lt;code&gt;null&lt;/code&gt;.<a name="line.685"></a>
+<font color="green">686</font>         * Basically, a convenience wrapper that constructs a &lt;code&gt;Class&lt;/code&gt;<a name="line.686"></a>
+<font color="green">687</font>         * array for you.&lt;/p&gt;<a name="line.687"></a>
+<font color="green">688</font>         *<a name="line.688"></a>
+<font color="green">689</font>         * @param clazz get method from this class<a name="line.689"></a>
+<font color="green">690</font>         * @param methodName get method with this name<a name="line.690"></a>
+<font color="green">691</font>         * @param parameterType taking this type of parameter<a name="line.691"></a>
+<font color="green">692</font>         * @return The accessible method<a name="line.692"></a>
+<font color="green">693</font>         */<a name="line.693"></a>
+<font color="green">694</font>        public static Method getAccessibleMethod(<a name="line.694"></a>
+<font color="green">695</font>                Class clazz,<a name="line.695"></a>
+<font color="green">696</font>                String methodName,<a name="line.696"></a>
+<font color="green">697</font>                Class parameterType) {<a name="line.697"></a>
+<font color="green">698</font>    <a name="line.698"></a>
+<font color="green">699</font>            Class[] parameterTypes = {parameterType};<a name="line.699"></a>
+<font color="green">700</font>            return getAccessibleMethod(clazz, methodName, parameterTypes);<a name="line.700"></a>
+<font color="green">701</font>    <a name="line.701"></a>
+<font color="green">702</font>        }<a name="line.702"></a>
+<font color="green">703</font>    <a name="line.703"></a>
+<font color="green">704</font>    <a name="line.704"></a>
+<font color="green">705</font>        /**<a name="line.705"></a>
+<font color="green">706</font>         * &lt;p&gt;Return an accessible method (that is, one that can be invoked via<a name="line.706"></a>
+<font color="green">707</font>         * reflection) with given name and parameters.  If no such method<a name="line.707"></a>
+<font color="green">708</font>         * can be found, return &lt;code&gt;null&lt;/code&gt;.<a name="line.708"></a>
+<font color="green">709</font>         * This is just a convenient wrapper for<a name="line.709"></a>
+<font color="green">710</font>         * {@link #getAccessibleMethod(Method method)}.&lt;/p&gt;<a name="line.710"></a>
+<font color="green">711</font>         *<a name="line.711"></a>
+<font color="green">712</font>         * @param clazz get method from this class<a name="line.712"></a>
+<font color="green">713</font>         * @param methodName get method with this name<a name="line.713"></a>
+<font color="green">714</font>         * @param parameterTypes with these parameters types<a name="line.714"></a>
+<font color="green">715</font>         * @return The accessible method<a name="line.715"></a>
+<font color="green">716</font>         */<a name="line.716"></a>
+<font color="green">717</font>        public static Method getAccessibleMethod(<a name="line.717"></a>
+<font color="green">718</font>                Class clazz,<a name="line.718"></a>
+<font color="green">719</font>                String methodName,<a name="line.719"></a>
+<font color="green">720</font>                Class[] parameterTypes) {<a name="line.720"></a>
+<font color="green">721</font>    <a name="line.721"></a>
+<font color="green">722</font>            try {<a name="line.722"></a>
+<font color="green">723</font>                MethodDescriptor md = new MethodDescriptor(clazz, methodName, parameterTypes, true);<a name="line.723"></a>
+<font color="green">724</font>                // Check the cache first<a name="line.724"></a>
+<font color="green">725</font>                Method method = getCachedMethod(md);<a name="line.725"></a>
+<font color="green">726</font>                if (method != null) {<a name="line.726"></a>
+<font color="green">727</font>                    return method;<a name="line.727"></a>
+<font color="green">728</font>                }<a name="line.728"></a>
+<font color="green">729</font>                <a name="line.729"></a>
+<font color="green">730</font>                method =  getAccessibleMethod<a name="line.730"></a>
+<font color="green">731</font>                        (clazz, clazz.getMethod(methodName, parameterTypes));<a name="line.731"></a>
+<font color="green">732</font>                cacheMethod(md, method);<a name="line.732"></a>
+<font color="green">733</font>                return method;<a name="line.733"></a>
+<font color="green">734</font>            } catch (NoSuchMethodException e) {<a name="line.734"></a>
+<font color="green">735</font>                return (null);<a name="line.735"></a>
+<font color="green">736</font>            }<a name="line.736"></a>
+<font color="green">737</font>    <a name="line.737"></a>
+<font color="green">738</font>        }<a name="line.738"></a>
+<font color="green">739</font>    <a name="line.739"></a>
+<font color="green">740</font>    <a name="line.740"></a>
+<font color="green">741</font>        /**<a name="line.741"></a>
+<font color="green">742</font>         * &lt;p&gt;Return an accessible method (that is, one that can be invoked via<a name="line.742"></a>
+<font color="green">743</font>         * reflection) that implements the specified Method.  If no such method<a name="line.743"></a>
+<font color="green">744</font>         * can be found, return &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;<a name="line.744"></a>
+<font color="green">745</font>         *<a name="line.745"></a>
+<font color="green">746</font>         * @param method The method that we wish to call<a name="line.746"></a>
+<font color="green">747</font>         * @return The accessible method<a name="line.747"></a>
+<font color="green">748</font>         */<a name="line.748"></a>
+<font color="green">749</font>        public static Method getAccessibleMethod(Method method) {<a name="line.749"></a>
+<font color="green">750</font>    <a name="line.750"></a>
+<font color="green">751</font>            // Make sure we have a method to check<a name="line.751"></a>
+<font color="green">752</font>            if (method == null) {<a name="line.752"></a>
+<font color="green">753</font>                return (null);<a name="line.753"></a>
+<font color="green">754</font>            }<a name="line.754"></a>
+<font color="green">755</font>    <a name="line.755"></a>
+<font color="green">756</font>            return getAccessibleMethod(method.getDeclaringClass(), method);<a name="line.756"></a>
+<font color="green">757</font>    <a name="line.757"></a>
+<font color="green">758</font>        }<a name="line.758"></a>
+<font color="green">759</font>    <a name="line.759"></a>
+<font color="green">760</font>    <a name="line.760"></a>
+<font color="green">761</font>    <a name="line.761"></a>
+<font color="green">762</font>        /**<a name="line.762"></a>
+<font color="green">763</font>         * &lt;p&gt;Return an accessible method (that is, one that can be invoked via<a name="line.763"></a>
+<font color="green">764</font>         * reflection) that implements the specified Method.  If no such method<a name="line.764"></a>
+<font color="green">765</font>         * can be found, return &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;<a name="line.765"></a>
+<font color="green">766</font>         *<a name="line.766"></a>
+<font color="green">767</font>         * @param clazz The class of the object<a name="line.767"></a>
+<font color="green">768</font>         * @param method The method that we wish to call<a name="line.768"></a>
+<font color="green">769</font>         * @return The accessible method<a name="line.769"></a>
+<font color="green">770</font>         * @since 1.8.0<a name="line.770"></a>
+<font color="green">771</font>         */<a name="line.771"></a>
+<font color="green">772</font>        public static Method getAccessibleMethod(Class clazz, Method method) {<a name="line.772"></a>
+<font color="green">773</font>    <a name="line.773"></a>
+<font color="green">774</font>            // Make sure we have a method to check<a name="line.774"></a>
+<font color="green">775</font>            if (method == null) {<a name="line.775"></a>
+<font color="green">776</font>                return (null);<a name="line.776"></a>
+<font color="green">777</font>            }<a name="line.777"></a>
+<font color="green">778</font>    <a name="line.778"></a>
+<font color="green">779</font>            // If the requested method is not public we cannot call it<a name="line.779"></a>
+<font color="green">780</font>            if (!Modifier.isPublic(method.getModifiers())) {<a name="line.780"></a>
+<font color="green">781</font>                return (null);<a name="line.781"></a>
+<font color="green">782</font>            }<a name="line.782"></a>
+<font color="green">783</font>    <a name="line.783"></a>
+<font color="green">784</font>            boolean sameClass = true;<a name="line.784"></a>
+<font color="green">785</font>            if (clazz == null) {<a name="line.785"></a>
+<font color="green">786</font>                clazz = method.getDeclaringClass();<a name="line.786"></a>
+<font color="green">787</font>            } else {<a name="line.787"></a>
+<font color="green">788</font>                sameClass = clazz.equals(method.getDeclaringClass());<a name="line.788"></a>
+<font color="green">789</font>                if (!method.getDeclaringClass().isAssignableFrom(clazz)) {<a name="line.789"></a>
+<font color="green">790</font>                    throw new IllegalArgumentException(clazz.getName() +<a name="line.790"></a>
+<font color="green">791</font>                            " is not assignable from " + method.getDeclaringClass().getName());<a name="line.791"></a>
+<font color="green">792</font>                }<a name="line.792"></a>
+<font color="green">793</font>            }<a name="line.793"></a>
+<font color="green">794</font>    <a name="line.794"></a>
+<font color="green">795</font>            // If the class is public, we are done<a name="line.795"></a>
+<font color="green">796</font>            if (Modifier.isPublic(clazz.getModifiers())) {<a name="line.796"></a>
+<font color="green">797</font>                if (!sameClass &amp;&amp; !Modifier.isPublic(method.getDeclaringClass().getModifiers())) {<a name="line.797"></a>
+<font color="green">798</font>                    setMethodAccessible(method); // Default access superclass workaround<a name="line.798"></a>
+<font color="green">799</font>                }<a name="line.799"></a>
+<font color="green">800</font>                return (method);<a name="line.800"></a>
+<font color="green">801</font>            }<a name="line.801"></a>
+<font color="green">802</font>    <a name="line.802"></a>
+<font color="green">803</font>            String methodName      = method.getName();<a name="line.803"></a>
+<font color="green">804</font>            Class[] parameterTypes = method.getParameterTypes();<a name="line.804"></a>
+<font color="green">805</font>    <a name="line.805"></a>
+<font color="green">806</font>            // Check the implemented interfaces and subinterfaces<a name="line.806"></a>
+<font color="green">807</font>            method =<a name="line.807"></a>
+<font color="green">808</font>                    getAccessibleMethodFromInterfaceNest(clazz,<a name="line.808"></a>
+<font color="green">809</font>                            methodName,<a name="line.809"></a>
+<font color="green">810</font>                            parameterTypes);<a name="line.810"></a>
+<font color="green">811</font>    <a name="line.811"></a>
+<font color="green">812</font>            // Check the superclass chain<a name="line.812"></a>
+<font color="green">813</font>            if (method == null) {<a name="line.813"></a>
+<font color="green">814</font>                method = getAccessibleMethodFromSuperclass(clazz,<a name="line.814"></a>
+<font color="green">815</font>                            methodName,<a name="line.815"></a>
+<font color="green">816</font>                            parameterTypes);<a name="line.816"></a>
+<font color="green">817</font>            }<a name="line.817"></a>
+<font color="green">818</font>    <a name="line.818"></a>
+<font color="green">819</font>            return (method);<a name="line.819"></a>
+<font color="green">820</font>    <a name="line.820"></a>
+<font color="green">821</font>        }<a name="line.821"></a>
+<font color="green">822</font>    <a name="line.822"></a>
+<font color="green">823</font>    <a name="line.823"></a>
+<font color="green">824</font>        // -------------------------------------------------------- Private Methods<a name="line.824"></a>
+<font color="green">825</font>    <a name="line.825"></a>
+<font color="green">826</font>        /**<a name="line.826"></a>
+<font color="green">827</font>         * &lt;p&gt;Return an accessible method (that is, one that can be invoked via<a name="line.827"></a>
+<font color="green">828</font>         * reflection) by scanning through the superclasses. If no such method<a name="line.828"></a>
+<font color="green">829</font>         * can be found, return &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;<a name="line.829"></a>
+<font color="green">830</font>         *<a name="line.830"></a>
+<font color="green">831</font>         * @param clazz Class to be checked<a name="line.831"></a>
+<font color="green">832</font>         * @param methodName Method name of the method we wish to call<a name="line.832"></a>
+<font color="green">833</font>         * @param parameterTypes The parameter type signatures<a name="line.833"></a>
+<font color="green">834</font>         */<a name="line.834"></a>
+<font color="green">835</font>        private static Method getAccessibleMethodFromSuperclass<a name="line.835"></a>
+<font color="green">836</font>                (Class clazz, String methodName, Class[] parameterTypes) {<a name="line.836"></a>
+<font color="green">837</font>    <a name="line.837"></a>
+<font color="green">838</font>            Class parentClazz = clazz.getSuperclass();<a name="line.838"></a>
+<font color="green">839</font>            while (parentClazz != null) {<a name="line.839"></a>
+<font color="green">840</font>                if (Modifier.isPublic(parentClazz.getModifiers())) {<a name="line.840"></a>
+<font color="green">841</font>                    try {<a name="line.841"></a>
+<font color="green">842</font>                        return parentClazz.getMethod(methodName, parameterTypes);<a name="line.842"></a>
+<font color="green">843</font>                    } catch (NoSuchMethodException e) {<a name="line.843"></a>
+<font color="green">844</font>                        return null;<a name="line.844"></a>
+<font color="green">845</font>                    }<a name="line.845"></a>
+<font color="green">846</font>                }<a name="line.846"></a>
+<font color="green">847</font>                parentClazz = parentClazz.getSuperclass();<a name="line.847"></a>
+<font color="green">848</font>            }<a name="line.848"></a>
+<font color="green">849</font>            return null;<a name="line.849"></a>
+<font color="green">850</font>        }<a name="line.850"></a>
+<font color="green">851</font>    <a name="line.851"></a>
+<font color="green">852</font>        /**<a name="line.852"></a>
+<font color="green">853</font>         * &lt;p&gt;Return an accessible method (that is, one that can be invoked via<a name="line.853"></a>
+<font color="green">854</font>         * reflection) that implements the specified method, by scanning through<a name="line.854"></a>
+<font color="green">855</font>         * all implemented interfaces and subinterfaces.  If no such method<a name="line.855"></a>
+<font color="green">856</font>         * can be found, return &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;<a name="line.856"></a>
+<font color="green">857</font>         *<a name="line.857"></a>
+<font color="green">858</font>         * &lt;p&gt; There isn't any good reason why this method must be private.<a name="line.858"></a>
+<font color="green">859</font>         * It is because there doesn't seem any reason why other classes should<a name="line.859"></a>
+<font color="green">860</font>         * call this rather than the higher level methods.&lt;/p&gt;<a name="line.860"></a>
+<font color="green">861</font>         *<a name="line.861"></a>
+<font color="green">862</font>         * @param clazz Parent class for the interfaces to be checked<a name="line.862"></a>
+<font color="green">863</font>         * @param methodName Method name of the method we wish to call<a name="line.863"></a>
+<font color="green">864</font>         * @param parameterTypes The parameter type signatures<a name="line.864"></a>
+<font color="green">865</font>         */<a name="line.865"></a>
+<font color="green">866</font>        private static Method getAccessibleMethodFromInterfaceNest<a name="line.866"></a>
+<font color="green">867</font>                (Class clazz, String methodName, Class[] parameterTypes) {<a name="line.867"></a>
+<font color="green">868</font>    <a name="line.868"></a>
+<font color="green">869</font>            Method method = null;<a name="line.869"></a>
+<font color="green">870</font>    <a name="line.870"></a>
+<font color="green">871</font>            // Search up the superclass chain<a name="line.871"></a>
+<font color="green">872</font>            for (; clazz != null; clazz = clazz.getSuperclass()) {<a name="line.872"></a>
+<font color="green">873</font>    <a name="line.873"></a>
+<font color="green">874</font>                // Check the implemented interfaces of the parent class<a name="line.874"></a>
+<font color="green">875</font>                Class[] interfaces = clazz.getInterfaces();<a name="line.875"></a>
+<font color="green">876</font>                for (int i = 0; i &lt; interfaces.length; i++) {<a name="line.876"></a>
+<font color="green">877</font>    <a name="line.877"></a>
+<font color="green">878</font>                    // Is this interface public?<a name="line.878"></a>
+<font color="green">879</font>                    if (!Modifier.isPublic(interfaces[i].getModifiers())) {<a name="line.879"></a>
+<font color="green">880</font>                        continue;<a name="line.880"></a>
+<font color="green">881</font>                    }<a name="line.881"></a>
+<font color="green">882</font>    <a name="line.882"></a>
+<font color="green">883</font>                    // Does the method exist on this interface?<a name="line.883"></a>
+<font color="green">884</font>                    try {<a name="line.884"></a>
+<font color="green">885</font>                        method = interfaces[i].getDeclaredMethod(methodName,<a name="line.885"></a>
+<font color="green">886</font>                                parameterTypes);<a name="line.886"></a>
+<font color="green">887</font>                    } catch (NoSuchMethodException e) {<a name="line.887"></a>
+<font color="green">888</font>                        /* Swallow, if no method is found after the loop then this<a name="line.888"></a>
+<font color="green">889</font>                         * method returns null.<a name="line.889"></a>
+<font color="green">890</font>                         */<a name="line.890"></a>
+<font color="green">891</font>                    }<a name="line.891"></a>
+<font color="green">892</font>                    if (method != null) {<a name="line.892"></a>
+<font color="green">893</font>                        return method;<a name="line.893"></a>
+<font color="green">894</font>                    }<a name="line.894"></a>
+<font color="green">895</font>    <a name="line.895"></a>
+<font color="green">896</font>                    // Recursively check our parent interfaces<a name="line.896"></a>
+<font color="green">897</font>                    method =<a name="line.897"></a>
+<font color="green">898</font>                            getAccessibleMethodFromInterfaceNest(interfaces[i],<a name="line.898"></a>
+<font color="green">899</font>                                    methodName,<a name="line.899"></a>
+<font color="green">900</font>                                    parameterTypes);<a name="line.900"></a>
+<font color="green">901</font>                    if (method != null) {<a name="line.901"></a>
+<font color="green">902</font>                        return method;<a name="line.902"></a>
+<font color="green">903</font>                    }<a name="line.903"></a>
+<font color="green">904</font>    <a name="line.904"></a>
+<font color="green">905</font>                }<a name="line.905"></a>
+<font color="green">906</font>    <a name="line.906"></a>
+<font color="green">907</font>            }<a name="line.907"></a>
+<font color="green">908</font>    <a name="line.908"></a>
+<font color="green">909</font>            // We did not find anything<a name="line.909"></a>
+<font color="green">910</font>            return (null);<a name="line.910"></a>
+<font color="green">911</font>    <a name="line.911"></a>
+<font color="green">912</font>        }<a name="line.912"></a>
+<font color="green">913</font>    <a name="line.913"></a>
+<font color="green">914</font>        /**<a name="line.914"></a>
+<font color="green">915</font>         * &lt;p&gt;Find an accessible method that matches the given name and has compatible parameters.<a name="line.915"></a>
+<font color="green">916</font>         * Compatible parameters mean that every method parameter is assignable from <a name="line.916"></a>
+<font color="green">917</font>         * the given parameters.<a name="line.917"></a>
+<font color="green">918</font>         * In other words, it finds a method with the given name <a name="line.918"></a>
+<font color="green">919</font>         * that will take the parameters given.&lt;p&gt;<a name="line.919"></a>
+<font color="green">920</font>         *<a name="line.920"></a>
+<font color="green">921</font>         * &lt;p&gt;This method is slightly undeterminstic since it loops <a name="line.921"></a>
+<font color="green">922</font>         * through methods names and return the first matching method.&lt;/p&gt;<a name="line.922"></a>
+<font color="green">923</font>         * <a name="line.923"></a>
+<font color="green">924</font>         * &lt;p&gt;This method is used by <a name="line.924"></a>
+<font color="green">925</font>         * {@link <a name="line.925"></a>
+<font color="green">926</font>         * #invokeMethod(Object object,String methodName,Object [] args,Class[] parameterTypes)}.<a name="line.926"></a>
+<font color="green">927</font>         *<a name="line.927"></a>
+<font color="green">928</font>         * &lt;p&gt;This method can match primitive parameter by passing in wrapper classes.<a name="line.928"></a>
+<font color="green">929</font>         * For example, a &lt;code&gt;Boolean&lt;/code&gt; will match a primitive &lt;code&gt;boolean&lt;/code&gt;<a name="line.929"></a>
+<font color="green">930</font>         * parameter.<a name="line.930"></a>
+<font color="green">931</font>         *<a name="line.931"></a>
+<font color="green">932</font>         * @param clazz find method in this class<a name="line.932"></a>
+<font color="green">933</font>         * @param methodName find method with this name<a name="line.933"></a>
+<font color="green">934</font>         * @param parameterTypes find method with compatible parameters <a name="line.934"></a>
+<font color="green">935</font>         * @return The accessible method<a name="line.935"></a>
+<font color="green">936</font>         */<a name="line.936"></a>
+<font color="green">937</font>        public static Method getMatchingAccessibleMethod(<a name="line.937"></a>
+<font color="green">938</font>                                                    Class clazz,<a name="line.938"></a>
+<font color="green">939</font>                                                    String methodName,<a name="line.939"></a>
+<font color="green">940</font>                                                    Class[] parameterTypes) {<a name="line.940"></a>
+<font color="green">941</font>            // trace logging<a name="line.941"></a>
+<font color="green">942</font>            Log log = LogFactory.getLog(MethodUtils.class);<a name="line.942"></a>
+<font color="green">943</font>            if (log.isTraceEnabled()) {<a name="line.943"></a>
+<font color="green">944</font>                log.trace("Matching name=" + methodName + " on " + clazz);<a name="line.944"></a>
+<font color="green">945</font>            }<a name="line.945"></a>
+<font color="green">946</font>            MethodDescriptor md = new MethodDescriptor(clazz, methodName, parameterTypes, false);<a name="line.946"></a>
+<font color="green">947</font>            <a name="line.947"></a>
+<font color="green">948</font>            // see if we can find the method directly<a name="line.948"></a>
+<font color="green">949</font>            // most of the time this works and it's much faster<a name="line.949"></a>
+<font color="green">950</font>            try {<a name="line.950"></a>
+<font color="green">951</font>                // Check the cache first<a name="line.951"></a>
+<font color="green">952</font>                Method method = getCachedMethod(md);<a name="line.952"></a>
+<font color="green">953</font>                if (method != null) {<a name="line.953"></a>
+<font color="green">954</font>                    return method;<a name="line.954"></a>
+<font color="green">955</font>                }<a name="line.955"></a>
+<font color="green">956</font>    <a name="line.956"></a>
+<font color="green">957</font>                method = clazz.getMethod(methodName, parameterTypes);<a name="line.957"></a>
+<font color="green">958</font>                if (log.isTraceEnabled()) {<a name="line.958"></a>
+<font color="green">959</font>                    log.trace("Found straight match: " + method);<a name="line.959"></a>
+<font color="green">960</font>                    log.trace("isPublic:" + Modifier.isPublic(method.getModifiers()));<a name="line.960"></a>
+<font color="green">961</font>                }<a name="line.961"></a>
+<font color="green">962</font>                <a name="line.962"></a>
+<font color="green">963</font>                setMethodAccessible(method); // Default access superclass workaround<a name="line.963"></a>
+<font color="green">964</font>    <a name="line.964"></a>
+<font color="green">965</font>                cacheMethod(md, method);<a name="line.965"></a>
+<font color="green">966</font>                return method;<a name="line.966"></a>
+<font color="green">967</font>                <a name="line.967"></a>
+<font color="green">968</font>            } catch (NoSuchMethodException e) { /* SWALLOW */ }<a name="line.968"></a>
+<font color="green">969</font>            <a name="line.969"></a>
+<font color="green">970</font>            // search through all methods <a name="line.970"></a>
+<font color="green">971</font>            int paramSize = parameterTypes.length;<a name="line.971"></a>
+<font color="green">972</font>            Method bestMatch = null;<a name="line.972"></a>
+<font color="green">973</font>            Method[] methods = clazz.getMethods();<a name="line.973"></a>
+<font color="green">974</font>            float bestMatchCost = Float.MAX_VALUE;<a name="line.974"></a>
+<font color="green">975</font>            float myCost = Float.MAX_VALUE;<a name="line.975"></a>
+<font color="green">976</font>            for (int i = 0, size = methods.length; i &lt; size ; i++) {<a name="line.976"></a>
+<font color="green">977</font>                if (methods[i].getName().equals(methodName)) {<a name="line.977"></a>
+<font color="green">978</font>                    // log some trace information<a name="line.978"></a>
+<font color="green">979</font>                    if (log.isTraceEnabled()) {<a name="line.979"></a>
+<font color="green">980</font>                        log.trace("Found matching name:");<a name="line.980"></a>
+<font color="green">981</font>                        log.trace(methods[i]);<a name="line.981"></a>
+<font color="green">982</font>                    }                <a name="line.982"></a>
+<font color="green">983</font>                    <a name="line.983"></a>
+<font color="green">984</font>                    // compare parameters<a name="line.984"></a>
+<font color="green">985</font>                    Class[] methodsParams = methods[i].getParameterTypes();<a name="line.985"></a>
+<font color="green">986</font>                    int methodParamSize = methodsParams.length;<a name="line.986"></a>
+<font color="green">987</font>                    if (methodParamSize == paramSize) {          <a name="line.987"></a>
+<font color="green">988</font>                        boolean match = true;<a name="line.988"></a>
+<font color="green">989</font>                        for (int n = 0 ; n &lt; methodParamSize; n++) {<a name="line.989"></a>
+<font color="green">990</font>                            if (log.isTraceEnabled()) {<a name="line.990"></a>
+<font color="green">991</font>                                log.trace("Param=" + parameterTypes[n].getName());<a name="line.991"></a>
+<font color="green">992</font>                                log.trace("Method=" + methodsParams[n].getName());<a name="line.992"></a>
+<font color="green">993</font>                            }<a name="line.993"></a>
+<font color="green">994</font>                            if (!isAssignmentCompatible(methodsParams[n], parameterTypes[n])) {<a name="line.994"></a>
+<font color="green">995</font>                                if (log.isTraceEnabled()) {<a name="line.995"></a>
+<font color="green">996</font>                                    log.trace(methodsParams[n] + " is not assignable from " <a name="line.996"></a>
+<font color="green">997</font>                                                + parameterTypes[n]);<a name="line.997"></a>
+<font color="green">998</font>                                }    <a name="line.998"></a>
+<font color="green">999</font>                                match = false;<a name="line.999"></a>
+<font color="green">1000</font>                                break;<a name="line.1000"></a>
+<font color="green">1001</font>                            }<a name="line.1001"></a>
+<font color="green">1002</font>                        }<a name="line.1002"></a>
+<font color="green">1003</font>                        <a name="line.1003"></a>
+<font color="green">1004</font>                        if (match) {<a name="line.1004"></a>
+<font color="green">1005</font>                            // get accessible version of method<a name="line.1005"></a>
+<font color="green">1006</font>                            Method method = getAccessibleMethod(clazz, methods[i]);<a name="line.1006"></a>
+<font color="green">1007</font>                            if (method != null) {<a name="line.1007"></a>
+<font color="green">1008</font>                                if (log.isTraceEnabled()) {<a name="line.1008"></a>
+<font color="green">1009</font>                                    log.trace(method + " accessible version of " <a name="line.1009"></a>
+<font color="green">1010</font>                                                + methods[i]);<a name="line.1010"></a>
+<font color="green">1011</font>                                }<a name="line.1011"></a>
+<font color="green">1012</font>                                setMethodAccessible(method); // Default access superclass workaround<a name="line.1012"></a>
+<font color="green">1013</font>                                myCost = getTotalTransformationCost(parameterTypes,method.getParameterTypes());<a name="line.1013"></a>
+<font color="green">1014</font>                                if ( myCost &lt; bestMatchCost ) {<a name="line.1014"></a>
+<font color="green">1015</font>                                   bestMatch = method;<a name="line.1015"></a>
+<font color="green">1016</font>                                   bestMatchCost = myCost;<a name="line.1016"></a>
+<font color="green">1017</font>                                }<a name="line.1017"></a>
+<font color="green">1018</font>                            }<a name="line.1018"></a>
+<font color="green">1019</font>                            <a name="line.1019"></a>
+<font color="green">1020</font>                            log.trace("Couldn't find accessible method.");<a name="line.1020"></a>
+<font color="green">1021</font>                        }<a name="line.1021"></a>
+<font color="green">1022</font>                    }<a name="line.1022"></a>
+<font color="green">1023</font>                }<a name="line.1023"></a>
+<font color="green">1024</font>            }<a name="line.1024"></a>
+<font color="green">1025</font>            if ( bestMatch != null ){<a name="line.1025"></a>
+<font color="green">1026</font>                     cacheMethod(md, bestMatch);<a name="line.1026"></a>
+<font color="green">1027</font>            } else {<a name="line.1027"></a>
+<font color="green">1028</font>            // didn't find a match<a name="line.1028"></a>
+<font color="green">1029</font>                   log.trace("No match found.");<a name="line.1029"></a>
+<font color="green">1030</font>            }<a name="line.1030"></a>
+<font color="green">1031</font>            <a name="line.1031"></a>
+<font color="green">1032</font>            return bestMatch;                                        <a name="line.1032"></a>
+<font color="green">1033</font>        }<a name="line.1033"></a>
+<font color="green">1034</font>    <a name="line.1034"></a>
+<font color="green">1035</font>        /**<a name="line.1035"></a>
+<font color="green">1036</font>         * Try to make the method accessible<a name="line.1036"></a>
+<font color="green">1037</font>         * @param method The source arguments<a name="line.1037"></a>
+<font color="green">1038</font>         */<a name="line.1038"></a>
+<font color="green">1039</font>        private static void setMethodAccessible(Method method) {<a name="line.1039"></a>
+<font color="green">1040</font>            try {<a name="line.1040"></a>
+<font color="green">1041</font>                //<a name="line.1041"></a>
+<font color="green">1042</font>                // XXX Default access superclass workaround<a name="line.1042"></a>
+<font color="green">1043</font>                //<a name="line.1043"></a>
+<font color="green">1044</font>                // When a public class has a default access superclass<a name="line.1044"></a>
+<font color="green">1045</font>                // with public methods, these methods are accessible.<a name="line.1045"></a>
+<font color="green">1046</font>                // Calling them from compiled code works fine.<a name="line.1046"></a>
+<font color="green">1047</font>                //<a name="line.1047"></a>
+<font color="green">1048</font>                // Unfortunately, using reflection to invoke these methods<a name="line.1048"></a>
+<font color="green">1049</font>                // seems to (wrongly) to prevent access even when the method<a name="line.1049"></a>
+<font color="green">1050</font>                // modifer is public.<a name="line.1050"></a>
+<font color="green">1051</font>                //<a name="line.1051"></a>
+<font color="green">1052</font>                // The following workaround solves the problem but will only<a name="line.1052"></a>
+<font color="green">1053</font>                // work from sufficiently privilages code. <a name="line.1053"></a>
+<font color="green">1054</font>                //<a name="line.1054"></a>
+<font color="green">1055</font>                // Better workarounds would be greatfully accepted.<a name="line.1055"></a>
+<font color="green">1056</font>                //<a name="line.1056"></a>
+<font color="green">1057</font>                if (!method.isAccessible()) {<a name="line.1057"></a>
+<font color="green">1058</font>                    method.setAccessible(true);<a name="line.1058"></a>
+<font color="green">1059</font>                }<a name="line.1059"></a>
+<font color="green">1060</font>                <a name="line.1060"></a>
+<font color="green">1061</font>            } catch (SecurityException se) {<a name="line.1061"></a>
+<font color="green">1062</font>                // log but continue just in case the method.invoke works anyway<a name="line.1062"></a>
+<font color="green">1063</font>                Log log = LogFactory.getLog(MethodUtils.class);<a name="line.1063"></a>
+<font color="green">1064</font>                if (!loggedAccessibleWarning) {<a name="line.1064"></a>
+<font color="green">1065</font>                    boolean vulnerableJVM = false;<a name="line.1065"></a>
+<font color="green">1066</font>                    try {<a name="line.1066"></a>
+<font color="green">1067</font>                        String specVersion = System.getProperty("java.specification.version");<a name="line.1067"></a>
+<font color="green">1068</font>                        if (specVersion.charAt(0) == '1' &amp;&amp; <a name="line.1068"></a>
+<font color="green">1069</font>                                (specVersion.charAt(2) == '0' ||<a name="line.1069"></a>
+<font color="green">1070</font>                                 specVersion.charAt(2) == '1' ||<a name="line.1070"></a>
+<font color="green">1071</font>                                 specVersion.charAt(2) == '2' ||<a name="line.1071"></a>
+<font color="green">1072</font>                                 specVersion.charAt(2) == '3')) {<a name="line.1072"></a>
+<font color="green">1073</font>                                 <a name="line.1073"></a>
+<font color="green">1074</font>                            vulnerableJVM = true;<a name="line.1074"></a>
+<font color="green">1075</font>                        }<a name="line.1075"></a>
+<font color="green">1076</font>                    } catch (SecurityException e) {<a name="line.1076"></a>
+<font color="green">1077</font>                        // don't know - so display warning<a name="line.1077"></a>
+<font color="green">1078</font>                        vulnerableJVM = true;<a name="line.1078"></a>
+<font color="green">1079</font>                    }<a name="line.1079"></a>
+<font color="green">1080</font>                    if (vulnerableJVM) {<a name="line.1080"></a>
+<font color="green">1081</font>                        log.warn(<a name="line.1081"></a>
+<font color="green">1082</font>                            "Current Security Manager restricts use of workarounds for reflection bugs "<a name="line.1082"></a>
+<font color="green">1083</font>                            + " in pre-1.4 JVMs.");<a name="line.1083"></a>
+<font color="green">1084</font>                    }<a name="line.1084"></a>
+<font color="green">1085</font>                    loggedAccessibleWarning = true;<a name="line.1085"></a>
+<font color="green">1086</font>                }<a name="line.1086"></a>
+<font color="green">1087</font>                log.debug("Cannot setAccessible on method. Therefore cannot use jvm access bug workaround.", se);<a name="line.1087"></a>
+<font color="green">1088</font>            }<a name="line.1088"></a>
+<font color="green">1089</font>        }<a name="line.1089"></a>
+<font color="green">1090</font>    <a name="line.1090"></a>
+<font color="green">1091</font>        /**<a name="line.1091"></a>
+<font color="green">1092</font>         * Returns the sum of the object transformation cost for each class in the source<a name="line.1092"></a>
+<font color="green">1093</font>         * argument list.<a name="line.1093"></a>
+<font color="green">1094</font>         * @param srcArgs The source arguments<a name="line.1094"></a>
+<font color="green">1095</font>         * @param destArgs The destination arguments<a name="line.1095"></a>
+<font color="green">1096</font>         * @return The total transformation cost<a name="line.1096"></a>
+<font color="green">1097</font>         */<a name="line.1097"></a>
+<font color="green">1098</font>        private static float getTotalTransformationCost(Class[] srcArgs, Class[] destArgs) {<a name="line.1098"></a>
+<font color="green">1099</font>    <a name="line.1099"></a>
+<font color="green">1100</font>            float totalCost = 0.0f;<a name="line.1100"></a>
+<font color="green">1101</font>            for (int i = 0; i &lt; srcArgs.length; i++) {<a name="line.1101"></a>
+<font color="green">1102</font>                Class srcClass, destClass;<a name="line.1102"></a>
+<font color="green">1103</font>                srcClass = srcArgs[i];<a name="line.1103"></a>
+<font color="green">1104</font>                destClass = destArgs[i];<a name="line.1104"></a>
+<font color="green">1105</font>                totalCost += getObjectTransformationCost(srcClass, destClass);<a name="line.1105"></a>
+<font color="green">1106</font>            }<a name="line.1106"></a>
+<font color="green">1107</font>    <a name="line.1107"></a>
+<font color="green">1108</font>            return totalCost;<a name="line.1108"></a>
+<font color="green">1109</font>        }<a name="line.1109"></a>
+<font color="green">1110</font>        <a name="line.1110"></a>
+<font color="green">1111</font>        /**<a name="line.1111"></a>
+<font color="green">1112</font>         * Gets the number of steps required needed to turn the source class into the <a name="line.1112"></a>
+<font color="green">1113</font>         * destination class. This represents the number of steps in the object hierarchy <a name="line.1113"></a>
+<font color="green">1114</font>         * graph.<a name="line.1114"></a>
+<font color="green">1115</font>         * @param srcClass The source class<a name="line.1115"></a>
+<font color="green">1116</font>         * @param destClass The destination class<a name="line.1116"></a>
+<font color="green">1117</font>         * @return The cost of transforming an object<a name="line.1117"></a>
+<font color="green">1118</font>         */<a name="line.1118"></a>
+<font color="green">1119</font>        private static float getObjectTransformationCost(Class srcClass, Class destClass) {<a name="line.1119"></a>
+<font color="green">1120</font>            float cost = 0.0f;<a name="line.1120"></a>
+<font color="green">1121</font>            while (destClass != null &amp;&amp; !destClass.equals(srcClass)) {<a name="line.1121"></a>
+<font color="green">1122</font>                if (destClass.isInterface() &amp;&amp; isAssignmentCompatible(destClass,srcClass)) {<a name="line.1122"></a>
+<font color="green">1123</font>                    // slight penalty for interface match. <a name="line.1123"></a>
+<font color="green">1124</font>                    // we still want an exact match to override an interface match, but  <a name="line.1124"></a>
+<font color="green">1125</font>                    // an interface match should override anything where we have to get a <a name="line.1125"></a>
+<font color="green">1126</font>                    // superclass.<a name="line.1126"></a>
+<font color="green">1127</font>                    cost += 0.25f;<a name="line.1127"></a>
+<font color="green">1128</font>                    break;<a name="line.1128"></a>
+<font color="green">1129</font>                }<a name="line.1129"></a>
+<font color="green">1130</font>                cost++;<a name="line.1130"></a>
+<font color="green">1131</font>                destClass = destClass.getSuperclass();<a name="line.1131"></a>
+<font color="green">1132</font>            }<a name="line.1132"></a>
+<font color="green">1133</font>    <a name="line.1133"></a>
+<font color="green">1134</font>            /*<a name="line.1134"></a>
+<font color="green">1135</font>             * If the destination class is null, we've travelled all the way up to <a name="line.1135"></a>
+<font color="green">1136</font>             * an Object match. We'll penalize this by adding 1.5 to the cost.<a name="line.1136"></a>
+<font color="green">1137</font>             */<a name="line.1137"></a>
+<font color="green">1138</font>            if (destClass == null) {<a name="line.1138"></a>
+<font color="green">1139</font>                cost += 1.5f;<a name="line.1139"></a>
+<font color="green">1140</font>            }<a name="line.1140"></a>
+<font color="green">1141</font>    <a name="line.1141"></a>
+<font color="green">1142</font>            return cost;<a name="line.1142"></a>
+<font color="green">1143</font>        }<a name="line.1143"></a>
+<font color="green">1144</font>        <a name="line.1144"></a>
+<font color="green">1145</font>        <a name="line.1145"></a>
+<font color="green">1146</font>        /**<a name="line.1146"></a>
+<font color="green">1147</font>         * &lt;p&gt;Determine whether a type can be used as a parameter in a method invocation.<a name="line.1147"></a>
+<font color="green">1148</font>         * This method handles primitive conversions correctly.&lt;/p&gt;<a name="line.1148"></a>
+<font color="green">1149</font>         *<a name="line.1149"></a>
+<font color="green">1150</font>         * &lt;p&gt;In order words, it will match a &lt;code&gt;Boolean&lt;/code&gt; to a &lt;code&gt;boolean&lt;/code&gt;,<a name="line.1150"></a>
+<font color="green">1151</font>         * a &lt;code&gt;Long&lt;/code&gt; to a &lt;code&gt;long&lt;/code&gt;,<a name="line.1151"></a>
+<font color="green">1152</font>         * a &lt;code&gt;Float&lt;/code&gt; to a &lt;code&gt;float&lt;/code&gt;,<a name="line.1152"></a>
+<font color="green">1153</font>         * a &lt;code&gt;Integer&lt;/code&gt; to a &lt;code&gt;int&lt;/code&gt;,<a name="line.1153"></a>
+<font color="green">1154</font>         * and a &lt;code&gt;Double&lt;/code&gt; to a &lt;code&gt;double&lt;/code&gt;.<a name="line.1154"></a>
+<font color="green">1155</font>         * Now logic widening matches are allowed.<a name="line.1155"></a>
+<font color="green">1156</font>         * For example, a &lt;code&gt;Long&lt;/code&gt; will not match a &lt;code&gt;int&lt;/code&gt;.<a name="line.1156"></a>
+<font color="green">1157</font>         *<a name="line.1157"></a>
+<font color="green">1158</font>         * @param parameterType the type of parameter accepted by the method<a name="line.1158"></a>
+<font color="green">1159</font>         * @param parameterization the type of parameter being tested <a name="line.1159"></a>
+<font color="green">1160</font>         *<a name="line.1160"></a>
+<font color="green">1161</font>         * @return true if the assignement is compatible.<a name="line.1161"></a>
+<font color="green">1162</font>         */<a name="line.1162"></a>
+<font color="green">1163</font>        public static final boolean isAssignmentCompatible(Class parameterType, Class parameterization) {<a name="line.1163"></a>
+<font color="green">1164</font>            // try plain assignment<a name="line.1164"></a>
+<font color="green">1165</font>            if (parameterType.isAssignableFrom(parameterization)) {<a name="line.1165"></a>
+<font color="green">1166</font>                return true;<a name="line.1166"></a>
+<font color="green">1167</font>            }<a name="line.1167"></a>
+<font color="green">1168</font>            <a name="line.1168"></a>
+<font color="green">1169</font>            if (parameterType.isPrimitive()) {<a name="line.1169"></a>
+<font color="green">1170</font>                // this method does *not* do widening - you must specify exactly<a name="line.1170"></a>
+<font color="green">1171</font>                // is this the right behaviour?<a name="line.1171"></a>
+<font color="green">1172</font>                Class parameterWrapperClazz = getPrimitiveWrapper(parameterType);<a name="line.1172"></a>
+<font color="green">1173</font>                if (parameterWrapperClazz != null) {<a name="line.1173"></a>
+<font color="green">1174</font>                    return parameterWrapperClazz.equals(parameterization);<a name="line.1174"></a>
+<font color="green">1175</font>                }<a name="line.1175"></a>
+<font color="green">1176</font>            }<a name="line.1176"></a>
+<font color="green">1177</font>            <a name="line.1177"></a>
+<font color="green">1178</font>            return false;<a name="line.1178"></a>
+<font color="green">1179</font>        }<a name="line.1179"></a>
+<font color="green">1180</font>        <a name="line.1180"></a>
+<font color="green">1181</font>        /**<a name="line.1181"></a>
+<font color="green">1182</font>         * Gets the wrapper object class for the given primitive type class.<a name="line.1182"></a>
+<font color="green">1183</font>         * For example, passing &lt;code&gt;boolean.class&lt;/code&gt; returns &lt;code&gt;Boolean.class&lt;/code&gt;<a name="line.1183"></a>
+<font color="green">1184</font>         * @param primitiveType the primitive type class for which a match is to be found<a name="line.1184"></a>
+<font color="green">1185</font>         * @return the wrapper type associated with the given primitive <a name="line.1185"></a>
+<font color="green">1186</font>         * or null if no match is found<a name="line.1186"></a>
+<font color="green">1187</font>         */<a name="line.1187"></a>
+<font color="green">1188</font>        public static Class getPrimitiveWrapper(Class primitiveType) {<a name="line.1188"></a>
+<font color="green">1189</font>            // does anyone know a better strategy than comparing names?<a name="line.1189"></a>
+<font color="green">1190</font>            if (boolean.class.equals(primitiveType)) {<a name="line.1190"></a>
+<font color="green">1191</font>                return Boolean.class;<a name="line.1191"></a>
+<font color="green">1192</font>            } else if (float.class.equals(primitiveType)) {<a name="line.1192"></a>
+<font color="green">1193</font>                return Float.class;<a name="line.1193"></a>
+<font color="green">1194</font>            } else if (long.class.equals(primitiveType)) {<a name="line.1194"></a>
+<font color="green">1195</font>                return Long.class;<a name="line.1195"></a>
+<font color="green">1196</font>            } else if (int.class.equals(primitiveType)) {<a name="line.1196"></a>
+<font color="green">1197</font>                return Integer.class;<a name="line.1197"></a>
+<font color="green">1198</font>            } else if (short.class.equals(primitiveType)) {<a name="line.1198"></a>
+<font color="green">1199</font>                return Short.class;<a name="line.1199"></a>
+<font color="green">1200</font>            } else if (byte.class.equals(primitiveType)) {<a name="line.1200"></a>
+<font color="green">1201</font>                return Byte.class;<a name="line.1201"></a>
+<font color="green">1202</font>            } else if (double.class.equals(primitiveType)) {<a name="line.1202"></a>
+<font color="green">1203</font>                return Double.class;<a name="line.1203"></a>
+<font color="green">1204</font>            } else if (char.class.equals(primitiveType)) {<a name="line.1204"></a>
+<font color="green">1205</font>                return Character.class;<a name="line.1205"></a>
+<font color="green">1206</font>            } else {<a name="line.1206"></a>
+<font color="green">1207</font>                <a name="line.1207"></a>
+<font color="green">1208</font>                return null;<a name="line.1208"></a>
+<font color="green">1209</font>            }<a name="line.1209"></a>
+<font color="green">1210</font>        }<a name="line.1210"></a>
+<font color="green">1211</font>    <a name="line.1211"></a>
+<font color="green">1212</font>        /**<a name="line.1212"></a>
+<font color="green">1213</font>         * Gets the class for the primitive type corresponding to the primitive wrapper class given.<a name="line.1213"></a>
+<font color="green">1214</font>         * For example, an instance of &lt;code&gt;Boolean.class&lt;/code&gt; returns a &lt;code&gt;boolean.class&lt;/code&gt;. <a name="line.1214"></a>
+<font color="green">1215</font>         * @param wrapperType the <a name="line.1215"></a>
+<font color="green">1216</font>         * @return the primitive type class corresponding to the given wrapper class,<a name="line.1216"></a>
+<font color="green">1217</font>         * null if no match is found<a name="line.1217"></a>
+<font color="green">1218</font>         */<a name="line.1218"></a>
+<font color="green">1219</font>        public static Class getPrimitiveType(Class wrapperType) {<a name="line.1219"></a>
+<font color="green">1220</font>            // does anyone know a better strategy than comparing names?<a name="line.1220"></a>
+<font color="green">1221</font>            if (Boolean.class.equals(wrapperType)) {<a name="line.1221"></a>
+<font color="green">1222</font>                return boolean.class;<a name="line.1222"></a>
+<font color="green">1223</font>            } else if (Float.class.equals(wrapperType)) {<a name="line.1223"></a>
+<font color="green">1224</font>                return float.class;<a name="line.1224"></a>
+<font color="green">1225</font>            } else if (Long.class.equals(wrapperType)) {<a name="line.1225"></a>
+<font color="green">1226</font>                return long.class;<a name="line.1226"></a>
+<font color="green">1227</font>            } else if (Integer.class.equals(wrapperType)) {<a name="line.1227"></a>
+<font color="green">1228</font>                return int.class;<a name="line.1228"></a>
+<font color="green">1229</font>            } else if (Short.class.equals(wrapperType)) {<a name="line.1229"></a>
+<font color="green">1230</font>                return short.class;<a name="line.1230"></a>
+<font color="green">1231</font>            } else if (Byte.class.equals(wrapperType)) {<a name="line.1231"></a>
+<font color="green">1232</font>                return byte.class;<a name="line.1232"></a>
+<font color="green">1233</font>            } else if (Double.class.equals(wrapperType)) {<a name="line.1233"></a>
+<font color="green">1234</font>                return double.class;<a name="line.1234"></a>
+<font color="green">1235</font>            } else if (Character.class.equals(wrapperType)) {<a name="line.1235"></a>
+<font color="green">1236</font>                return char.class;<a name="line.1236"></a>
+<font color="green">1237</font>            } else {<a name="line.1237"></a>
+<font color="green">1238</font>                Log log = LogFactory.getLog(MethodUtils.class);<a name="line.1238"></a>
+<font color="green">1239</font>                if (log.isDebugEnabled()) {<a name="line.1239"></a>
+<font color="green">1240</font>                    log.debug("Not a known primitive wrapper class: " + wrapperType);<a name="line.1240"></a>
+<font color="green">1241</font>                }<a name="line.1241"></a>
+<font color="green">1242</font>                return null;<a name="line.1242"></a>
+<font color="green">1243</font>            }<a name="line.1243"></a>
+<font color="green">1244</font>        }<a name="line.1244"></a>
+<font color="green">1245</font>        <a name="line.1245"></a>
+<font color="green">1246</font>        /**<a name="line.1246"></a>
+<font color="green">1247</font>         * Find a non primitive representation for given primitive class.<a name="line.1247"></a>
+<font color="green">1248</font>         *<a name="line.1248"></a>
+<font color="green">1249</font>         * @param clazz the class to find a representation for, not null<a name="line.1249"></a>
+<font color="green">1250</font>         * @return the original class if it not a primitive. Otherwise the wrapper class. Not null<a name="line.1250"></a>
+<font color="green">1251</font>         */<a name="line.1251"></a>
+<font color="green">1252</font>        public static Class toNonPrimitiveClass(Class clazz) {<a name="line.1252"></a>
+<font color="green">1253</font>            if (clazz.isPrimitive()) {<a name="line.1253"></a>
+<font color="green">1254</font>                Class primitiveClazz = MethodUtils.getPrimitiveWrapper(clazz);<a name="line.1254"></a>
+<font color="green">1255</font>                // the above method returns <a name="line.1255"></a>
+<font color="green">1256</font>                if (primitiveClazz != null) {<a name="line.1256"></a>
+<font color="green">1257</font>                    return primitiveClazz;<a name="line.1257"></a>
+<font color="green">1258</font>                } else {<a name="line.1258"></a>
+<font color="green">1259</font>                    return clazz;<a name="line.1259"></a>
+<font color="green">1260</font>                }<a name="line.1260"></a>
+<font color="green">1261</font>            } else {<a name="line.1261"></a>
+<font color="green">1262</font>                return clazz;<a name="line.1262"></a>
+<font color="green">1263</font>            }<a name="line.1263"></a>
+<font color="green">1264</font>        }<a name="line.1264"></a>
+<font color="green">1265</font>        <a name="line.1265"></a>
+<font color="green">1266</font>    <a name="line.1266"></a>
+<font color="green">1267</font>        /**<a name="line.1267"></a>
+<font color="green">1268</font>         * Return the method from the cache, if present.<a name="line.1268"></a>
+<font color="green">1269</font>         *<a name="line.1269"></a>
+<font color="green">1270</font>         * @param md The method descriptor<a name="line.1270"></a>
+<font color="green">1271</font>         * @return The cached method<a name="line.1271"></a>
+<font color="green">1272</font>         */<a name="line.1272"></a>
+<font color="green">1273</font>        private static Method getCachedMethod(MethodDescriptor md) {<a name="line.1273"></a>
+<font color="green">1274</font>            if (CACHE_METHODS) {<a name="line.1274"></a>
+<font color="green">1275</font>                Reference methodRef = (Reference)cache.get(md);<a name="line.1275"></a>
+<font color="green">1276</font>                if (methodRef != null) {<a name="line.1276"></a>
+<font color="green">1277</font>                    return (Method)methodRef.get();<a name="line.1277"></a>
+<font color="green">1278</font>                }<a name="line.1278"></a>
+<font color="green">1279</font>            }<a name="line.1279"></a>
+<font color="green">1280</font>            return null;<a name="line.1280"></a>
+<font color="green">1281</font>        }<a name="line.1281"></a>
+<font color="green">1282</font>    <a name="line.1282"></a>
+<font color="green">1283</font>        /**<a name="line.1283"></a>
+<font color="green">1284</font>         * Add a method to the cache.<a name="line.1284"></a>
+<font color="green">1285</font>         *<a name="line.1285"></a>
+<font color="green">1286</font>         * @param md The method descriptor<a name="line.1286"></a>
+<font color="green">1287</font>         * @param method The method to cache<a name="line.1287"></a>
+<font color="green">1288</font>         */<a name="line.1288"></a>
+<font color="green">1289</font>        private static void cacheMethod(MethodDescriptor md, Method method) {<a name="line.1289"></a>
+<font color="green">1290</font>            if (CACHE_METHODS) {<a name="line.1290"></a>
+<font color="green">1291</font>                if (method != null) {<a name="line.1291"></a>
+<font color="green">1292</font>                    cache.put(md, new WeakReference(method));<a name="line.1292"></a>
+<font color="green">1293</font>                }<a name="line.1293"></a>
+<font color="green">1294</font>            }<a name="line.1294"></a>
+<font color="green">1295</font>        }<a name="line.1295"></a>
+<font color="green">1296</font>    <a name="line.1296"></a>
+<font color="green">1297</font>        /**<a name="line.1297"></a>
+<font color="green">1298</font>         * Represents the key to looking up a Method by reflection.<a name="line.1298"></a>
+<font color="green">1299</font>         */<a name="line.1299"></a>
+<font color="green">1300</font>        private static class MethodDescriptor {<a name="line.1300"></a>
+<font color="green">1301</font>            private Class cls;<a name="line.1301"></a>
+<font color="green">1302</font>            private String methodName;<a name="line.1302"></a>
+<font color="green">1303</font>            private Class[] paramTypes;<a name="line.1303"></a>
+<font color="green">1304</font>            private boolean exact;<a name="line.1304"></a>
+<font color="green">1305</font>            private int hashCode;<a name="line.1305"></a>
+<font color="green">1306</font>    <a name="line.1306"></a>
+<font color="green">1307</font>            /**<a name="line.1307"></a>
+<font color="green">1308</font>             * The sole constructor.<a name="line.1308"></a>
+<font color="green">1309</font>             *<a name="line.1309"></a>
+<font color="green">1310</font>             * @param cls  the class to reflect, must not be null<a name="line.1310"></a>
+<font color="green">1311</font>             * @param methodName  the method name to obtain<a name="line.1311"></a>
+<font color="green">1312</font>             * @param paramTypes the array of classes representing the paramater types<a name="line.1312"></a>
+<font color="green">1313</font>             * @param exact whether the match has to be exact.<a name="line.1313"></a>
+<font color="green">1314</font>             */<a name="line.1314"></a>
+<font color="green">1315</font>            public MethodDescriptor(Class cls, String methodName, Class[] paramTypes, boolean exact) {<a name="line.1315"></a>
+<font color="green">1316</font>                if (cls == null) {<a name="line.1316"></a>
+<font color="green">1317</font>                    throw new IllegalArgumentException("Class cannot be null");<a name="line.1317"></a>
+<font color="green">1318</font>                }<a name="line.1318"></a>
+<font color="green">1319</font>                if (methodName == null) {<a name="line.1319"></a>
+<font color="green">1320</font>                    throw new IllegalArgumentException("Method Name cannot be null");<a name="line.1320"></a>
+<font color="green">1321</font>                }<a name="line.1321"></a>
+<font color="green">1322</font>                if (paramTypes == null) {<a name="line.1322"></a>
+<font color="green">1323</font>                    paramTypes = EMPTY_CLASS_PARAMETERS;<a name="line.1323"></a>
+<font color="green">1324</font>                }<a name="line.1324"></a>
+<font color="green">1325</font>    <a name="line.1325"></a>
+<font color="green">1326</font>                this.cls = cls;<a name="line.1326"></a>
+<font color="green">1327</font>                this.methodName = methodName;<a name="line.1327"></a>
+<font color="green">1328</font>                this.paramTypes = paramTypes;<a name="line.1328"></a>
+<font color="green">1329</font>                this.exact= exact;<a name="line.1329"></a>
+<font color="green">1330</font>    <a name="line.1330"></a>
+<font color="green">1331</font>                this.hashCode = methodName.length();<a name="line.1331"></a>
+<font color="green">1332</font>            }<a name="line.1332"></a>
+<font color="green">1333</font>            /**<a name="line.1333"></a>
+<font color="green">1334</font>             * Checks for equality.<a name="line.1334"></a>
+<font color="green">1335</font>             * @param obj object to be tested for equality<a name="line.1335"></a>
+<font color="green">1336</font>             * @return true, if the object describes the same Method.<a name="line.1336"></a>
+<font color="green">1337</font>             */<a name="line.1337"></a>
+<font color="green">1338</font>            public boolean equals(Object obj) {<a name="line.1338"></a>
+<font color="green">1339</font>                if (!(obj instanceof MethodDescriptor)) {<a name="line.1339"></a>
+<font color="green">1340</font>                    return false;<a name="line.1340"></a>
+<font color="green">1341</font>                }<a name="line.1341"></a>
+<font color="green">1342</font>                MethodDescriptor md = (MethodDescriptor)obj;<a name="line.1342"></a>
+<font color="green">1343</font>    <a name="line.1343"></a>
+<font color="green">1344</font>                return (<a name="line.1344"></a>
+<font color="green">1345</font>                    exact == md.exact &amp;&amp;<a name="line.1345"></a>
+<font color="green">1346</font>                    methodName.equals(md.methodName) &amp;&amp;<a name="line.1346"></a>
+<font color="green">1347</font>                    cls.equals(md.cls) &amp;&amp;<a name="line.1347"></a>
+<font color="green">1348</font>                    java.util.Arrays.equals(paramTypes, md.paramTypes)<a name="line.1348"></a>
+<font color="green">1349</font>                );<a name="line.1349"></a>
+<font color="green">1350</font>            }<a name="line.1350"></a>
+<font color="green">1351</font>            /**<a name="line.1351"></a>
+<font color="green">1352</font>             * Returns the string length of method name. I.e. if the<a name="line.1352"></a>
+<font color="green">1353</font>             * hashcodes are different, the objects are different. If the<a name="line.1353"></a>
+<font color="green">1354</font>             * hashcodes are the same, need to use the equals method to<a name="line.1354"></a>
+<font color="green">1355</font>             * determine equality.<a name="line.1355"></a>
+<font color="green">1356</font>             * @return the string length of method name.<a name="line.1356"></a>
+<font color="green">1357</font>             */<a name="line.1357"></a>
+<font color="green">1358</font>            public int hashCode() {<a name="line.1358"></a>
+<font color="green">1359</font>                return hashCode;<a name="line.1359"></a>
+<font color="green">1360</font>            }<a name="line.1360"></a>
+<font color="green">1361</font>        }<a name="line.1361"></a>
+<font color="green">1362</font>    }<a name="line.1362"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/MappedPropertyDescriptor/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/MutableDynaClass/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

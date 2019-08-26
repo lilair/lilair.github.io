@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="ConvertUtilsBean (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;ConvertUtilsBean (Common">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/ConvertUtilsBean/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="ConvertUtilsBean (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;ConvertUtilsBean (Common">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+<meta property="og:updated_time" content="2010-03-24T09:13:46.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="ConvertUtilsBean (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;ConvertUtilsBean (Common">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/ConvertUtilsBean/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/ConvertUtilsBean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:20" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:20+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:13:46" itemprop="dateModified" datetime="2010-03-24T17:13:46+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<!-- Generated by javadoc (build 1.6.0_17) on Wed Mar 24 17:13:45 GMT 2010 -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>
+ConvertUtilsBean (Commons BeanUtils 1.8.3 API)
+</title>
+
+<meta name="date" content="2010-03-24">
+
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+
+<script type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ConvertUtilsBean (Commons BeanUtils 1.8.3 API)";
+    }
+}
+</script>
+<noscript>
+</noscript>
+
+</head>
+
+<body bgcolor="white" onload="windowTitle();">
+<hr>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<a name="navbar_top"><!-- --></a>
+<a href="#skip-navbar_top" title="Skip navigation links"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0" summary>
+<tr>
+<td colspan="2" bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3" summary>
+  <tr align="center" valign="top">
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev"> &nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="class-use/ConvertUtilsBean.html"><font class="NavBarFont1"><b>Use</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../deprecated-list.html"><font class="NavBarFont1"><b>Deprecated</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td align="right" valign="top" rowspan="3"><em>
+</em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;<a href="../../../../org/apache/commons/beanutils/ConvertUtils.html" title="class in org.apache.commons.beanutils"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;<a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean2.html" title="class in org.apache.commons.beanutils"><b>NEXT CLASS</b></a></font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="../../../../index.html?org/apache/commons/beanutils/ConvertUtilsBean.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="ConvertUtilsBean.html" target="_top"><b>NO FRAMES</b></a>  &nbsp;
+&nbsp;<script type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+  <a href="../../../../allclasses-noframe.html"><b>All Classes</b></a>
+</noscript>
+
+
+</font></td>
+</tr>
+<tr>
+<td valign="top" class="NavBarCell3"><font size="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;<a href="#method_summary">METHOD</a></font></td>
+<td valign="top" class="NavBarCell3"><font size="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;<a href="#method_detail">METHOD</a></font></td>
+</tr>
+</table>
+<a name="skip-navbar_top"></a>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<hr>
+<!-- ======== START OF CLASS DATA ======== -->
+<h2>
+<font size="-1">
+org.apache.commons.beanutils</font>
+<br>
+Class ConvertUtilsBean</h2>
+<pre>
+<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">java.lang.Object</a>
+  <img src="../../../../resources/inherit.gif" alt="extended by "><b>org.apache.commons.beanutils.ConvertUtilsBean</b>
+</pre>
+<dl>
+<dt><b>Direct Known Subclasses:</b> <dd><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean2.html" title="class in org.apache.commons.beanutils">ConvertUtilsBean2</a></dd>
+</dt></dl>
+<hr>
+<dl>
+<dt><pre>public class <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.131"><b>ConvertUtilsBean</b></a><dt>extends <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></dt></pre></dt></dl>
+
+
+<p>
+</p><p>Utility methods for converting String scalar values to objects of the
+ specified Class, String arrays to arrays of the specified Class.  The
+ actual <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> instance to be used can be registered for each
+ possible destination Class.  Unless you override them, standard
+ <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> instances are provided for all of the following
+ destination Classes:</p>
+ <ul>
+ <li>java.lang.BigDecimal (no default value)</li>
+ <li>java.lang.BigInteger (no default value)</li>
+ <li>boolean and java.lang.Boolean (default to false)</li>
+ <li>byte and java.lang.Byte (default to zero)</li>
+ <li>char and java.lang.Character (default to a space)</li>
+ <li>java.lang.Class (no default value)</li>
+ <li>double and java.lang.Double (default to zero)</li>
+ <li>float and java.lang.Float (default to zero)</li>
+ <li>int and java.lang.Integer (default to zero)</li>
+ <li>long and java.lang.Long (default to zero)</li>
+ <li>short and java.lang.Short (default to zero)</li>
+ <li>java.lang.String (default to null)</li>
+ <li>java.io.File (no default value)</li>
+ <li>java.net.URL (no default value)</li>
+ <li>java.sql.Date (no default value)</li>
+ <li>java.sql.Time (no default value)</li>
+ <li>java.sql.Timestamp (no default value)</li>
+ </ul>
+
+ <p>For backwards compatibility, the standard Converters for primitive
+ types (and the corresponding wrapper classes) return a defined
+ default value when a conversion error occurs.  If you prefer to have a
+ <a href="../../../../org/apache/commons/beanutils/ConversionException.html" title="class in org.apache.commons.beanutils"><code>ConversionException</code></a> thrown instead, replace the standard Converter
+ instances with instances created with the zero-arguments constructor.  For
+ example, to cause the Converters for integers to throw an exception on
+ conversion errors, you could do this:</p>
+ <pre>
+   // No-args constructor gets the version that throws exceptions
+   Converter myConverter =
+    new org.apache.commons.beanutils.converter.IntegerConverter();
+   ConvertUtils.register(myConverter, Integer.TYPE);    // Native type
+   ConvertUtils.register(myConverter, Integer.class);   // Wrapper class
+ </pre>
+ 
+ <p>
+ Converters generally treat null input as if it were invalid
+ input, ie they return their default value if one was specified when the
+ converter was constructed, and throw an exception otherwise. If you prefer
+ nulls to be preserved for converters that are converting to objects (not
+ primitives) then register a converter as above, passing a default value of
+ null to the converter constructor (and of course registering that converter
+ only for the .class target).
+ </p>
+
+ <p>
+ When a converter is listed above as having no default value, then that
+ converter will throw an exception when passed null or an invalid value
+ as its input. In particular, by default the BigInteger and BigDecimal
+ converters have no default (and are therefore somewhat inconsistent
+ with the other numerical converters which all have zero as their default).
+ </p>
+ 
+ <p>
+ Converters that generate <i>arrays</i> of each of the primitive types are
+ also automatically configured (including String[]). When passed null
+ or invalid input, these return an empty array (not null). See class
+ AbstractArrayConverter for the supported input formats for these converters.
+ </p>
+<p>
+
+</p><p>
+<dl>
+<dt><b>Since:</b></dt>
+  <dd>1.7</dd>
+<dt><b>Version:</b></dt>
+  <dd>$Revision: 745079 $ $Date: 2009-02-17 14:04:10 +0000 (Tue, 17 Feb 2009) $</dd>
+<dt><b>Author:</b></dt>
+  <dd>Craig R. McClanahan, Ralph Schaer, Chris Audley, James Strachan</dd>
+</dl>
+<hr>
+
+</p><p>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<a name="constructor_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Constructor Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#ConvertUtilsBean()">ConvertUtilsBean</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a bean with standard converters registered</td>
+</tr>
+</table>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="method_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Method Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#convert(java.lang.Object)">convert</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert the specified value into a String.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#convert(java.lang.Object, java.lang.Class)">convert</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value,
+               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;targetType)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert the value to an object of the specified class (if
+ possible).</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#convert(java.lang.String[], java.lang.Class)">convert</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>[]&nbsp;values,
+               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert an array of specified values to an array of objects of the
+ specified class (if possible).</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#convert(java.lang.String, java.lang.Class)">convert</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;value,
+               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert the specified value to an object of the specified class (if
+ possible).</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#deregister()">deregister</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove all registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a>s, and re-establish the
+ standard Converters.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#deregister(java.lang.Class)">deregister</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove any registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified destination
+ <code>Class</code>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultBoolean()">getDefaultBoolean</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Boolean.TYPE and
+  Boolean.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;byte</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultByte()">getDefaultByte</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Byte.TYPE and
+  Byte.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;char</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultCharacter()">getDefaultCharacter</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Character.TYPE and
+  Character.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;double</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultDouble()">getDefaultDouble</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Double.TYPE and
+  Double.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;float</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultFloat()">getDefaultFloat</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Float.TYPE and
+  Float.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;int</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultInteger()">getDefaultInteger</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Integer.TYPE and
+  Integer.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;long</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultLong()">getDefaultLong</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Long.TYPE and
+  Long.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;short</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getDefaultShort()">getDefaultShort</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Short.TYPE and
+  Short.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected static&nbsp;<a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html" title="class in org.apache.commons.beanutils">ConvertUtilsBean</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#getInstance()">getInstance</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get singleton instance</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils">Converter</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#lookup(java.lang.Class)">lookup</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Look up and return any registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified
+ destination class; if there is no registered Converter, return
+ <code>null</code>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils">Converter</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#lookup(java.lang.Class, java.lang.Class)">lookup</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;sourceType,
+             <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;targetType)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Look up and return any registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified
+ source and destination class; if there is no registered Converter,
+ return <code>null</code>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#register(boolean, boolean, int)">register</a></b>(boolean&nbsp;throwException,
+                 boolean&nbsp;defaultNull,
+                 int&nbsp;defaultArraySize)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register the provided converters with the specified defaults.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#register(org.apache.commons.beanutils.Converter, java.lang.Class)">register</a></b>(<a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils">Converter</a>&nbsp;converter,
+                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register a custom <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified destination
+ <code>Class</code>, replacing any previously registered Converter.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultBoolean(boolean)">setDefaultBoolean</a></b>(boolean&nbsp;newDefaultBoolean)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Boolean.TYPE and
+  Boolean.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultByte(byte)">setDefaultByte</a></b>(byte&nbsp;newDefaultByte)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Byte.TYPE and
+  Byte.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultCharacter(char)">setDefaultCharacter</a></b>(char&nbsp;newDefaultCharacter)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Character.TYPE and
+  Character.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultDouble(double)">setDefaultDouble</a></b>(double&nbsp;newDefaultDouble)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Double.TYPE and
+  Double.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultFloat(float)">setDefaultFloat</a></b>(float&nbsp;newDefaultFloat)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Float.TYPE and
+  Float.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultInteger(int)">setDefaultInteger</a></b>(int&nbsp;newDefaultInteger)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Integer.TYPE and
+  Integer.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultLong(long)">setDefaultLong</a></b>(long&nbsp;newDefaultLong)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Long.TYPE and
+  Long.class instead</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#setDefaultShort(short)">setDefaultShort</a></b>(short&nbsp;newDefaultShort)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Register replacement converters for Short.TYPE and
+  Short.class instead</i></td>
+</tr>
+</table>
+&nbsp;<a name="methods_inherited_from_class_java.lang.Object"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#EEEEFF" class="TableSubHeadingColor">
+<th align="left"><b>Methods inherited from class java.lang.<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></b></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" target="_blank" rel="noopener">clone</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" target="_blank" rel="noopener">equals</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" target="_blank" rel="noopener">finalize</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" target="_blank" rel="noopener">getClass</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" target="_blank" rel="noopener">hashCode</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" target="_blank" rel="noopener">notify</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" target="_blank" rel="noopener">notifyAll</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" target="_blank" rel="noopener">toString</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a></code></td>
+</tr>
+</table>
+&nbsp;
+</p><p>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<a name="constructor_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Constructor Detail</b></font></th>
+</tr>
+</table>
+
+<a name="ConvertUtilsBean()"><!-- --></a></p><h3>
+ConvertUtilsBean</h3>
+<pre>
+public <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.162"><b>ConvertUtilsBean</b></a>()</pre>
+<dl>
+<dd>Construct a bean with standard converters registered
+<p>
+</p></dd></dl>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<a name="method_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Method Detail</b></font></th>
+</tr>
+</table>
+
+<a name="getInstance()"><!-- --></a><h3>
+getInstance</h3>
+<pre>
+protected static <a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html" title="class in org.apache.commons.beanutils">ConvertUtilsBean</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.141"><b>getInstance</b></a>()</pre>
+<dl>
+<dd>Get singleton instance
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The singleton instance</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getDefaultBoolean()"><!-- --></a><h3>
+getDefaultBoolean</h3>
+<pre>
+public boolean <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.183"><b>getDefaultBoolean</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Boolean.TYPE and
+  Boolean.class instead</i>
+<p>
+<dd>Gets the default value for Boolean conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Boolean value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultBoolean(boolean)"><!-- --></a><h3>
+setDefaultBoolean</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.193"><b>setDefaultBoolean</b></a>(boolean&nbsp;newDefaultBoolean)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Boolean.TYPE and
+  Boolean.class instead</i>
+<p>
+<dd>Sets the default value for Boolean conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultBoolean</code> - The default Boolean value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultByte()"><!-- --></a><h3>
+getDefaultByte</h3>
+<pre>
+public byte <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.213"><b>getDefaultByte</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Byte.TYPE and
+  Byte.class instead</i>
+<p>
+<dd>Gets the default value for Byte conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Byte value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultByte(byte)"><!-- --></a><h3>
+setDefaultByte</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.223"><b>setDefaultByte</b></a>(byte&nbsp;newDefaultByte)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Byte.TYPE and
+  Byte.class instead</i>
+<p>
+<dd>Sets the default value for Byte conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultByte</code> - The default Byte value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultCharacter()"><!-- --></a><h3>
+getDefaultCharacter</h3>
+<pre>
+public char <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.243"><b>getDefaultCharacter</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Character.TYPE and
+  Character.class instead</i>
+<p>
+<dd>Gets the default value for Character conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Character value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultCharacter(char)"><!-- --></a><h3>
+setDefaultCharacter</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.253"><b>setDefaultCharacter</b></a>(char&nbsp;newDefaultCharacter)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Character.TYPE and
+  Character.class instead</i>
+<p>
+<dd>Sets the default value for Character conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultCharacter</code> - The default Character value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultDouble()"><!-- --></a><h3>
+getDefaultDouble</h3>
+<pre>
+public double <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.275"><b>getDefaultDouble</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Double.TYPE and
+  Double.class instead</i>
+<p>
+<dd>Gets the default value for Double conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Double value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultDouble(double)"><!-- --></a><h3>
+setDefaultDouble</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.285"><b>setDefaultDouble</b></a>(double&nbsp;newDefaultDouble)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Double.TYPE and
+  Double.class instead</i>
+<p>
+<dd>Sets the default value for Double conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultDouble</code> - The default Double value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultFloat()"><!-- --></a><h3>
+getDefaultFloat</h3>
+<pre>
+public float <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.305"><b>getDefaultFloat</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Float.TYPE and
+  Float.class instead</i>
+<p>
+<dd>Gets the default value for Float conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Float value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultFloat(float)"><!-- --></a><h3>
+setDefaultFloat</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.315"><b>setDefaultFloat</b></a>(float&nbsp;newDefaultFloat)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Float.TYPE and
+  Float.class instead</i>
+<p>
+<dd>Sets the default value for Float conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultFloat</code> - The default Float value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultInteger()"><!-- --></a><h3>
+getDefaultInteger</h3>
+<pre>
+public int <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.335"><b>getDefaultInteger</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Integer.TYPE and
+  Integer.class instead</i>
+<p>
+<dd>Gets the default value for Integer conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Integer value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultInteger(int)"><!-- --></a><h3>
+setDefaultInteger</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.345"><b>setDefaultInteger</b></a>(int&nbsp;newDefaultInteger)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Integer.TYPE and
+  Integer.class instead</i>
+<p>
+<dd>Sets the default value for Integer conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultInteger</code> - The default Integer value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultLong()"><!-- --></a><h3>
+getDefaultLong</h3>
+<pre>
+public long <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.365"><b>getDefaultLong</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Long.TYPE and
+  Long.class instead</i>
+<p>
+<dd>Gets the default value for Long conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Long value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultLong(long)"><!-- --></a><h3>
+setDefaultLong</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.375"><b>setDefaultLong</b></a>(long&nbsp;newDefaultLong)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Long.TYPE and
+  Long.class instead</i>
+<p>
+<dd>Sets the default value for Long conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultLong</code> - The default Long value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="getDefaultShort()"><!-- --></a><h3>
+getDefaultShort</h3>
+<pre>
+public short <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.395"><b>getDefaultShort</b></a>()</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Short.TYPE and
+  Short.class instead</i>
+<p>
+<dd>Gets the default value for Short conversions.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>The default Short value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="setDefaultShort(short)"><!-- --></a><h3>
+setDefaultShort</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.405"><b>setDefaultShort</b></a>(short&nbsp;newDefaultShort)</pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Register replacement converters for Short.TYPE and
+  Short.class instead</i>
+<p>
+<dd>Sets the default value for Short conversions.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newDefaultShort</code> - The default Short value</dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<hr>
+
+<a name="convert(java.lang.Object)"><!-- --></a><h3>
+convert</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.424"><b>convert</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</pre>
+<dl>
+<dd>Convert the specified value into a String.  If the specified value
+ is an array, the first element (converted to a String) will be
+ returned.  The registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the
+ <code>java.lang.String</code> class will be used, which allows
+ applications to customize Object->String conversions (the default
+ implementation simply uses toString()).
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>value</code> - Value to be converted (may be null)
+<dt><b>Returns:</b><dd>The converted String value</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="convert(java.lang.String, java.lang.Class)"><!-- --></a><h3>
+convert</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.457"><b>convert</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;value,
+                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</pre>
+<dl>
+<dd>Convert the specified value to an object of the specified class (if
+ possible).  Otherwise, return a String representation of the value.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>value</code> - Value to be converted (may be null)<dd><code>clazz</code> - Java class to be converted to
+<dt><b>Returns:</b><dd>The converted value
+<dt><b>Throws:</b>
+<dd><code><a href="../../../../org/apache/commons/beanutils/ConversionException.html" title="class in org.apache.commons.beanutils">ConversionException</a></code> - if thrown by an underlying Converter</dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="convert(java.lang.String[], java.lang.Class)"><!-- --></a><h3>
+convert</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.488"><b>convert</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>[]&nbsp;values,
+                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</pre>
+<dl>
+<dd>Convert an array of specified values to an array of objects of the
+ specified class (if possible).  If the specified Java class is itself
+ an array class, this class will be the type of the returned value.
+ Otherwise, an array will be constructed whose component type is the
+ specified class.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>values</code> - Array of values to be converted<dd><code>clazz</code> - Java array or element class to be converted to
+<dt><b>Returns:</b><dd>The converted value
+<dt><b>Throws:</b>
+<dd><code><a href="../../../../org/apache/commons/beanutils/ConversionException.html" title="class in org.apache.commons.beanutils">ConversionException</a></code> - if thrown by an underlying Converter</dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="convert(java.lang.Object, java.lang.Class)"><!-- --></a><h3>
+convert</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.524"><b>convert</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value,
+                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;targetType)</pre>
+<dl>
+<dd><p>Convert the value to an object of the specified class (if
+ possible).</p>
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>value</code> - Value to be converted (may be null)<dd><code>targetType</code> - Class of the value to be converted to
+<dt><b>Returns:</b><dd>The converted value
+<dt><b>Throws:</b>
+<dd><code><a href="../../../../org/apache/commons/beanutils/ConversionException.html" title="class in org.apache.commons.beanutils">ConversionException</a></code> - if thrown by an underlying Converter</dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="deregister()"><!-- --></a><h3>
+deregister</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.574"><b>deregister</b></a>()</pre>
+<dl>
+<dd>Remove all registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a>s, and re-establish the
+ standard Converters.
+<p>
+<dd><dl>
+</dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="register(boolean, boolean, int)"><!-- --></a><h3>
+register</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.601"><b>register</b></a>(boolean&nbsp;throwException,
+                     boolean&nbsp;defaultNull,
+                     int&nbsp;defaultArraySize)</pre>
+<dl>
+<dd>Register the provided converters with the specified defaults.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>throwException</code> - <code>true</code> if the converters should
+ throw an exception when a conversion error occurs, otherwise <code>
+ <code>false</code> if a default value should be used.<dd><code>defaultNull</code> - <code>true</code>if the <i>standard</i> converters
+ (see <a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean.html#registerStandard(boolean, boolean)"><code>registerStandard(boolean, boolean)</code></a>)
+ should use a default value of <code>null</code>, otherwise <code>false</code>.
+ N.B. This values is ignored if <code>throwException</code> is <code>true</code><dd><code>defaultArraySize</code> - The size of the default array value for array converters
+ (N.B. This values is ignored if <code>throwException</code> is <code>true</code>).
+ Specifying a value less than zero causes a <code>null<code> value to be used for
+ the default.</code></code></dd></dd></code></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="deregister(java.lang.Class)"><!-- --></a><h3>
+deregister</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.795"><b>deregister</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</pre>
+<dl>
+<dd>Remove any registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified destination
+ <code>Class</code>.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>clazz</code> - Class for which to remove a registered Converter</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="lookup(java.lang.Class)"><!-- --></a><h3>
+lookup</h3>
+<pre>
+public <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils">Converter</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.810"><b>lookup</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</pre>
+<dl>
+<dd>Look up and return any registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified
+ destination class; if there is no registered Converter, return
+ <code>null</code>.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>clazz</code> - Class for which to return a registered Converter
+<dt><b>Returns:</b><dd>The registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> or <code>null</code> if not found</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="lookup(java.lang.Class, java.lang.Class)"><!-- --></a><h3>
+lookup</h3>
+<pre>
+public <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils">Converter</a> <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.825"><b>lookup</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;sourceType,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;targetType)</pre>
+<dl>
+<dd>Look up and return any registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified
+ source and destination class; if there is no registered Converter,
+ return <code>null</code>.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>sourceType</code> - Class of the value being converted<dd><code>targetType</code> - Class of the value to be converted to
+<dt><b>Returns:</b><dd>The registered <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> or <code>null</code> if not found</dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="register(org.apache.commons.beanutils.Converter, java.lang.Class)"><!-- --></a><h3>
+register</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/beanutils/ConvertUtilsBean.html#line.871"><b>register</b></a>(<a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils">Converter</a>&nbsp;converter,
+                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;clazz)</pre>
+<dl>
+<dd>Register a custom <a href="../../../../org/apache/commons/beanutils/Converter.html" title="interface in org.apache.commons.beanutils"><code>Converter</code></a> for the specified destination
+ <code>Class</code>, replacing any previously registered Converter.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>converter</code> - Converter to be registered<dd><code>clazz</code> - Destination class for conversions performed by this
+  Converter</dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<!-- ========= END OF CLASS DATA ========= -->
+<hr>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<a name="navbar_bottom"><!-- --></a>
+<a href="#skip-navbar_bottom" title="Skip navigation links"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0" summary>
+<tr>
+<td colspan="2" bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_bottom_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3" summary>
+  <tr align="center" valign="top">
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev"> &nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="class-use/ConvertUtilsBean.html"><font class="NavBarFont1"><b>Use</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../deprecated-list.html"><font class="NavBarFont1"><b>Deprecated</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td align="right" valign="top" rowspan="3"><em>
+</em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;<a href="../../../../org/apache/commons/beanutils/ConvertUtils.html" title="class in org.apache.commons.beanutils"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;<a href="../../../../org/apache/commons/beanutils/ConvertUtilsBean2.html" title="class in org.apache.commons.beanutils"><b>NEXT CLASS</b></a></font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="../../../../index.html?org/apache/commons/beanutils/ConvertUtilsBean.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="ConvertUtilsBean.html" target="_top"><b>NO FRAMES</b></a>  &nbsp;
+&nbsp;<script type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+  <a href="../../../../allclasses-noframe.html"><b>All Classes</b></a>
+</noscript>
+
+
+</font></td>
+</tr>
+<tr>
+<td valign="top" class="NavBarCell3"><font size="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;<a href="#method_summary">METHOD</a></font></td>
+<td valign="top" class="NavBarCell3"><font size="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;<a href="#method_detail">METHOD</a></font></td>
+</tr>
+</table>
+<a name="skip-navbar_bottom"></a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<hr>
+Copyright &#169; 2000-2010 <a href="http://www.apache.org/" target="_blank" rel="noopener">The Apache Software Foundation</a>. All Rights Reserved.
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/ConvertUtils/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/ConvertUtilsBean2/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">
+
+org.apache.commons.beanutils
+
+Class ConvertUtilsBean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">
+ConvertUtilsBean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">
+getInstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">
+getDefaultBoolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">
+setDefaultBoolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">
+getDefaultByte</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.6.</span> <span class="nav-text">
+setDefaultByte</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.7.</span> <span class="nav-text">
+getDefaultCharacter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.8.</span> <span class="nav-text">
+setDefaultCharacter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.9.</span> <span class="nav-text">
+getDefaultDouble</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.10.</span> <span class="nav-text">
+setDefaultDouble</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.11.</span> <span class="nav-text">
+getDefaultFloat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.12.</span> <span class="nav-text">
+setDefaultFloat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.13.</span> <span class="nav-text">
+getDefaultInteger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.14.</span> <span class="nav-text">
+setDefaultInteger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.15.</span> <span class="nav-text">
+getDefaultLong</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.16.</span> <span class="nav-text">
+setDefaultLong</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.17.</span> <span class="nav-text">
+getDefaultShort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.18.</span> <span class="nav-text">
+setDefaultShort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.19.</span> <span class="nav-text">
+convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.20.</span> <span class="nav-text">
+convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.21.</span> <span class="nav-text">
+convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.22.</span> <span class="nav-text">
+convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.23.</span> <span class="nav-text">
+deregister</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.24.</span> <span class="nav-text">
+register</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.25.</span> <span class="nav-text">
+deregister</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.26.</span> <span class="nav-text">
+lookup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.27.</span> <span class="nav-text">
+lookup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.28.</span> <span class="nav-text">
+register</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

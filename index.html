@@ -209,7 +209,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">2</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
 
   </li>
   </ul>
@@ -238,7 +238,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/Linux入门基础 学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day08-Ajax&Jquery/笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吒儿">
@@ -252,7 +252,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
             
-            <a href="/2019/08/26/Linux入门基础 学习/" class="post-title-link" itemprop="url">Linux入门基础学习</a>
+            <a href="/2019/08/26/day08-Ajax&Jquery/笔记/" class="post-title-link" itemprop="url">未命名</a>
           
         </h1>
 
@@ -267,11 +267,19 @@
                 
               
 
-              <time title="创建时间：2019-08-26 15:16:57 / 修改时间：15:38:45" itemprop="dateCreated datePublished" datetime="2019-08-26T15:16:57+08:00">2019-08-26</time>
+              <time title="创建时间：2019-08-26 15:56:28" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:28+08:00">2019-08-26</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-03-01 17:55:29" itemprop="dateModified" datetime="2017-03-01T17:55:29+08:00">2017-03-01</time>
+              </span>
             
           
 
@@ -286,57 +294,1100 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-Linux学习笔记"><a href="#1-Linux学习笔记" class="headerlink" title="1.Linux学习笔记"></a>1.Linux学习笔记</h2><h3 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1、<span class="built_in">cd</span>命令  ChangeDirectory的意思，改变文件夹，切换目录到新的地址</span><br></pre></td></tr></table></figure>
+          <p>#Ajax &amp; Jquery</p>
+<p>##Ajax</p>
+<ul>
+<li>是什么?</li>
+</ul>
+<blockquote>
+<p>“Asynchronous Javascript And XML”（异步JavaScript和XML），</p>
+</blockquote>
+<blockquote>
+<p>并不是新的技术，只是把原有的技术，整合到一起而已。 </p>
+</blockquote>
+<pre><code>1.使用CSS和XHTML来表示。
+2. 使用DOM模型来交互和动态显示。
+3.使用XMLHttpRequest来和服务器进行异步通信。
+4.使用javascript来绑定和调用。</code></pre><ul>
+<li>有什么用?</li>
+</ul>
+<blockquote>
+<p>咱们的网页如果想要刷新局部内容。 那么需要重新载入整个网页。用户体验不是很好。  就是为了解决局部刷新的问题。 保持其他部分不动，只刷新某些地方。 </p>
+</blockquote>
+<p>##数据请求 Get</p>
+<pre><code>1.创建对象
 
-<p>​    cd /root   切换到root文件夹</p>
-<p>​    cd ~ 进入到家目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2、ls命令  List的意思，列表，可以查看当前目录下面的文件和文件夹</span><br></pre></td></tr></table></figure>
+        function  ajaxFunction(){
+           var xmlHttp;
+           try{ // Firefox, Opera 8.0+, Safari
+                xmlHttp=new XMLHttpRequest();
+            }
+            catch (e){
+               try{// Internet Explorer
+                     xmlHttp=new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;);
+                  }
+                catch (e){
+                  try{
+                     xmlHttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+                  }
+                  catch (e){}
+                  }
+            }
 
-<p>​    ls -a 列出目录所有文件，包括隐藏的文件</p>
-<p>​    ls -A 列出非隐藏文件夹</p>
-<p>​    ls -r 倒序排列</p>
-<p>​    ls -h 以M显示文件的大小 易读</p>
-<p>​    ls -l 显示文件的权限大小等详细的信息</p>
-<p>​    ls -a* 通配符显示以a开头的文件和文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3、<span class="built_in">pwd</span> 显示当前目录的详细路径</span><br></pre></td></tr></table></figure>
+            return xmlHttp;
+         }
 
-<p>​    pwd     </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4、mkdir命令 创建文件夹</span><br></pre></td></tr></table></figure>
 
-<p>​    mkdir /root/a  在root文件夹下面建立a文件夹</p>
-<p>​    mkdir -p root/c/a  在给定目录下面创建文件夹 如果中间目录不存在，就创建</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5、cat命令</span><br></pre></td></tr></table></figure>
+2. 发送请求
 
-<p>​    a.显示文件 b.合并文件 c.创建文件</p>
-<p>​    cat 文件路径/文件 </p>
-<p>​    cat &gt;文件</p>
-<p>​    cat 文件1 文件2&gt;/&gt;&gt; 文件0 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6、rm命令</span><br></pre></td></tr></table></figure>
 
-<p>​    rm [选项] 文件</p>
-<p>​    rm -rf 文档 不询问</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7、rmdir命令</span><br></pre></td></tr></table></figure>
+    //执行get请求
+function get() {
 
-<p>​    rmdir -p a/b/c 从目录中删除一个或者多个子目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8、cp命令</span><br></pre></td></tr></table></figure>
+    //1. 创建xmlhttprequest 对象
+    var request = ajaxFunction();
 
-<p>​    复制命令，将源文件（多个文件）复制到目标目录</p>
-<p>​    -i 提示  -r复制目录以及目录内所有项目 -a保持时间一致</p>
-<p>​    cp -ai a.txt root</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9、mv命令</span><br></pre></td></tr></table></figure>
+    //2. 发送请求。
+    // http://localhost:8080/day16/demo01.jsp
+    //http://localhost:8080/day16/DemoServlet01
 
-<p>​    剪切，重命名</p>
-<p>​    mv 1.txt 2.txt</p>
-<p>​    mv 1.txt 2.txt /root</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10、less命令</span><br></pre></td></tr></table></figure>
+    /*    
+        参数一： 请求类型  GET or  POST
+        参数二： 请求的路径
+        参数三： 是否异步， true  or false
+    */
+    request.open(&quot;GET&quot; ,&quot;/day16/DemoServlet01&quot; ,true );
+    request.send();
+}
 
-<p>​    浏览文件</p>
-<p>​    less 1.txt</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11、more命令</span><br></pre></td></tr></table></figure>
 
-<p>​    分页显示文件，不覆盖窗口</p>
-<p>​    +n  -n </p>
-<p>​    more +3 1.txt</p>
+
+如果发送请求的同时，还想获取数据，那么代码如下
+
+//执行get请求
+function get() {
+
+    //1. 创建xmlhttprequest 对象
+    var request = ajaxFunction();
+
+    //2. 发送请求
+    request.open(&quot;GET&quot; ,&quot;/day16/DemoServlet01?name=aa&amp;age=18&quot; ,true );
+
+    //3. 获取响应数据 注册监听的意思。  一会准备的状态发生了改变，那么就执行 = 号右边的方法
+    request.onreadystatechange = function(){
+
+        //前半段表示 已经能够正常处理。  再判断状态码是否是200
+        if(request.readyState == 4 &amp;&amp; request.status == 200){
+            //弹出响应的信息
+            alert(request.responseText);
+        }
+    }
+    request.send();
+}</code></pre><p>##数据请求 Post</p>
+<p>​        </p>
+<script type="text/javascript">
+
+    //1. 创建对象
+    function  ajaxFunction(){
+       var xmlHttp;
+       try{ // Firefox, Opera 8.0+, Safari
+            xmlHttp=new XMLHttpRequest();
+        }
+        catch (e){
+           try{// Internet Explorer
+                 xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+              }
+            catch (e){
+              try{
+                 xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+              }
+              catch (e){}
+              }
+        }
+
+        return xmlHttp;
+     }
+
+    function post() {
+        //1. 创建对象
+        var request = ajaxFunction();
+
+        //2. 发送请求
+        request.open( "POST", "/day16/DemoServlet01", true );
+
+        //如果不带数据，写这行就可以了
+        //request.send();
+
+        //如果想带数据，就写下面的两行
+
+        //如果使用的是post方式带数据，那么 这里要添加头， 说明提交的数据类型是一个经过url编码的form表单数据
+        request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+        //带数据过去  ， 在send方法里面写表单数据。 
+        request.send("name=aobama&age=19");
+    }
+
+
+</script>
+
+
+<pre><code>需要获取数据
+
+
+    function post() {
+        //1. 创建对象
+        var request = ajaxFunction();
+
+        //2. 发送请求
+        request.open( &quot;POST&quot;, &quot;/day16/DemoServlet01&quot;, true );
+
+        //想获取服务器传送过来的数据， 加一个状态的监听。 
+        request.onreadystatechange=function(){
+            if(request.readyState==4 &amp;&amp; request.status == 200){
+
+                alert(&quot;post：&quot;+request.responseText);
+            }
+        }
+
+        //如果使用的是post方式带数据，那么 这里要添加头， 说明提交的数据类型是一个经过url编码的form表单数据
+        request.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+
+        //带数据过去  ， 在send方法里面写表单数据。 
+        request.send(&quot;name=aobama&amp;age=19&quot;);
+    }</code></pre><p>##校验用户名是否可用</p>
+<p>###1. 搭建环境</p>
+<ol>
+<li><p>页面准备</p>
+<pre><code>&lt;body&gt;
+&lt;table border=&quot;1&quot; width=&quot;500&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;用户名:&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;  onblur=&quot;checkUserName()&quot;&gt;&lt;span id=&quot;span01&quot;&gt;&lt;/span&gt;&lt;/td&gt; 
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;密码&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;邮箱&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;简介&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+
+</li>
+</ol>
+<ol start="2">
+<li>数据库准备</li>
+</ol>
+<p>###2. Servlet代码</p>
+<pre><code>    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    try {
+
+        request.setCharacterEncoding(&quot;UTF-8&quot;);
+
+        //1. 检测是否存在
+        String name = request.getParameter(&quot;name&quot;);
+        System.out.println(&quot;name=&quot;+name);
+
+        UserDao dao = new UserDaomImpl();
+        boolean isExist = dao.checkUserName(name);
+
+        //2.  通知页面，到底有还是没有。
+        if(isExist){
+            response.getWriter().println(1);  //存在用户名
+        }else{
+            response.getWriter().println(2); //不存在该用户名
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}</code></pre><p>###3. Dao代码</p>
+<pre><code>public class UserDaomImpl implements UserDao{
+
+    @Override
+    public boolean checkUserName(String username) throws SQLException {
+        QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+
+        String sql = &quot;select count(*) from t_user where username =?&quot;;
+
+
+        runner.query(sql, new  ScalarHandler(), username);
+
+        Long result = (Long) runner.query(sql, new  ScalarHandler(), username); 
+        return result &gt; 0 ;
+    }
+
+}</code></pre><p>###jsp页面显示</p>
+<p>​<br>    function checkUserName() {</p>
+<pre><code>    //获取输入框的值 document 整个网页
+    var name = document.getElementById(&quot;name&quot;).value; // value  value() val val()
+    //1. 创建对象
+    var request = ajaxFunction();
+
+    //2. 发送请求
+    request.open(&quot;POST&quot;  ,&quot;/day16/CheckUserNameServlet&quot; , true );
+
+    //注册状态改变监听，获取服务器传送过来的数据
+    request.onreadystatechange = function(){
+
+        if(request.readyState == 4 &amp;&amp; request.status == 200){
+            //alert(request.responseText);
+            var data = request.responseText;
+            if(data == 1){
+                //alert(&quot;用户名已存在&quot;);
+                document.getElementById(&quot;span01&quot;).innerHTML = &quot;&lt;font color=&apos;red&apos;&gt;用户名已存在!&lt;/font&gt;&quot;;
+            }else{
+                document.getElementById(&quot;span01&quot;).innerHTML = &quot;&lt;font color=&apos;green&apos;&gt;用户名可用!&lt;/font&gt;&quot;;
+                //alert(&quot;用户名未存在&quot;);
+            }
+        }
+
+    }
+
+    request.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+    request.send(&quot;name=&quot;+name);
+}</code></pre><p>##JQuery</p>
+<ul>
+<li>是什么?</li>
+</ul>
+<blockquote>
+<p>javascript 的代码框架。  </p>
+</blockquote>
+<ul>
+<li>有什么用?</li>
+</ul>
+<blockquote>
+<p>简化代码，提高效率。  </p>
+</blockquote>
+<ul>
+<li>核心 </li>
+</ul>
+<blockquote>
+<p>write less do more , 写得更少，做的更多。 </p>
+</blockquote>
+<p>###load</p>
+<pre><code>&lt;a href=&quot;&quot; onclick=&quot;load()&quot;&gt;使用JQuery执行load方法&lt;/a&gt;
+
+有两次刷新，  先走 onClick的方法，取到数据回来之后，赋值显示。 接着 走 href=&quot;&quot;的路径，但是这个属性没有给值，所以会把当前的页面重新再刷新一次。所以导致看不见值。
+
+
+//找到这个元素， 去执行加载的动作， 加载/day16/DemoServlet02 ， 得到的数据，赋值显示
+$(&quot;#aaa&quot;).load(&quot;/day16/DemoServlet02&quot; , function(responseText , statusTXT  , xhr) {
+        //找到id为text01的元素， 设置它的value属性值为 responseText 对应的值
+        $(&quot;#aaa&quot;).val(responseText);
+    }); </code></pre><p>###Get</p>
+<pre><code>$.get(&quot;/day16/DemoServlet02&quot;  , function(data ,status) {
+        $(&quot;#div01&quot;).text(data);
+    });</code></pre><p>#赋值显示</p>
+<ul>
+<li>val(“aa”); </li>
+</ul>
+<blockquote>
+<p>只能放那些标签带有value属性</p>
+<ul>
+<li>html(“aa”); —写html代码</li>
+<li>text(“aa”);</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>其实没有什么区别，如果想针对这分数据做html样式处理，那么只能用html()</p>
+</blockquote>
+<p>###load &amp; get</p>
+<ul>
+<li><p>load</p>
+<pre><code>$(&quot;#元素id&quot;).load(url地址);
+
+$(&quot;#div1&quot;).load(serlvet); ---&gt; 使用的get请求，回来赋值的时候， 使用text（）;去赋值</code></pre></li>
+<li><p>get</p>
+<pre><code>语法格式 ： $.get(URL,callback);    </code></pre></li>
+</ul>
+<pre><code>使用案例： $.get(&quot;/day16/DemoServlet02&quot;  , function(data ,status) {
+    $(&quot;#div01&quot;).text(data);
+});</code></pre><ul>
+<li><p>post</p>
+<pre><code>语法格式：$.post(URL,data,callback);</code></pre></li>
+</ul>
+<pre><code>function post() {
+    $.post(&quot;/day16/DemoServlet02&quot;, {name:&quot;zhangsan&quot;,age:18},function(data,status) {
+        //想要放数据到div里面去。 --- 找到div
+        $(&quot;#div01&quot;).html(data);
+    });
+}</code></pre><p>###使用JQuery去实现校验用户名</p>
+<pre><code>function checkUserName() {
+    //1. 获取输入框的内容
+    var name = $(&quot;#name&quot;).val();
+
+    //2. 发送请求
+    $.post(&quot;/day16/CheckUserNameServlet&quot; , {name:name} , function(data , status){
+        //alert(data);
+        if(data == 1){//用户名存在
+            //alert(&quot;用户名存在&quot;);
+            $(&quot;#span01&quot;).html(&quot;&lt;font color=&apos;red&apos;&gt;用户名已被注册&lt;/font&gt;&quot;);
+        }else{
+            //alert(&quot;用户名可用&quot;);
+            $(&quot;#span01&quot;).html(&quot;&lt;font color=&apos;green&apos;&gt;用户名可以使用&lt;/font&gt;&quot;);
+        }
+    } );
+    //3. 输出响应的数据到页面上。
+}</code></pre><h2 id="实现百度搜索提示"><a href="#实现百度搜索提示" class="headerlink" title="实现百度搜索提示"></a>实现百度搜索提示</h2><p>###搭建环境</p>
+<ol>
+<li><p>定义首页</p>
+<pre><code>&lt;body&gt;
+&lt;center&gt;
+&lt;h2&gt;黑马&lt;/h2&gt;
+    &lt;input type=&quot;text&quot; name=&quot;word&quot; id=&quot;word&quot; style=&quot;width: 600px ; height: 50px  ;font-size: 20px;&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;黑马一下&quot;  style=&quot;height: 55px ; width: 100px ; &quot;&gt;
+
+    &lt;div id=&quot;div01&quot; style=&quot;position:relative; left : -54px; width: 600px; height: 200px ; border:  1px solid blue; display: none&quot;&gt;&lt;/div&gt;
+&lt;/center&gt;
+&lt;/body&gt;</code></pre></li>
+<li><p>定义数据库</p>
+</li>
+</ol>
+<p>###捕获键盘弹起</p>
+<p>$(function(){<br>    $(“#word”).keyup(function() {<br>        alert(“键盘弹起了..”);<br>    })<br>});</p>
+<p>###JS请求</p>
+<pre><code>$(function(){
+    $(&quot;#word&quot;).keyup(function() {
+        //2。 获取输入框的值 
+        //var word = $(&quot;#word&quot;).val();
+        //this  对应就是执行这个方法的那个对象， $(&quot;#word&quot;)
+        var word = $(this).val();
+
+        if(word == &quot;&quot;){
+            $(&quot;#div01&quot;).hide();
+        }else{
+            //3. 请求数据。
+            $.post(&quot;find&quot;,{word:word} ,function(data , status){
+                //alert(data);
+                $(&quot;#div01&quot;).show();
+                $(&quot;#div01&quot;).html(data);
+            });
+        }
+
+    })
+});</code></pre><p>###Servlet代码</p>
+<pre><code>    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    request.setCharacterEncoding(&quot;utf-8&quot;);
+    try {
+        //1. 先获取参数
+        String word = request.getParameter(&quot;word&quot;);
+        System.out.println(&quot;word=&quot;+word);
+
+        //2. 让dao执行查询
+        WordsDao dao = new WordsDaoImpl();
+        List&lt;WordBean&gt; list = dao.findWords(word);
+
+        for (WordBean wordBean : list) {
+            System.out.println(&quot;===&quot;+wordBean.toString());
+        }
+
+        request.setAttribute(&quot;list&quot;, list);
+
+        //3. 返回数据
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        //response.getWriter().write(&quot;数据是：&quot;);
+        request.getRequestDispatcher(&quot;list.jsp&quot;).forward(request, response);
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+}</code></pre><p>###list.jsp</p>
+<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+ &lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot;  prefix=&quot;c&quot;%&gt;</code></pre><p>​<br>        <table style="width: 100%"><br>            &lt;c:forEach items=”${list }” var=”wordBean”&gt;<br>                <tr><br>                    <td>${wordBean.words}</td><br>                </tr><br>            <br>        </table></p>
+<p>##使用JQuery实现 省市联动</p>
+<p>###环境准备</p>
+<ol>
+<li>准备数据库</li>
+</ol>
+<p>2 。 准备页面</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;js/city.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    省份: &lt;select name=&quot;province&quot; id =&quot;province&quot;&gt;
+            &lt;option value=&quot;&quot; &gt;-请选择 -
+            &lt;option value=&quot;1&quot; &gt;广东
+            &lt;option value=&quot;2&quot; &gt;湖南
+            &lt;option value=&quot;3&quot; &gt;湖北
+            &lt;option value=&quot;4&quot; &gt;四川
+        &lt;/select&gt;
+    城市: 
+        &lt;select name=&quot;city&quot; id=&quot;city&quot;&gt;
+            &lt;option value=&quot;&quot; &gt;-请选择 -
+        &lt;/select&gt;
+    &lt;/body&gt;</code></pre><p>###XStream的使用</p>
+<pre><code>//3. 返回数据。手动拼  ---&gt; XStream  转化 bean对象成 xml
+    XStream xStream = new XStream();
+
+    //想把id做成属性
+    xStream.useAttributeFor(CityBean.class, &quot;id&quot;);
+
+    //设置别名
+    xStream.alias(&quot;city&quot;, CityBean.class);
+
+    //转化一个对象成xml字符串
+    String xml = xStream.toXML(list);</code></pre><p>###JS代码</p>
+<pre><code>    $(function() {
+    //1。找到省份的元素
+    $(&quot;#province&quot;).change(function() {
+        //2. 一旦里面的值发生了改变，那么就去请求该省份的城市数据
+        //$(&quot;#province&quot;).varl();
+        var pid = $(this).val();
+
+        /*&lt;list&gt;
+            &lt;city&gt;
+                &lt;id&gt;1&lt;id&gt;
+                &lt;pid&gt;1&lt;/pid&gt;
+                &lt;cname&gt;深圳&lt;/cname&gt;
+            &lt;/city&gt;
+            &lt;city &gt;
+                &lt;id&gt;2&lt;id&gt;
+                &lt;pid&gt;1&lt;/pid&gt;
+                &lt;cname&gt;东莞&lt;/cname&gt;
+            &lt;/city&gt;
+        &lt;/list&gt;*/
+
+        $.post( &quot;CityServlet&quot;,{pid:pid} ,function(data,status){
+            //alert(&quot;回来数据了:&quot;+data);
+
+            //先清空以前的值：
+            $(&quot;#city&quot;).html(&quot;&lt;option value=&apos;&apos; &gt;-请选择-&quot;)
+            //遍历： 
+            //从data数据里面找出所有的city  ， 然后遍历所有的city。
+            //遍历一个city，就执行一次function方法
+            $(data).find(&quot;city&quot;).each(function() {
+
+                //遍历出来的每一个city，取它的孩子。 id , cname
+                var id = $(this).children(&quot;id&quot;).text();
+                var cname = $(this).children(&quot;cname&quot;).text();
+
+                $(&quot;#city&quot;).append(&quot;&lt;option value=&apos;&quot;+id+&quot;&apos; &gt;&quot;+cname)
+            });
+        } );
+
+    });
+});</code></pre><p>##服务器和客户端数据传输的方式</p>
+<ul>
+<li><p>xml</p>
+<pre><code>&lt;list&gt;
+        &lt;city&gt;
+            &lt;id&gt;1&lt;id&gt;
+            &lt;pid&gt;1&lt;/pid&gt;
+            &lt;cname&gt;深圳&lt;/cname&gt;
+        &lt;/city&gt;
+        &lt;city &gt;
+            &lt;id&gt;2&lt;id&gt;
+            &lt;pid&gt;1&lt;/pid&gt;
+            &lt;cname&gt;东莞&lt;/cname&gt;
+        &lt;/city&gt;
+    &lt;/list&gt;</code></pre></li>
+<li><p>json</p>
+<p>阅读性更好 、 容量更小。</p>
+<p>{“name”:”aaa” , “age”:19}</p>
+</li>
+</ul>
+<pre><code>把javaBean  转化成 json数据
+
+//3. 把list ---&gt; json数据
+    //JSONArray ---&gt; 变成数组 ， 集合  []
+    //JSONObject ---&gt; 变成简单的数据  { name : zhangsan , age:18}
+
+    JSONArray jsonArray = JSONArray.fromObject(list);
+    String json = jsonArray.toString();</code></pre><p>##使用json格式数据显示省市联动效果<br>    serlvet代码：</p>
+<pre><code>    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    try {
+        //1. 获取参数
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+
+        //2 找出所有的城市
+        CityDao dao = new CityDaoImpl();
+        List&lt;CityBean&gt; list = dao.findCity(pid);
+
+        //3. 把list ---&gt; json数据
+        //JSONArray ---&gt; 变成数组 ， 集合  []
+        //JSONObject ---&gt; 变成简单的数据  { name : zhangsan , age:18}
+
+        JSONArray jsonArray = JSONArray.fromObject(list);
+        String json = jsonArray.toString();
+
+
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        response.getWriter().write(json);
+
+
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    };
+}
+
+
+
+js代码
+
+
+    $(function() {
+        //1。找到省份的元素
+        $(&quot;#province&quot;).change(function() {
+            //2. 一旦里面的值发生了改变，那么就去请求该省份的城市数据
+            //$(&quot;#province&quot;).varl();
+            var pid = $(this).val();
+
+            /*[
+                {
+                    &quot;cname&quot;: &quot;深圳&quot;,
+                    &quot;id&quot;: 1,
+                    &quot;pid&quot;: 1
+                },
+                {
+                    &quot;cname&quot;: &quot;东莞&quot;,
+                    &quot;id&quot;: 2,
+                    &quot;pid&quot;: 1
+                }
+                ...
+            ]*/
+            $.post( &quot;CityServlet02&quot;,{pid:pid} ,function(data,status){
+
+                //先清空
+                $(&quot;#city&quot;).html(&quot;&lt;option value=&apos;&apos; &gt;-请选择-&quot;);
+                //再遍历，追加
+                $(data).each(function(index , c) {
+                    $(&quot;#city&quot;).append(&quot;&lt;option value=&apos;&quot;+c.id+&quot;&apos; &gt;&quot;+c.cname)
+                });
+            },&quot;json&quot; );
+
+        });
+    });</code></pre><p>##总结</p>
+<p>###Ajax  </p>
+<pre><code>发送get请求
+
+发送post请求
+
+都要求带数据 + 获取数据＋　放置到元素上。</code></pre><p>###JQuery</p>
+<pre><code>发送get请求
+
+发送post请求
+
+都要求带数据 + 获取数据＋　放置到元素上。
+
+---------------------------------------
+
+1. 服务器返回xml数据
+
+
+2. 服务器返回json数据</code></pre>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day08-Ajax&Jquery/Ajax&Json笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day08-Ajax&Jquery/Ajax&Json笔记/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:28" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:28+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-07-07 19:07:53" itemprop="dateModified" datetime="2018-07-07T19:07:53+08:00">2018-07-07</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h2><pre><code>1. AJAX：
+2. JSON</code></pre><h1 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h1><pre><code>1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML
+    1. 异步和同步：客户端和服务器端相互通信的基础上
+        * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。
+        * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。
+
+        Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] 
+        通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+        传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。
+
+        提升用户的体验
+
+2. 实现方式：
+    1. 原生的JS实现方式（了解）
+                 //1.创建核心对象
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+                }
+
+                //2. 建立连接
+                /*
+                    参数：
+                        1. 请求方式：GET、POST
+                            * get方式，请求参数在URL后边拼接。send方法为空参
+                            * post方式，请求参数在send方法中定义
+                        2. 请求的URL：
+                        3. 同步或异步请求：true（异步）或 false（同步）
+
+                 */
+                xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username=tom&quot;,true);
+
+                //3.发送请求
+                xmlhttp.send();
+
+                //4.接受并处理来自服务器的响应结果
+                //获取方式 ：xmlhttp.responseText
+                //什么时候获取？当服务器响应成功后再获取
+
+                //当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。
+                xmlhttp.onreadystatechange=function()
+                {
+                    //判断readyState就绪状态是否为4，判断status响应状态码是否为200
+                    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+                    {
+                       //获取服务器的响应结果
+                        var responseText = xmlhttp.responseText;
+                        alert(responseText);
+                    }
+                }
+    2. JQeury实现方式
+        1. $.ajax()
+            * 语法：$.ajax({键值对});
+             //使用$.ajax()发送异步请求
+                $.ajax({
+                    url:&quot;ajaxServlet1111&quot; , // 请求路径
+                    type:&quot;POST&quot; , //请求方式
+                    //data: &quot;username=jack&amp;age=23&quot;,//请求参数
+                    data:{&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23},
+                    success:function (data) {
+                        alert(data);
+                    },//响应成功后的回调函数
+                    error:function () {
+                        alert(&quot;出错啦...&quot;)
+                    },//表示如果请求响应出现错误，会执行的回调函数
+
+                    dataType:&quot;text&quot;//设置接受到的响应数据的格式
+                });
+        2. $.get()：发送get请求
+            * 语法：$.get(url, [data], [callback], [type])
+                * 参数：
+                    * url：请求路径
+                    * data：请求参数
+                    * callback：回调函数
+                    * type：响应结果的类型
+
+        3. $.post()：发送post请求
+            * 语法：$.post(url, [data], [callback], [type])
+                * 参数：
+                    * url：请求路径
+                    * data：请求参数
+                    * callback：回调函数
+                    * type：响应结果的类型</code></pre><h1 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h1><pre><code>1. 概念： JavaScript Object Notation        JavaScript对象表示法
+    Person p = new Person();
+    p.setName(&quot;张三&quot;);
+    p.setAge(23);
+    p.setGender(&quot;男&quot;);
+
+    var p = {&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;};
+
+    * json现在多用于存储和交换文本信息的语法
+    * 进行数据的传输
+    * JSON 比 XML 更小、更快，更易解析。
+
+2. 语法：
+    1. 基本规则
+        * 数据在名称/值对中：json数据是由键值对构成的
+            * 键用引号(单双都行)引起来，也可以不使用引号
+            * 值得取值类型：
+                1. 数字（整数或浮点数）
+                2. 字符串（在双引号中）
+                3. 逻辑值（true 或 false）
+                4. 数组（在方括号中）    {&quot;persons&quot;:[{},{}]}
+                5. 对象（在花括号中） {&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}
+                6. null
+        * 数据由逗号分隔：多个键值对由逗号分隔
+        * 花括号保存对象：使用{}定义json 格式
+        * 方括号保存数组：[]
+    2. 获取数据:
+        1. json对象.键名
+        2. json对象[&quot;键名&quot;]
+        3. 数组对象[索引]
+        4. 遍历
+                 //1.定义基本格式
+                var person = {&quot;name&quot;: &quot;张三&quot;, age: 23, &apos;gender&apos;: true};
+
+                var ps = [{&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true},
+                    {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true},
+                    {&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false}];
+
+
+
+
+                //获取person对象中所有的键和值
+                //for in 循环
+               /* for(var key in person){
+                    //这样的方式获取不行。因为相当于  person.&quot;name&quot;
+                    //alert(key + &quot;:&quot; + person.key);
+                    alert(key+&quot;:&quot;+person[key]);
+                }*/
+
+               //获取ps中的所有值
+                for (var i = 0; i &lt; ps.length; i++) {
+                    var p = ps[i];
+                    for(var key in p){
+                        alert(key+&quot;:&quot;+p[key]);
+                    }
+                }
+
+
+3. JSON数据和Java对象的相互转换
+
+    * JSON解析器：
+        * 常见的解析器：Jsonlib，Gson，fastjson，jackson
+
+    1. JSON转为Java对象
+        1. 导入jackson的相关jar包
+        2. 创建Jackson核心对象 ObjectMapper
+        3. 调用ObjectMapper的相关方法进行转换
+            1. readValue(json字符串数据,Class)
+    2. Java对象转换JSON
+        1. 使用步骤：
+            1. 导入jackson的相关jar包
+            2. 创建Jackson核心对象 ObjectMapper
+            3. 调用ObjectMapper的相关方法进行转换
+                1. 转换方法：
+                    * writeValue(参数1，obj):
+                        参数1：
+                            File：将obj对象转换为JSON字符串，并保存到指定的文件中
+                            Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中
+                            OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中
+                    * writeValueAsString(obj):将对象转为json字符串
+
+                2. 注解：
+                    1. @JsonIgnore：排除属性。
+                    2. @JsonFormat：属性值得格式化
+                        * @JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)
+
+                3. 复杂java对象转换
+                    1. List：数组
+                    2. Map：对象格式一致</code></pre><h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><pre><code>* 校验用户名是否存在
+    1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：
+        1. $.get(type):将最后一个参数type指定为&quot;json&quot;
+        2. 在服务器端设置MIME类型
+            response.setContentType(&quot;application/json;charset=utf-8&quot;);</code></pre>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/TcclEnabledTestCase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/TcclEnabledTestCase/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:28" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:28+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>TcclEnabledTestCase xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css">
+</head>
+<body>
+<pre>
+
+<a name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a name="2" href="#2">2</a>   <em class="jxr_comment"> * Licensed to the Apache Software Foundation (ASF) under one or more</em>
+<a name="3" href="#3">3</a>   <em class="jxr_comment"> * contributor license agreements.  See the NOTICE file distributed with</em>
+<a name="4" href="#4">4</a>   <em class="jxr_comment"> * this work for additional information regarding copyright ownership.</em>
+<a name="5" href="#5">5</a>   <em class="jxr_comment"> * The ASF licenses this file to You under the Apache License, Version 2.0</em>
+<a name="6" href="#6">6</a>   <em class="jxr_comment"> * (the "License"); you may not use this file except in compliance with</em>
+<a name="7" href="#7">7</a>   <em class="jxr_comment"> * the License.  You may obtain a copy of the License at</em>
+<a name="8" href="#8">8</a>   <em class="jxr_comment"> * </em>
+<a name="9" href="#9">9</a>   <em class="jxr_comment"> *      <a href="http://www.apache.org/licenses/LICENSE-2.0" target="alexandria_uri">http://www.apache.org/licenses/LICENSE-2.0</a></em>
+<a name="10" href="#10">10</a>  <em class="jxr_comment"> * </em>
+<a name="11" href="#11">11</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a name="12" href="#12">12</a>  <em class="jxr_comment"> * distributed under the License is distributed on an "AS IS" BASIS,</em>
+<a name="13" href="#13">13</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a name="14" href="#14">14</a>  <em class="jxr_comment"> * See the License for the specific language governing permissions and</em>
+<a name="15" href="#15">15</a>  <em class="jxr_comment"> * limitations under the License.</em>
+<a name="16" href="#16">16</a>  <em class="jxr_comment"> */</em> 
+<a name="17" href="#17">17</a>  
+<a name="18" href="#18">18</a>  <strong class="jxr_keyword">package</strong> org.apache.commons.logging.tccl.logfactory;
+<a name="19" href="#19">19</a>  
+<a name="20" href="#20">20</a>  
+<a name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> java.net.URL;
+<a name="22" href="#22">22</a>  
+<a name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> junit.framework.Test;
+<a name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> junit.framework.TestCase;
+<a name="25" href="#25">25</a>  
+<a name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.LogFactory;
+<a name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableClassLoader;
+<a name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableTestSuite;
+<a name="29" href="#29">29</a>  
+<a name="30" href="#30">30</a>  
+<a name="31" href="#31">31</a>  <em class="jxr_javadoccomment">/**</em>
+<a name="32" href="#32">32</a>  <em class="jxr_javadoccomment"> * Verify that by default a custom LogFactoryImpl is loaded from the</em>
+<a name="33" href="#33">33</a>  <em class="jxr_javadoccomment"> * tccl classloader.</em>
+<a name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> */</em>
+<a name="35" href="#35">35</a>  
+<a name="36" href="#36">36</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../org/apache/commons/logging/tccl/logfactory/TcclEnabledTestCase.html">TcclEnabledTestCase</a> <strong class="jxr_keyword">extends</strong> TestCase {
+<a name="37" href="#37">37</a>  
+<a name="38" href="#38">38</a>      <em class="jxr_comment">// ------------------------------------------- JUnit Infrastructure Methods</em>
+<a name="39" href="#39">39</a>  
+<a name="40" href="#40">40</a>  
+<a name="41" href="#41">41</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="42" href="#42">42</a>  <em class="jxr_javadoccomment">     * Return the tests included in this test suite.</em>
+<a name="43" href="#43">43</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="44" href="#44">44</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Test suite() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="45" href="#45">45</a>          Class thisClass = TcclEnabledTestCase.<strong class="jxr_keyword">class</strong>;
+<a name="46" href="#46">46</a>  
+<a name="47" href="#47">47</a>          <em class="jxr_comment">// Determine the URL to this .class file, so that we can then</em>
+<a name="48" href="#48">48</a>          <em class="jxr_comment">// append the priority dirs to it. For tidiness, load this</em>
+<a name="49" href="#49">49</a>          <em class="jxr_comment">// class through a dummy loader though this is not absolutely</em>
+<a name="50" href="#50">50</a>          <em class="jxr_comment">// necessary...</em>
+<a name="51" href="#51">51</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> dummy = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="52" href="#52">52</a>          dummy.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="53" href="#53">53</a>          dummy.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="54" href="#54">54</a>          dummy.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="55" href="#55">55</a>          
+<a name="56" href="#56">56</a>          String thisClassPath = thisClass.getName().replace('.', '/') + <span class="jxr_string">".class"</span>;
+<a name="57" href="#57">57</a>          URL baseUrl = dummy.findResource(thisClassPath);
+<a name="58" href="#58">58</a>  
+<a name="59" href="#59">59</a>          <em class="jxr_comment">// Now set up the desired classloader hierarchy. Everything goes into</em>
+<a name="60" href="#60">60</a>          <em class="jxr_comment">// the parent classpath, but we exclude the custom LogFactoryImpl</em>
+<a name="61" href="#61">61</a>          <em class="jxr_comment">// class.</em>
+<a name="62" href="#62">62</a>          <em class="jxr_comment">//</em>
+<a name="63" href="#63">63</a>          <em class="jxr_comment">// We then create a tccl classloader that can see the custom</em>
+<a name="64" href="#64">64</a>          <em class="jxr_comment">// LogFactory class. Therefore if that class can be found, then the</em>
+<a name="65" href="#65">65</a>          <em class="jxr_comment">// TCCL must have been used to load it.</em>
+<a name="66" href="#66">66</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> emptyLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="67" href="#67">67</a>          
+<a name="68" href="#68">68</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> parentLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="69" href="#69">69</a>          parentLoader.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="70" href="#70">70</a>          parentLoader.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="71" href="#71">71</a>          parentLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="72" href="#72">72</a>          <em class="jxr_comment">// hack to ensure that the testcase classloader can't see</em>
+<a name="73" href="#73">73</a>          <em class="jxr_comment">// the cust MyLogFactoryImpl</em>
+<a name="74" href="#74">74</a>          parentLoader.useExplicitLoader(
+<a name="75" href="#75">75</a>              <span class="jxr_string">"org.apache.commons.logging.tccl.custom."</span>, emptyLoader);
+<a name="76" href="#76">76</a>          
+<a name="77" href="#77">77</a>          URL propsEnableUrl = <strong class="jxr_keyword">new</strong> URL(baseUrl, <span class="jxr_string">"props_enable_tccl/"</span>);
+<a name="78" href="#78">78</a>          parentLoader.addURL(propsEnableUrl);
+<a name="79" href="#79">79</a>  
+<a name="80" href="#80">80</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> tcclLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(parentLoader);
+<a name="81" href="#81">81</a>          tcclLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="82" href="#82">82</a>  
+<a name="83" href="#83">83</a>          Class testClass = parentLoader.loadClass(thisClass.getName());
+<a name="84" href="#84">84</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableTestSuite.html">PathableTestSuite</a>(testClass, tcclLoader);
+<a name="85" href="#85">85</a>      }
+<a name="86" href="#86">86</a>  
+<a name="87" href="#87">87</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="88" href="#88">88</a>  <em class="jxr_javadoccomment">     * Set up instance variables required by this test case.</em>
+<a name="89" href="#89">89</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="90" href="#90">90</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="91" href="#91">91</a>          LogFactory.releaseAll();
+<a name="92" href="#92">92</a>      }
+<a name="93" href="#93">93</a>  
+<a name="94" href="#94">94</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="95" href="#95">95</a>  <em class="jxr_javadoccomment">     * Tear down instance variables required by this test case.</em>
+<a name="96" href="#96">96</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="97" href="#97">97</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tearDown() {
+<a name="98" href="#98">98</a>          LogFactory.releaseAll();
+<a name="99" href="#99">99</a>      }
+<a name="100" href="#100">100</a> 
+<a name="101" href="#101">101</a>     <em class="jxr_comment">// ----------------------------------------------------------- Test Methods</em>
+<a name="102" href="#102">102</a> 
+<a name="103" href="#103">103</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="104" href="#104">104</a> <em class="jxr_javadoccomment">     * Verify that MyLogFactoryImpl is only loadable via the tccl.</em>
+<a name="105" href="#105">105</a> <em class="jxr_javadoccomment">     */</em>
+<a name="106" href="#106">106</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLoader() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="107" href="#107">107</a>         
+<a name="108" href="#108">108</a>         ClassLoader thisClassLoader = <strong class="jxr_keyword">this</strong>.getClass().getClassLoader();
+<a name="109" href="#109">109</a>         ClassLoader tcclLoader = Thread.currentThread().getContextClassLoader();
+<a name="110" href="#110">110</a> 
+<a name="111" href="#111">111</a>         <em class="jxr_comment">// the tccl loader should NOT be the same as the loader that loaded this test class.</em>
+<a name="112" href="#112">112</a>         assertNotSame(<span class="jxr_string">"tccl not same as test classloader"</span>, thisClassLoader, tcclLoader);
+<a name="113" href="#113">113</a> 
+<a name="114" href="#114">114</a>         <em class="jxr_comment">// MyLogFactoryImpl should not be loadable via parent loader</em>
+<a name="115" href="#115">115</a>         <strong class="jxr_keyword">try</strong> {
+<a name="116" href="#116">116</a>             Class clazz = thisClassLoader.loadClass(
+<a name="117" href="#117">117</a>                 <span class="jxr_string">"org.apache.commons.logging.tccl.custom.MyLogFactoryImpl"</span>);
+<a name="118" href="#118">118</a>             fail(<span class="jxr_string">"Unexpectedly able to load MyLogFactoryImpl via test class classloader"</span>);
+<a name="119" href="#119">119</a>             assertNotNull(clazz); <em class="jxr_comment">// silence warning about unused var</em>
+<a name="120" href="#120">120</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="121" href="#121">121</a>             <em class="jxr_comment">// ok, expected</em>
+<a name="122" href="#122">122</a>         }
+<a name="123" href="#123">123</a>         
+<a name="124" href="#124">124</a>         <em class="jxr_comment">// MyLogFactoryImpl should be loadable via tccl loader</em>
+<a name="125" href="#125">125</a>         <strong class="jxr_keyword">try</strong> {
+<a name="126" href="#126">126</a>             Class clazz = tcclLoader.loadClass(
+<a name="127" href="#127">127</a>                 <span class="jxr_string">"org.apache.commons.logging.tccl.custom.MyLogFactoryImpl"</span>);
+<a name="128" href="#128">128</a>             assertNotNull(clazz);
+<a name="129" href="#129">129</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="130" href="#130">130</a>             fail(<span class="jxr_string">"Unexpectedly unable to load MyLogFactoryImpl via tccl classloader"</span>);
+<a name="131" href="#131">131</a>         }
+<a name="132" href="#132">132</a>     }
+<a name="133" href="#133">133</a> 
+<a name="134" href="#134">134</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="135" href="#135">135</a> <em class="jxr_javadoccomment">     * Verify that the custom LogFactory implementation which is only accessable</em>
+<a name="136" href="#136">136</a> <em class="jxr_javadoccomment">     * via the TCCL has successfully been loaded as specified in the config file.</em>
+<a name="137" href="#137">137</a> <em class="jxr_javadoccomment">     * This proves that the TCCL was used to load that class.</em>
+<a name="138" href="#138">138</a> <em class="jxr_javadoccomment">     */</em>
+<a name="139" href="#139">139</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testTcclLoading() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="140" href="#140">140</a>         LogFactory instance = LogFactory.getFactory();
+<a name="141" href="#141">141</a>         
+<a name="142" href="#142">142</a>         assertEquals(
+<a name="143" href="#143">143</a>             <span class="jxr_string">"Correct LogFactory loaded"</span>, 
+<a name="144" href="#144">144</a>             <span class="jxr_string">"org.apache.commons.logging.tccl.custom.MyLogFactoryImpl"</span>,
+<a name="145" href="#145">145</a>             instance.getClass().getName());
+<a name="146" href="#146">146</a>     }
+<a name="147" href="#147">147</a> }
+</pre>
+<hr><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a></div></body>
+</html>
+
 
         
       
@@ -361,7 +1412,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/TcclDisabledTestCase/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吒儿">
@@ -375,7 +1426,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
             
-            <a href="/2019/08/26/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/TcclDisabledTestCase/" class="post-title-link" itemprop="url">未命名</a>
           
         </h1>
 
@@ -390,8 +1441,20 @@
                 
               
 
-              <time title="创建时间：2019-08-26 11:13:28" itemprop="dateCreated datePublished" datetime="2019-08-26T11:13:28+08:00">2019-08-26</time>
+              <time title="创建时间：2019-08-26 15:56:28" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:28+08:00">2019-08-26</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
           
 
           
@@ -405,20 +1468,1194 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>TcclDisabledTestCase xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css">
+</head>
+<body>
+<pre>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<a name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a name="2" href="#2">2</a>   <em class="jxr_comment"> * Licensed to the Apache Software Foundation (ASF) under one or more</em>
+<a name="3" href="#3">3</a>   <em class="jxr_comment"> * contributor license agreements.  See the NOTICE file distributed with</em>
+<a name="4" href="#4">4</a>   <em class="jxr_comment"> * this work for additional information regarding copyright ownership.</em>
+<a name="5" href="#5">5</a>   <em class="jxr_comment"> * The ASF licenses this file to You under the Apache License, Version 2.0</em>
+<a name="6" href="#6">6</a>   <em class="jxr_comment"> * (the "License"); you may not use this file except in compliance with</em>
+<a name="7" href="#7">7</a>   <em class="jxr_comment"> * the License.  You may obtain a copy of the License at</em>
+<a name="8" href="#8">8</a>   <em class="jxr_comment"> * </em>
+<a name="9" href="#9">9</a>   <em class="jxr_comment"> *      <a href="http://www.apache.org/licenses/LICENSE-2.0" target="alexandria_uri">http://www.apache.org/licenses/LICENSE-2.0</a></em>
+<a name="10" href="#10">10</a>  <em class="jxr_comment"> * </em>
+<a name="11" href="#11">11</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a name="12" href="#12">12</a>  <em class="jxr_comment"> * distributed under the License is distributed on an "AS IS" BASIS,</em>
+<a name="13" href="#13">13</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a name="14" href="#14">14</a>  <em class="jxr_comment"> * See the License for the specific language governing permissions and</em>
+<a name="15" href="#15">15</a>  <em class="jxr_comment"> * limitations under the License.</em>
+<a name="16" href="#16">16</a>  <em class="jxr_comment"> */</em> 
+<a name="17" href="#17">17</a>  
+<a name="18" href="#18">18</a>  <strong class="jxr_keyword">package</strong> org.apache.commons.logging.tccl.logfactory;
+<a name="19" href="#19">19</a>  
+<a name="20" href="#20">20</a>  
+<a name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> java.net.URL;
+<a name="22" href="#22">22</a>  
+<a name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> junit.framework.Test;
+<a name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> junit.framework.TestCase;
+<a name="25" href="#25">25</a>  
+<a name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.LogFactory;
+<a name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableClassLoader;
+<a name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableTestSuite;
+<a name="29" href="#29">29</a>  
+<a name="30" href="#30">30</a>  
+<a name="31" href="#31">31</a>  <em class="jxr_javadoccomment">/**</em>
+<a name="32" href="#32">32</a>  <em class="jxr_javadoccomment"> * Verify that a commons-logging.properties file can prevent a custom</em>
+<a name="33" href="#33">33</a>  <em class="jxr_javadoccomment"> * LogFactoryImpl being loaded from the tccl classloader.</em>
+<a name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> */</em>
+<a name="35" href="#35">35</a>  
+<a name="36" href="#36">36</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../org/apache/commons/logging/tccl/logfactory/TcclDisabledTestCase.html">TcclDisabledTestCase</a> <strong class="jxr_keyword">extends</strong> TestCase {
+<a name="37" href="#37">37</a>  
+<a name="38" href="#38">38</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MY_LOG_FACTORY_PKG = 
+<a name="39" href="#39">39</a>          <span class="jxr_string">"org.apache.commons.logging.tccl.custom"</span>;
+<a name="40" href="#40">40</a>  
+<a name="41" href="#41">41</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MY_LOG_FACTORY_IMPL =
+<a name="42" href="#42">42</a>          MY_LOG_FACTORY_PKG + <span class="jxr_string">".MyLogFactoryImpl"</span>;
+<a name="43" href="#43">43</a>  
+<a name="44" href="#44">44</a>      <em class="jxr_comment">// ------------------------------------------- JUnit Infrastructure Methods</em>
+<a name="45" href="#45">45</a>  
+<a name="46" href="#46">46</a>  
+<a name="47" href="#47">47</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="48" href="#48">48</a>  <em class="jxr_javadoccomment">     * Return the tests included in this test suite.</em>
+<a name="49" href="#49">49</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="50" href="#50">50</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Test suite() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="51" href="#51">51</a>          Class thisClass = TcclDisabledTestCase.<strong class="jxr_keyword">class</strong>;
+<a name="52" href="#52">52</a>  
+<a name="53" href="#53">53</a>          <em class="jxr_comment">// Determine the URL to this .class file, so that we can then</em>
+<a name="54" href="#54">54</a>          <em class="jxr_comment">// append the priority dirs to it. For tidiness, load this</em>
+<a name="55" href="#55">55</a>          <em class="jxr_comment">// class through a dummy loader though this is not absolutely</em>
+<a name="56" href="#56">56</a>          <em class="jxr_comment">// necessary...</em>
+<a name="57" href="#57">57</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> dummy = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="58" href="#58">58</a>          dummy.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="59" href="#59">59</a>          dummy.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="60" href="#60">60</a>          dummy.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="61" href="#61">61</a>          
+<a name="62" href="#62">62</a>          String thisClassPath = thisClass.getName().replace('.', '/') + <span class="jxr_string">".class"</span>;
+<a name="63" href="#63">63</a>          URL baseUrl = dummy.findResource(thisClassPath);
+<a name="64" href="#64">64</a>  
+<a name="65" href="#65">65</a>          <em class="jxr_comment">// Now set up the desired classloader hierarchy. Everything goes into</em>
+<a name="66" href="#66">66</a>          <em class="jxr_comment">// the parent classpath, but we exclude the custom LogFactoryImpl</em>
+<a name="67" href="#67">67</a>          <em class="jxr_comment">// class.</em>
+<a name="68" href="#68">68</a>          <em class="jxr_comment">//</em>
+<a name="69" href="#69">69</a>          <em class="jxr_comment">// We then create a tccl classloader that can see the custom</em>
+<a name="70" href="#70">70</a>          <em class="jxr_comment">// LogFactory class. Therefore if that class can be found, then the</em>
+<a name="71" href="#71">71</a>          <em class="jxr_comment">// TCCL must have been used to load it.</em>
+<a name="72" href="#72">72</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> emptyLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="73" href="#73">73</a>          
+<a name="74" href="#74">74</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> parentLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="75" href="#75">75</a>          parentLoader.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="76" href="#76">76</a>          parentLoader.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="77" href="#77">77</a>          parentLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="78" href="#78">78</a>          <em class="jxr_comment">// hack to ensure that the testcase classloader can't see</em>
+<a name="79" href="#79">79</a>          <em class="jxr_comment">// the custom MyLogFactoryImpl</em>
+<a name="80" href="#80">80</a>          parentLoader.useExplicitLoader(
+<a name="81" href="#81">81</a>              MY_LOG_FACTORY_PKG + <span class="jxr_string">"."</span>, emptyLoader);
+<a name="82" href="#82">82</a>          
+<a name="83" href="#83">83</a>          URL propsEnableUrl = <strong class="jxr_keyword">new</strong> URL(baseUrl, <span class="jxr_string">"props_disable_tccl/"</span>);
+<a name="84" href="#84">84</a>          parentLoader.addURL(propsEnableUrl);
+<a name="85" href="#85">85</a>  
+<a name="86" href="#86">86</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> tcclLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(parentLoader);
+<a name="87" href="#87">87</a>          tcclLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="88" href="#88">88</a>  
+<a name="89" href="#89">89</a>          Class testClass = parentLoader.loadClass(thisClass.getName());
+<a name="90" href="#90">90</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableTestSuite.html">PathableTestSuite</a>(testClass, tcclLoader);
+<a name="91" href="#91">91</a>      }
+<a name="92" href="#92">92</a>  
+<a name="93" href="#93">93</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="94" href="#94">94</a>  <em class="jxr_javadoccomment">     * Set up instance variables required by this test case.</em>
+<a name="95" href="#95">95</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="96" href="#96">96</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="97" href="#97">97</a>          LogFactory.releaseAll();
+<a name="98" href="#98">98</a>      }
+<a name="99" href="#99">99</a>  
+<a name="100" href="#100">100</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="101" href="#101">101</a> <em class="jxr_javadoccomment">     * Tear down instance variables required by this test case.</em>
+<a name="102" href="#102">102</a> <em class="jxr_javadoccomment">     */</em>
+<a name="103" href="#103">103</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tearDown() {
+<a name="104" href="#104">104</a>         LogFactory.releaseAll();
+<a name="105" href="#105">105</a>     }
+<a name="106" href="#106">106</a> 
+<a name="107" href="#107">107</a>     <em class="jxr_comment">// ----------------------------------------------------------- Test Methods</em>
+<a name="108" href="#108">108</a> 
+<a name="109" href="#109">109</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="110" href="#110">110</a> <em class="jxr_javadoccomment">     * Verify that MyLogFactoryImpl is only loadable via the tccl.</em>
+<a name="111" href="#111">111</a> <em class="jxr_javadoccomment">     */</em>
+<a name="112" href="#112">112</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLoader() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="113" href="#113">113</a>         
+<a name="114" href="#114">114</a>         ClassLoader thisClassLoader = <strong class="jxr_keyword">this</strong>.getClass().getClassLoader();
+<a name="115" href="#115">115</a>         ClassLoader tcclLoader = Thread.currentThread().getContextClassLoader();
+<a name="116" href="#116">116</a> 
+<a name="117" href="#117">117</a>         <em class="jxr_comment">// the tccl loader should NOT be the same as the loader that loaded this test class.</em>
+<a name="118" href="#118">118</a>         assertNotSame(<span class="jxr_string">"tccl not same as test classloader"</span>, thisClassLoader, tcclLoader);
+<a name="119" href="#119">119</a> 
+<a name="120" href="#120">120</a>         <em class="jxr_comment">// MyLogFactoryImpl should not be loadable via parent loader</em>
+<a name="121" href="#121">121</a>         <strong class="jxr_keyword">try</strong> {
+<a name="122" href="#122">122</a>             Class clazz = thisClassLoader.loadClass(MY_LOG_FACTORY_IMPL);
+<a name="123" href="#123">123</a>             fail(<span class="jxr_string">"Unexpectedly able to load MyLogFactoryImpl via test class classloader"</span>);
+<a name="124" href="#124">124</a>             assertNotNull(clazz); <em class="jxr_comment">// silence warning about unused var</em>
+<a name="125" href="#125">125</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="126" href="#126">126</a>             <em class="jxr_comment">// ok, expected</em>
+<a name="127" href="#127">127</a>         }
+<a name="128" href="#128">128</a>         
+<a name="129" href="#129">129</a>         <em class="jxr_comment">// MyLogFactoryImpl should be loadable via tccl loader</em>
+<a name="130" href="#130">130</a>         <strong class="jxr_keyword">try</strong> {
+<a name="131" href="#131">131</a>             Class clazz = tcclLoader.loadClass(MY_LOG_FACTORY_IMPL);
+<a name="132" href="#132">132</a>             assertNotNull(clazz);
+<a name="133" href="#133">133</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="134" href="#134">134</a>             fail(<span class="jxr_string">"Unexpectedly unable to load MyLogFactoryImpl via tccl classloader"</span>);
+<a name="135" href="#135">135</a>         }
+<a name="136" href="#136">136</a>     }
+<a name="137" href="#137">137</a> 
+<a name="138" href="#138">138</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="139" href="#139">139</a> <em class="jxr_javadoccomment">     * Verify that the custom LogFactory implementation which is only accessable</em>
+<a name="140" href="#140">140</a> <em class="jxr_javadoccomment">     * via the TCCL has NOT been loaded. Because this is only accessable via the</em>
+<a name="141" href="#141">141</a> <em class="jxr_javadoccomment">     * TCCL, and we've use a commons-logging.properties that disables TCCL loading,</em>
+<a name="142" href="#142">142</a> <em class="jxr_javadoccomment">     * we should see the default LogFactoryImpl rather than the custom one.</em>
+<a name="143" href="#143">143</a> <em class="jxr_javadoccomment">     */</em>
+<a name="144" href="#144">144</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testTcclLoading() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="145" href="#145">145</a>         <strong class="jxr_keyword">try</strong> {
+<a name="146" href="#146">146</a>             LogFactory instance = LogFactory.getFactory();
+<a name="147" href="#147">147</a>             fail(<span class="jxr_string">"Unexpectedly succeeded in loading custom factory, though TCCL disabled."</span>);
+<a name="148" href="#148">148</a>             assertNotNull(instance); <em class="jxr_comment">// silence warning about unused var</em>
+<a name="149" href="#149">149</a>         } <strong class="jxr_keyword">catch</strong>(org.apache.commons.logging.LogConfigurationException ex) {
+<a name="150" href="#150">150</a>             <em class="jxr_comment">// ok, custom MyLogFactoryImpl as specified in props_disable_tccl</em>
+<a name="151" href="#151">151</a>             <em class="jxr_comment">// could not be found.</em>
+<a name="152" href="#152">152</a>             <strong class="jxr_keyword">int</strong> index = ex.getMessage().indexOf(MY_LOG_FACTORY_IMPL);
+<a name="153" href="#153">153</a>             assertTrue(<span class="jxr_string">"MylogFactoryImpl not found"</span>, index &gt;= 0);
+<a name="154" href="#154">154</a>         }
+<a name="155" href="#155">155</a>     }
+<a name="156" href="#156">156</a> }
+</pre>
+<hr><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a></div></body>
+</html>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
 
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/package-summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/package-summary/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:28" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:28+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>Commons Logging 1.1.1 Reference Package org.apache.commons.logging.tccl.logfactory</title>
+		<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="style">
+	</head>
+	<body>
+		      	<div class="overview">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../overview-summary.html">Overview</a>
+          		</li>
+          		<li class="selected">Package</li>
+        	</ul>
+      	</div>
+      	<div class="framenoframe">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../index.html" target="_top">FRAMES</a>
+          		</li>
+          		<li>
+            		<a href="package-summary.html" target="_top">NO FRAMES</a>
+          		</li>
+        	</ul>
+      	</div>
+		
+		      	<h2>Package org.apache.commons.logging.tccl.logfactory</h2>
+
+		<table class="summary">
+        	<thead>
+          		<tr>
+            		<th>Class Summary</th>
+          		</tr>
+        	</thead>
+        	<tbody>
+        		            	<tr>
+              		<td>
+                		<a href="TcclDisabledTestCase.html" target="classFrame">TcclDisabledTestCase</a>
+              		</td>
+            	</tr>
+				            	<tr>
+              		<td>
+                		<a href="TcclEnabledTestCase.html" target="classFrame">TcclEnabledTestCase</a>
+              		</td>
+            	</tr>
+				        	</tbody>
+      	</table>
+		
+		      	<div class="overview">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../overview-summary.html">Overview</a>
+          		</li>
+          		<li class="selected">Package</li>
+        	</ul>
+      	</div>
+      	<div class="framenoframe">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../index.html" target="_top">FRAMES</a>
+          		</li>
+          		<li>
+            		<a href="package-summary.html" target="_top">NO FRAMES</a>
+          		</li>
+        	</ul>
+      	</div>
+				<hr>
+		Copyright &copy; 2001-2007 The Apache Software Foundation. All Rights Reserved.
+	</body>
+</html>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/package-frame/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/logfactory/package-frame/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:28" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:28+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>Commons Logging 1.1.1 Reference Package org.apache.commons.logging.tccl.logfactory</title>
+		<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="style">
+	</head>
+	<body>
+
+		<h3>
+        	<a href="package-summary.html" target="classFrame">org.apache.commons.logging.tccl.logfactory</a>
+      	</h3>
+
+      	<h3>Classes</h3>
+
+      	<ul>
+      		          	<li>
+            	<a href="TcclDisabledTestCase.html" target="classFrame">TcclDisabledTestCase</a>
+          	</li>
+          	          	<li>
+            	<a href="TcclEnabledTestCase.html" target="classFrame">TcclEnabledTestCase</a>
+          	</li>
+          	      	</ul>
+
+	</body>
+</html>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/TcclEnabledTestCase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/TcclEnabledTestCase/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:27" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:27+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>TcclEnabledTestCase xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css">
+</head>
+<body>
+<pre>
+
+<a name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a name="2" href="#2">2</a>   <em class="jxr_comment"> * Licensed to the Apache Software Foundation (ASF) under one or more</em>
+<a name="3" href="#3">3</a>   <em class="jxr_comment"> * contributor license agreements.  See the NOTICE file distributed with</em>
+<a name="4" href="#4">4</a>   <em class="jxr_comment"> * this work for additional information regarding copyright ownership.</em>
+<a name="5" href="#5">5</a>   <em class="jxr_comment"> * The ASF licenses this file to You under the Apache License, Version 2.0</em>
+<a name="6" href="#6">6</a>   <em class="jxr_comment"> * (the "License"); you may not use this file except in compliance with</em>
+<a name="7" href="#7">7</a>   <em class="jxr_comment"> * the License.  You may obtain a copy of the License at</em>
+<a name="8" href="#8">8</a>   <em class="jxr_comment"> * </em>
+<a name="9" href="#9">9</a>   <em class="jxr_comment"> *      <a href="http://www.apache.org/licenses/LICENSE-2.0" target="alexandria_uri">http://www.apache.org/licenses/LICENSE-2.0</a></em>
+<a name="10" href="#10">10</a>  <em class="jxr_comment"> * </em>
+<a name="11" href="#11">11</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a name="12" href="#12">12</a>  <em class="jxr_comment"> * distributed under the License is distributed on an "AS IS" BASIS,</em>
+<a name="13" href="#13">13</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a name="14" href="#14">14</a>  <em class="jxr_comment"> * See the License for the specific language governing permissions and</em>
+<a name="15" href="#15">15</a>  <em class="jxr_comment"> * limitations under the License.</em>
+<a name="16" href="#16">16</a>  <em class="jxr_comment"> */</em> 
+<a name="17" href="#17">17</a>  
+<a name="18" href="#18">18</a>  <strong class="jxr_keyword">package</strong> org.apache.commons.logging.tccl.log;
+<a name="19" href="#19">19</a>  
+<a name="20" href="#20">20</a>  
+<a name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> java.net.URL;
+<a name="22" href="#22">22</a>  
+<a name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> junit.framework.Test;
+<a name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> junit.framework.TestCase;
+<a name="25" href="#25">25</a>  
+<a name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.Log;
+<a name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.LogFactory;
+<a name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableClassLoader;
+<a name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableTestSuite;
+<a name="30" href="#30">30</a>  
+<a name="31" href="#31">31</a>  
+<a name="32" href="#32">32</a>  <em class="jxr_javadoccomment">/**</em>
+<a name="33" href="#33">33</a>  <em class="jxr_javadoccomment"> * Verify that by default the standard LogFactoryImpl class loads a</em>
+<a name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> * custom Log implementation via the TCCL. </em>
+<a name="35" href="#35">35</a>  <em class="jxr_javadoccomment"> */</em>
+<a name="36" href="#36">36</a>  
+<a name="37" href="#37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../org/apache/commons/logging/tccl/log/TcclEnabledTestCase.html">TcclEnabledTestCase</a> <strong class="jxr_keyword">extends</strong> TestCase {
+<a name="38" href="#38">38</a>  
+<a name="39" href="#39">39</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MY_LOG_PKG = 
+<a name="40" href="#40">40</a>          <span class="jxr_string">"org.apache.commons.logging.tccl.custom"</span>;
+<a name="41" href="#41">41</a>  
+<a name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MY_LOG_IMPL =
+<a name="43" href="#43">43</a>          MY_LOG_PKG + <span class="jxr_string">".MyLog"</span>;
+<a name="44" href="#44">44</a>  
+<a name="45" href="#45">45</a>      <em class="jxr_comment">// ------------------------------------------- JUnit Infrastructure Methods</em>
+<a name="46" href="#46">46</a>  
+<a name="47" href="#47">47</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="48" href="#48">48</a>  <em class="jxr_javadoccomment">     * Return the tests included in this test suite.</em>
+<a name="49" href="#49">49</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="50" href="#50">50</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Test suite() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="51" href="#51">51</a>          Class thisClass = TcclEnabledTestCase.<strong class="jxr_keyword">class</strong>;
+<a name="52" href="#52">52</a>  
+<a name="53" href="#53">53</a>          <em class="jxr_comment">// Determine the URL to this .class file, so that we can then</em>
+<a name="54" href="#54">54</a>          <em class="jxr_comment">// append the priority dirs to it. For tidiness, load this</em>
+<a name="55" href="#55">55</a>          <em class="jxr_comment">// class through a dummy loader though this is not absolutely</em>
+<a name="56" href="#56">56</a>          <em class="jxr_comment">// necessary...</em>
+<a name="57" href="#57">57</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> dummy = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="58" href="#58">58</a>          dummy.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="59" href="#59">59</a>          dummy.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="60" href="#60">60</a>          dummy.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="61" href="#61">61</a>          
+<a name="62" href="#62">62</a>          String thisClassPath = thisClass.getName().replace('.', '/') + <span class="jxr_string">".class"</span>;
+<a name="63" href="#63">63</a>          URL baseUrl = dummy.findResource(thisClassPath);
+<a name="64" href="#64">64</a>  
+<a name="65" href="#65">65</a>          <em class="jxr_comment">// Now set up the desired classloader hierarchy. Everything goes into</em>
+<a name="66" href="#66">66</a>          <em class="jxr_comment">// the parent classpath, but we exclude the custom Log class.</em>
+<a name="67" href="#67">67</a>          <em class="jxr_comment">//</em>
+<a name="68" href="#68">68</a>          <em class="jxr_comment">// We then create a tccl classloader that can see the custom</em>
+<a name="69" href="#69">69</a>          <em class="jxr_comment">// Log class. Therefore if that class can be found, then the</em>
+<a name="70" href="#70">70</a>          <em class="jxr_comment">// TCCL must have been used to load it.</em>
+<a name="71" href="#71">71</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> emptyLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="72" href="#72">72</a>          
+<a name="73" href="#73">73</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> parentLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="74" href="#74">74</a>          parentLoader.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="75" href="#75">75</a>          parentLoader.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="76" href="#76">76</a>          parentLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="77" href="#77">77</a>          <em class="jxr_comment">// hack to ensure that the testcase classloader can't see</em>
+<a name="78" href="#78">78</a>          <em class="jxr_comment">// the custom MyLogFactoryImpl</em>
+<a name="79" href="#79">79</a>          parentLoader.useExplicitLoader(MY_LOG_PKG + <span class="jxr_string">"."</span>, emptyLoader);
+<a name="80" href="#80">80</a>          
+<a name="81" href="#81">81</a>          URL propsEnableUrl = <strong class="jxr_keyword">new</strong> URL(baseUrl, <span class="jxr_string">"props_enable_tccl/"</span>);
+<a name="82" href="#82">82</a>          parentLoader.addURL(propsEnableUrl);
+<a name="83" href="#83">83</a>  
+<a name="84" href="#84">84</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> tcclLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(parentLoader);
+<a name="85" href="#85">85</a>          tcclLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="86" href="#86">86</a>  
+<a name="87" href="#87">87</a>          Class testClass = parentLoader.loadClass(thisClass.getName());
+<a name="88" href="#88">88</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableTestSuite.html">PathableTestSuite</a>(testClass, tcclLoader);
+<a name="89" href="#89">89</a>      }
+<a name="90" href="#90">90</a>  
+<a name="91" href="#91">91</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="92" href="#92">92</a>  <em class="jxr_javadoccomment">     * Set up instance variables required by this test case.</em>
+<a name="93" href="#93">93</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="94" href="#94">94</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="95" href="#95">95</a>          LogFactory.releaseAll();
+<a name="96" href="#96">96</a>      }
+<a name="97" href="#97">97</a>  
+<a name="98" href="#98">98</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="99" href="#99">99</a>  <em class="jxr_javadoccomment">     * Tear down instance variables required by this test case.</em>
+<a name="100" href="#100">100</a> <em class="jxr_javadoccomment">     */</em>
+<a name="101" href="#101">101</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tearDown() {
+<a name="102" href="#102">102</a>         LogFactory.releaseAll();
+<a name="103" href="#103">103</a>     }
+<a name="104" href="#104">104</a> 
+<a name="105" href="#105">105</a>     <em class="jxr_comment">// ----------------------------------------------------------- Test Methods</em>
+<a name="106" href="#106">106</a> 
+<a name="107" href="#107">107</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="108" href="#108">108</a> <em class="jxr_javadoccomment">     * Verify that MyLogFactoryImpl is only loadable via the tccl.</em>
+<a name="109" href="#109">109</a> <em class="jxr_javadoccomment">     */</em>
+<a name="110" href="#110">110</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLoader() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="111" href="#111">111</a>         
+<a name="112" href="#112">112</a>         ClassLoader thisClassLoader = <strong class="jxr_keyword">this</strong>.getClass().getClassLoader();
+<a name="113" href="#113">113</a>         ClassLoader tcclLoader = Thread.currentThread().getContextClassLoader();
+<a name="114" href="#114">114</a>         
+<a name="115" href="#115">115</a>         <em class="jxr_comment">// the tccl loader should NOT be the same as the loader that loaded this test class.</em>
+<a name="116" href="#116">116</a>         assertNotSame(<span class="jxr_string">"tccl not same as test classloader"</span>, thisClassLoader, tcclLoader);
+<a name="117" href="#117">117</a> 
+<a name="118" href="#118">118</a>         <em class="jxr_comment">// MyLog should not be loadable via parent loader</em>
+<a name="119" href="#119">119</a>         <strong class="jxr_keyword">try</strong> {
+<a name="120" href="#120">120</a>             Class clazz = thisClassLoader.loadClass(MY_LOG_IMPL);
+<a name="121" href="#121">121</a>             fail(<span class="jxr_string">"Unexpectedly able to load MyLog via test class classloader"</span>);
+<a name="122" href="#122">122</a>             assertNotNull(clazz); <em class="jxr_comment">// silence warnings about unused var</em>
+<a name="123" href="#123">123</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="124" href="#124">124</a>             <em class="jxr_comment">// ok, expected</em>
+<a name="125" href="#125">125</a>         }
+<a name="126" href="#126">126</a>         
+<a name="127" href="#127">127</a>         <em class="jxr_comment">// MyLog should be loadable via tccl loader</em>
+<a name="128" href="#128">128</a>         <strong class="jxr_keyword">try</strong> {
+<a name="129" href="#129">129</a>             Class clazz = tcclLoader.loadClass(MY_LOG_IMPL);
+<a name="130" href="#130">130</a>             assertNotNull(clazz);
+<a name="131" href="#131">131</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="132" href="#132">132</a>             fail(<span class="jxr_string">"Unexpectedly unable to load MyLog via tccl classloader"</span>);
+<a name="133" href="#133">133</a>         }
+<a name="134" href="#134">134</a>     }
+<a name="135" href="#135">135</a> 
+<a name="136" href="#136">136</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="137" href="#137">137</a> <em class="jxr_javadoccomment">     * Verify that the custom Log implementation which is only accessable</em>
+<a name="138" href="#138">138</a> <em class="jxr_javadoccomment">     * via the TCCL has successfully been loaded as specified in the config file.</em>
+<a name="139" href="#139">139</a> <em class="jxr_javadoccomment">     * This proves that the TCCL was used to load that class.</em>
+<a name="140" href="#140">140</a> <em class="jxr_javadoccomment">     */</em>
+<a name="141" href="#141">141</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testTcclLoading() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="142" href="#142">142</a>         LogFactory instance = LogFactory.getFactory();
+<a name="143" href="#143">143</a>         
+<a name="144" href="#144">144</a>         assertEquals(
+<a name="145" href="#145">145</a>             <span class="jxr_string">"Correct LogFactory loaded"</span>, 
+<a name="146" href="#146">146</a>             <span class="jxr_string">"org.apache.commons.logging.impl.LogFactoryImpl"</span>,
+<a name="147" href="#147">147</a>             instance.getClass().getName());
+<a name="148" href="#148">148</a> 
+<a name="149" href="#149">149</a>         Log log = instance.getInstance(<span class="jxr_string">"test"</span>);
+<a name="150" href="#150">150</a>         assertEquals(
+<a name="151" href="#151">151</a>             <span class="jxr_string">"Correct Log loaded"</span>,
+<a name="152" href="#152">152</a>             MY_LOG_IMPL,
+<a name="153" href="#153">153</a>             log.getClass().getName());
+<a name="154" href="#154">154</a>     }
+<a name="155" href="#155">155</a> }
+</pre>
+<hr><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a></div></body>
+</html>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/TcclDisabledTestCase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/TcclDisabledTestCase/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:27" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:27+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>TcclDisabledTestCase xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css">
+</head>
+<body>
+<pre>
+
+<a name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a name="2" href="#2">2</a>   <em class="jxr_comment"> * Licensed to the Apache Software Foundation (ASF) under one or more</em>
+<a name="3" href="#3">3</a>   <em class="jxr_comment"> * contributor license agreements.  See the NOTICE file distributed with</em>
+<a name="4" href="#4">4</a>   <em class="jxr_comment"> * this work for additional information regarding copyright ownership.</em>
+<a name="5" href="#5">5</a>   <em class="jxr_comment"> * The ASF licenses this file to You under the Apache License, Version 2.0</em>
+<a name="6" href="#6">6</a>   <em class="jxr_comment"> * (the "License"); you may not use this file except in compliance with</em>
+<a name="7" href="#7">7</a>   <em class="jxr_comment"> * the License.  You may obtain a copy of the License at</em>
+<a name="8" href="#8">8</a>   <em class="jxr_comment"> * </em>
+<a name="9" href="#9">9</a>   <em class="jxr_comment"> *      <a href="http://www.apache.org/licenses/LICENSE-2.0" target="alexandria_uri">http://www.apache.org/licenses/LICENSE-2.0</a></em>
+<a name="10" href="#10">10</a>  <em class="jxr_comment"> * </em>
+<a name="11" href="#11">11</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a name="12" href="#12">12</a>  <em class="jxr_comment"> * distributed under the License is distributed on an "AS IS" BASIS,</em>
+<a name="13" href="#13">13</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a name="14" href="#14">14</a>  <em class="jxr_comment"> * See the License for the specific language governing permissions and</em>
+<a name="15" href="#15">15</a>  <em class="jxr_comment"> * limitations under the License.</em>
+<a name="16" href="#16">16</a>  <em class="jxr_comment"> */</em> 
+<a name="17" href="#17">17</a>  
+<a name="18" href="#18">18</a>  <strong class="jxr_keyword">package</strong> org.apache.commons.logging.tccl.log;
+<a name="19" href="#19">19</a>  
+<a name="20" href="#20">20</a>  
+<a name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> java.net.URL;
+<a name="22" href="#22">22</a>  
+<a name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> junit.framework.Test;
+<a name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> junit.framework.TestCase;
+<a name="25" href="#25">25</a>  
+<a name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.Log;
+<a name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.LogConfigurationException;
+<a name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.LogFactory;
+<a name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableClassLoader;
+<a name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.logging.PathableTestSuite;
+<a name="31" href="#31">31</a>  
+<a name="32" href="#32">32</a>  
+<a name="33" href="#33">33</a>  <em class="jxr_javadoccomment">/**</em>
+<a name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> * Verify that by default LogFactoryImpl is loaded from the tccl classloader.</em>
+<a name="35" href="#35">35</a>  <em class="jxr_javadoccomment"> */</em>
+<a name="36" href="#36">36</a>  
+<a name="37" href="#37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../org/apache/commons/logging/tccl/log/TcclDisabledTestCase.html">TcclDisabledTestCase</a> <strong class="jxr_keyword">extends</strong> TestCase {
+<a name="38" href="#38">38</a>  
+<a name="39" href="#39">39</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MY_LOG_PKG = 
+<a name="40" href="#40">40</a>          <span class="jxr_string">"org.apache.commons.logging.tccl.custom"</span>;
+<a name="41" href="#41">41</a>  
+<a name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MY_LOG_IMPL =
+<a name="43" href="#43">43</a>          MY_LOG_PKG + <span class="jxr_string">".MyLog"</span>;
+<a name="44" href="#44">44</a>  
+<a name="45" href="#45">45</a>      <em class="jxr_comment">// ------------------------------------------- JUnit Infrastructure Methods</em>
+<a name="46" href="#46">46</a>  
+<a name="47" href="#47">47</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="48" href="#48">48</a>  <em class="jxr_javadoccomment">     * Return the tests included in this test suite.</em>
+<a name="49" href="#49">49</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="50" href="#50">50</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Test suite() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="51" href="#51">51</a>          Class thisClass = TcclDisabledTestCase.<strong class="jxr_keyword">class</strong>;
+<a name="52" href="#52">52</a>  
+<a name="53" href="#53">53</a>          <em class="jxr_comment">// Determine the URL to this .class file, so that we can then</em>
+<a name="54" href="#54">54</a>          <em class="jxr_comment">// append the priority dirs to it. For tidiness, load this</em>
+<a name="55" href="#55">55</a>          <em class="jxr_comment">// class through a dummy loader though this is not absolutely</em>
+<a name="56" href="#56">56</a>          <em class="jxr_comment">// necessary...</em>
+<a name="57" href="#57">57</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> dummy = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="58" href="#58">58</a>          dummy.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="59" href="#59">59</a>          dummy.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="60" href="#60">60</a>          dummy.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="61" href="#61">61</a>          
+<a name="62" href="#62">62</a>          String thisClassPath = thisClass.getName().replace('.', '/') + <span class="jxr_string">".class"</span>;
+<a name="63" href="#63">63</a>          URL baseUrl = dummy.findResource(thisClassPath);
+<a name="64" href="#64">64</a>  
+<a name="65" href="#65">65</a>          <em class="jxr_comment">// Now set up the desired classloader hierarchy. Everything goes into</em>
+<a name="66" href="#66">66</a>          <em class="jxr_comment">// the parent classpath, but we exclude the custom Log class.</em>
+<a name="67" href="#67">67</a>          <em class="jxr_comment">//</em>
+<a name="68" href="#68">68</a>          <em class="jxr_comment">// We then create a tccl classloader that can see the custom</em>
+<a name="69" href="#69">69</a>          <em class="jxr_comment">// Log class. Therefore if that class can be found, then the</em>
+<a name="70" href="#70">70</a>          <em class="jxr_comment">// TCCL must have been used to load it.</em>
+<a name="71" href="#71">71</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> emptyLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="72" href="#72">72</a>          
+<a name="73" href="#73">73</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> parentLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(<strong class="jxr_keyword">null</strong>);
+<a name="74" href="#74">74</a>          parentLoader.useExplicitLoader(<span class="jxr_string">"junit."</span>, Test.<strong class="jxr_keyword">class</strong>.getClassLoader());
+<a name="75" href="#75">75</a>          parentLoader.addLogicalLib(<span class="jxr_string">"commons-logging"</span>);
+<a name="76" href="#76">76</a>          parentLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="77" href="#77">77</a>          <em class="jxr_comment">// hack to ensure that the testcase classloader can't see</em>
+<a name="78" href="#78">78</a>          <em class="jxr_comment">// the custom MyLog</em>
+<a name="79" href="#79">79</a>          parentLoader.useExplicitLoader(MY_LOG_PKG + <span class="jxr_string">"."</span>, emptyLoader);
+<a name="80" href="#80">80</a>          
+<a name="81" href="#81">81</a>          URL propsEnableUrl = <strong class="jxr_keyword">new</strong> URL(baseUrl, <span class="jxr_string">"props_disable_tccl/"</span>);
+<a name="82" href="#82">82</a>          parentLoader.addURL(propsEnableUrl);
+<a name="83" href="#83">83</a>  
+<a name="84" href="#84">84</a>          <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a> tcclLoader = <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableClassLoader.html">PathableClassLoader</a>(parentLoader);
+<a name="85" href="#85">85</a>          tcclLoader.addLogicalLib(<span class="jxr_string">"testclasses"</span>);
+<a name="86" href="#86">86</a>  
+<a name="87" href="#87">87</a>          Class testClass = parentLoader.loadClass(thisClass.getName());
+<a name="88" href="#88">88</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../org/apache/commons/logging/PathableTestSuite.html">PathableTestSuite</a>(testClass, tcclLoader);
+<a name="89" href="#89">89</a>      }
+<a name="90" href="#90">90</a>  
+<a name="91" href="#91">91</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="92" href="#92">92</a>  <em class="jxr_javadoccomment">     * Set up instance variables required by this test case.</em>
+<a name="93" href="#93">93</a>  <em class="jxr_javadoccomment">     */</em>
+<a name="94" href="#94">94</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="95" href="#95">95</a>          LogFactory.releaseAll();
+<a name="96" href="#96">96</a>      }
+<a name="97" href="#97">97</a>  
+<a name="98" href="#98">98</a>      <em class="jxr_javadoccomment">/**</em>
+<a name="99" href="#99">99</a>  <em class="jxr_javadoccomment">     * Tear down instance variables required by this test case.</em>
+<a name="100" href="#100">100</a> <em class="jxr_javadoccomment">     */</em>
+<a name="101" href="#101">101</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tearDown() {
+<a name="102" href="#102">102</a>         LogFactory.releaseAll();
+<a name="103" href="#103">103</a>     }
+<a name="104" href="#104">104</a> 
+<a name="105" href="#105">105</a>     <em class="jxr_comment">// ----------------------------------------------------------- Test Methods</em>
+<a name="106" href="#106">106</a> 
+<a name="107" href="#107">107</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="108" href="#108">108</a> <em class="jxr_javadoccomment">     * Verify that MyLog is only loadable via the tccl.</em>
+<a name="109" href="#109">109</a> <em class="jxr_javadoccomment">     */</em>
+<a name="110" href="#110">110</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLoader() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="111" href="#111">111</a>         
+<a name="112" href="#112">112</a>         ClassLoader thisClassLoader = <strong class="jxr_keyword">this</strong>.getClass().getClassLoader();
+<a name="113" href="#113">113</a>         ClassLoader tcclLoader = Thread.currentThread().getContextClassLoader();
+<a name="114" href="#114">114</a> 
+<a name="115" href="#115">115</a>         <em class="jxr_comment">// the tccl loader should NOT be the same as the loader that loaded this test class.</em>
+<a name="116" href="#116">116</a>         assertNotSame(<span class="jxr_string">"tccl not same as test classloader"</span>, thisClassLoader, tcclLoader);
+<a name="117" href="#117">117</a> 
+<a name="118" href="#118">118</a>         <em class="jxr_comment">// MyLog should not be loadable via parent loader</em>
+<a name="119" href="#119">119</a>         <strong class="jxr_keyword">try</strong> {
+<a name="120" href="#120">120</a>             Class clazz = thisClassLoader.loadClass(MY_LOG_IMPL);
+<a name="121" href="#121">121</a>             fail(<span class="jxr_string">"Unexpectedly able to load MyLog via test class classloader"</span>);
+<a name="122" href="#122">122</a>             assertNotNull(clazz); <em class="jxr_comment">// silence warnings about unused var</em>
+<a name="123" href="#123">123</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="124" href="#124">124</a>             <em class="jxr_comment">// ok, expected</em>
+<a name="125" href="#125">125</a>         }
+<a name="126" href="#126">126</a>         
+<a name="127" href="#127">127</a>         <em class="jxr_comment">// MyLog should be loadable via tccl loader</em>
+<a name="128" href="#128">128</a>         <strong class="jxr_keyword">try</strong> {
+<a name="129" href="#129">129</a>             Class clazz = tcclLoader.loadClass(MY_LOG_IMPL);
+<a name="130" href="#130">130</a>             assertNotNull(clazz);
+<a name="131" href="#131">131</a>         } <strong class="jxr_keyword">catch</strong>(ClassNotFoundException ex) {
+<a name="132" href="#132">132</a>             fail(<span class="jxr_string">"Unexpectedly unable to load MyLog via tccl classloader"</span>);
+<a name="133" href="#133">133</a>         }
+<a name="134" href="#134">134</a>     }
+<a name="135" href="#135">135</a> 
+<a name="136" href="#136">136</a>     <em class="jxr_javadoccomment">/**</em>
+<a name="137" href="#137">137</a> <em class="jxr_javadoccomment">     * Verify that the custom Log implementation which is only accessable</em>
+<a name="138" href="#138">138</a> <em class="jxr_javadoccomment">     * via the TCCL has NOT been loaded. Because this is only accessable via the</em>
+<a name="139" href="#139">139</a> <em class="jxr_javadoccomment">     * TCCL, and we've use a commons-logging.properties that disables TCCL loading,</em>
+<a name="140" href="#140">140</a> <em class="jxr_javadoccomment">     * we should see the default Log rather than the custom one.</em>
+<a name="141" href="#141">141</a> <em class="jxr_javadoccomment">     */</em>
+<a name="142" href="#142">142</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testTcclLoading() <strong class="jxr_keyword">throws</strong> Exception {
+<a name="143" href="#143">143</a>         LogFactory instance = LogFactory.getFactory();
+<a name="144" href="#144">144</a>         assertEquals(
+<a name="145" href="#145">145</a>                 <span class="jxr_string">"Correct LogFactory loaded"</span>, 
+<a name="146" href="#146">146</a>                 <span class="jxr_string">"org.apache.commons.logging.impl.LogFactoryImpl"</span>,
+<a name="147" href="#147">147</a>                 instance.getClass().getName());
+<a name="148" href="#148">148</a> 
+<a name="149" href="#149">149</a>         <strong class="jxr_keyword">try</strong> {
+<a name="150" href="#150">150</a>             Log log = instance.getInstance(<span class="jxr_string">"test"</span>);
+<a name="151" href="#151">151</a>             fail(<span class="jxr_string">"Unexpectedly succeeded in loading a custom Log class"</span>
+<a name="152" href="#152">152</a>                 + <span class="jxr_string">" that is only accessable via the tccl."</span>);
+<a name="153" href="#153">153</a>             assertNotNull(log); <em class="jxr_comment">// silence compiler warning about unused var</em>
+<a name="154" href="#154">154</a>         } <strong class="jxr_keyword">catch</strong>(LogConfigurationException ex) {
+<a name="155" href="#155">155</a>             <em class="jxr_comment">// ok, expected</em>
+<a name="156" href="#156">156</a>             <strong class="jxr_keyword">int</strong> index = ex.getMessage().indexOf(MY_LOG_IMPL);
+<a name="157" href="#157">157</a>             assertTrue(<span class="jxr_string">"MyLog not found"</span>, index &gt;= 0);
+<a name="158" href="#158">158</a>         }
+<a name="159" href="#159">159</a>     }
+<a name="160" href="#160">160</a> }
+</pre>
+<hr><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a></div></body>
+</html>
+
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/package-summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/package-summary/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:27" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:27+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>Commons Logging 1.1.1 Reference Package org.apache.commons.logging.tccl.log</title>
+		<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="style">
+	</head>
+	<body>
+		      	<div class="overview">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../overview-summary.html">Overview</a>
+          		</li>
+          		<li class="selected">Package</li>
+        	</ul>
+      	</div>
+      	<div class="framenoframe">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../index.html" target="_top">FRAMES</a>
+          		</li>
+          		<li>
+            		<a href="package-summary.html" target="_top">NO FRAMES</a>
+          		</li>
+        	</ul>
+      	</div>
+		
+		      	<h2>Package org.apache.commons.logging.tccl.log</h2>
+
+		<table class="summary">
+        	<thead>
+          		<tr>
+            		<th>Class Summary</th>
+          		</tr>
+        	</thead>
+        	<tbody>
+        		            	<tr>
+              		<td>
+                		<a href="TcclDisabledTestCase.html" target="classFrame">TcclDisabledTestCase</a>
+              		</td>
+            	</tr>
+				            	<tr>
+              		<td>
+                		<a href="TcclEnabledTestCase.html" target="classFrame">TcclEnabledTestCase</a>
+              		</td>
+            	</tr>
+				        	</tbody>
+      	</table>
+		
+		      	<div class="overview">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../overview-summary.html">Overview</a>
+          		</li>
+          		<li class="selected">Package</li>
+        	</ul>
+      	</div>
+      	<div class="framenoframe">
+        	<ul>
+          		<li>
+            		<a href="../../../../../../index.html" target="_top">FRAMES</a>
+          		</li>
+          		<li>
+            		<a href="package-summary.html" target="_top">NO FRAMES</a>
+          		</li>
+        	</ul>
+      	</div>
+				<hr>
+		Copyright &copy; 2001-2007 The Apache Software Foundation. All Rights Reserved.
+	</body>
+</html>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/package-frame/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-logging-1.1.1-bin/commons-logging-1.1.1/site/xref-test/org/apache/commons/logging/tccl/log/package-frame/" class="post-title-link" itemprop="url">未命名</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:27" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:27+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2007-11-22 00:28:10" itemprop="dateModified" datetime="2007-11-22T00:28:10+08:00">2007-11-22</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en">
+	<head><meta name="generator" content="Hexo 3.9.0">
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>Commons Logging 1.1.1 Reference Package org.apache.commons.logging.tccl.log</title>
+		<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="style">
+	</head>
+	<body>
+
+		<h3>
+        	<a href="package-summary.html" target="classFrame">org.apache.commons.logging.tccl.log</a>
+      	</h3>
+
+      	<h3>Classes</h3>
+
+      	<ul>
+      		          	<li>
+            	<a href="TcclDisabledTestCase.html" target="classFrame">TcclDisabledTestCase</a>
+          	</li>
+          	          	<li>
+            	<a href="TcclEnabledTestCase.html" target="classFrame">TcclEnabledTestCase</a>
+          	</li>
+          	      	</ul>
+
+	</body>
+</html>
         
       
     </div>
@@ -440,6 +2677,9 @@
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/54/">54</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
           </div>
@@ -486,7 +2726,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">539</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/locale/BaseLocaleConverter/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2010-03-24T09:14:04.454Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/locale/BaseLocaleConverter/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/locale/BaseLocaleConverter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:23" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:23+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:14:04" itemprop="dateModified" datetime="2010-03-24T17:14:04+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html>
+<body bgcolor="white">
+<pre>
+<font color="green">001</font>    /*<a name="line.1"></a>
+<font color="green">002</font>     * Licensed to the Apache Software Foundation (ASF) under one or more<a name="line.2"></a>
+<font color="green">003</font>     * contributor license agreements.  See the NOTICE file distributed with<a name="line.3"></a>
+<font color="green">004</font>     * this work for additional information regarding copyright ownership.<a name="line.4"></a>
+<font color="green">005</font>     * The ASF licenses this file to You under the Apache License, Version 2.0<a name="line.5"></a>
+<font color="green">006</font>     * (the "License"); you may not use this file except in compliance with<a name="line.6"></a>
+<font color="green">007</font>     * the License.  You may obtain a copy of the License at<a name="line.7"></a>
+<font color="green">008</font>     *<a name="line.8"></a>
+<font color="green">009</font>     *      http://www.apache.org/licenses/LICENSE-2.0<a name="line.9"></a>
+<font color="green">010</font>     *<a name="line.10"></a>
+<font color="green">011</font>     * Unless required by applicable law or agreed to in writing, software<a name="line.11"></a>
+<font color="green">012</font>     * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.12"></a>
+<font color="green">013</font>     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<a name="line.13"></a>
+<font color="green">014</font>     * See the License for the specific language governing permissions and<a name="line.14"></a>
+<font color="green">015</font>     * limitations under the License.<a name="line.15"></a>
+<font color="green">016</font>     */<a name="line.16"></a>
+<font color="green">017</font>    <a name="line.17"></a>
+<font color="green">018</font>    package org.apache.commons.beanutils.locale;<a name="line.18"></a>
+<font color="green">019</font>    <a name="line.19"></a>
+<font color="green">020</font>    import org.apache.commons.beanutils.ConversionException;<a name="line.20"></a>
+<font color="green">021</font>    import org.apache.commons.logging.Log;<a name="line.21"></a>
+<font color="green">022</font>    import org.apache.commons.logging.LogFactory;<a name="line.22"></a>
+<font color="green">023</font>    <a name="line.23"></a>
+<font color="green">024</font>    import java.text.ParseException;<a name="line.24"></a>
+<font color="green">025</font>    import java.util.Locale;<a name="line.25"></a>
+<font color="green">026</font>    <a name="line.26"></a>
+<font color="green">027</font>    <a name="line.27"></a>
+<font color="green">028</font>    /**<a name="line.28"></a>
+<font color="green">029</font>     * &lt;p&gt;The base class for all standart type locale-sensitive converters.<a name="line.29"></a>
+<font color="green">030</font>     * It has {@link LocaleConverter} and {@link org.apache.commons.beanutils.Converter} implementations,<a name="line.30"></a>
+<font color="green">031</font>     * that convert an incoming locale-sensitive Object into an object of correspond type,<a name="line.31"></a>
+<font color="green">032</font>     * optionally using a default value or throwing a {@link ConversionException}<a name="line.32"></a>
+<font color="green">033</font>     * if a conversion error occurs.&lt;/p&gt;<a name="line.33"></a>
+<font color="green">034</font>     *<a name="line.34"></a>
+<font color="green">035</font>     * @author Yauheny Mikulski<a name="line.35"></a>
+<font color="green">036</font>     */<a name="line.36"></a>
+<font color="green">037</font>    <a name="line.37"></a>
+<font color="green">038</font>    public abstract class BaseLocaleConverter implements LocaleConverter {<a name="line.38"></a>
+<font color="green">039</font>    <a name="line.39"></a>
+<font color="green">040</font>        // ----------------------------------------------------- Instance Variables<a name="line.40"></a>
+<font color="green">041</font>    <a name="line.41"></a>
+<font color="green">042</font>        /** All logging goes through this logger */<a name="line.42"></a>
+<font color="green">043</font>        private Log log = LogFactory.getLog(BaseLocaleConverter.class);<a name="line.43"></a>
+<font color="green">044</font>    <a name="line.44"></a>
+<font color="green">045</font>        /** The default value specified to our Constructor, if any. */<a name="line.45"></a>
+<font color="green">046</font>        private Object defaultValue = null;<a name="line.46"></a>
+<font color="green">047</font>    <a name="line.47"></a>
+<font color="green">048</font>        /** Should we return the default value on conversion errors? */<a name="line.48"></a>
+<font color="green">049</font>        protected boolean useDefault = false;<a name="line.49"></a>
+<font color="green">050</font>    <a name="line.50"></a>
+<font color="green">051</font>        /** The locale specified to our Constructor, by default - system locale. */<a name="line.51"></a>
+<font color="green">052</font>        protected Locale locale = Locale.getDefault();<a name="line.52"></a>
+<font color="green">053</font>    <a name="line.53"></a>
+<font color="green">054</font>        /** The default pattern specified to our Constructor, if any. */<a name="line.54"></a>
+<font color="green">055</font>        protected String pattern = null;<a name="line.55"></a>
+<font color="green">056</font>    <a name="line.56"></a>
+<font color="green">057</font>        /** The flag indicating whether the given pattern string is localized or not. */<a name="line.57"></a>
+<font color="green">058</font>        protected boolean locPattern = false;<a name="line.58"></a>
+<font color="green">059</font>    <a name="line.59"></a>
+<font color="green">060</font>        // ----------------------------------------------------------- Constructors<a name="line.60"></a>
+<font color="green">061</font>    <a name="line.61"></a>
+<font color="green">062</font>        /**<a name="line.62"></a>
+<font color="green">063</font>         * Create a {@link LocaleConverter} that will throw a {@link ConversionException}<a name="line.63"></a>
+<font color="green">064</font>         * if a conversion error occurs.<a name="line.64"></a>
+<font color="green">065</font>         * An unlocalized pattern is used for the convertion.<a name="line.65"></a>
+<font color="green">066</font>         *<a name="line.66"></a>
+<font color="green">067</font>         * @param locale        The locale<a name="line.67"></a>
+<font color="green">068</font>         * @param pattern       The convertion pattern<a name="line.68"></a>
+<font color="green">069</font>         */<a name="line.69"></a>
+<font color="green">070</font>        protected BaseLocaleConverter(Locale locale, String pattern) {<a name="line.70"></a>
+<font color="green">071</font>    <a name="line.71"></a>
+<font color="green">072</font>            this(null, locale, pattern, false, false);<a name="line.72"></a>
+<font color="green">073</font>        }<a name="line.73"></a>
+<font color="green">074</font>    <a name="line.74"></a>
+<font color="green">075</font>        /**<a name="line.75"></a>
+<font color="green">076</font>         * Create a {@link LocaleConverter} that will throw a {@link ConversionException}<a name="line.76"></a>
+<font color="green">077</font>         * if a conversion error occurs.<a name="line.77"></a>
+<font color="green">078</font>         *<a name="line.78"></a>
+<font color="green">079</font>         * @param locale        The locale<a name="line.79"></a>
+<font color="green">080</font>         * @param pattern       The convertion pattern<a name="line.80"></a>
+<font color="green">081</font>         * @param locPattern    Indicate whether the pattern is localized or not<a name="line.81"></a>
+<font color="green">082</font>         */<a name="line.82"></a>
+<font color="green">083</font>        protected BaseLocaleConverter(Locale locale, String pattern, boolean locPattern) {<a name="line.83"></a>
+<font color="green">084</font>    <a name="line.84"></a>
+<font color="green">085</font>            this(null, locale, pattern, false, locPattern);<a name="line.85"></a>
+<font color="green">086</font>        }<a name="line.86"></a>
+<font color="green">087</font>    <a name="line.87"></a>
+<font color="green">088</font>        /**<a name="line.88"></a>
+<font color="green">089</font>         * Create a {@link LocaleConverter} that will return the specified default value<a name="line.89"></a>
+<font color="green">090</font>         * if a conversion error occurs.<a name="line.90"></a>
+<font color="green">091</font>         * An unlocalized pattern is used for the convertion.<a name="line.91"></a>
+<font color="green">092</font>         *<a name="line.92"></a>
+<font color="green">093</font>         * @param defaultValue  The default value to be returned<a name="line.93"></a>
+<font color="green">094</font>         * @param locale        The locale<a name="line.94"></a>
+<font color="green">095</font>         * @param pattern       The convertion pattern<a name="line.95"></a>
+<font color="green">096</font>         */<a name="line.96"></a>
+<font color="green">097</font>        protected BaseLocaleConverter(Object defaultValue, Locale locale, String pattern) {<a name="line.97"></a>
+<font color="green">098</font>    <a name="line.98"></a>
+<font color="green">099</font>            this(defaultValue, locale, pattern, false);<a name="line.99"></a>
+<font color="green">100</font>        }<a name="line.100"></a>
+<font color="green">101</font>    <a name="line.101"></a>
+<font color="green">102</font>        /**<a name="line.102"></a>
+<font color="green">103</font>         * Create a {@link LocaleConverter} that will return the specified default value<a name="line.103"></a>
+<font color="green">104</font>         * if a conversion error occurs.<a name="line.104"></a>
+<font color="green">105</font>         *<a name="line.105"></a>
+<font color="green">106</font>         * @param defaultValue  The default value to be returned<a name="line.106"></a>
+<font color="green">107</font>         * @param locale        The locale<a name="line.107"></a>
+<font color="green">108</font>         * @param pattern       The convertion pattern<a name="line.108"></a>
+<font color="green">109</font>         * @param locPattern    Indicate whether the pattern is localized or not<a name="line.109"></a>
+<font color="green">110</font>         */<a name="line.110"></a>
+<font color="green">111</font>        protected BaseLocaleConverter(Object defaultValue, Locale locale, String pattern, boolean locPattern) {<a name="line.111"></a>
+<font color="green">112</font>    <a name="line.112"></a>
+<font color="green">113</font>            this(defaultValue, locale, pattern, true, locPattern);<a name="line.113"></a>
+<font color="green">114</font>        }<a name="line.114"></a>
+<font color="green">115</font>    <a name="line.115"></a>
+<font color="green">116</font>        /**<a name="line.116"></a>
+<font color="green">117</font>         * Create a {@link LocaleConverter} that will return the specified default value<a name="line.117"></a>
+<font color="green">118</font>         * or throw a {@link ConversionException} if a conversion error occurs.<a name="line.118"></a>
+<font color="green">119</font>         *<a name="line.119"></a>
+<font color="green">120</font>         * @param defaultValue  The default value to be returned<a name="line.120"></a>
+<font color="green">121</font>         * @param locale        The locale<a name="line.121"></a>
+<font color="green">122</font>         * @param pattern       The convertion pattern<a name="line.122"></a>
+<font color="green">123</font>         * @param useDefault    Indicate whether the default value is used or not<a name="line.123"></a>
+<font color="green">124</font>         * @param locPattern    Indicate whether the pattern is localized or not<a name="line.124"></a>
+<font color="green">125</font>         */<a name="line.125"></a>
+<font color="green">126</font>        private BaseLocaleConverter(Object defaultValue, Locale locale,<a name="line.126"></a>
+<font color="green">127</font>                                    String pattern, boolean useDefault, boolean locPattern) {<a name="line.127"></a>
+<font color="green">128</font>    <a name="line.128"></a>
+<font color="green">129</font>            if (useDefault) {<a name="line.129"></a>
+<font color="green">130</font>                this.defaultValue = defaultValue;<a name="line.130"></a>
+<font color="green">131</font>                this.useDefault = true;<a name="line.131"></a>
+<font color="green">132</font>            }<a name="line.132"></a>
+<font color="green">133</font>    <a name="line.133"></a>
+<font color="green">134</font>            if (locale != null) {<a name="line.134"></a>
+<font color="green">135</font>                this.locale = locale;<a name="line.135"></a>
+<font color="green">136</font>            }<a name="line.136"></a>
+<font color="green">137</font>    <a name="line.137"></a>
+<font color="green">138</font>            this.pattern = pattern;<a name="line.138"></a>
+<font color="green">139</font>            this.locPattern = locPattern;<a name="line.139"></a>
+<font color="green">140</font>        }<a name="line.140"></a>
+<font color="green">141</font>    <a name="line.141"></a>
+<font color="green">142</font>        // --------------------------------------------------------- Methods<a name="line.142"></a>
+<font color="green">143</font>    <a name="line.143"></a>
+<font color="green">144</font>        /**<a name="line.144"></a>
+<font color="green">145</font>         * Convert the specified locale-sensitive input object into an output object of the<a name="line.145"></a>
+<font color="green">146</font>         * specified type.<a name="line.146"></a>
+<font color="green">147</font>         *<a name="line.147"></a>
+<font color="green">148</font>         * @param value The input object to be converted<a name="line.148"></a>
+<font color="green">149</font>         * @param pattern The pattern is used for the convertion<a name="line.149"></a>
+<font color="green">150</font>         * @return The converted value<a name="line.150"></a>
+<font color="green">151</font>         *<a name="line.151"></a>
+<font color="green">152</font>         * @exception ParseException if conversion cannot be performed<a name="line.152"></a>
+<font color="green">153</font>         *  successfully<a name="line.153"></a>
+<font color="green">154</font>         */<a name="line.154"></a>
+<font color="green">155</font>    <a name="line.155"></a>
+<font color="green">156</font>        abstract protected Object parse(Object value, String pattern) throws ParseException;<a name="line.156"></a>
+<font color="green">157</font>    <a name="line.157"></a>
+<font color="green">158</font>    <a name="line.158"></a>
+<font color="green">159</font>        /**<a name="line.159"></a>
+<font color="green">160</font>         * Convert the specified locale-sensitive input object into an output object.<a name="line.160"></a>
+<font color="green">161</font>         * The default pattern is used for the convertion.<a name="line.161"></a>
+<font color="green">162</font>         *<a name="line.162"></a>
+<font color="green">163</font>         * @param value The input object to be converted<a name="line.163"></a>
+<font color="green">164</font>         * @return The converted value<a name="line.164"></a>
+<font color="green">165</font>         *<a name="line.165"></a>
+<font color="green">166</font>         * @exception ConversionException if conversion cannot be performed<a name="line.166"></a>
+<font color="green">167</font>         *  successfully<a name="line.167"></a>
+<font color="green">168</font>         */<a name="line.168"></a>
+<font color="green">169</font>        public Object convert(Object value) {<a name="line.169"></a>
+<font color="green">170</font>            return convert(value, null);<a name="line.170"></a>
+<font color="green">171</font>        }<a name="line.171"></a>
+<font color="green">172</font>    <a name="line.172"></a>
+<font color="green">173</font>        /**<a name="line.173"></a>
+<font color="green">174</font>         * Convert the specified locale-sensitive input object into an output object.<a name="line.174"></a>
+<font color="green">175</font>         *<a name="line.175"></a>
+<font color="green">176</font>         * @param value The input object to be converted<a name="line.176"></a>
+<font color="green">177</font>         * @param pattern The pattern is used for the convertion<a name="line.177"></a>
+<font color="green">178</font>         * @return The converted value<a name="line.178"></a>
+<font color="green">179</font>         *<a name="line.179"></a>
+<font color="green">180</font>         * @exception ConversionException if conversion cannot be performed<a name="line.180"></a>
+<font color="green">181</font>         *  successfully<a name="line.181"></a>
+<font color="green">182</font>         */<a name="line.182"></a>
+<font color="green">183</font>        public Object convert(Object value, String pattern) {<a name="line.183"></a>
+<font color="green">184</font>            return convert(null, value, pattern);<a name="line.184"></a>
+<font color="green">185</font>        }<a name="line.185"></a>
+<font color="green">186</font>    <a name="line.186"></a>
+<font color="green">187</font>        /**<a name="line.187"></a>
+<font color="green">188</font>         * Convert the specified locale-sensitive input object into an output object of the<a name="line.188"></a>
+<font color="green">189</font>         * specified type. The default pattern is used for the convertion.<a name="line.189"></a>
+<font color="green">190</font>         *<a name="line.190"></a>
+<font color="green">191</font>         * @param type Data type to which this value should be converted<a name="line.191"></a>
+<font color="green">192</font>         * @param value The input object to be converted<a name="line.192"></a>
+<font color="green">193</font>         * @return The converted value<a name="line.193"></a>
+<font color="green">194</font>         *<a name="line.194"></a>
+<font color="green">195</font>         * @exception ConversionException if conversion cannot be performed<a name="line.195"></a>
+<font color="green">196</font>         *  successfully<a name="line.196"></a>
+<font color="green">197</font>         */<a name="line.197"></a>
+<font color="green">198</font>        public Object convert(Class type, Object value) {<a name="line.198"></a>
+<font color="green">199</font>            return convert(type, value, null);<a name="line.199"></a>
+<font color="green">200</font>        }<a name="line.200"></a>
+<font color="green">201</font>    <a name="line.201"></a>
+<font color="green">202</font>        /**<a name="line.202"></a>
+<font color="green">203</font>         * Convert the specified locale-sensitive input object into an output object of the<a name="line.203"></a>
+<font color="green">204</font>         * specified type.<a name="line.204"></a>
+<font color="green">205</font>         *<a name="line.205"></a>
+<font color="green">206</font>         * @param type Data is type to which this value should be converted<a name="line.206"></a>
+<font color="green">207</font>         * @param value is the input object to be converted<a name="line.207"></a>
+<font color="green">208</font>         * @param pattern is the pattern is used for the conversion; if null is<a name="line.208"></a>
+<font color="green">209</font>         * passed then the default pattern associated with the converter object<a name="line.209"></a>
+<font color="green">210</font>         * will be used.<a name="line.210"></a>
+<font color="green">211</font>         * @return The converted value<a name="line.211"></a>
+<font color="green">212</font>         *<a name="line.212"></a>
+<font color="green">213</font>         * @exception ConversionException if conversion cannot be performed<a name="line.213"></a>
+<font color="green">214</font>         *  successfully<a name="line.214"></a>
+<font color="green">215</font>         */<a name="line.215"></a>
+<font color="green">216</font>        public Object convert(Class type, Object value, String pattern) {<a name="line.216"></a>
+<font color="green">217</font>            if (value == null) {<a name="line.217"></a>
+<font color="green">218</font>                if (useDefault) {<a name="line.218"></a>
+<font color="green">219</font>                    return (defaultValue);<a name="line.219"></a>
+<font color="green">220</font>                } else {<a name="line.220"></a>
+<font color="green">221</font>                    // symmetric beanutils function allows null<a name="line.221"></a>
+<font color="green">222</font>                    // so do not: throw new ConversionException("No value specified");<a name="line.222"></a>
+<font color="green">223</font>                    log.debug("Null value specified for conversion, returing null");<a name="line.223"></a>
+<font color="green">224</font>                    return null;<a name="line.224"></a>
+<font color="green">225</font>                }<a name="line.225"></a>
+<font color="green">226</font>            }<a name="line.226"></a>
+<font color="green">227</font>    <a name="line.227"></a>
+<font color="green">228</font>            try {<a name="line.228"></a>
+<font color="green">229</font>                if (pattern != null) {<a name="line.229"></a>
+<font color="green">230</font>                    return parse(value, pattern);<a name="line.230"></a>
+<font color="green">231</font>                } else {<a name="line.231"></a>
+<font color="green">232</font>                    return parse(value, this.pattern);<a name="line.232"></a>
+<font color="green">233</font>                }<a name="line.233"></a>
+<font color="green">234</font>            } catch (Exception e) {<a name="line.234"></a>
+<font color="green">235</font>                if (useDefault) {<a name="line.235"></a>
+<font color="green">236</font>                    return (defaultValue);<a name="line.236"></a>
+<font color="green">237</font>                } else {<a name="line.237"></a>
+<font color="green">238</font>                    if (e instanceof ConversionException) {<a name="line.238"></a>
+<font color="green">239</font>                        throw (ConversionException)e;<a name="line.239"></a>
+<font color="green">240</font>                    }<a name="line.240"></a>
+<font color="green">241</font>                    throw new ConversionException(e);<a name="line.241"></a>
+<font color="green">242</font>                }<a name="line.242"></a>
+<font color="green">243</font>            }<a name="line.243"></a>
+<font color="green">244</font>        }<a name="line.244"></a>
+<font color="green">245</font>    }<a name="line.245"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/expression/Resolver/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/locale/LocaleBeanUtils.Descriptor/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

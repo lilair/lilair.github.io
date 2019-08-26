@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/ConvertUtilsBean/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2010-03-24T09:14:01.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="001    /* 002     * Licensed to the Apache Software Foundation (ASF) under one or more 003     * contributor license agreements.  See the NOTICE file distributed with 004     * this work for additi">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/ConvertUtilsBean/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/ConvertUtilsBean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:22" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:22+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:14:01" itemprop="dateModified" datetime="2010-03-24T17:14:01+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html>
+<body bgcolor="white">
+<pre>
+<font color="green">001</font>    /*<a name="line.1"></a>
+<font color="green">002</font>     * Licensed to the Apache Software Foundation (ASF) under one or more<a name="line.2"></a>
+<font color="green">003</font>     * contributor license agreements.  See the NOTICE file distributed with<a name="line.3"></a>
+<font color="green">004</font>     * this work for additional information regarding copyright ownership.<a name="line.4"></a>
+<font color="green">005</font>     * The ASF licenses this file to You under the Apache License, Version 2.0<a name="line.5"></a>
+<font color="green">006</font>     * (the "License"); you may not use this file except in compliance with<a name="line.6"></a>
+<font color="green">007</font>     * the License.  You may obtain a copy of the License at<a name="line.7"></a>
+<font color="green">008</font>     *<a name="line.8"></a>
+<font color="green">009</font>     *      http://www.apache.org/licenses/LICENSE-2.0<a name="line.9"></a>
+<font color="green">010</font>     *<a name="line.10"></a>
+<font color="green">011</font>     * Unless required by applicable law or agreed to in writing, software<a name="line.11"></a>
+<font color="green">012</font>     * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.12"></a>
+<font color="green">013</font>     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<a name="line.13"></a>
+<font color="green">014</font>     * See the License for the specific language governing permissions and<a name="line.14"></a>
+<font color="green">015</font>     * limitations under the License.<a name="line.15"></a>
+<font color="green">016</font>     */<a name="line.16"></a>
+<font color="green">017</font>    <a name="line.17"></a>
+<font color="green">018</font>    <a name="line.18"></a>
+<font color="green">019</font>    package org.apache.commons.beanutils;<a name="line.19"></a>
+<font color="green">020</font>    <a name="line.20"></a>
+<font color="green">021</font>    <a name="line.21"></a>
+<font color="green">022</font>    import java.io.File;<a name="line.22"></a>
+<font color="green">023</font>    import java.lang.reflect.Array;<a name="line.23"></a>
+<font color="green">024</font>    import java.math.BigDecimal;<a name="line.24"></a>
+<font color="green">025</font>    import java.math.BigInteger;<a name="line.25"></a>
+<font color="green">026</font>    import java.net.URL;<a name="line.26"></a>
+<font color="green">027</font>    import java.sql.Timestamp;<a name="line.27"></a>
+<font color="green">028</font>    import java.util.Calendar;<a name="line.28"></a>
+<font color="green">029</font>    import java.util.Collection;<a name="line.29"></a>
+<font color="green">030</font>    <a name="line.30"></a>
+<font color="green">031</font>    import org.apache.commons.beanutils.converters.ArrayConverter;<a name="line.31"></a>
+<font color="green">032</font>    import org.apache.commons.beanutils.converters.BigDecimalConverter;<a name="line.32"></a>
+<font color="green">033</font>    import org.apache.commons.beanutils.converters.BigIntegerConverter;<a name="line.33"></a>
+<font color="green">034</font>    import org.apache.commons.beanutils.converters.BooleanConverter;<a name="line.34"></a>
+<font color="green">035</font>    import org.apache.commons.beanutils.converters.ByteConverter;<a name="line.35"></a>
+<font color="green">036</font>    import org.apache.commons.beanutils.converters.CalendarConverter;<a name="line.36"></a>
+<font color="green">037</font>    import org.apache.commons.beanutils.converters.CharacterConverter;<a name="line.37"></a>
+<font color="green">038</font>    import org.apache.commons.beanutils.converters.ClassConverter;<a name="line.38"></a>
+<font color="green">039</font>    import org.apache.commons.beanutils.converters.ConverterFacade;<a name="line.39"></a>
+<font color="green">040</font>    import org.apache.commons.beanutils.converters.DateConverter;<a name="line.40"></a>
+<font color="green">041</font>    import org.apache.commons.beanutils.converters.DoubleConverter;<a name="line.41"></a>
+<font color="green">042</font>    import org.apache.commons.beanutils.converters.FileConverter;<a name="line.42"></a>
+<font color="green">043</font>    import org.apache.commons.beanutils.converters.FloatConverter;<a name="line.43"></a>
+<font color="green">044</font>    import org.apache.commons.beanutils.converters.IntegerConverter;<a name="line.44"></a>
+<font color="green">045</font>    import org.apache.commons.beanutils.converters.LongConverter;<a name="line.45"></a>
+<font color="green">046</font>    import org.apache.commons.beanutils.converters.ShortConverter;<a name="line.46"></a>
+<font color="green">047</font>    import org.apache.commons.beanutils.converters.SqlDateConverter;<a name="line.47"></a>
+<font color="green">048</font>    import org.apache.commons.beanutils.converters.SqlTimeConverter;<a name="line.48"></a>
+<font color="green">049</font>    import org.apache.commons.beanutils.converters.SqlTimestampConverter;<a name="line.49"></a>
+<font color="green">050</font>    import org.apache.commons.beanutils.converters.StringConverter;<a name="line.50"></a>
+<font color="green">051</font>    import org.apache.commons.beanutils.converters.URLConverter;<a name="line.51"></a>
+<font color="green">052</font>    import org.apache.commons.logging.Log;<a name="line.52"></a>
+<font color="green">053</font>    import org.apache.commons.logging.LogFactory;<a name="line.53"></a>
+<font color="green">054</font>    <a name="line.54"></a>
+<font color="green">055</font>    <a name="line.55"></a>
+<font color="green">056</font>    /**<a name="line.56"></a>
+<font color="green">057</font>     * &lt;p&gt;Utility methods for converting String scalar values to objects of the<a name="line.57"></a>
+<font color="green">058</font>     * specified Class, String arrays to arrays of the specified Class.  The<a name="line.58"></a>
+<font color="green">059</font>     * actual {@link Converter} instance to be used can be registered for each<a name="line.59"></a>
+<font color="green">060</font>     * possible destination Class.  Unless you override them, standard<a name="line.60"></a>
+<font color="green">061</font>     * {@link Converter} instances are provided for all of the following<a name="line.61"></a>
+<font color="green">062</font>     * destination Classes:&lt;/p&gt;<a name="line.62"></a>
+<font color="green">063</font>     * &lt;ul&gt;<a name="line.63"></a>
+<font color="green">064</font>     * &lt;li&gt;java.lang.BigDecimal (no default value)&lt;/li&gt;<a name="line.64"></a>
+<font color="green">065</font>     * &lt;li&gt;java.lang.BigInteger (no default value)&lt;/li&gt;<a name="line.65"></a>
+<font color="green">066</font>     * &lt;li&gt;boolean and java.lang.Boolean (default to false)&lt;/li&gt;<a name="line.66"></a>
+<font color="green">067</font>     * &lt;li&gt;byte and java.lang.Byte (default to zero)&lt;/li&gt;<a name="line.67"></a>
+<font color="green">068</font>     * &lt;li&gt;char and java.lang.Character (default to a space)&lt;/li&gt;<a name="line.68"></a>
+<font color="green">069</font>     * &lt;li&gt;java.lang.Class (no default value)&lt;/li&gt;<a name="line.69"></a>
+<font color="green">070</font>     * &lt;li&gt;double and java.lang.Double (default to zero)&lt;/li&gt;<a name="line.70"></a>
+<font color="green">071</font>     * &lt;li&gt;float and java.lang.Float (default to zero)&lt;/li&gt;<a name="line.71"></a>
+<font color="green">072</font>     * &lt;li&gt;int and java.lang.Integer (default to zero)&lt;/li&gt;<a name="line.72"></a>
+<font color="green">073</font>     * &lt;li&gt;long and java.lang.Long (default to zero)&lt;/li&gt;<a name="line.73"></a>
+<font color="green">074</font>     * &lt;li&gt;short and java.lang.Short (default to zero)&lt;/li&gt;<a name="line.74"></a>
+<font color="green">075</font>     * &lt;li&gt;java.lang.String (default to null)&lt;/li&gt;<a name="line.75"></a>
+<font color="green">076</font>     * &lt;li&gt;java.io.File (no default value)&lt;/li&gt;<a name="line.76"></a>
+<font color="green">077</font>     * &lt;li&gt;java.net.URL (no default value)&lt;/li&gt;<a name="line.77"></a>
+<font color="green">078</font>     * &lt;li&gt;java.sql.Date (no default value)&lt;/li&gt;<a name="line.78"></a>
+<font color="green">079</font>     * &lt;li&gt;java.sql.Time (no default value)&lt;/li&gt;<a name="line.79"></a>
+<font color="green">080</font>     * &lt;li&gt;java.sql.Timestamp (no default value)&lt;/li&gt;<a name="line.80"></a>
+<font color="green">081</font>     * &lt;/ul&gt;<a name="line.81"></a>
+<font color="green">082</font>     *<a name="line.82"></a>
+<font color="green">083</font>     * &lt;p&gt;For backwards compatibility, the standard Converters for primitive<a name="line.83"></a>
+<font color="green">084</font>     * types (and the corresponding wrapper classes) return a defined<a name="line.84"></a>
+<font color="green">085</font>     * default value when a conversion error occurs.  If you prefer to have a<a name="line.85"></a>
+<font color="green">086</font>     * {@link ConversionException} thrown instead, replace the standard Converter<a name="line.86"></a>
+<font color="green">087</font>     * instances with instances created with the zero-arguments constructor.  For<a name="line.87"></a>
+<font color="green">088</font>     * example, to cause the Converters for integers to throw an exception on<a name="line.88"></a>
+<font color="green">089</font>     * conversion errors, you could do this:&lt;/p&gt;<a name="line.89"></a>
+<font color="green">090</font>     * &lt;pre&gt;<a name="line.90"></a>
+<font color="green">091</font>     *   // No-args constructor gets the version that throws exceptions<a name="line.91"></a>
+<font color="green">092</font>     *   Converter myConverter =<a name="line.92"></a>
+<font color="green">093</font>     *    new org.apache.commons.beanutils.converter.IntegerConverter();<a name="line.93"></a>
+<font color="green">094</font>     *   ConvertUtils.register(myConverter, Integer.TYPE);    // Native type<a name="line.94"></a>
+<font color="green">095</font>     *   ConvertUtils.register(myConverter, Integer.class);   // Wrapper class<a name="line.95"></a>
+<font color="green">096</font>     * &lt;/pre&gt;<a name="line.96"></a>
+<font color="green">097</font>     * <a name="line.97"></a>
+<font color="green">098</font>     * &lt;p&gt;<a name="line.98"></a>
+<font color="green">099</font>     * Converters generally treat null input as if it were invalid<a name="line.99"></a>
+<font color="green">100</font>     * input, ie they return their default value if one was specified when the<a name="line.100"></a>
+<font color="green">101</font>     * converter was constructed, and throw an exception otherwise. If you prefer<a name="line.101"></a>
+<font color="green">102</font>     * nulls to be preserved for converters that are converting to objects (not<a name="line.102"></a>
+<font color="green">103</font>     * primitives) then register a converter as above, passing a default value of<a name="line.103"></a>
+<font color="green">104</font>     * null to the converter constructor (and of course registering that converter<a name="line.104"></a>
+<font color="green">105</font>     * only for the .class target).<a name="line.105"></a>
+<font color="green">106</font>     * &lt;/p&gt;<a name="line.106"></a>
+<font color="green">107</font>     *<a name="line.107"></a>
+<font color="green">108</font>     * &lt;p&gt;<a name="line.108"></a>
+<font color="green">109</font>     * When a converter is listed above as having no default value, then that<a name="line.109"></a>
+<font color="green">110</font>     * converter will throw an exception when passed null or an invalid value<a name="line.110"></a>
+<font color="green">111</font>     * as its input. In particular, by default the BigInteger and BigDecimal<a name="line.111"></a>
+<font color="green">112</font>     * converters have no default (and are therefore somewhat inconsistent<a name="line.112"></a>
+<font color="green">113</font>     * with the other numerical converters which all have zero as their default).<a name="line.113"></a>
+<font color="green">114</font>     * &lt;/p&gt;<a name="line.114"></a>
+<font color="green">115</font>     * <a name="line.115"></a>
+<font color="green">116</font>     * &lt;p&gt;<a name="line.116"></a>
+<font color="green">117</font>     * Converters that generate &lt;i&gt;arrays&lt;/i&gt; of each of the primitive types are<a name="line.117"></a>
+<font color="green">118</font>     * also automatically configured (including String[]). When passed null<a name="line.118"></a>
+<font color="green">119</font>     * or invalid input, these return an empty array (not null). See class<a name="line.119"></a>
+<font color="green">120</font>     * AbstractArrayConverter for the supported input formats for these converters.<a name="line.120"></a>
+<font color="green">121</font>     * &lt;/p&gt;<a name="line.121"></a>
+<font color="green">122</font>     * <a name="line.122"></a>
+<font color="green">123</font>     * @author Craig R. McClanahan<a name="line.123"></a>
+<font color="green">124</font>     * @author Ralph Schaer<a name="line.124"></a>
+<font color="green">125</font>     * @author Chris Audley<a name="line.125"></a>
+<font color="green">126</font>     * @author James Strachan<a name="line.126"></a>
+<font color="green">127</font>     * @version $Revision: 745079 $ $Date: 2009-02-17 14:04:10 +0000 (Tue, 17 Feb 2009) $<a name="line.127"></a>
+<font color="green">128</font>     * @since 1.7<a name="line.128"></a>
+<font color="green">129</font>     */<a name="line.129"></a>
+<font color="green">130</font>    <a name="line.130"></a>
+<font color="green">131</font>    public class ConvertUtilsBean {<a name="line.131"></a>
+<font color="green">132</font>        <a name="line.132"></a>
+<font color="green">133</font>        private static final Integer ZERO = new Integer(0);<a name="line.133"></a>
+<font color="green">134</font>        private static final Character SPACE = new Character(' ');<a name="line.134"></a>
+<font color="green">135</font>    <a name="line.135"></a>
+<font color="green">136</font>        // ------------------------------------------------------- Class Methods<a name="line.136"></a>
+<font color="green">137</font>        /**<a name="line.137"></a>
+<font color="green">138</font>         * Get singleton instance<a name="line.138"></a>
+<font color="green">139</font>         * @return The singleton instance<a name="line.139"></a>
+<font color="green">140</font>         */<a name="line.140"></a>
+<font color="green">141</font>        protected static ConvertUtilsBean getInstance() {<a name="line.141"></a>
+<font color="green">142</font>            return BeanUtilsBean.getInstance().getConvertUtils();<a name="line.142"></a>
+<font color="green">143</font>        }<a name="line.143"></a>
+<font color="green">144</font>    <a name="line.144"></a>
+<font color="green">145</font>        // ------------------------------------------------------- Variables<a name="line.145"></a>
+<font color="green">146</font>    <a name="line.146"></a>
+<font color="green">147</font>    <a name="line.147"></a>
+<font color="green">148</font>        /**<a name="line.148"></a>
+<font color="green">149</font>         * The set of {@link Converter}s that can be used to convert Strings<a name="line.149"></a>
+<font color="green">150</font>         * into objects of a specified Class, keyed by the destination Class.<a name="line.150"></a>
+<font color="green">151</font>         */<a name="line.151"></a>
+<font color="green">152</font>        private WeakFastHashMap converters = new WeakFastHashMap();<a name="line.152"></a>
+<font color="green">153</font>    <a name="line.153"></a>
+<font color="green">154</font>        /**<a name="line.154"></a>
+<font color="green">155</font>         * The &lt;code&gt;Log&lt;/code&gt; instance for this class.<a name="line.155"></a>
+<font color="green">156</font>         */<a name="line.156"></a>
+<font color="green">157</font>        private Log log = LogFactory.getLog(ConvertUtils.class);<a name="line.157"></a>
+<font color="green">158</font>    <a name="line.158"></a>
+<font color="green">159</font>        // ------------------------------------------------------- Constructors<a name="line.159"></a>
+<font color="green">160</font>    <a name="line.160"></a>
+<font color="green">161</font>        /** Construct a bean with standard converters registered */<a name="line.161"></a>
+<font color="green">162</font>        public ConvertUtilsBean() {<a name="line.162"></a>
+<font color="green">163</font>            converters.setFast(false);   <a name="line.163"></a>
+<font color="green">164</font>            deregister();<a name="line.164"></a>
+<font color="green">165</font>            converters.setFast(true);<a name="line.165"></a>
+<font color="green">166</font>        }<a name="line.166"></a>
+<font color="green">167</font>    <a name="line.167"></a>
+<font color="green">168</font>        // --------------------------------------------------------- Public Methods<a name="line.168"></a>
+<font color="green">169</font>        <a name="line.169"></a>
+<font color="green">170</font>        /**<a name="line.170"></a>
+<font color="green">171</font>         * The default value for Boolean conversions.<a name="line.171"></a>
+<font color="green">172</font>         * @deprecated Register replacement converters for Boolean.TYPE and<a name="line.172"></a>
+<font color="green">173</font>         *  Boolean.class instead<a name="line.173"></a>
+<font color="green">174</font>         */<a name="line.174"></a>
+<font color="green">175</font>        private Boolean defaultBoolean = Boolean.FALSE;<a name="line.175"></a>
+<font color="green">176</font>    <a name="line.176"></a>
+<font color="green">177</font>        /**<a name="line.177"></a>
+<font color="green">178</font>         * Gets the default value for Boolean conversions.<a name="line.178"></a>
+<font color="green">179</font>         * @return The default Boolean value<a name="line.179"></a>
+<font color="green">180</font>         * @deprecated Register replacement converters for Boolean.TYPE and<a name="line.180"></a>
+<font color="green">181</font>         *  Boolean.class instead<a name="line.181"></a>
+<font color="green">182</font>         */<a name="line.182"></a>
+<font color="green">183</font>        public boolean getDefaultBoolean() {<a name="line.183"></a>
+<font color="green">184</font>            return (defaultBoolean.booleanValue());<a name="line.184"></a>
+<font color="green">185</font>        }<a name="line.185"></a>
+<font color="green">186</font>    <a name="line.186"></a>
+<font color="green">187</font>        /**<a name="line.187"></a>
+<font color="green">188</font>         * Sets the default value for Boolean conversions.<a name="line.188"></a>
+<font color="green">189</font>         * @param newDefaultBoolean The default Boolean value<a name="line.189"></a>
+<font color="green">190</font>         * @deprecated Register replacement converters for Boolean.TYPE and<a name="line.190"></a>
+<font color="green">191</font>         *  Boolean.class instead<a name="line.191"></a>
+<font color="green">192</font>         */<a name="line.192"></a>
+<font color="green">193</font>        public void setDefaultBoolean(boolean newDefaultBoolean) {<a name="line.193"></a>
+<font color="green">194</font>            defaultBoolean = (newDefaultBoolean ? Boolean.TRUE : Boolean.FALSE);<a name="line.194"></a>
+<font color="green">195</font>            register(new BooleanConverter(defaultBoolean), Boolean.TYPE);<a name="line.195"></a>
+<font color="green">196</font>            register(new BooleanConverter(defaultBoolean), Boolean.class);<a name="line.196"></a>
+<font color="green">197</font>        }<a name="line.197"></a>
+<font color="green">198</font>    <a name="line.198"></a>
+<font color="green">199</font>    <a name="line.199"></a>
+<font color="green">200</font>        /**<a name="line.200"></a>
+<font color="green">201</font>         * The default value for Byte conversions.<a name="line.201"></a>
+<font color="green">202</font>         * @deprecated Register replacement converters for Byte.TYPE and<a name="line.202"></a>
+<font color="green">203</font>         *  Byte.class instead<a name="line.203"></a>
+<font color="green">204</font>         */<a name="line.204"></a>
+<font color="green">205</font>        private Byte defaultByte = new Byte((byte) 0);<a name="line.205"></a>
+<font color="green">206</font>    <a name="line.206"></a>
+<font color="green">207</font>        /**<a name="line.207"></a>
+<font color="green">208</font>         * Gets the default value for Byte conversions.<a name="line.208"></a>
+<font color="green">209</font>         * @return The default Byte value<a name="line.209"></a>
+<font color="green">210</font>         * @deprecated Register replacement converters for Byte.TYPE and<a name="line.210"></a>
+<font color="green">211</font>         *  Byte.class instead<a name="line.211"></a>
+<font color="green">212</font>         */<a name="line.212"></a>
+<font color="green">213</font>        public byte getDefaultByte() {<a name="line.213"></a>
+<font color="green">214</font>            return (defaultByte.byteValue());<a name="line.214"></a>
+<font color="green">215</font>        }<a name="line.215"></a>
+<font color="green">216</font>    <a name="line.216"></a>
+<font color="green">217</font>        /**<a name="line.217"></a>
+<font color="green">218</font>         * Sets the default value for Byte conversions.<a name="line.218"></a>
+<font color="green">219</font>         * @param newDefaultByte The default Byte value<a name="line.219"></a>
+<font color="green">220</font>         * @deprecated Register replacement converters for Byte.TYPE and<a name="line.220"></a>
+<font color="green">221</font>         *  Byte.class instead<a name="line.221"></a>
+<font color="green">222</font>         */<a name="line.222"></a>
+<font color="green">223</font>        public void setDefaultByte(byte newDefaultByte) {<a name="line.223"></a>
+<font color="green">224</font>            defaultByte = new Byte(newDefaultByte);<a name="line.224"></a>
+<font color="green">225</font>            register(new ByteConverter(defaultByte), Byte.TYPE);<a name="line.225"></a>
+<font color="green">226</font>            register(new ByteConverter(defaultByte), Byte.class);<a name="line.226"></a>
+<font color="green">227</font>        }<a name="line.227"></a>
+<font color="green">228</font>    <a name="line.228"></a>
+<font color="green">229</font>    <a name="line.229"></a>
+<font color="green">230</font>        /**<a name="line.230"></a>
+<font color="green">231</font>         * The default value for Character conversions.<a name="line.231"></a>
+<font color="green">232</font>         * @deprecated Register replacement converters for Character.TYPE and<a name="line.232"></a>
+<font color="green">233</font>         *  Character.class instead<a name="line.233"></a>
+<font color="green">234</font>         */<a name="line.234"></a>
+<font color="green">235</font>        private Character defaultCharacter = new Character(' ');<a name="line.235"></a>
+<font color="green">236</font>    <a name="line.236"></a>
+<font color="green">237</font>        /**<a name="line.237"></a>
+<font color="green">238</font>         * Gets the default value for Character conversions.<a name="line.238"></a>
+<font color="green">239</font>         * @return The default Character value<a name="line.239"></a>
+<font color="green">240</font>         * @deprecated Register replacement converters for Character.TYPE and<a name="line.240"></a>
+<font color="green">241</font>         *  Character.class instead<a name="line.241"></a>
+<font color="green">242</font>         */<a name="line.242"></a>
+<font color="green">243</font>        public char getDefaultCharacter() {<a name="line.243"></a>
+<font color="green">244</font>            return (defaultCharacter.charValue());<a name="line.244"></a>
+<font color="green">245</font>        }<a name="line.245"></a>
+<font color="green">246</font>    <a name="line.246"></a>
+<font color="green">247</font>        /**<a name="line.247"></a>
+<font color="green">248</font>         * Sets the default value for Character conversions.<a name="line.248"></a>
+<font color="green">249</font>         * @param newDefaultCharacter The default Character value<a name="line.249"></a>
+<font color="green">250</font>         * @deprecated Register replacement converters for Character.TYPE and<a name="line.250"></a>
+<font color="green">251</font>         *  Character.class instead<a name="line.251"></a>
+<font color="green">252</font>         */<a name="line.252"></a>
+<font color="green">253</font>        public void setDefaultCharacter(char newDefaultCharacter) {<a name="line.253"></a>
+<font color="green">254</font>            defaultCharacter = new Character(newDefaultCharacter);<a name="line.254"></a>
+<font color="green">255</font>            register(new CharacterConverter(defaultCharacter),<a name="line.255"></a>
+<font color="green">256</font>                        Character.TYPE);<a name="line.256"></a>
+<font color="green">257</font>            register(new CharacterConverter(defaultCharacter),<a name="line.257"></a>
+<font color="green">258</font>                        Character.class);<a name="line.258"></a>
+<font color="green">259</font>        }<a name="line.259"></a>
+<font color="green">260</font>    <a name="line.260"></a>
+<font color="green">261</font>    <a name="line.261"></a>
+<font color="green">262</font>        /**<a name="line.262"></a>
+<font color="green">263</font>         * The default value for Double conversions.<a name="line.263"></a>
+<font color="green">264</font>         * @deprecated Register replacement converters for Double.TYPE and<a name="line.264"></a>
+<font color="green">265</font>         *  Double.class instead<a name="line.265"></a>
+<font color="green">266</font>         */<a name="line.266"></a>
+<font color="green">267</font>        private Double defaultDouble = new Double(0.0);<a name="line.267"></a>
+<font color="green">268</font>    <a name="line.268"></a>
+<font color="green">269</font>        /**<a name="line.269"></a>
+<font color="green">270</font>         * Gets the default value for Double conversions.<a name="line.270"></a>
+<font color="green">271</font>         * @return The default Double value<a name="line.271"></a>
+<font color="green">272</font>         * @deprecated Register replacement converters for Double.TYPE and<a name="line.272"></a>
+<font color="green">273</font>         *  Double.class instead<a name="line.273"></a>
+<font color="green">274</font>         */<a name="line.274"></a>
+<font color="green">275</font>        public double getDefaultDouble() {<a name="line.275"></a>
+<font color="green">276</font>            return (defaultDouble.doubleValue());<a name="line.276"></a>
+<font color="green">277</font>        }<a name="line.277"></a>
+<font color="green">278</font>    <a name="line.278"></a>
+<font color="green">279</font>        /**<a name="line.279"></a>
+<font color="green">280</font>         * Sets the default value for Double conversions.<a name="line.280"></a>
+<font color="green">281</font>         * @param newDefaultDouble The default Double value<a name="line.281"></a>
+<font color="green">282</font>         * @deprecated Register replacement converters for Double.TYPE and<a name="line.282"></a>
+<font color="green">283</font>         *  Double.class instead<a name="line.283"></a>
+<font color="green">284</font>         */<a name="line.284"></a>
+<font color="green">285</font>        public void setDefaultDouble(double newDefaultDouble) {<a name="line.285"></a>
+<font color="green">286</font>            defaultDouble = new Double(newDefaultDouble);<a name="line.286"></a>
+<font color="green">287</font>            register(new DoubleConverter(defaultDouble), Double.TYPE);<a name="line.287"></a>
+<font color="green">288</font>            register(new DoubleConverter(defaultDouble), Double.class);<a name="line.288"></a>
+<font color="green">289</font>        }<a name="line.289"></a>
+<font color="green">290</font>    <a name="line.290"></a>
+<font color="green">291</font>    <a name="line.291"></a>
+<font color="green">292</font>        /**<a name="line.292"></a>
+<font color="green">293</font>         * The default value for Float conversions.<a name="line.293"></a>
+<font color="green">294</font>         * @deprecated Register replacement converters for Float.TYPE and<a name="line.294"></a>
+<font color="green">295</font>         *  Float.class instead<a name="line.295"></a>
+<font color="green">296</font>         */<a name="line.296"></a>
+<font color="green">297</font>        private Float defaultFloat = new Float((float) 0.0);<a name="line.297"></a>
+<font color="green">298</font>    <a name="line.298"></a>
+<font color="green">299</font>        /**<a name="line.299"></a>
+<font color="green">300</font>         * Gets the default value for Float conversions.<a name="line.300"></a>
+<font color="green">301</font>         * @return The default Float value<a name="line.301"></a>
+<font color="green">302</font>         * @deprecated Register replacement converters for Float.TYPE and<a name="line.302"></a>
+<font color="green">303</font>         *  Float.class instead<a name="line.303"></a>
+<font color="green">304</font>         */<a name="line.304"></a>
+<font color="green">305</font>        public float getDefaultFloat() {<a name="line.305"></a>
+<font color="green">306</font>            return (defaultFloat.floatValue());<a name="line.306"></a>
+<font color="green">307</font>        }<a name="line.307"></a>
+<font color="green">308</font>    <a name="line.308"></a>
+<font color="green">309</font>        /**<a name="line.309"></a>
+<font color="green">310</font>         * Sets the default value for Float conversions.<a name="line.310"></a>
+<font color="green">311</font>         * @param newDefaultFloat The default Float value<a name="line.311"></a>
+<font color="green">312</font>         * @deprecated Register replacement converters for Float.TYPE and<a name="line.312"></a>
+<font color="green">313</font>         *  Float.class instead<a name="line.313"></a>
+<font color="green">314</font>         */<a name="line.314"></a>
+<font color="green">315</font>        public void setDefaultFloat(float newDefaultFloat) {<a name="line.315"></a>
+<font color="green">316</font>            defaultFloat = new Float(newDefaultFloat);<a name="line.316"></a>
+<font color="green">317</font>            register(new FloatConverter(defaultFloat), Float.TYPE);<a name="line.317"></a>
+<font color="green">318</font>            register(new FloatConverter(defaultFloat), Float.class);<a name="line.318"></a>
+<font color="green">319</font>        }<a name="line.319"></a>
+<font color="green">320</font>    <a name="line.320"></a>
+<font color="green">321</font>    <a name="line.321"></a>
+<font color="green">322</font>        /**<a name="line.322"></a>
+<font color="green">323</font>         * The default value for Integer conversions.<a name="line.323"></a>
+<font color="green">324</font>         * @deprecated Register replacement converters for Integer.TYPE and<a name="line.324"></a>
+<font color="green">325</font>         *  Integer.class instead<a name="line.325"></a>
+<font color="green">326</font>         */<a name="line.326"></a>
+<font color="green">327</font>        private Integer defaultInteger = new Integer(0);<a name="line.327"></a>
+<font color="green">328</font>    <a name="line.328"></a>
+<font color="green">329</font>        /**<a name="line.329"></a>
+<font color="green">330</font>         * Gets the default value for Integer conversions.<a name="line.330"></a>
+<font color="green">331</font>         * @return The default Integer value<a name="line.331"></a>
+<font color="green">332</font>         * @deprecated Register replacement converters for Integer.TYPE and<a name="line.332"></a>
+<font color="green">333</font>         *  Integer.class instead<a name="line.333"></a>
+<font color="green">334</font>         */<a name="line.334"></a>
+<font color="green">335</font>        public int getDefaultInteger() {<a name="line.335"></a>
+<font color="green">336</font>            return (defaultInteger.intValue());<a name="line.336"></a>
+<font color="green">337</font>        }<a name="line.337"></a>
+<font color="green">338</font>        <a name="line.338"></a>
+<font color="green">339</font>        /**<a name="line.339"></a>
+<font color="green">340</font>         * Sets the default value for Integer conversions.<a name="line.340"></a>
+<font color="green">341</font>         * @param newDefaultInteger The default Integer value<a name="line.341"></a>
+<font color="green">342</font>         * @deprecated Register replacement converters for Integer.TYPE and<a name="line.342"></a>
+<font color="green">343</font>         *  Integer.class instead<a name="line.343"></a>
+<font color="green">344</font>         */<a name="line.344"></a>
+<font color="green">345</font>        public void setDefaultInteger(int newDefaultInteger) {<a name="line.345"></a>
+<font color="green">346</font>            defaultInteger = new Integer(newDefaultInteger);<a name="line.346"></a>
+<font color="green">347</font>            register(new IntegerConverter(defaultInteger), Integer.TYPE);<a name="line.347"></a>
+<font color="green">348</font>            register(new IntegerConverter(defaultInteger), Integer.class);<a name="line.348"></a>
+<font color="green">349</font>        }<a name="line.349"></a>
+<font color="green">350</font>    <a name="line.350"></a>
+<font color="green">351</font>    <a name="line.351"></a>
+<font color="green">352</font>        /**<a name="line.352"></a>
+<font color="green">353</font>         * The default value for Long conversions.<a name="line.353"></a>
+<font color="green">354</font>         * @deprecated Register replacement converters for Long.TYPE and<a name="line.354"></a>
+<font color="green">355</font>         *  Long.class instead<a name="line.355"></a>
+<font color="green">356</font>         */<a name="line.356"></a>
+<font color="green">357</font>        private Long defaultLong = new Long(0);<a name="line.357"></a>
+<font color="green">358</font>    <a name="line.358"></a>
+<font color="green">359</font>        /**<a name="line.359"></a>
+<font color="green">360</font>         * Gets the default value for Long conversions.<a name="line.360"></a>
+<font color="green">361</font>         * @return The default Long value<a name="line.361"></a>
+<font color="green">362</font>         * @deprecated Register replacement converters for Long.TYPE and<a name="line.362"></a>
+<font color="green">363</font>         *  Long.class instead<a name="line.363"></a>
+<font color="green">364</font>         */<a name="line.364"></a>
+<font color="green">365</font>        public long getDefaultLong() {<a name="line.365"></a>
+<font color="green">366</font>            return (defaultLong.longValue());<a name="line.366"></a>
+<font color="green">367</font>        }<a name="line.367"></a>
+<font color="green">368</font>    <a name="line.368"></a>
+<font color="green">369</font>        /**<a name="line.369"></a>
+<font color="green">370</font>         * Sets the default value for Long conversions.<a name="line.370"></a>
+<font color="green">371</font>         * @param newDefaultLong The default Long value<a name="line.371"></a>
+<font color="green">372</font>         * @deprecated Register replacement converters for Long.TYPE and<a name="line.372"></a>
+<font color="green">373</font>         *  Long.class instead<a name="line.373"></a>
+<font color="green">374</font>         */<a name="line.374"></a>
+<font color="green">375</font>        public void setDefaultLong(long newDefaultLong) {<a name="line.375"></a>
+<font color="green">376</font>            defaultLong = new Long(newDefaultLong);<a name="line.376"></a>
+<font color="green">377</font>            register(new LongConverter(defaultLong), Long.TYPE);<a name="line.377"></a>
+<font color="green">378</font>            register(new LongConverter(defaultLong), Long.class);<a name="line.378"></a>
+<font color="green">379</font>        }<a name="line.379"></a>
+<font color="green">380</font>    <a name="line.380"></a>
+<font color="green">381</font>    <a name="line.381"></a>
+<font color="green">382</font>        /**<a name="line.382"></a>
+<font color="green">383</font>         * The default value for Short conversions.<a name="line.383"></a>
+<font color="green">384</font>         * @deprecated Register replacement converters for Short.TYPE and<a name="line.384"></a>
+<font color="green">385</font>         *  Short.class instead<a name="line.385"></a>
+<font color="green">386</font>         */<a name="line.386"></a>
+<font color="green">387</font>        private static Short defaultShort = new Short((short) 0);<a name="line.387"></a>
+<font color="green">388</font>    <a name="line.388"></a>
+<font color="green">389</font>        /**<a name="line.389"></a>
+<font color="green">390</font>         * Gets the default value for Short conversions.<a name="line.390"></a>
+<font color="green">391</font>         * @return The default Short value<a name="line.391"></a>
+<font color="green">392</font>         * @deprecated Register replacement converters for Short.TYPE and<a name="line.392"></a>
+<font color="green">393</font>         *  Short.class instead<a name="line.393"></a>
+<font color="green">394</font>         */<a name="line.394"></a>
+<font color="green">395</font>        public short getDefaultShort() {<a name="line.395"></a>
+<font color="green">396</font>            return (defaultShort.shortValue());<a name="line.396"></a>
+<font color="green">397</font>        }<a name="line.397"></a>
+<font color="green">398</font>    <a name="line.398"></a>
+<font color="green">399</font>        /**<a name="line.399"></a>
+<font color="green">400</font>         * Sets the default value for Short conversions.<a name="line.400"></a>
+<font color="green">401</font>         * @param newDefaultShort The default Short value<a name="line.401"></a>
+<font color="green">402</font>         * @deprecated Register replacement converters for Short.TYPE and<a name="line.402"></a>
+<font color="green">403</font>         *  Short.class instead<a name="line.403"></a>
+<font color="green">404</font>         */<a name="line.404"></a>
+<font color="green">405</font>        public void setDefaultShort(short newDefaultShort) {<a name="line.405"></a>
+<font color="green">406</font>            defaultShort = new Short(newDefaultShort);<a name="line.406"></a>
+<font color="green">407</font>            register(new ShortConverter(defaultShort), Short.TYPE);<a name="line.407"></a>
+<font color="green">408</font>            register(new ShortConverter(defaultShort), Short.class);<a name="line.408"></a>
+<font color="green">409</font>        }<a name="line.409"></a>
+<font color="green">410</font>    <a name="line.410"></a>
+<font color="green">411</font>    <a name="line.411"></a>
+<font color="green">412</font>    <a name="line.412"></a>
+<font color="green">413</font>        /**<a name="line.413"></a>
+<font color="green">414</font>         * Convert the specified value into a String.  If the specified value<a name="line.414"></a>
+<font color="green">415</font>         * is an array, the first element (converted to a String) will be<a name="line.415"></a>
+<font color="green">416</font>         * returned.  The registered {@link Converter} for the<a name="line.416"></a>
+<font color="green">417</font>         * &lt;code&gt;java.lang.String&lt;/code&gt; class will be used, which allows<a name="line.417"></a>
+<font color="green">418</font>         * applications to customize Object-&gt;String conversions (the default<a name="line.418"></a>
+<font color="green">419</font>         * implementation simply uses toString()).<a name="line.419"></a>
+<font color="green">420</font>         *<a name="line.420"></a>
+<font color="green">421</font>         * @param value Value to be converted (may be null)<a name="line.421"></a>
+<font color="green">422</font>         * @return The converted String value<a name="line.422"></a>
+<font color="green">423</font>         */<a name="line.423"></a>
+<font color="green">424</font>        public String convert(Object value) {<a name="line.424"></a>
+<font color="green">425</font>    <a name="line.425"></a>
+<font color="green">426</font>            if (value == null) {<a name="line.426"></a>
+<font color="green">427</font>                return null;<a name="line.427"></a>
+<font color="green">428</font>            } else if (value.getClass().isArray()) {<a name="line.428"></a>
+<font color="green">429</font>                if (Array.getLength(value) &lt; 1) {<a name="line.429"></a>
+<font color="green">430</font>                    return (null);<a name="line.430"></a>
+<font color="green">431</font>                }<a name="line.431"></a>
+<font color="green">432</font>                value = Array.get(value, 0);<a name="line.432"></a>
+<font color="green">433</font>                if (value == null) {<a name="line.433"></a>
+<font color="green">434</font>                    return null;<a name="line.434"></a>
+<font color="green">435</font>                } else {<a name="line.435"></a>
+<font color="green">436</font>                    Converter converter = lookup(String.class);<a name="line.436"></a>
+<font color="green">437</font>                    return ((String) converter.convert(String.class, value));<a name="line.437"></a>
+<font color="green">438</font>                }<a name="line.438"></a>
+<font color="green">439</font>            } else {<a name="line.439"></a>
+<font color="green">440</font>                Converter converter = lookup(String.class);<a name="line.440"></a>
+<font color="green">441</font>                return ((String) converter.convert(String.class, value));<a name="line.441"></a>
+<font color="green">442</font>            }<a name="line.442"></a>
+<font color="green">443</font>    <a name="line.443"></a>
+<font color="green">444</font>        }<a name="line.444"></a>
+<font color="green">445</font>    <a name="line.445"></a>
+<font color="green">446</font>    <a name="line.446"></a>
+<font color="green">447</font>        /**<a name="line.447"></a>
+<font color="green">448</font>         * Convert the specified value to an object of the specified class (if<a name="line.448"></a>
+<font color="green">449</font>         * possible).  Otherwise, return a String representation of the value.<a name="line.449"></a>
+<font color="green">450</font>         *<a name="line.450"></a>
+<font color="green">451</font>         * @param value Value to be converted (may be null)<a name="line.451"></a>
+<font color="green">452</font>         * @param clazz Java class to be converted to<a name="line.452"></a>
+<font color="green">453</font>         * @return The converted value<a name="line.453"></a>
+<font color="green">454</font>         *<a name="line.454"></a>
+<font color="green">455</font>         * @exception ConversionException if thrown by an underlying Converter<a name="line.455"></a>
+<font color="green">456</font>         */<a name="line.456"></a>
+<font color="green">457</font>        public Object convert(String value, Class clazz) {<a name="line.457"></a>
+<font color="green">458</font>    <a name="line.458"></a>
+<font color="green">459</font>            if (log.isDebugEnabled()) {<a name="line.459"></a>
+<font color="green">460</font>                log.debug("Convert string '" + value + "' to class '" +<a name="line.460"></a>
+<font color="green">461</font>                          clazz.getName() + "'");<a name="line.461"></a>
+<font color="green">462</font>            }<a name="line.462"></a>
+<font color="green">463</font>            Converter converter = lookup(clazz);<a name="line.463"></a>
+<font color="green">464</font>            if (converter == null) {<a name="line.464"></a>
+<font color="green">465</font>                converter = lookup(String.class);<a name="line.465"></a>
+<font color="green">466</font>            }<a name="line.466"></a>
+<font color="green">467</font>            if (log.isTraceEnabled()) {<a name="line.467"></a>
+<font color="green">468</font>                log.trace("  Using converter " + converter);<a name="line.468"></a>
+<font color="green">469</font>            }<a name="line.469"></a>
+<font color="green">470</font>            return (converter.convert(clazz, value));<a name="line.470"></a>
+<font color="green">471</font>    <a name="line.471"></a>
+<font color="green">472</font>        }<a name="line.472"></a>
+<font color="green">473</font>    <a name="line.473"></a>
+<font color="green">474</font>    <a name="line.474"></a>
+<font color="green">475</font>        /**<a name="line.475"></a>
+<font color="green">476</font>         * Convert an array of specified values to an array of objects of the<a name="line.476"></a>
+<font color="green">477</font>         * specified class (if possible).  If the specified Java class is itself<a name="line.477"></a>
+<font color="green">478</font>         * an array class, this class will be the type of the returned value.<a name="line.478"></a>
+<font color="green">479</font>         * Otherwise, an array will be constructed whose component type is the<a name="line.479"></a>
+<font color="green">480</font>         * specified class.<a name="line.480"></a>
+<font color="green">481</font>         *<a name="line.481"></a>
+<font color="green">482</font>         * @param values Array of values to be converted<a name="line.482"></a>
+<font color="green">483</font>         * @param clazz Java array or element class to be converted to<a name="line.483"></a>
+<font color="green">484</font>         * @return The converted value<a name="line.484"></a>
+<font color="green">485</font>         *<a name="line.485"></a>
+<font color="green">486</font>         * @exception ConversionException if thrown by an underlying Converter<a name="line.486"></a>
+<font color="green">487</font>         */<a name="line.487"></a>
+<font color="green">488</font>        public Object convert(String[] values, Class clazz) {<a name="line.488"></a>
+<font color="green">489</font>    <a name="line.489"></a>
+<font color="green">490</font>            Class type = clazz;<a name="line.490"></a>
+<font color="green">491</font>            if (clazz.isArray()) {<a name="line.491"></a>
+<font color="green">492</font>                type = clazz.getComponentType();<a name="line.492"></a>
+<font color="green">493</font>            }<a name="line.493"></a>
+<font color="green">494</font>            if (log.isDebugEnabled()) {<a name="line.494"></a>
+<font color="green">495</font>                log.debug("Convert String[" + values.length + "] to class '" +<a name="line.495"></a>
+<font color="green">496</font>                          type.getName() + "[]'");<a name="line.496"></a>
+<font color="green">497</font>            }<a name="line.497"></a>
+<font color="green">498</font>            Converter converter = lookup(type);<a name="line.498"></a>
+<font color="green">499</font>            if (converter == null) {<a name="line.499"></a>
+<font color="green">500</font>                converter = lookup(String.class);<a name="line.500"></a>
+<font color="green">501</font>            }<a name="line.501"></a>
+<font color="green">502</font>            if (log.isTraceEnabled()) {<a name="line.502"></a>
+<font color="green">503</font>                log.trace("  Using converter " + converter);<a name="line.503"></a>
+<font color="green">504</font>            }<a name="line.504"></a>
+<font color="green">505</font>            Object array = Array.newInstance(type, values.length);<a name="line.505"></a>
+<font color="green">506</font>            for (int i = 0; i &lt; values.length; i++) {<a name="line.506"></a>
+<font color="green">507</font>                Array.set(array, i, converter.convert(type, values[i]));<a name="line.507"></a>
+<font color="green">508</font>            }<a name="line.508"></a>
+<font color="green">509</font>            return (array);<a name="line.509"></a>
+<font color="green">510</font>    <a name="line.510"></a>
+<font color="green">511</font>        }<a name="line.511"></a>
+<font color="green">512</font>    <a name="line.512"></a>
+<font color="green">513</font>    <a name="line.513"></a>
+<font color="green">514</font>        /**<a name="line.514"></a>
+<font color="green">515</font>         * &lt;p&gt;Convert the value to an object of the specified class (if<a name="line.515"></a>
+<font color="green">516</font>         * possible).&lt;/p&gt;<a name="line.516"></a>
+<font color="green">517</font>         *<a name="line.517"></a>
+<font color="green">518</font>         * @param value Value to be converted (may be null)<a name="line.518"></a>
+<font color="green">519</font>         * @param targetType Class of the value to be converted to<a name="line.519"></a>
+<font color="green">520</font>         * @return The converted value<a name="line.520"></a>
+<font color="green">521</font>         *<a name="line.521"></a>
+<font color="green">522</font>         * @exception ConversionException if thrown by an underlying Converter<a name="line.522"></a>
+<font color="green">523</font>         */<a name="line.523"></a>
+<font color="green">524</font>        public Object convert(Object value, Class targetType) {<a name="line.524"></a>
+<font color="green">525</font>    <a name="line.525"></a>
+<font color="green">526</font>            Class sourceType = value == null ? null : value.getClass();<a name="line.526"></a>
+<font color="green">527</font>    <a name="line.527"></a>
+<font color="green">528</font>            if (log.isDebugEnabled()) {<a name="line.528"></a>
+<font color="green">529</font>                if (value == null) {<a name="line.529"></a>
+<font color="green">530</font>                    log.debug("Convert null value to type '" +<a name="line.530"></a>
+<font color="green">531</font>                            targetType.getName() + "'");<a name="line.531"></a>
+<font color="green">532</font>                } else {<a name="line.532"></a>
+<font color="green">533</font>                    log.debug("Convert type '" + sourceType.getName() + "' value '" + value +<a name="line.533"></a>
+<font color="green">534</font>                          "' to type '" + targetType.getName() + "'");<a name="line.534"></a>
+<font color="green">535</font>                }<a name="line.535"></a>
+<font color="green">536</font>            }<a name="line.536"></a>
+<font color="green">537</font>    <a name="line.537"></a>
+<font color="green">538</font>            Object converted = value;<a name="line.538"></a>
+<font color="green">539</font>            Converter converter = lookup(sourceType, targetType);<a name="line.539"></a>
+<font color="green">540</font>            if (converter != null) {<a name="line.540"></a>
+<font color="green">541</font>                if (log.isTraceEnabled()) {<a name="line.541"></a>
+<font color="green">542</font>                    log.trace("  Using converter " + converter);<a name="line.542"></a>
+<font color="green">543</font>                }<a name="line.543"></a>
+<font color="green">544</font>                converted = converter.convert(targetType, value);<a name="line.544"></a>
+<font color="green">545</font>            }<a name="line.545"></a>
+<font color="green">546</font>            if (targetType == String.class &amp;&amp; converted != null &amp;&amp; <a name="line.546"></a>
+<font color="green">547</font>                    !(converted instanceof String)) {<a name="line.547"></a>
+<font color="green">548</font>    <a name="line.548"></a>
+<font color="green">549</font>                // NOTE: For backwards compatibility, if the Converter<a name="line.549"></a>
+<font color="green">550</font>                //       doesn't handle  conversion--&gt;String then<a name="line.550"></a>
+<font color="green">551</font>                //       use the registered String Converter<a name="line.551"></a>
+<font color="green">552</font>                converter = lookup(String.class);<a name="line.552"></a>
+<font color="green">553</font>                if (converter != null) {<a name="line.553"></a>
+<font color="green">554</font>                    if (log.isTraceEnabled()) {<a name="line.554"></a>
+<font color="green">555</font>                        log.trace("  Using converter " + converter);<a name="line.555"></a>
+<font color="green">556</font>                    }<a name="line.556"></a>
+<font color="green">557</font>                    converted = converter.convert(String.class, converted);<a name="line.557"></a>
+<font color="green">558</font>                }<a name="line.558"></a>
+<font color="green">559</font>    <a name="line.559"></a>
+<font color="green">560</font>                // If the object still isn't a String, use toString() method<a name="line.560"></a>
+<font color="green">561</font>                if (converted != null &amp;&amp; !(converted instanceof String)) {<a name="line.561"></a>
+<font color="green">562</font>                    converted = converted.toString();<a name="line.562"></a>
+<font color="green">563</font>                }<a name="line.563"></a>
+<font color="green">564</font>    <a name="line.564"></a>
+<font color="green">565</font>            }<a name="line.565"></a>
+<font color="green">566</font>            return converted;<a name="line.566"></a>
+<font color="green">567</font>    <a name="line.567"></a>
+<font color="green">568</font>        }<a name="line.568"></a>
+<font color="green">569</font>    <a name="line.569"></a>
+<font color="green">570</font>        /**<a name="line.570"></a>
+<font color="green">571</font>         * Remove all registered {@link Converter}s, and re-establish the<a name="line.571"></a>
+<font color="green">572</font>         * standard Converters.<a name="line.572"></a>
+<font color="green">573</font>         */<a name="line.573"></a>
+<font color="green">574</font>        public void deregister() {<a name="line.574"></a>
+<font color="green">575</font>    <a name="line.575"></a>
+<font color="green">576</font>            converters.clear();<a name="line.576"></a>
+<font color="green">577</font>            <a name="line.577"></a>
+<font color="green">578</font>            registerPrimitives(false);<a name="line.578"></a>
+<font color="green">579</font>            registerStandard(false, false);<a name="line.579"></a>
+<font color="green">580</font>            registerOther(true);<a name="line.580"></a>
+<font color="green">581</font>            registerArrays(false, 0);<a name="line.581"></a>
+<font color="green">582</font>            register(BigDecimal.class, new BigDecimalConverter());<a name="line.582"></a>
+<font color="green">583</font>            register(BigInteger.class, new BigIntegerConverter());<a name="line.583"></a>
+<font color="green">584</font>        }<a name="line.584"></a>
+<font color="green">585</font>    <a name="line.585"></a>
+<font color="green">586</font>        /**<a name="line.586"></a>
+<font color="green">587</font>         * Register the provided converters with the specified defaults.<a name="line.587"></a>
+<font color="green">588</font>         *<a name="line.588"></a>
+<font color="green">589</font>         * @param throwException &lt;code&gt;true&lt;/code&gt; if the converters should<a name="line.589"></a>
+<font color="green">590</font>         * throw an exception when a conversion error occurs, otherwise &lt;code&gt;<a name="line.590"></a>
+<font color="green">591</font>         * &lt;code&gt;false&lt;/code&gt; if a default value should be used.<a name="line.591"></a>
+<font color="green">592</font>         * @param defaultNull &lt;code&gt;true&lt;/code&gt;if the &lt;i&gt;standard&lt;/i&gt; converters<a name="line.592"></a>
+<font color="green">593</font>         * (see {@link ConvertUtilsBean#registerStandard(boolean, boolean)})<a name="line.593"></a>
+<font color="green">594</font>         * should use a default value of &lt;code&gt;null&lt;/code&gt;, otherwise &lt;code&gt;false&lt;/code&gt;.<a name="line.594"></a>
+<font color="green">595</font>         * N.B. This values is ignored if &lt;code&gt;throwException&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt;<a name="line.595"></a>
+<font color="green">596</font>         * @param defaultArraySize The size of the default array value for array converters<a name="line.596"></a>
+<font color="green">597</font>         * (N.B. This values is ignored if &lt;code&gt;throwException&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt;).<a name="line.597"></a>
+<font color="green">598</font>         * Specifying a value less than zero causes a &lt;code&gt;null&lt;code&gt; value to be used for<a name="line.598"></a>
+<font color="green">599</font>         * the default.<a name="line.599"></a>
+<font color="green">600</font>         */<a name="line.600"></a>
+<font color="green">601</font>        public void register(boolean throwException, boolean defaultNull, int defaultArraySize) {<a name="line.601"></a>
+<font color="green">602</font>            registerPrimitives(throwException);<a name="line.602"></a>
+<font color="green">603</font>            registerStandard(throwException, defaultNull);<a name="line.603"></a>
+<font color="green">604</font>            registerOther(throwException);<a name="line.604"></a>
+<font color="green">605</font>            registerArrays(throwException, defaultArraySize);<a name="line.605"></a>
+<font color="green">606</font>        }<a name="line.606"></a>
+<font color="green">607</font>    <a name="line.607"></a>
+<font color="green">608</font>        /**<a name="line.608"></a>
+<font color="green">609</font>         * Register the converters for primitive types.<a name="line.609"></a>
+<font color="green">610</font>         * &lt;/p&gt;<a name="line.610"></a>
+<font color="green">611</font>         * This method registers the following converters:<a name="line.611"></a>
+<font color="green">612</font>         * &lt;ul&gt;<a name="line.612"></a>
+<font color="green">613</font>         *     &lt;li&gt;&lt;code&gt;Boolean.TYPE&lt;/code&gt; - {@link BooleanConverter}&lt;/li&gt;<a name="line.613"></a>
+<font color="green">614</font>         *     &lt;li&gt;&lt;code&gt;Byte.TYPE&lt;/code&gt; - {@link ByteConverter}&lt;/li&gt;<a name="line.614"></a>
+<font color="green">615</font>         *     &lt;li&gt;&lt;code&gt;Character.TYPE&lt;/code&gt; - {@link CharacterConverter}&lt;/li&gt;<a name="line.615"></a>
+<font color="green">616</font>         *     &lt;li&gt;&lt;code&gt;Double.TYPE&lt;/code&gt; - {@link DoubleConverter}&lt;/li&gt;<a name="line.616"></a>
+<font color="green">617</font>         *     &lt;li&gt;&lt;code&gt;Float.TYPE&lt;/code&gt; - {@link FloatConverter}&lt;/li&gt;<a name="line.617"></a>
+<font color="green">618</font>         *     &lt;li&gt;&lt;code&gt;Integer.TYPE&lt;/code&gt; - {@link IntegerConverter}&lt;/li&gt;<a name="line.618"></a>
+<font color="green">619</font>         *     &lt;li&gt;&lt;code&gt;Long.TYPE&lt;/code&gt; - {@link LongConverter}&lt;/li&gt;<a name="line.619"></a>
+<font color="green">620</font>         *     &lt;li&gt;&lt;code&gt;Short.TYPE&lt;/code&gt; - {@link ShortConverter}&lt;/li&gt;<a name="line.620"></a>
+<font color="green">621</font>         * &lt;/ul&gt;<a name="line.621"></a>
+<font color="green">622</font>         * @param throwException &lt;code&gt;true&lt;/code&gt; if the converters should<a name="line.622"></a>
+<font color="green">623</font>         * throw an exception when a conversion error occurs, otherwise &lt;code&gt;<a name="line.623"></a>
+<font color="green">624</font>         * &lt;code&gt;false&lt;/code&gt; if a default value should be used.<a name="line.624"></a>
+<font color="green">625</font>         */<a name="line.625"></a>
+<font color="green">626</font>        private void registerPrimitives(boolean throwException) {<a name="line.626"></a>
+<font color="green">627</font>            register(Boolean.TYPE,   throwException ? new BooleanConverter()    : new BooleanConverter(Boolean.FALSE));<a name="line.627"></a>
+<font color="green">628</font>            register(Byte.TYPE,      throwException ? new ByteConverter()       : new ByteConverter(ZERO));<a name="line.628"></a>
+<font color="green">629</font>            register(Character.TYPE, throwException ? new CharacterConverter()  : new CharacterConverter(SPACE));<a name="line.629"></a>
+<font color="green">630</font>            register(Double.TYPE,    throwException ? new DoubleConverter()     : new DoubleConverter(ZERO));<a name="line.630"></a>
+<font color="green">631</font>            register(Float.TYPE,     throwException ? new FloatConverter()      : new FloatConverter(ZERO));<a name="line.631"></a>
+<font color="green">632</font>            register(Integer.TYPE,   throwException ? new IntegerConverter()    : new IntegerConverter(ZERO));<a name="line.632"></a>
+<font color="green">633</font>            register(Long.TYPE,      throwException ? new LongConverter()       : new LongConverter(ZERO));<a name="line.633"></a>
+<font color="green">634</font>            register(Short.TYPE,     throwException ? new ShortConverter()      : new ShortConverter(ZERO));<a name="line.634"></a>
+<font color="green">635</font>        }<a name="line.635"></a>
+<font color="green">636</font>    <a name="line.636"></a>
+<font color="green">637</font>        /**<a name="line.637"></a>
+<font color="green">638</font>         * Register the converters for standard types.<a name="line.638"></a>
+<font color="green">639</font>         * &lt;/p&gt;<a name="line.639"></a>
+<font color="green">640</font>         * This method registers the following converters:<a name="line.640"></a>
+<font color="green">641</font>         * &lt;ul&gt;<a name="line.641"></a>
+<font color="green">642</font>         *     &lt;li&gt;&lt;code&gt;BigDecimal.class&lt;/code&gt; - {@link BigDecimalConverter}&lt;/li&gt;<a name="line.642"></a>
+<font color="green">643</font>         *     &lt;li&gt;&lt;code&gt;BigInteger.class&lt;/code&gt; - {@link BigIntegerConverter}&lt;/li&gt;<a name="line.643"></a>
+<font color="green">644</font>         *     &lt;li&gt;&lt;code&gt;Boolean.class&lt;/code&gt; - {@link BooleanConverter}&lt;/li&gt;<a name="line.644"></a>
+<font color="green">645</font>         *     &lt;li&gt;&lt;code&gt;Byte.class&lt;/code&gt; - {@link ByteConverter}&lt;/li&gt;<a name="line.645"></a>
+<font color="green">646</font>         *     &lt;li&gt;&lt;code&gt;Character.class&lt;/code&gt; - {@link CharacterConverter}&lt;/li&gt;<a name="line.646"></a>
+<font color="green">647</font>         *     &lt;li&gt;&lt;code&gt;Double.class&lt;/code&gt; - {@link DoubleConverter}&lt;/li&gt;<a name="line.647"></a>
+<font color="green">648</font>         *     &lt;li&gt;&lt;code&gt;Float.class&lt;/code&gt; - {@link FloatConverter}&lt;/li&gt;<a name="line.648"></a>
+<font color="green">649</font>         *     &lt;li&gt;&lt;code&gt;Integer.class&lt;/code&gt; - {@link IntegerConverter}&lt;/li&gt;<a name="line.649"></a>
+<font color="green">650</font>         *     &lt;li&gt;&lt;code&gt;Long.class&lt;/code&gt; - {@link LongConverter}&lt;/li&gt;<a name="line.650"></a>
+<font color="green">651</font>         *     &lt;li&gt;&lt;code&gt;Short.class&lt;/code&gt; - {@link ShortConverter}&lt;/li&gt;<a name="line.651"></a>
+<font color="green">652</font>         *     &lt;li&gt;&lt;code&gt;String.class&lt;/code&gt; - {@link StringConverter}&lt;/li&gt;<a name="line.652"></a>
+<font color="green">653</font>         * &lt;/ul&gt;<a name="line.653"></a>
+<font color="green">654</font>         * @param throwException &lt;code&gt;true&lt;/code&gt; if the converters should<a name="line.654"></a>
+<font color="green">655</font>         * throw an exception when a conversion error occurs, otherwise &lt;code&gt;<a name="line.655"></a>
+<font color="green">656</font>         * &lt;code&gt;false&lt;/code&gt; if a default value should be used.<a name="line.656"></a>
+<font color="green">657</font>         * @param defaultNull &lt;code&gt;true&lt;/code&gt;if the &lt;i&gt;standard&lt;/i&gt; converters<a name="line.657"></a>
+<font color="green">658</font>         * (see {@link ConvertUtilsBean#registerStandard(boolean, boolean)})<a name="line.658"></a>
+<font color="green">659</font>         * should use a default value of &lt;code&gt;null&lt;/code&gt;, otherwise &lt;code&gt;false&lt;/code&gt;.<a name="line.659"></a>
+<font color="green">660</font>         * N.B. This values is ignored if &lt;code&gt;throwException&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt;<a name="line.660"></a>
+<font color="green">661</font>         */<a name="line.661"></a>
+<font color="green">662</font>        private void registerStandard(boolean throwException, boolean defaultNull) {<a name="line.662"></a>
+<font color="green">663</font>    <a name="line.663"></a>
+<font color="green">664</font>            Number     defaultNumber     = defaultNull ? null : ZERO;<a name="line.664"></a>
+<font color="green">665</font>            BigDecimal bigDecDeflt       = defaultNull ? null : new BigDecimal("0.0");<a name="line.665"></a>
+<font color="green">666</font>            BigInteger bigIntDeflt       = defaultNull ? null : new BigInteger("0");<a name="line.666"></a>
+<font color="green">667</font>            Boolean    booleanDefault    = defaultNull ? null : Boolean.FALSE;<a name="line.667"></a>
+<font color="green">668</font>            Character  charDefault       = defaultNull ? null : SPACE;<a name="line.668"></a>
+<font color="green">669</font>            String     stringDefault     = defaultNull ? null : "";<a name="line.669"></a>
+<font color="green">670</font>    <a name="line.670"></a>
+<font color="green">671</font>            register(BigDecimal.class, throwException ? new BigDecimalConverter() : new BigDecimalConverter(bigDecDeflt));<a name="line.671"></a>
+<font color="green">672</font>            register(BigInteger.class, throwException ? new BigIntegerConverter() : new BigIntegerConverter(bigIntDeflt));<a name="line.672"></a>
+<font color="green">673</font>            register(Boolean.class,    throwException ? new BooleanConverter()    : new BooleanConverter(booleanDefault));<a name="line.673"></a>
+<font color="green">674</font>            register(Byte.class,       throwException ? new ByteConverter()       : new ByteConverter(defaultNumber));<a name="line.674"></a>
+<font color="green">675</font>            register(Character.class,  throwException ? new CharacterConverter()  : new CharacterConverter(charDefault));<a name="line.675"></a>
+<font color="green">676</font>            register(Double.class,     throwException ? new DoubleConverter()     : new DoubleConverter(defaultNumber));<a name="line.676"></a>
+<font color="green">677</font>            register(Float.class,      throwException ? new FloatConverter()      : new FloatConverter(defaultNumber));<a name="line.677"></a>
+<font color="green">678</font>            register(Integer.class,    throwException ? new IntegerConverter()    : new IntegerConverter(defaultNumber));<a name="line.678"></a>
+<font color="green">679</font>            register(Long.class,       throwException ? new LongConverter()       : new LongConverter(defaultNumber));<a name="line.679"></a>
+<font color="green">680</font>            register(Short.class,      throwException ? new ShortConverter()      : new ShortConverter(defaultNumber));<a name="line.680"></a>
+<font color="green">681</font>            register(String.class,     throwException ? new StringConverter()     : new StringConverter(stringDefault));<a name="line.681"></a>
+<font color="green">682</font>            <a name="line.682"></a>
+<font color="green">683</font>        }<a name="line.683"></a>
+<font color="green">684</font>    <a name="line.684"></a>
+<font color="green">685</font>        /**<a name="line.685"></a>
+<font color="green">686</font>         * Register the converters for other types.<a name="line.686"></a>
+<font color="green">687</font>         * &lt;/p&gt;<a name="line.687"></a>
+<font color="green">688</font>         * This method registers the following converters:<a name="line.688"></a>
+<font color="green">689</font>         * &lt;ul&gt;<a name="line.689"></a>
+<font color="green">690</font>         *     &lt;li&gt;&lt;code&gt;Class.class&lt;/code&gt; - {@link ClassConverter}&lt;/li&gt;<a name="line.690"></a>
+<font color="green">691</font>         *     &lt;li&gt;&lt;code&gt;java.util.Date.class&lt;/code&gt; - {@link DateConverter}&lt;/li&gt;<a name="line.691"></a>
+<font color="green">692</font>         *     &lt;li&gt;&lt;code&gt;java.util.Calendar.class&lt;/code&gt; - {@link CalendarConverter}&lt;/li&gt;<a name="line.692"></a>
+<font color="green">693</font>         *     &lt;li&gt;&lt;code&gt;File.class&lt;/code&gt; - {@link FileConverter}&lt;/li&gt;<a name="line.693"></a>
+<font color="green">694</font>         *     &lt;li&gt;&lt;code&gt;java.sql.Date.class&lt;/code&gt; - {@link SqlDateConverter}&lt;/li&gt;<a name="line.694"></a>
+<font color="green">695</font>         *     &lt;li&gt;&lt;code&gt;java.sql.Time.class&lt;/code&gt; - {@link SqlTimeConverter}&lt;/li&gt;<a name="line.695"></a>
+<font color="green">696</font>         *     &lt;li&gt;&lt;code&gt;java.sql.Timestamp.class&lt;/code&gt; - {@link SqlTimestampConverter}&lt;/li&gt;<a name="line.696"></a>
+<font color="green">697</font>         *     &lt;li&gt;&lt;code&gt;URL.class&lt;/code&gt; - {@link URLConverter}&lt;/li&gt;<a name="line.697"></a>
+<font color="green">698</font>         * &lt;/ul&gt;<a name="line.698"></a>
+<font color="green">699</font>         * @param throwException &lt;code&gt;true&lt;/code&gt; if the converters should<a name="line.699"></a>
+<font color="green">700</font>         * throw an exception when a conversion error occurs, otherwise &lt;code&gt;<a name="line.700"></a>
+<font color="green">701</font>         * &lt;code&gt;false&lt;/code&gt; if a default value should be used.<a name="line.701"></a>
+<font color="green">702</font>         */<a name="line.702"></a>
+<font color="green">703</font>        private void registerOther(boolean throwException) {<a name="line.703"></a>
+<font color="green">704</font>            register(Class.class,         throwException ? new ClassConverter()        : new ClassConverter(null));<a name="line.704"></a>
+<font color="green">705</font>            register(java.util.Date.class, throwException ? new DateConverter()        : new DateConverter(null));<a name="line.705"></a>
+<font color="green">706</font>            register(Calendar.class,      throwException ? new CalendarConverter()     : new CalendarConverter(null));<a name="line.706"></a>
+<font color="green">707</font>            register(File.class,          throwException ? new FileConverter()         : new FileConverter(null));<a name="line.707"></a>
+<font color="green">708</font>            register(java.sql.Date.class, throwException ? new SqlDateConverter()      : new SqlDateConverter(null));<a name="line.708"></a>
+<font color="green">709</font>            register(java.sql.Time.class, throwException ? new SqlTimeConverter()      : new SqlTimeConverter(null));<a name="line.709"></a>
+<font color="green">710</font>            register(Timestamp.class,     throwException ? new SqlTimestampConverter() : new SqlTimestampConverter(null));<a name="line.710"></a>
+<font color="green">711</font>            register(URL.class,           throwException ? new URLConverter()          : new URLConverter(null));<a name="line.711"></a>
+<font color="green">712</font>        }<a name="line.712"></a>
+<font color="green">713</font>    <a name="line.713"></a>
+<font color="green">714</font>        /**<a name="line.714"></a>
+<font color="green">715</font>         * Register array converters.<a name="line.715"></a>
+<font color="green">716</font>         *<a name="line.716"></a>
+<font color="green">717</font>         * @param throwException &lt;code&gt;true&lt;/code&gt; if the converters should<a name="line.717"></a>
+<font color="green">718</font>         * throw an exception when a conversion error occurs, otherwise &lt;code&gt;<a name="line.718"></a>
+<font color="green">719</font>         * &lt;code&gt;false&lt;/code&gt; if a default value should be used.<a name="line.719"></a>
+<font color="green">720</font>         * @param defaultArraySize The size of the default array value for array converters<a name="line.720"></a>
+<font color="green">721</font>         * (N.B. This values is ignored if &lt;code&gt;throwException&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt;).<a name="line.721"></a>
+<font color="green">722</font>         * Specifying a value less than zero causes a &lt;code&gt;null&lt;code&gt; value to be used for<a name="line.722"></a>
+<font color="green">723</font>         * the default.<a name="line.723"></a>
+<font color="green">724</font>         */<a name="line.724"></a>
+<font color="green">725</font>        private void registerArrays(boolean throwException, int defaultArraySize) {<a name="line.725"></a>
+<font color="green">726</font>    <a name="line.726"></a>
+<font color="green">727</font>            // Primitives<a name="line.727"></a>
+<font color="green">728</font>            registerArrayConverter(Boolean.TYPE,   new BooleanConverter(),   throwException, defaultArraySize);<a name="line.728"></a>
+<font color="green">729</font>            registerArrayConverter(Byte.TYPE,      new ByteConverter(),      throwException, defaultArraySize);<a name="line.729"></a>
+<font color="green">730</font>            registerArrayConverter(Character.TYPE, new CharacterConverter(), throwException, defaultArraySize);<a name="line.730"></a>
+<font color="green">731</font>            registerArrayConverter(Double.TYPE,    new DoubleConverter(),    throwException, defaultArraySize);<a name="line.731"></a>
+<font color="green">732</font>            registerArrayConverter(Float.TYPE,     new FloatConverter(),     throwException, defaultArraySize);<a name="line.732"></a>
+<font color="green">733</font>            registerArrayConverter(Integer.TYPE,   new IntegerConverter(),   throwException, defaultArraySize);<a name="line.733"></a>
+<font color="green">734</font>            registerArrayConverter(Long.TYPE,      new LongConverter(),      throwException, defaultArraySize);<a name="line.734"></a>
+<font color="green">735</font>            registerArrayConverter(Short.TYPE,     new ShortConverter(),     throwException, defaultArraySize);<a name="line.735"></a>
+<font color="green">736</font>    <a name="line.736"></a>
+<font color="green">737</font>            // Standard<a name="line.737"></a>
+<font color="green">738</font>            registerArrayConverter(BigDecimal.class, new BigDecimalConverter(), throwException, defaultArraySize);<a name="line.738"></a>
+<font color="green">739</font>            registerArrayConverter(BigInteger.class, new BigIntegerConverter(), throwException, defaultArraySize);<a name="line.739"></a>
+<font color="green">740</font>            registerArrayConverter(Boolean.class,    new BooleanConverter(),    throwException, defaultArraySize);<a name="line.740"></a>
+<font color="green">741</font>            registerArrayConverter(Byte.class,       new ByteConverter(),       throwException, defaultArraySize);<a name="line.741"></a>
+<font color="green">742</font>            registerArrayConverter(Character.class,  new CharacterConverter(),  throwException, defaultArraySize);<a name="line.742"></a>
+<font color="green">743</font>            registerArrayConverter(Double.class,     new DoubleConverter(),     throwException, defaultArraySize);<a name="line.743"></a>
+<font color="green">744</font>            registerArrayConverter(Float.class,      new FloatConverter(),      throwException, defaultArraySize);<a name="line.744"></a>
+<font color="green">745</font>            registerArrayConverter(Integer.class,    new IntegerConverter(),    throwException, defaultArraySize);<a name="line.745"></a>
+<font color="green">746</font>            registerArrayConverter(Long.class,       new LongConverter(),       throwException, defaultArraySize);<a name="line.746"></a>
+<font color="green">747</font>            registerArrayConverter(Short.class,      new ShortConverter(),      throwException, defaultArraySize);<a name="line.747"></a>
+<font color="green">748</font>            registerArrayConverter(String.class,     new StringConverter(),     throwException, defaultArraySize);<a name="line.748"></a>
+<font color="green">749</font>    <a name="line.749"></a>
+<font color="green">750</font>            // Other<a name="line.750"></a>
+<font color="green">751</font>            registerArrayConverter(Class.class,          new ClassConverter(),        throwException, defaultArraySize);<a name="line.751"></a>
+<font color="green">752</font>            registerArrayConverter(java.util.Date.class, new DateConverter(),         throwException, defaultArraySize);<a name="line.752"></a>
+<font color="green">753</font>            registerArrayConverter(Calendar.class,       new DateConverter(),         throwException, defaultArraySize);<a name="line.753"></a>
+<font color="green">754</font>            registerArrayConverter(File.class,           new FileConverter(),         throwException, defaultArraySize);<a name="line.754"></a>
+<font color="green">755</font>            registerArrayConverter(java.sql.Date.class,  new SqlDateConverter(),      throwException, defaultArraySize);<a name="line.755"></a>
+<font color="green">756</font>            registerArrayConverter(java.sql.Time.class,  new SqlTimeConverter(),      throwException, defaultArraySize);<a name="line.756"></a>
+<font color="green">757</font>            registerArrayConverter(Timestamp.class,      new SqlTimestampConverter(), throwException, defaultArraySize);<a name="line.757"></a>
+<font color="green">758</font>            registerArrayConverter(URL.class,            new URLConverter(),          throwException, defaultArraySize);<a name="line.758"></a>
+<font color="green">759</font>    <a name="line.759"></a>
+<font color="green">760</font>        }<a name="line.760"></a>
+<font color="green">761</font>    <a name="line.761"></a>
+<font color="green">762</font>        /**<a name="line.762"></a>
+<font color="green">763</font>         * Register a new ArrayConverter with the specified element delegate converter<a name="line.763"></a>
+<font color="green">764</font>         * that returns a default array of the specified size in the event of conversion errors.<a name="line.764"></a>
+<font color="green">765</font>         *<a name="line.765"></a>
+<font color="green">766</font>         * @param componentType The component type of the array<a name="line.766"></a>
+<font color="green">767</font>         * @param componentConverter The converter to delegate to for the array elements<a name="line.767"></a>
+<font color="green">768</font>         * @param throwException Whether a conversion exception should be thrown or a default<a name="line.768"></a>
+<font color="green">769</font>         * value used in the event of a conversion error<a name="line.769"></a>
+<font color="green">770</font>         * @param defaultArraySize The size of the default array<a name="line.770"></a>
+<font color="green">771</font>         */<a name="line.771"></a>
+<font color="green">772</font>        private void registerArrayConverter(Class componentType, Converter componentConverter,<a name="line.772"></a>
+<font color="green">773</font>                boolean throwException, int defaultArraySize) {<a name="line.773"></a>
+<font color="green">774</font>            Class arrayType = Array.newInstance(componentType, 0).getClass();<a name="line.774"></a>
+<font color="green">775</font>            Converter arrayConverter = null;<a name="line.775"></a>
+<font color="green">776</font>            if (throwException) {<a name="line.776"></a>
+<font color="green">777</font>                arrayConverter = new ArrayConverter(arrayType, componentConverter);<a name="line.777"></a>
+<font color="green">778</font>            } else {<a name="line.778"></a>
+<font color="green">779</font>                arrayConverter = new ArrayConverter(arrayType, componentConverter, defaultArraySize);<a name="line.779"></a>
+<font color="green">780</font>            }<a name="line.780"></a>
+<font color="green">781</font>            register(arrayType, arrayConverter);<a name="line.781"></a>
+<font color="green">782</font>        }<a name="line.782"></a>
+<font color="green">783</font>    <a name="line.783"></a>
+<font color="green">784</font>        /** strictly for convenience since it has same parameter order as Map.put */<a name="line.784"></a>
+<font color="green">785</font>        private void register(Class clazz, Converter converter) {<a name="line.785"></a>
+<font color="green">786</font>            register(new ConverterFacade(converter), clazz);<a name="line.786"></a>
+<font color="green">787</font>        }<a name="line.787"></a>
+<font color="green">788</font>    <a name="line.788"></a>
+<font color="green">789</font>        /**<a name="line.789"></a>
+<font color="green">790</font>         * Remove any registered {@link Converter} for the specified destination<a name="line.790"></a>
+<font color="green">791</font>         * &lt;code&gt;Class&lt;/code&gt;.<a name="line.791"></a>
+<font color="green">792</font>         *<a name="line.792"></a>
+<font color="green">793</font>         * @param clazz Class for which to remove a registered Converter<a name="line.793"></a>
+<font color="green">794</font>         */<a name="line.794"></a>
+<font color="green">795</font>        public void deregister(Class clazz) {<a name="line.795"></a>
+<font color="green">796</font>    <a name="line.796"></a>
+<font color="green">797</font>            converters.remove(clazz);<a name="line.797"></a>
+<font color="green">798</font>    <a name="line.798"></a>
+<font color="green">799</font>        }<a name="line.799"></a>
+<font color="green">800</font>    <a name="line.800"></a>
+<font color="green">801</font>    <a name="line.801"></a>
+<font color="green">802</font>        /**<a name="line.802"></a>
+<font color="green">803</font>         * Look up and return any registered {@link Converter} for the specified<a name="line.803"></a>
+<font color="green">804</font>         * destination class; if there is no registered Converter, return<a name="line.804"></a>
+<font color="green">805</font>         * &lt;code&gt;null&lt;/code&gt;.<a name="line.805"></a>
+<font color="green">806</font>         *<a name="line.806"></a>
+<font color="green">807</font>         * @param clazz Class for which to return a registered Converter<a name="line.807"></a>
+<font color="green">808</font>         * @return The registered {@link Converter} or &lt;code&gt;null&lt;/code&gt; if not found<a name="line.808"></a>
+<font color="green">809</font>         */<a name="line.809"></a>
+<font color="green">810</font>        public Converter lookup(Class clazz) {<a name="line.810"></a>
+<font color="green">811</font>    <a name="line.811"></a>
+<font color="green">812</font>            return ((Converter) converters.get(clazz));<a name="line.812"></a>
+<font color="green">813</font>    <a name="line.813"></a>
+<font color="green">814</font>        }<a name="line.814"></a>
+<font color="green">815</font>    <a name="line.815"></a>
+<font color="green">816</font>        /**<a name="line.816"></a>
+<font color="green">817</font>         * Look up and return any registered {@link Converter} for the specified<a name="line.817"></a>
+<font color="green">818</font>         * source and destination class; if there is no registered Converter,<a name="line.818"></a>
+<font color="green">819</font>         * return &lt;code&gt;null&lt;/code&gt;.<a name="line.819"></a>
+<font color="green">820</font>         *<a name="line.820"></a>
+<font color="green">821</font>         * @param sourceType Class of the value being converted<a name="line.821"></a>
+<font color="green">822</font>         * @param targetType Class of the value to be converted to<a name="line.822"></a>
+<font color="green">823</font>         * @return The registered {@link Converter} or &lt;code&gt;null&lt;/code&gt; if not found<a name="line.823"></a>
+<font color="green">824</font>         */<a name="line.824"></a>
+<font color="green">825</font>        public Converter lookup(Class sourceType, Class targetType) {<a name="line.825"></a>
+<font color="green">826</font>    <a name="line.826"></a>
+<font color="green">827</font>            if (targetType == null) {<a name="line.827"></a>
+<font color="green">828</font>                throw new IllegalArgumentException("Target type is missing");<a name="line.828"></a>
+<font color="green">829</font>            }<a name="line.829"></a>
+<font color="green">830</font>            if (sourceType == null) {<a name="line.830"></a>
+<font color="green">831</font>                return lookup(targetType);<a name="line.831"></a>
+<font color="green">832</font>            }<a name="line.832"></a>
+<font color="green">833</font>    <a name="line.833"></a>
+<font color="green">834</font>            Converter converter = null;<a name="line.834"></a>
+<font color="green">835</font>            // Convert --&gt; String <a name="line.835"></a>
+<font color="green">836</font>            if (targetType == String.class) {<a name="line.836"></a>
+<font color="green">837</font>                converter = lookup(sourceType);<a name="line.837"></a>
+<font color="green">838</font>                if (converter == null &amp;&amp; (sourceType.isArray() ||<a name="line.838"></a>
+<font color="green">839</font>                            Collection.class.isAssignableFrom(sourceType))) {<a name="line.839"></a>
+<font color="green">840</font>                    converter = lookup(String[].class);<a name="line.840"></a>
+<font color="green">841</font>                }<a name="line.841"></a>
+<font color="green">842</font>                if (converter == null) {<a name="line.842"></a>
+<font color="green">843</font>                    converter = lookup(String.class);<a name="line.843"></a>
+<font color="green">844</font>                }<a name="line.844"></a>
+<font color="green">845</font>                return converter;<a name="line.845"></a>
+<font color="green">846</font>            }<a name="line.846"></a>
+<font color="green">847</font>    <a name="line.847"></a>
+<font color="green">848</font>            // Convert --&gt; String array <a name="line.848"></a>
+<font color="green">849</font>            if (targetType == String[].class) {<a name="line.849"></a>
+<font color="green">850</font>                if (sourceType.isArray() || Collection.class.isAssignableFrom(sourceType)) {<a name="line.850"></a>
+<font color="green">851</font>                    converter = lookup(sourceType);<a name="line.851"></a>
+<font color="green">852</font>                }<a name="line.852"></a>
+<font color="green">853</font>                if (converter == null) {<a name="line.853"></a>
+<font color="green">854</font>                    converter = lookup(String[].class);<a name="line.854"></a>
+<font color="green">855</font>                }<a name="line.855"></a>
+<font color="green">856</font>                return converter;<a name="line.856"></a>
+<font color="green">857</font>            }<a name="line.857"></a>
+<font color="green">858</font>    <a name="line.858"></a>
+<font color="green">859</font>            return lookup(targetType);<a name="line.859"></a>
+<font color="green">860</font>    <a name="line.860"></a>
+<font color="green">861</font>        }<a name="line.861"></a>
+<font color="green">862</font>    <a name="line.862"></a>
+<font color="green">863</font>        /**<a name="line.863"></a>
+<font color="green">864</font>         * Register a custom {@link Converter} for the specified destination<a name="line.864"></a>
+<font color="green">865</font>         * &lt;code&gt;Class&lt;/code&gt;, replacing any previously registered Converter.<a name="line.865"></a>
+<font color="green">866</font>         *<a name="line.866"></a>
+<font color="green">867</font>         * @param converter Converter to be registered<a name="line.867"></a>
+<font color="green">868</font>         * @param clazz Destination class for conversions performed by this<a name="line.868"></a>
+<font color="green">869</font>         *  Converter<a name="line.869"></a>
+<font color="green">870</font>         */<a name="line.870"></a>
+<font color="green">871</font>        public void register(Converter converter, Class clazz) {<a name="line.871"></a>
+<font color="green">872</font>    <a name="line.872"></a>
+<font color="green">873</font>            converters.put(clazz, converter);<a name="line.873"></a>
+<font color="green">874</font>    <a name="line.874"></a>
+<font color="green">875</font>        }<a name="line.875"></a>
+<font color="green">876</font>    }<a name="line.876"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/ConvertUtils/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/src-html/org/apache/commons/beanutils/ConvertUtilsBean2/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

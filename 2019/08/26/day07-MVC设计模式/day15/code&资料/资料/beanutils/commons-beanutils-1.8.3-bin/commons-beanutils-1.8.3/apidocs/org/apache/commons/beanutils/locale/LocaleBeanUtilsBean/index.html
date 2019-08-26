@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="LocaleBeanUtilsBean (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;LocaleBeanUtilsBean (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="LocaleBeanUtilsBean (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;LocaleBeanUtilsBean (">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+<meta property="og:updated_time" content="2010-03-24T09:13:54.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="LocaleBeanUtilsBean (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;LocaleBeanUtilsBean (">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:22" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:22+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:13:54" itemprop="dateModified" datetime="2010-03-24T17:13:54+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<!-- Generated by javadoc (build 1.6.0_17) on Wed Mar 24 17:13:52 GMT 2010 -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>
+LocaleBeanUtilsBean (Commons BeanUtils 1.8.3 API)
+</title>
+
+<meta name="date" content="2010-03-24">
+
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+
+<script type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="LocaleBeanUtilsBean (Commons BeanUtils 1.8.3 API)";
+    }
+}
+</script>
+<noscript>
+</noscript>
+
+</head>
+
+<body bgcolor="white" onload="windowTitle();">
+<hr>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<a name="navbar_top"><!-- --></a>
+<a href="#skip-navbar_top" title="Skip navigation links"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0" summary>
+<tr>
+<td colspan="2" bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3" summary>
+  <tr align="center" valign="top">
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev"> &nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="class-use/LocaleBeanUtilsBean.html"><font class="NavBarFont1"><b>Use</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../deprecated-list.html"><font class="NavBarFont1"><b>Deprecated</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td align="right" valign="top" rowspan="3"><em>
+</em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtils.Descriptor.html" title="class in org.apache.commons.beanutils.locale"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.Descriptor.html" title="class in org.apache.commons.beanutils.locale"><b>NEXT CLASS</b></a></font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="../../../../../index.html?org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="LocaleBeanUtilsBean.html" target="_top"><b>NO FRAMES</b></a>  &nbsp;
+&nbsp;<script type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+  <a href="../../../../../allclasses-noframe.html"><b>All Classes</b></a>
+</noscript>
+
+
+</font></td>
+</tr>
+<tr>
+<td valign="top" class="NavBarCell3"><font size="-2">
+  SUMMARY:&nbsp;<a href="#nested_class_summary">NESTED</a>&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;<a href="#method_summary">METHOD</a></font></td>
+<td valign="top" class="NavBarCell3"><font size="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;<a href="#method_detail">METHOD</a></font></td>
+</tr>
+</table>
+<a name="skip-navbar_top"></a>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<hr>
+<!-- ======== START OF CLASS DATA ======== -->
+<h2>
+<font size="-1">
+org.apache.commons.beanutils.locale</font>
+<br>
+Class LocaleBeanUtilsBean</h2>
+<pre>
+<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">java.lang.Object</a>
+  <img src="../../../../../resources/inherit.gif" alt="extended by "><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">org.apache.commons.beanutils.BeanUtilsBean</a>
+      <img src="../../../../../resources/inherit.gif" alt="extended by "><b>org.apache.commons.beanutils.locale.LocaleBeanUtilsBean</b>
+</pre>
+<hr>
+<dl>
+<dt><pre>public class <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.53"><b>LocaleBeanUtilsBean</b></a><dt>extends <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></dt></pre></dt></dl>
+
+
+<p>
+</p><p>Utility methods for populating JavaBeans properties
+ via reflection in a locale-dependent manner.</p>
+<p>
+
+</p><p>
+<dl>
+<dt><b>Since:</b></dt>
+  <dd>1.7</dd>
+<dt><b>Author:</b></dt>
+  <dd>Craig R. McClanahan, Ralph Schaer, Chris Audley, Rey Francois, Gregor Rayman, Yauheny Mikulski</dd>
+</dl>
+<hr>
+
+</p><p>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<a name="nested_class_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Nested Class Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;class</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.Descriptor.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean.Descriptor</a></b></code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Property name expressions are now processed by
+ the configured <a href="../../../../../org/apache/commons/beanutils/expression/Resolver.html" title="interface in org.apache.commons.beanutils.expression"><code>Resolver</code></a> implementation and this class
+ is no longer used by BeanUtils.</i></td>
+</tr>
+</table>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<a name="constructor_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Constructor Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#LocaleBeanUtilsBean()">LocaleBeanUtilsBean</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct instance with standard conversion bean</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#LocaleBeanUtilsBean(org.apache.commons.beanutils.locale.LocaleConvertUtilsBean)">LocaleBeanUtilsBean</a></b>(<a href="../../../../../org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleConvertUtilsBean</a>&nbsp;localeConvertUtils)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct instance that uses given locale conversion</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#LocaleBeanUtilsBean(org.apache.commons.beanutils.locale.LocaleConvertUtilsBean, org.apache.commons.beanutils.ConvertUtilsBean, org.apache.commons.beanutils.PropertyUtilsBean)">LocaleBeanUtilsBean</a></b>(<a href="../../../../../org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleConvertUtilsBean</a>&nbsp;localeConvertUtils,
+                                       <a href="../../../../../org/apache/commons/beanutils/ConvertUtilsBean.html" title="class in org.apache.commons.beanutils">ConvertUtilsBean</a>&nbsp;convertUtilsBean,
+                                       <a href="../../../../../org/apache/commons/beanutils/PropertyUtilsBean.html" title="class in org.apache.commons.beanutils">PropertyUtilsBean</a>&nbsp;propertyUtilsBean)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct instance that uses given locale conversion</td>
+</tr>
+</table>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="method_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Method Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.Descriptor.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean.Descriptor</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#calculate(java.lang.Object, java.lang.String)">calculate</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Deprecated.</b>&nbsp;<i>Property name expressions are now processed by
+ the configured <a href="../../../../../org/apache/commons/beanutils/expression/Resolver.html" title="interface in org.apache.commons.beanutils.expression"><code>Resolver</code></a> implementation and this method
+ is no longer used by BeanUtils.</i></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#convert(java.lang.Class, int, java.lang.Object)">convert</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;type,
+               int&nbsp;index,
+               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert the specified value to the required type.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#convert(java.lang.Class, int, java.lang.Object, java.lang.String)">convert</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;type,
+               int&nbsp;index,
+               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value,
+               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert the specified value to the required type using the
+ specified conversion pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#definePropertyType(java.lang.Object, java.lang.String, java.lang.String)">definePropertyType</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;target,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;propName)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calculate the property type.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getApplyLocalized()">getApplyLocalized</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is the pattern to be applied localized
+ (Indicate whether the pattern is localized or not)</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Locale</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getDefaultLocale()">getDefaultLocale</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the default Locale</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getIndexedProperty(java.lang.Object, java.lang.String)">getIndexedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensitive indexed property
+ of the specified bean, as a String using the default conversion pattern of
+ the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getIndexedProperty(java.lang.Object, java.lang.String, int)">getIndexedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                     int&nbsp;index)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensetive indexed property
+ of the specified bean, as a String using the default conversion pattern of
+ the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getIndexedProperty(java.lang.Object, java.lang.String, int, java.lang.String)">getIndexedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                     int&nbsp;index,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensetive indexed property
+ of the specified bean, as a String using the specified conversion pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getIndexedProperty(java.lang.Object, java.lang.String, java.lang.String)">getIndexedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                     <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensitive indexed property
+ of the specified bean, as a String.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>static&nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getLocaleBeanUtilsInstance()">getLocaleBeanUtilsInstance</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets singleton instance</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleConvertUtilsBean</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getLocaleConvertUtils()">getLocaleConvertUtils</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the bean instance used for conversions</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getMappedProperty(java.lang.Object, java.lang.String)">getMappedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensitive mapped property
+ of the specified bean, as a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getMappedProperty(java.lang.Object, java.lang.String, java.lang.String)">getMappedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;key)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified mapped locale-sensitive property
+ of the specified bean, as a String
+ The key is specified as a method parameter and must *not* be included
+ in the property name expression</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getMappedProperty(java.lang.Object, java.lang.String, java.lang.String, java.lang.String)">getMappedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;key,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified mapped locale-sensitive property
+ of the specified bean, as a String using the specified conversion pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getMappedPropertyLocale(java.lang.Object, java.lang.String, java.lang.String)">getMappedPropertyLocale</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                               <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensitive mapped property
+ of the specified bean, as a String using the specified pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getNestedProperty(java.lang.Object, java.lang.String)">getNestedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the (possibly nested) locale-sensitive property
+ of the specified name, for the specified bean, as a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getNestedProperty(java.lang.Object, java.lang.String, java.lang.String)">getNestedProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the (possibly nested) locale-sensitive property
+ of the specified name, for the specified bean,
+ as a String using the specified pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getProperty(java.lang.Object, java.lang.String)">getProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensitive property
+ of the specified bean, no matter which property reference
+ format is used, as a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getProperty(java.lang.Object, java.lang.String, java.lang.String)">getProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified locale-sensitive property
+ of the specified bean, no matter which property reference
+ format is used, as a String using the specified conversion pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getSimpleProperty(java.lang.Object, java.lang.String)">getSimpleProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified simple locale-sensitive property
+ of the specified bean, converted to a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a></code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#getSimpleProperty(java.lang.Object, java.lang.String, java.lang.String)">getSimpleProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value of the specified simple locale-sensitive property
+ of the specified bean, converted to a String using the specified
+ conversion pattern.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;void</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#invokeSetter(java.lang.Object, java.lang.String, java.lang.String, int, java.lang.Object)">invokeSetter</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;target,
+                         <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;propName,
+                         <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;key,
+                         int&nbsp;index,
+                         <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;newValue)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invoke the setter method.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#setApplyLocalized(boolean)">setApplyLocalized</a></b>(boolean&nbsp;newApplyLocalized)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets whether the pattern is applied localized
+ (Indicate whether the pattern is localized or not)</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#setDefaultLocale(java.util.Locale)">setDefaultLocale</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Locale</a>&nbsp;locale)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the default Locale.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>static&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#setInstance(org.apache.commons.beanutils.locale.LocaleBeanUtilsBean)">setInstance</a></b>(<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean</a>&nbsp;newInstance)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the instance which provides the functionality for <a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtils.html" title="class in org.apache.commons.beanutils.locale"><code>LocaleBeanUtils</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#setProperty(java.lang.Object, java.lang.String, java.lang.Object)">setProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the specified locale-sensitive property value, performing type
+ conversions as required to conform to the type of the destination property
+ using the default conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#setProperty(java.lang.Object, java.lang.String, java.lang.Object, java.lang.String)">setProperty</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value,
+                       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the specified locale-sensitive property value, performing type
+ conversions as required to conform to the type of the destination
+ property using the specified conversion pattern.</td>
+</tr>
+</table>
+&nbsp;<a name="methods_inherited_from_class_org.apache.commons.beanutils.BeanUtilsBean"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#EEEEFF" class="TableSubHeadingColor">
+<th align="left"><b>Methods inherited from class org.apache.commons.beanutils.<a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></b></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#cloneBean(java.lang.Object)">cloneBean</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#convert(java.lang.Object, java.lang.Class)">convert</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#copyProperties(java.lang.Object, java.lang.Object)">copyProperties</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#copyProperty(java.lang.Object, java.lang.String, java.lang.Object)">copyProperty</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#describe(java.lang.Object)">describe</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getArrayProperty(java.lang.Object, java.lang.String)">getArrayProperty</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getConvertUtils()">getConvertUtils</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getInstance()">getInstance</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getPropertyUtils()">getPropertyUtils</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#initCause(java.lang.Throwable, java.lang.Throwable)">initCause</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#populate(java.lang.Object, java.util.Map)">populate</a>, <a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#setInstance(org.apache.commons.beanutils.BeanUtilsBean)">setInstance</a></code></td>
+</tr>
+</table>
+&nbsp;<a name="methods_inherited_from_class_java.lang.Object"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#EEEEFF" class="TableSubHeadingColor">
+<th align="left"><b>Methods inherited from class java.lang.<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></b></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" target="_blank" rel="noopener">clone</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" target="_blank" rel="noopener">equals</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" target="_blank" rel="noopener">finalize</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" target="_blank" rel="noopener">getClass</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" target="_blank" rel="noopener">hashCode</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" target="_blank" rel="noopener">notify</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" target="_blank" rel="noopener">notifyAll</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" target="_blank" rel="noopener">toString</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a></code></td>
+</tr>
+</table>
+&nbsp;
+</p><p>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<a name="constructor_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Constructor Detail</b></font></th>
+</tr>
+</table>
+
+<a name="LocaleBeanUtilsBean()"><!-- --></a></p><h3>
+LocaleBeanUtilsBean</h3>
+<pre>
+public <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.97"><b>LocaleBeanUtilsBean</b></a>()</pre>
+<dl>
+<dd>Construct instance with standard conversion bean
+<p>
+</p></dd></dl>
+<hr>
+
+<a name="LocaleBeanUtilsBean(org.apache.commons.beanutils.locale.LocaleConvertUtilsBean, org.apache.commons.beanutils.ConvertUtilsBean, org.apache.commons.beanutils.PropertyUtilsBean)"><!-- --></a><h3>
+LocaleBeanUtilsBean</h3>
+<pre>
+public <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.109"><b>LocaleBeanUtilsBean</b></a>(<a href="../../../../../org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleConvertUtilsBean</a>&nbsp;localeConvertUtils,
+                           <a href="../../../../../org/apache/commons/beanutils/ConvertUtilsBean.html" title="class in org.apache.commons.beanutils">ConvertUtilsBean</a>&nbsp;convertUtilsBean,
+                           <a href="../../../../../org/apache/commons/beanutils/PropertyUtilsBean.html" title="class in org.apache.commons.beanutils">PropertyUtilsBean</a>&nbsp;propertyUtilsBean)</pre>
+<dl>
+<dd>Construct instance that uses given locale conversion
+<p>
+<dl>
+<dt><b>Parameters:</b><dd><code>localeConvertUtils</code> - use this <code>localeConvertUtils</code> to perform
+ conversions<dd><code>convertUtilsBean</code> - use this for standard conversions<dd><code>propertyUtilsBean</code> - use this for property conversions</dd></dd></dd></dt></dl>
+</p></dd></dl>
+<hr>
+
+<a name="LocaleBeanUtilsBean(org.apache.commons.beanutils.locale.LocaleConvertUtilsBean)"><!-- --></a><h3>
+LocaleBeanUtilsBean</h3>
+<pre>
+public <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.123"><b>LocaleBeanUtilsBean</b></a>(<a href="../../../../../org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleConvertUtilsBean</a>&nbsp;localeConvertUtils)</pre>
+<dl>
+<dd>Construct instance that uses given locale conversion
+<p>
+<dl>
+<dt><b>Parameters:</b><dd><code>localeConvertUtils</code> - use this <code>localeConvertUtils</code> to perform
+ conversions</dd></dt></dl>
+</p></dd></dl>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<a name="method_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Method Detail</b></font></th>
+</tr>
+</table>
+
+<a name="getLocaleBeanUtilsInstance()"><!-- --></a><h3>
+getLocaleBeanUtilsInstance</h3>
+<pre>
+public static <a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.71"><b>getLocaleBeanUtilsInstance</b></a>()</pre>
+<dl>
+<dd>Gets singleton instance
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the singleton instance</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="setInstance(org.apache.commons.beanutils.locale.LocaleBeanUtilsBean)"><!-- --></a><h3>
+setInstance</h3>
+<pre>
+public static void <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.82"><b>setInstance</b></a>(<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean</a>&nbsp;newInstance)</pre>
+<dl>
+<dd>Sets the instance which provides the functionality for <a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtils.html" title="class in org.apache.commons.beanutils.locale"><code>LocaleBeanUtils</code></a>.
+ This is a pseudo-singleton - an single instance is provided per (thread) context classloader.
+ This mechanism provides isolation for web apps deployed in the same container.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newInstance</code> - a new singleton instance</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getLocaleConvertUtils()"><!-- --></a><h3>
+getLocaleConvertUtils</h3>
+<pre>
+public <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.html" title="class in org.apache.commons.beanutils.locale">LocaleConvertUtilsBean</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.134"><b>getLocaleConvertUtils</b></a>()</pre>
+<dl>
+<dd>Gets the bean instance used for conversions
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the locale converter bean instance</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getDefaultLocale()"><!-- --></a><h3>
+getDefaultLocale</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Locale</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.142"><b>getDefaultLocale</b></a>()</pre>
+<dl>
+<dd>Gets the default Locale
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the default locale</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="setDefaultLocale(java.util.Locale)"><!-- --></a><h3>
+setDefaultLocale</h3>
+<pre>
+public void <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.153"><b>setDefaultLocale</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Locale</a>&nbsp;locale)</pre>
+<dl>
+<dd>Sets the default Locale.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>locale</code> - the default locale</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getApplyLocalized()"><!-- --></a><h3>
+getApplyLocalized</h3>
+<pre>
+public boolean <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.165"><b>getApplyLocalized</b></a>()</pre>
+<dl>
+<dd>Is the pattern to be applied localized
+ (Indicate whether the pattern is localized or not)
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd><code>true</code> if pattern is localized,
+ otherwise <code>false</code></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="setApplyLocalized(boolean)"><!-- --></a><h3>
+setApplyLocalized</h3>
+<pre>
+public void <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.177"><b>setApplyLocalized</b></a>(boolean&nbsp;newApplyLocalized)</pre>
+<dl>
+<dd>Sets whether the pattern is applied localized
+ (Indicate whether the pattern is localized or not)
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>newApplyLocalized</code> - <code>true</code> if pattern is localized,
+ otherwise <code>false</code></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getIndexedProperty(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getIndexedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.205"><b>getIndexedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                          throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensitive indexed property
+ of the specified bean, as a String. The zero-relative index of the
+ required value must be included (in square brackets) as a suffix to
+ the property name, or <code>IllegalArgumentException</code> will be
+ thrown.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - <code>propertyname[index]</code> of the property value
+  to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The indexed property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getIndexedProperty(java.lang.Object, java.lang.String)"><!-- --></a><h3>
+getIndexedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.237"><b>getIndexedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)
+                          throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensitive indexed property
+ of the specified bean, as a String using the default conversion pattern of
+ the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>. The zero-relative index
+ of the required value must be included (in square brackets) as a suffix
+ to the property name, or <code>IllegalArgumentException</code> will be thrown.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getIndexedProperty(java.lang.Object, java.lang.String)">getIndexedProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - <code>propertyname[index]</code> of the property value
+  to be extracted
+<dt><b>Returns:</b><dd>The indexed property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getIndexedProperty(java.lang.Object, java.lang.String, int, java.lang.String)"><!-- --></a><h3>
+getIndexedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.267"><b>getIndexedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                 int&nbsp;index,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                          throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensetive indexed property
+ of the specified bean, as a String using the specified conversion pattern.
+ The index is specified as a method parameter and
+ must *not* be included in the property name expression
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Simple property name of the property value to be extracted<dd><code>index</code> - Index of the property value to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The indexed property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getIndexedProperty(java.lang.Object, java.lang.String, int)"><!-- --></a><h3>
+getIndexedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.295"><b>getIndexedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                 int&nbsp;index)
+                          throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                 <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensetive indexed property
+ of the specified bean, as a String using the default conversion pattern of
+ the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.
+ The index is specified as a method parameter and
+ must *not* be included in the property name expression
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getIndexedProperty(java.lang.Object, java.lang.String, int)">getIndexedProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Simple property name of the property value to be extracted<dd><code>index</code> - Index of the property value to be extracted
+<dt><b>Returns:</b><dd>The indexed property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getSimpleProperty(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getSimpleProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.319"><b>getSimpleProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified simple locale-sensitive property
+ of the specified bean, converted to a String using the specified
+ conversion pattern.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Name of the property to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getSimpleProperty(java.lang.Object, java.lang.String)"><!-- --></a><h3>
+getSimpleProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.343"><b>getSimpleProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified simple locale-sensitive property
+ of the specified bean, converted to a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getSimpleProperty(java.lang.Object, java.lang.String)">getSimpleProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Name of the property to be extracted
+<dt><b>Returns:</b><dd>The property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getMappedProperty(java.lang.Object, java.lang.String, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getMappedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.369"><b>getMappedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;key,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified mapped locale-sensitive property
+ of the specified bean, as a String using the specified conversion pattern.
+ The key is specified as a method parameter and must *not* be included in
+ the property name expression.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Simple property name of the property value to be extracted<dd><code>key</code> - Lookup key of the property value to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The mapped property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getMappedProperty(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getMappedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.401"><b>getMappedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;key)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified mapped locale-sensitive property
+ of the specified bean, as a String
+ The key is specified as a method parameter and must *not* be included
+ in the property name expression
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getMappedProperty(java.lang.Object, java.lang.String, java.lang.String)">getMappedProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Simple property name of the property value to be extracted<dd><code>key</code> - Lookup key of the property value to be extracted
+<dt><b>Returns:</b><dd>The mapped property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getMappedPropertyLocale(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getMappedPropertyLocale</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.431"><b>getMappedPropertyLocale</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                               throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                      <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensitive mapped property
+ of the specified bean, as a String using the specified pattern.
+ The String-valued key of the required value
+ must be included (in parentheses) as a suffix to
+ the property name, or <code>IllegalArgumentException</code> will be
+ thrown.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - <code>propertyname(index)</code> of the property value
+  to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The mapped property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getMappedProperty(java.lang.Object, java.lang.String)"><!-- --></a><h3>
+getMappedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.466"><b>getMappedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensitive mapped property
+ of the specified bean, as a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.
+ The String-valued key of the required value
+ must be included (in parentheses) as a suffix to
+ the property name, or <code>IllegalArgumentException</code> will be
+ thrown.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getMappedProperty(java.lang.Object, java.lang.String)">getMappedProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - <code>propertyname(index)</code> of the property value
+  to be extracted
+<dt><b>Returns:</b><dd>The mapped property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getNestedProperty(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getNestedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.494"><b>getNestedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the (possibly nested) locale-sensitive property
+ of the specified name, for the specified bean,
+ as a String using the specified pattern.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Possibly nested name of the property to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The nested property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalArgumentException</a></code> - if a nested reference to a
+  property returns null
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getNestedProperty(java.lang.Object, java.lang.String)"><!-- --></a><h3>
+getNestedProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.525"><b>getNestedProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)
+                         throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                                <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the (possibly nested) locale-sensitive property
+ of the specified name, for the specified bean, as a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getNestedProperty(java.lang.Object, java.lang.String)">getNestedProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Possibly nested name of the property to be extracted
+<dt><b>Returns:</b><dd>The nested property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalArgumentException</a></code> - if a nested reference to a
+  property returns null
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getProperty(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+getProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.552"><b>getProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                   throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensitive property
+ of the specified bean, no matter which property reference
+ format is used, as a String using the specified conversion pattern.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Possibly indexed and/or nested name of the property
+  to be extracted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The nested property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="getProperty(java.lang.Object, java.lang.String)"><!-- --></a><h3>
+getProperty</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.579"><b>getProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)
+                   throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a>,
+                          <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></pre>
+<dl>
+<dd>Return the value of the specified locale-sensitive property
+ of the specified bean, no matter which property reference
+ format is used, as a String using the default
+ conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#getProperty(java.lang.Object, java.lang.String)">getProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean whose property is to be extracted<dd><code>name</code> - Possibly indexed and/or nested name of the property
+  to be extracted
+<dt><b>Returns:</b><dd>The property's value, converted to a String
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/NoSuchMethodException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">NoSuchMethodException</a></code> - if an accessor method for this
+  propety cannot be found</dd></dd></dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="setProperty(java.lang.Object, java.lang.String, java.lang.Object)"><!-- --></a><h3>
+setProperty</h3>
+<pre>
+public void <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.602"><b>setProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)
+                 throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></pre>
+<dl>
+<dd>Set the specified locale-sensitive property value, performing type
+ conversions as required to conform to the type of the destination property
+ using the default conversion pattern of the corresponding <a href="../../../../../org/apache/commons/beanutils/locale/LocaleConverter.html" title="interface in org.apache.commons.beanutils.locale"><code>LocaleConverter</code></a>.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html#setProperty(java.lang.Object, java.lang.String, java.lang.Object)">setProperty</a></code> in class <code><a href="../../../../../org/apache/commons/beanutils/BeanUtilsBean.html" title="class in org.apache.commons.beanutils">BeanUtilsBean</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean on which setting is to be performed<dd><code>name</code> - Property name (can be nested/indexed/mapped/combo)<dd><code>value</code> - Value to be set
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception</dd></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="setProperty(java.lang.Object, java.lang.String, java.lang.Object, java.lang.String)"><!-- --></a><h3>
+setProperty</h3>
+<pre>
+public void <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.625"><b>setProperty</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)
+                 throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                        <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></pre>
+<dl>
+<dd>Set the specified locale-sensitive property value, performing type
+ conversions as required to conform to the type of the destination
+ property using the specified conversion pattern.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - Bean on which setting is to be performed<dd><code>name</code> - Property name (can be nested/indexed/mapped/combo)<dd><code>value</code> - Value to be set<dd><code>pattern</code> - The conversion pattern
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception</dd></dd></dt></dd></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="definePropertyType(java.lang.Object, java.lang.String, java.lang.String)"><!-- --></a><h3>
+definePropertyType</h3>
+<pre>
+protected <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.706"><b>definePropertyType</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;target,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;propName)
+                            throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></pre>
+<dl>
+<dd>Calculate the property type.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>target</code> - The bean<dd><code>name</code> - The property name<dd><code>propName</code> - The Simple name of target property
+<dt><b>Returns:</b><dd>The property's type
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception</dd></dd></dt></dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="convert(java.lang.Class, int, java.lang.Object, java.lang.String)"><!-- --></a><h3>
+convert</h3>
+<pre>
+protected <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.756"><b>convert</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;type,
+                         int&nbsp;index,
+                         <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value,
+                         <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;pattern)</pre>
+<dl>
+<dd>Convert the specified value to the required type using the
+ specified conversion pattern.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>type</code> - The Java type of target property<dd><code>index</code> - The indexed subscript value (if any)<dd><code>value</code> - The value to be converted<dd><code>pattern</code> - The conversion pattern
+<dt><b>Returns:</b><dd>The converted value</dd></dt></dd></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="convert(java.lang.Class, int, java.lang.Object)"><!-- --></a><h3>
+convert</h3>
+<pre>
+protected <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.813"><b>convert</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Class</a>&nbsp;type,
+                         int&nbsp;index,
+                         <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</pre>
+<dl>
+<dd>Convert the specified value to the required type.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>type</code> - The Java type of target property<dd><code>index</code> - The indexed subscript value (if any)<dd><code>value</code> - The value to be converted
+<dt><b>Returns:</b><dd>The converted value</dd></dt></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="invokeSetter(java.lang.Object, java.lang.String, java.lang.String, int, java.lang.Object)"><!-- --></a><h3>
+invokeSetter</h3>
+<pre>
+protected void <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.872"><b>invokeSetter</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;target,
+                            <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;propName,
+                            <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;key,
+                            int&nbsp;index,
+                            <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;newValue)
+                     throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                            <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></pre>
+<dl>
+<dd>Invoke the setter method.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>target</code> - The bean<dd><code>propName</code> - The Simple name of target property<dd><code>key</code> - The Mapped key value (if any)<dd><code>index</code> - The indexed subscript value (if any)<dd><code>newValue</code> - The value to be set
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception</dd></dd></dt></dd></dd></dd></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="calculate(java.lang.Object, java.lang.String)"><!-- --></a><h3>
+calculate</h3>
+<pre>
+protected <a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.Descriptor.html" title="class in org.apache.commons.beanutils.locale">LocaleBeanUtilsBean.Descriptor</a> <a href="../../../../../src-html/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html#line.909"><b>calculate</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;bean,
+                                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">String</a>&nbsp;name)
+                                            throws <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a>,
+                                                   <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></pre>
+<dl>
+<dd><b>Deprecated.</b>&nbsp;<i>Property name expressions are now processed by
+ the configured <a href="../../../../../org/apache/commons/beanutils/expression/Resolver.html" title="interface in org.apache.commons.beanutils.expression"><code>Resolver</code></a> implementation and this method
+ is no longer used by BeanUtils.</i>
+<p>
+<dd>Resolve any nested expression to get the actual target property.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>bean</code> - The bean<dd><code>name</code> - The property name
+<dt><b>Returns:</b><dd>The property's descriptor
+<dt><b>Throws:</b>
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/IllegalAccessException.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">IllegalAccessException</a></code> - if the caller does not have
+  access to the property accessor method
+<dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/reflect/InvocationTargetException.html?is-external=true" title="class or interface in java.lang.reflect" target="_blank" rel="noopener">InvocationTargetException</a></code> - if the property accessor method
+  throws an exception</dd></dd></dt></dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></p></dd></dl>
+<!-- ========= END OF CLASS DATA ========= -->
+<hr>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<a name="navbar_bottom"><!-- --></a>
+<a href="#skip-navbar_bottom" title="Skip navigation links"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0" summary>
+<tr>
+<td colspan="2" bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_bottom_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3" summary>
+  <tr align="center" valign="top">
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev"> &nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="class-use/LocaleBeanUtilsBean.html"><font class="NavBarFont1"><b>Use</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../deprecated-list.html"><font class="NavBarFont1"><b>Deprecated</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td align="right" valign="top" rowspan="3"><em>
+</em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtils.Descriptor.html" title="class in org.apache.commons.beanutils.locale"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;<a href="../../../../../org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.Descriptor.html" title="class in org.apache.commons.beanutils.locale"><b>NEXT CLASS</b></a></font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="../../../../../index.html?org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="LocaleBeanUtilsBean.html" target="_top"><b>NO FRAMES</b></a>  &nbsp;
+&nbsp;<script type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+  <a href="../../../../../allclasses-noframe.html"><b>All Classes</b></a>
+</noscript>
+
+
+</font></td>
+</tr>
+<tr>
+<td valign="top" class="NavBarCell3"><font size="-2">
+  SUMMARY:&nbsp;<a href="#nested_class_summary">NESTED</a>&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;<a href="#method_summary">METHOD</a></font></td>
+<td valign="top" class="NavBarCell3"><font size="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;<a href="#method_detail">METHOD</a></font></td>
+</tr>
+</table>
+<a name="skip-navbar_bottom"></a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<hr>
+Copyright &#169; 2000-2010 <a href="http://www.apache.org/" target="_blank" rel="noopener">The Apache Software Foundation</a>. All Rights Reserved.
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.Descriptor/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/beanutils/locale/LocaleConverter/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">
+
+org.apache.commons.beanutils.locale
+
+Class LocaleBeanUtilsBean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">
+LocaleBeanUtilsBean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">
+LocaleBeanUtilsBean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">
+LocaleBeanUtilsBean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">
+getLocaleBeanUtilsInstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">
+setInstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.6.</span> <span class="nav-text">
+getLocaleConvertUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.7.</span> <span class="nav-text">
+getDefaultLocale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.8.</span> <span class="nav-text">
+setDefaultLocale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.9.</span> <span class="nav-text">
+getApplyLocalized</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.10.</span> <span class="nav-text">
+setApplyLocalized</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.11.</span> <span class="nav-text">
+getIndexedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.12.</span> <span class="nav-text">
+getIndexedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.13.</span> <span class="nav-text">
+getIndexedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.14.</span> <span class="nav-text">
+getIndexedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.15.</span> <span class="nav-text">
+getSimpleProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.16.</span> <span class="nav-text">
+getSimpleProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.17.</span> <span class="nav-text">
+getMappedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.18.</span> <span class="nav-text">
+getMappedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.19.</span> <span class="nav-text">
+getMappedPropertyLocale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.20.</span> <span class="nav-text">
+getMappedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.21.</span> <span class="nav-text">
+getNestedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.22.</span> <span class="nav-text">
+getNestedProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.23.</span> <span class="nav-text">
+getProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.24.</span> <span class="nav-text">
+getProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.25.</span> <span class="nav-text">
+setProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.26.</span> <span class="nav-text">
+setProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.27.</span> <span class="nav-text">
+definePropertyType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.28.</span> <span class="nav-text">
+convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.29.</span> <span class="nav-text">
+convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.30.</span> <span class="nav-text">
+invokeSetter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.31.</span> <span class="nav-text">
+calculate</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

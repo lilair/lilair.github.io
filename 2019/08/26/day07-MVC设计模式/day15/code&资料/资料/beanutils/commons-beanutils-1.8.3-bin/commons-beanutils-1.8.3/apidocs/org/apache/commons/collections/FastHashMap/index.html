@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="FastHashMap (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;FastHashMap (Commons BeanUtil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学海无涯，惟勤是岸。">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/collections/FastHashMap/index.html">
+<meta property="og:site_name" content="学海无涯，惟勤是岸。">
+<meta property="og:description" content="FastHashMap (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;FastHashMap (Commons BeanUtil">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+<meta property="og:updated_time" content="2010-03-24T09:13:56.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学海无涯，惟勤是岸。">
+<meta name="twitter:description" content="FastHashMap (Commons BeanUtils 1.8.3 API)        function windowTitle() {     if (location.href.indexOf(&apos;is-external=true&apos;) == -1) {         parent.document.title=&quot;FastHashMap (Commons BeanUtil">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/resources/inherit.gif">
+  <link rel="canonical" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/collections/FastHashMap/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title> | 学海无涯，惟勤是岸。</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学海无涯，惟勤是岸。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">认真生活，快乐工作。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">539</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/collections/FastHashMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吒儿">
+      <meta itemprop="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+      <meta itemprop="image" content="/images/nezha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学海无涯，惟勤是岸。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-26 15:56:22" itemprop="dateCreated datePublished" datetime="2019-08-26T15:56:22+08:00">2019-08-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2010-03-24 17:13:56" itemprop="dateModified" datetime="2010-03-24T17:13:56+08:00">2010-03-24</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<!-- Generated by javadoc (build 1.6.0_17) on Wed Mar 24 17:13:55 GMT 2010 -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>
+FastHashMap (Commons BeanUtils 1.8.3 API)
+</title>
+
+<meta name="date" content="2010-03-24">
+
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+
+<script type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="FastHashMap (Commons BeanUtils 1.8.3 API)";
+    }
+}
+</script>
+<noscript>
+</noscript>
+
+</head>
+
+<body bgcolor="white" onload="windowTitle();">
+<hr>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<a name="navbar_top"><!-- --></a>
+<a href="#skip-navbar_top" title="Skip navigation links"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0" summary>
+<tr>
+<td colspan="2" bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3" summary>
+  <tr align="center" valign="top">
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev"> &nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="class-use/FastHashMap.html"><font class="NavBarFont1"><b>Use</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../deprecated-list.html"><font class="NavBarFont1"><b>Deprecated</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td align="right" valign="top" rowspan="3"><em>
+</em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;<a href="../../../../org/apache/commons/collections/BufferUnderflowException.html" title="class in org.apache.commons.collections"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;NEXT CLASS</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="../../../../index.html?org/apache/commons/collections/FastHashMap.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="FastHashMap.html" target="_top"><b>NO FRAMES</b></a>  &nbsp;
+&nbsp;<script type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+  <a href="../../../../allclasses-noframe.html"><b>All Classes</b></a>
+</noscript>
+
+
+</font></td>
+</tr>
+<tr>
+<td valign="top" class="NavBarCell3"><font size="-2">
+  SUMMARY:&nbsp;<a href="#nested_classes_inherited_from_class_java.util.AbstractMap">NESTED</a>&nbsp;|&nbsp;<a href="#field_summary">FIELD</a>&nbsp;|&nbsp;<a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;<a href="#method_summary">METHOD</a></font></td>
+<td valign="top" class="NavBarCell3"><font size="-2">
+DETAIL:&nbsp;<a href="#field_detail">FIELD</a>&nbsp;|&nbsp;<a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;<a href="#method_detail">METHOD</a></font></td>
+</tr>
+</table>
+<a name="skip-navbar_top"></a>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<hr>
+<!-- ======== START OF CLASS DATA ======== -->
+<h2>
+<font size="-1">
+org.apache.commons.collections</font>
+<br>
+Class FastHashMap</h2>
+<pre>
+<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">java.lang.Object</a>
+  <img src="../../../../resources/inherit.gif" alt="extended by "><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">java.util.AbstractMap</a>
+      <img src="../../../../resources/inherit.gif" alt="extended by "><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">java.util.HashMap</a>
+          <img src="../../../../resources/inherit.gif" alt="extended by "><b>org.apache.commons.collections.FastHashMap</b>
+</pre>
+<dl>
+<dt><b>All Implemented Interfaces:</b> <dd><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" target="_blank" rel="noopener">Serializable</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Cloneable</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></dd>
+</dt></dl>
+<hr>
+<dl>
+<dt><pre>public class <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.66"><b>FastHashMap</b></a><dt>extends <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></dt></pre></dt></dl>
+
+
+<p>
+</p><p>A customized implementation of <code>java.util.HashMap</code> designed
+ to operate in a multithreaded environment where the large majority of
+ method calls are read-only, instead of structural changes.  When operating
+ in "fast" mode, read calls are non-synchronized and write calls perform the
+ following steps:</p>
+ <ul>
+ <li>Clone the existing collection
+ </li><li>Perform the modification on the clone
+ </li><li>Replace the existing collection with the (modified) clone
+ </li></ul>
+ <p>When first created, objects of this class default to "slow" mode, where
+ all accesses of any type are synchronized but no cloning takes place.  This
+ is appropriate for initially populating the collection, followed by a switch
+ to "fast" mode (by calling <code>setFast(true)</code>) after initialization
+ is complete.</p>
+
+ <p><strong>NOTE</strong>: If you are creating and accessing a
+ <code>HashMap</code> only within a single thread, you should use
+ <code>java.util.HashMap</code> directly (with no synchronization), for
+ maximum performance.</p>
+
+ <p><strong>NOTE</strong>: <i>This class is not cross-platform.  
+ Using it may cause unexpected failures on some architectures.</i>
+ It suffers from the same problems as the double-checked locking idiom.  
+ In particular, the instruction that clones the internal collection and the 
+ instruction that sets the internal reference to the clone can be executed 
+ or perceived out-of-order.  This means that any read operation might fail 
+ unexpectedly, as it may be reading the state of the internal collection
+ before the internal collection is fully formed.
+ For more information on the double-checked locking idiom, see the
+ <a href="http://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html" target="_blank" rel="noopener">
+ Double-Checked Locking Idiom Is Broken Declaration</a>.</p>
+<p>
+
+</p><p>
+<dl>
+<dt><b>Since:</b></dt>
+  <dd>Commons Collections 1.0</dd>
+<dt><b>Version:</b></dt>
+  <dd>$Revision: 555845 $ $Date: 2007-07-13 03:52:05 +0100 (Fri, 13 Jul 2007) $</dd>
+<dt><b>Author:</b></dt>
+  <dd>Craig R. McClanahan, Stephen Colebourne</dd>
+<dt><b>See Also:</b><dd><a href="../../../../serialized-form.html#org.apache.commons.collections.FastHashMap">Serialized Form</a></dd></dt></dl>
+<hr>
+
+</p><p>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<a name="nested_class_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Nested Class Summary</b></font></th>
+</tr>
+</table>
+&nbsp;<a name="nested_classes_inherited_from_class_java.util.AbstractMap"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#EEEEFF" class="TableSubHeadingColor">
+<th align="left"><b>Nested classes/interfaces inherited from class java.util.<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">AbstractMap</a></b></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.SimpleEntry.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">AbstractMap.SimpleEntry</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.SimpleImmutableEntry.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">AbstractMap.SimpleImmutableEntry</a></code></td>
+</tr>
+</table>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<a name="field_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Field Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#fast">fast</a></b></code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Are we currently operating in "fast" mode?</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>protected &nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#map">map</a></b></code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The underlying map we are managing.</td>
+</tr>
+</table>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<a name="constructor_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Constructor Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#FastHashMap()">FastHashMap</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct an empty map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#FastHashMap(int)">FastHashMap</a></b>(int&nbsp;capacity)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct an empty map with the specified capacity.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#FastHashMap(int, float)">FastHashMap</a></b>(int&nbsp;capacity,
+                       float&nbsp;factor)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct an empty map with the specified capacity and load factor.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#FastHashMap(java.util.Map)">FastHashMap</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a>&nbsp;map)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new map with the same mappings as the specified map.</td>
+</tr>
+</table>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="method_summary"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="2"><font size="+2">
+<b>Method Summary</b></font></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#clear()">clear</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove all mappings from this map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#clone()">clone</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a shallow copy of this <code>FastHashMap</code> instance.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#containsKey(java.lang.Object)">containsKey</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return <code>true</code> if this map contains a mapping for the
+ specified key.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#containsValue(java.lang.Object)">containsValue</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return <code>true</code> if this map contains one or more keys mapping
+ to the specified value.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Set</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#entrySet()">entrySet</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a collection view of the mappings contained in this map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#equals(java.lang.Object)">equals</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;o)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compare the specified object with this list for equality.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#get(java.lang.Object)">get</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the value to which this map maps the specified key.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#getFast()">getFast</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns true if this map is operating in fast mode.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;int</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#hashCode()">hashCode</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the hash code value for this map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;boolean</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#isEmpty()">isEmpty</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return <code>true</code> if this map contains no mappings.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Set</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#keySet()">keySet</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a set view of the keys contained in this map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#put(java.lang.Object, java.lang.Object)">put</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key,
+       <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Associate the specified value with the specified key in this map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#putAll(java.util.Map)">putAll</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a>&nbsp;in)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy all of the mappings from the specified map to this one, replacing
+ any mappings with the same keys.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#remove(java.lang.Object)">remove</a></b>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove any mapping for this key, and return any previously
+ mapped value.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;void</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#setFast(boolean)">setFast</a></b>(boolean&nbsp;fast)</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets whether this map is operating in fast mode.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;int</code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#size()">size</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the number of key-value mappings in this map.</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Collection</a></code></font></td>
+<td><code><b><a href="../../../../org/apache/commons/collections/FastHashMap.html#values()">values</a></b>()</code>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a collection view of the values contained in this map.</td>
+</tr>
+</table>
+&nbsp;<a name="methods_inherited_from_class_java.util.AbstractMap"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#EEEEFF" class="TableSubHeadingColor">
+<th align="left"><b>Methods inherited from class java.util.<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">AbstractMap</a></b></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true#toString()" title="class or interface in java.util" target="_blank" rel="noopener">toString</a></code></td>
+</tr>
+</table>
+&nbsp;<a name="methods_inherited_from_class_java.lang.Object"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#EEEEFF" class="TableSubHeadingColor">
+<th align="left"><b>Methods inherited from class java.lang.<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a></b></th>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" target="_blank" rel="noopener">finalize</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" target="_blank" rel="noopener">getClass</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" target="_blank" rel="noopener">notify</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" target="_blank" rel="noopener">notifyAll</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang" target="_blank" rel="noopener">wait</a></code></td>
+</tr>
+</table>
+&nbsp;
+</p><p>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<a name="field_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Field Detail</b></font></th>
+</tr>
+</table>
+
+<a name="map"><!-- --></a></p><h3>
+map</h3>
+<pre>
+protected <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.71"><b>map</b></a></pre>
+<dl>
+<dd>The underlying map we are managing.
+<p>
+<dl>
+</dl>
+</p></dd></dl>
+<hr>
+
+<a name="fast"><!-- --></a><h3>
+fast</h3>
+<pre>
+protected boolean <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.76"><b>fast</b></a></pre>
+<dl>
+<dd>Are we currently operating in "fast" mode?
+<p>
+<dl>
+</dl>
+</p></dd></dl>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<a name="constructor_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Constructor Detail</b></font></th>
+</tr>
+</table>
+
+<a name="FastHashMap()"><!-- --></a><h3>
+FastHashMap</h3>
+<pre>
+public <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.84"><b>FastHashMap</b></a>()</pre>
+<dl>
+<dd>Construct an empty map.
+<p>
+</p></dd></dl>
+<hr>
+
+<a name="FastHashMap(int)"><!-- --></a><h3>
+FastHashMap</h3>
+<pre>
+public <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.94"><b>FastHashMap</b></a>(int&nbsp;capacity)</pre>
+<dl>
+<dd>Construct an empty map with the specified capacity.
+<p>
+<dl>
+<dt><b>Parameters:</b><dd><code>capacity</code> - the initial capacity of the empty map</dd></dt></dl>
+</p></dd></dl>
+<hr>
+
+<a name="FastHashMap(int, float)"><!-- --></a><h3>
+FastHashMap</h3>
+<pre>
+public <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.105"><b>FastHashMap</b></a>(int&nbsp;capacity,
+                   float&nbsp;factor)</pre>
+<dl>
+<dd>Construct an empty map with the specified capacity and load factor.
+<p>
+<dl>
+<dt><b>Parameters:</b><dd><code>capacity</code> - the initial capacity of the empty map<dd><code>factor</code> - the load factor of the new map</dd></dd></dt></dl>
+</p></dd></dl>
+<hr>
+
+<a name="FastHashMap(java.util.Map)"><!-- --></a><h3>
+FastHashMap</h3>
+<pre>
+public <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.115"><b>FastHashMap</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a>&nbsp;map)</pre>
+<dl>
+<dd>Construct a new map with the same mappings as the specified map.
+<p>
+<dl>
+<dt><b>Parameters:</b><dd><code>map</code> - the map whose mappings are to be copied</dd></dt></dl>
+</p></dd></dl>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<a name="method_detail"><!-- --></a>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary>
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<th align="left" colspan="1"><font size="+2">
+<b>Method Detail</b></font></th>
+</tr>
+</table>
+
+<a name="getFast()"><!-- --></a><h3>
+getFast</h3>
+<pre>
+public boolean <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.129"><b>getFast</b></a>()</pre>
+<dl>
+<dd>Returns true if this map is operating in fast mode.
+<p>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>true if this map is operating in fast mode</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="setFast(boolean)"><!-- --></a><h3>
+setFast</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.138"><b>setFast</b></a>(boolean&nbsp;fast)</pre>
+<dl>
+<dd>Sets whether this map is operating in fast mode.
+<p>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>fast</code> - true if this map should operate in fast mode</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="get(java.lang.Object)"><!-- --></a><h3>
+get</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.157"><b>get</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key)</pre>
+<dl>
+<dd>Return the value to which this map maps the specified key.  Returns
+ <code>null</code> if the map contains no mapping for this key, or if
+ there is a mapping with a value of <code>null</code>.  Use the
+ <code>containsKey()</code> method to disambiguate these cases.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#get(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">get</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#get(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">get</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>key</code> - the key whose value is to be returned
+<dt><b>Returns:</b><dd>the value mapped to that key, or null</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="size()"><!-- --></a><h3>
+size</h3>
+<pre>
+public int <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.172"><b>size</b></a>()</pre>
+<dl>
+<dd>Return the number of key-value mappings in this map.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#size()" title="class or interface in java.util" target="_blank" rel="noopener">size</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#size()" title="class or interface in java.util" target="_blank" rel="noopener">size</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the current size of the map</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="isEmpty()"><!-- --></a><h3>
+isEmpty</h3>
+<pre>
+public boolean <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.187"><b>isEmpty</b></a>()</pre>
+<dl>
+<dd>Return <code>true</code> if this map contains no mappings.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#isEmpty()" title="class or interface in java.util" target="_blank" rel="noopener">isEmpty</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#isEmpty()" title="class or interface in java.util" target="_blank" rel="noopener">isEmpty</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>is the map currently empty</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="containsKey(java.lang.Object)"><!-- --></a><h3>
+containsKey</h3>
+<pre>
+public boolean <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.204"><b>containsKey</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key)</pre>
+<dl>
+<dd>Return <code>true</code> if this map contains a mapping for the
+ specified key.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#containsKey(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">containsKey</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#containsKey(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">containsKey</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>key</code> - the key to be searched for
+<dt><b>Returns:</b><dd>true if the map contains the key</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="containsValue(java.lang.Object)"><!-- --></a><h3>
+containsValue</h3>
+<pre>
+public boolean <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.221"><b>containsValue</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</pre>
+<dl>
+<dd>Return <code>true</code> if this map contains one or more keys mapping
+ to the specified value.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#containsValue(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">containsValue</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#containsValue(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">containsValue</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>value</code> - the value to be searched for
+<dt><b>Returns:</b><dd>true if the map contains the value</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="put(java.lang.Object, java.lang.Object)"><!-- --></a><h3>
+put</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.246"><b>put</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key,
+                  <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;value)</pre>
+<dl>
+<dd>Associate the specified value with the specified key in this map.
+ If the map previously contained a mapping for this key, the old
+ value is replaced and returned.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#put(java.lang.Object, java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">put</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#put(java.lang.Object, java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">put</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>key</code> - the key with which the value is to be associated<dd><code>value</code> - the value to be associated with this key
+<dt><b>Returns:</b><dd>the value previously mapped to the key, or null</dd></dt></dd></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="putAll(java.util.Map)"><!-- --></a><h3>
+putAll</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.267"><b>putAll</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a>&nbsp;in)</pre>
+<dl>
+<dd>Copy all of the mappings from the specified map to this one, replacing
+ any mappings with the same keys.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#putAll(java.util.Map)" title="class or interface in java.util" target="_blank" rel="noopener">putAll</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#putAll(java.util.Map)" title="class or interface in java.util" target="_blank" rel="noopener">putAll</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>in</code> - the map whose mappings are to be copied</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="remove(java.lang.Object)"><!-- --></a><h3>
+remove</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.288"><b>remove</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;key)</pre>
+<dl>
+<dd>Remove any mapping for this key, and return any previously
+ mapped value.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#remove(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">remove</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#remove(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">remove</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>key</code> - the key whose mapping is to be removed
+<dt><b>Returns:</b><dd>the value removed, or null</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="clear()"><!-- --></a><h3>
+clear</h3>
+<pre>
+public void <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.306"><b>clear</b></a>()</pre>
+<dl>
+<dd>Remove all mappings from this map.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#clear()" title="class or interface in java.util" target="_blank" rel="noopener">clear</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#clear()" title="class or interface in java.util" target="_blank" rel="noopener">clear</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+</dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="equals(java.lang.Object)"><!-- --></a><h3>
+equals</h3>
+<pre>
+public boolean <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.330"><b>equals</b></a>(<a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a>&nbsp;o)</pre>
+<dl>
+<dd>Compare the specified object with this list for equality.  This
+ implementation uses exactly the code that is used to define the
+ list equals function in the documentation for the
+ <code>Map.equals</code> method.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">equals</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.util" target="_blank" rel="noopener">equals</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">AbstractMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+<dt><b>Parameters:</b><dd><code>o</code> - the object to be compared to this list
+<dt><b>Returns:</b><dd>true if the two maps are equal</dd></dt></dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="hashCode()"><!-- --></a><h3>
+hashCode</h3>
+<pre>
+public int <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.393"><b>hashCode</b></a>()</pre>
+<dl>
+<dd>Return the hash code value for this map.  This implementation uses
+ exactly the code that is used to define the list hash function in the
+ documentation for the <code>Map.hashCode</code> method.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#hashCode()" title="class or interface in java.util" target="_blank" rel="noopener">hashCode</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true#hashCode()" title="class or interface in java.util" target="_blank" rel="noopener">hashCode</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/AbstractMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">AbstractMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>suitable integer hash code</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="clone()"><!-- --></a><h3>
+clone</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" target="_blank" rel="noopener">Object</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.419"><b>clone</b></a>()</pre>
+<dl>
+<dd>Return a shallow copy of this <code>FastHashMap</code> instance.
+ The keys and values themselves are not copied.
+<p>
+<dd><dl>
+<dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#clone()" title="class or interface in java.util" target="_blank" rel="noopener">clone</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>a clone of this map</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="entrySet()"><!-- --></a><h3>
+entrySet</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Set</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.440"><b>entrySet</b></a>()</pre>
+<dl>
+<dd>Return a collection view of the mappings contained in this map.  Each
+ element in the returned collection is a <code>Map.Entry</code>.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#entrySet()" title="class or interface in java.util" target="_blank" rel="noopener">entrySet</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#entrySet()" title="class or interface in java.util" target="_blank" rel="noopener">entrySet</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the set of map Map entries</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="keySet()"><!-- --></a><h3>
+keySet</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Set</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.448"><b>keySet</b></a>()</pre>
+<dl>
+<dd>Return a set view of the keys contained in this map.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#keySet()" title="class or interface in java.util" target="_blank" rel="noopener">keySet</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#keySet()" title="class or interface in java.util" target="_blank" rel="noopener">keySet</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the set of the Map's keys</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<hr>
+
+<a name="values()"><!-- --></a><h3>
+values</h3>
+<pre>
+public <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Collection</a> <a href="../../../../src-html/org/apache/commons/collections/FastHashMap.html#line.456"><b>values</b></a>()</pre>
+<dl>
+<dd>Return a collection view of the values contained in this map.
+<p>
+<dd><dl>
+<dt><b>Specified by:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true#values()" title="class or interface in java.util" target="_blank" rel="noopener">values</a></code> in interface <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">Map</a></code><dt><b>Overrides:</b><dd><code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true#values()" title="class or interface in java.util" target="_blank" rel="noopener">values</a></code> in class <code><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" target="_blank" rel="noopener">HashMap</a></code></dd></dt></dd></dt></dl>
+</dd>
+<dd><dl>
+
+<dt><b>Returns:</b><dd>the set of the Map's values</dd></dt></dl>
+</dd>
+</p></dd></dl>
+<!-- ========= END OF CLASS DATA ========= -->
+<hr>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<a name="navbar_bottom"><!-- --></a>
+<a href="#skip-navbar_bottom" title="Skip navigation links"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0" summary>
+<tr>
+<td colspan="2" bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_bottom_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3" summary>
+  <tr align="center" valign="top">
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev"> &nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="class-use/FastHashMap.html"><font class="NavBarFont1"><b>Use</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="package-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../deprecated-list.html"><font class="NavBarFont1"><b>Deprecated</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="../../../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td align="right" valign="top" rowspan="3"><em>
+</em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;<a href="../../../../org/apache/commons/collections/BufferUnderflowException.html" title="class in org.apache.commons.collections"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;NEXT CLASS</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="../../../../index.html?org/apache/commons/collections/FastHashMap.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="FastHashMap.html" target="_top"><b>NO FRAMES</b></a>  &nbsp;
+&nbsp;<script type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+  <a href="../../../../allclasses-noframe.html"><b>All Classes</b></a>
+</noscript>
+
+
+</font></td>
+</tr>
+<tr>
+<td valign="top" class="NavBarCell3"><font size="-2">
+  SUMMARY:&nbsp;<a href="#nested_classes_inherited_from_class_java.util.AbstractMap">NESTED</a>&nbsp;|&nbsp;<a href="#field_summary">FIELD</a>&nbsp;|&nbsp;<a href="#constructor_summary">CONSTR</a>&nbsp;|&nbsp;<a href="#method_summary">METHOD</a></font></td>
+<td valign="top" class="NavBarCell3"><font size="-2">
+DETAIL:&nbsp;<a href="#field_detail">FIELD</a>&nbsp;|&nbsp;<a href="#constructor_detail">CONSTR</a>&nbsp;|&nbsp;<a href="#method_detail">METHOD</a></font></td>
+</tr>
+</table>
+<a name="skip-navbar_bottom"></a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<hr>
+Copyright &#169; 2000-2010 <a href="http://www.apache.org/" target="_blank" rel="noopener">The Apache Software Foundation</a>. All Rights Reserved.
+</body>
+</html>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/collections/BufferUnderflowException/" rel="next" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/26/day07-MVC设计模式/day15/code&资料/资料/beanutils/commons-beanutils-1.8.3-bin/commons-beanutils-1.8.3/apidocs/org/apache/commons/collections/package-frame/" rel="prev" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">
+
+org.apache.commons.collections
+
+Class FastHashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">
+map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">
+fast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">
+FastHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">
+FastHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">
+FastHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.6.</span> <span class="nav-text">
+FastHashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.7.</span> <span class="nav-text">
+getFast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.8.</span> <span class="nav-text">
+setFast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.9.</span> <span class="nav-text">
+get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.10.</span> <span class="nav-text">
+size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.11.</span> <span class="nav-text">
+isEmpty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.12.</span> <span class="nav-text">
+containsKey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.13.</span> <span class="nav-text">
+containsValue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.14.</span> <span class="nav-text">
+put</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.15.</span> <span class="nav-text">
+putAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.16.</span> <span class="nav-text">
+remove</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.17.</span> <span class="nav-text">
+clear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.18.</span> <span class="nav-text">
+equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.19.</span> <span class="nav-text">
+hashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.20.</span> <span class="nav-text">
+clone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.21.</span> <span class="nav-text">
+entrySet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.22.</span> <span class="nav-text">
+keySet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.23.</span> <span class="nav-text">
+values</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/nezha.jpg"
+      alt="吒儿">
+  <p class="site-author-name" itemprop="name">吒儿</p>
+  <div class="site-description" itemprop="description">去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">539</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吒儿</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
