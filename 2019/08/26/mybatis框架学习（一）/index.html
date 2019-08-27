@@ -54,17 +54,19 @@
   };
 </script>
 
-  <meta name="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+  <meta name="description" content="1 MyBatis简介1.1 MyBatis​    MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis，实质上Mybatis对ibatis进行一些改进。  ​    MyBatis是一个优秀的持久层框架，它对jdbc的操作数据库的过程进行封装，使开发者只需">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mybatis框架学习（一）">
 <meta property="og:url" content="http://yoursite.com/2019/08/26/mybatis框架学习（一）/index.html">
 <meta property="og:site_name" content="学海无涯，惟勤是岸。">
-<meta property="og:description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+<meta property="og:description" content="1 MyBatis简介1.1 MyBatis​    MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis，实质上Mybatis对ibatis进行一些改进。  ​    MyBatis是一个优秀的持久层框架，它对jdbc的操作数据库的过程进行封装，使开发者只需">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T15:30:25.885Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/26/mybatis框架学习（一）/1566877973118.png">
+<meta property="og:updated_time" content="2019-08-27T05:47:39.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mybatis框架学习（一）">
-<meta name="twitter:description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+<meta name="twitter:description" content="1 MyBatis简介1.1 MyBatis​    MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis，实质上Mybatis对ibatis进行一些改进。  ​    MyBatis是一个优秀的持久层框架，它对jdbc的操作数据库的过程进行封装，使开发者只需">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/26/mybatis框架学习（一）/1566877973118.png">
   <link rel="canonical" href="http://yoursite.com/2019/08/26/mybatis框架学习（一）/">
 
 
@@ -184,7 +186,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">8</span></a>
 
   </li>
       
@@ -271,6 +273,18 @@
               <time title="创建时间：2019-08-26 23:30:25" itemprop="dateCreated datePublished" datetime="2019-08-26T23:30:25+08:00">2019-08-26</time>
             </span>
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-27 13:47:39" itemprop="dateModified" datetime="2019-08-27T13:47:39+08:00">2019-08-27</time>
+              </span>
+            
+          
 
           
 
@@ -283,7 +297,190 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="1-MyBatis简介"><a href="#1-MyBatis简介" class="headerlink" title="1 MyBatis简介"></a>1 MyBatis简介</h1><h2 id="1-1-MyBatis"><a href="#1-1-MyBatis" class="headerlink" title="1.1 MyBatis"></a>1.1 MyBatis</h2><p>​    MyBatis 本是<a href="http://baike.baidu.com/view/28283.htm" target="_blank" rel="noopener">apache</a>的一个开源项目<a href="http://baike.baidu.com/view/628102.htm" target="_blank" rel="noopener">iBatis</a>, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis，实质上Mybatis对ibatis进行一些改进。 </p>
+<p>​    MyBatis是一个优秀的持久层框架，它对jdbc的操作数据库的过程进行封装，使开发者只需要关注 SQL 本身，而不需要花费精力去处理例如注册驱动、创建connection、创建statement、手动设置参数、结果集检索等jdbc繁杂的过程代码。</p>
+<p>​    对jdbc的封装框架有哪些：Hibernate,dbutils,jdbcTemplate[spring]，mybatis</p>
+<p>​    原理：Mybatis通过<strong>xml或注解</strong>的方式将要执行的各种statement（statement、preparedStatemnt、CallableStatement）配置起来，并通过java对象和statement中的sql进行映射生成最终执行的sql语句，最后由mybatis框架执行sql并将结果映射成java对象并返回。</p>
+<h2 id="1-2-jdbc程序代码"><a href="#1-2-jdbc程序代码" class="headerlink" title="1.2 jdbc程序代码"></a>1.2 jdbc程序代码</h2><p> <img src="/2019/08/26/mybatis框架学习（一）/1566877973118.png" alt="1566877973118"></p>
+<p><strong>存在的问题</strong></p>
+<p>1、数据库链接创建、释放频繁造成系统资源浪费从而影响系统性能，如果使用数据库链接池可解决此问题。 </p>
+<p>2、Sql 语句在代码中硬编码，造成代码不易维护，实际应用 sql 变化的可能较大，sql 变动需要改变 java </p>
+<p>代码。 </p>
+<p>3、使用 preparedStatement 向占有位符号传参数存在硬编码，因为 sql 语句的 where 条件不一定，可能 </p>
+<p>多也可能少，修改 sql 还要修改代码，系统不易维护。 </p>
+<p>4、对结果集解析存在硬编码（查询列名），sql 变化导致解析代码变化，系统不易维护，如果能将数据库记 </p>
+<p>录封装成 pojo 对象解析比较方便。 </p>
+<h2 id="1-3-MyBatis的框架核心"><a href="#1-3-MyBatis的框架核心" class="headerlink" title="1.3 MyBatis的框架核心"></a>1.3 MyBatis的框架核心</h2><h1 id="2-Mybatis-框架快速入门"><a href="#2-Mybatis-框架快速入门" class="headerlink" title="2 Mybatis 框架快速入门"></a>2 <strong>Mybatis</strong> 框架快速入门</h1><h2 id="2-1-Mybatis-框架开发的准备"><a href="#2-1-Mybatis-框架开发的准备" class="headerlink" title="2.1 Mybatis 框架开发的准备"></a><strong>2.1 Mybatis</strong> <strong>框架开发的准备</strong></h2><h3 id="2-1-1-官网下载-Mybatis-框架"><a href="#2-1-1-官网下载-Mybatis-框架" class="headerlink" title="2.1.1 官网下载 Mybatis 框架"></a><strong>2.1.1</strong> <strong>官网下载</strong> <strong>Mybatis</strong> <strong>框架</strong></h3><p>从百度中“mybatis download”可以下载最新的 Mybatis 开发包。 </p>
+<p>进入选择语言的界面，进入中文版本的开发文档。</p>
+<h2 id="2-2-搭建-Mybatis-开发环境"><a href="#2-2-搭建-Mybatis-开发环境" class="headerlink" title="2.2 搭建 Mybatis 开发环境"></a>2.2 <strong>搭建</strong> <strong>Mybatis</strong> <strong>开发环境</strong></h2><h3 id="2-2-1创建maven工程"><a href="#2-2-1创建maven工程" class="headerlink" title="2.2.1创建maven工程"></a>2.2.1创建maven工程</h3><p>创建 mybatis01 的工程，工程信息如下： </p>
+<p>Groupid:com.itheima </p>
+<p>ArtifactId:mybatis01 </p>
+<p>Packing:jar</p>
+<h3 id="2-2-2添加-Mybatis-的坐标"><a href="#2-2-2添加-Mybatis-的坐标" class="headerlink" title="2.2.2添加 Mybatis 的坐标"></a><strong>2.2.2添加</strong> Mybatis 的坐标</h3><p>在 pom.xml 文件中添加 Mybatis3.4.5 的坐标，如下： </p>
+<p>&lt; dependencies&gt; </p>
+<p>&lt; dependency&gt; </p>
+<p>&lt; groupId&gt;org.mybatis&lt; /groupId&gt; </p>
+<p>&lt; artifactId&gt;mybatis&lt; /artifactId&gt; </p>
+<p>&lt; version&gt;3.4.5&lt; /version&gt; </p>
+<p>&lt; /dependency&gt; </p>
+<p>&lt; dependency&gt; </p>
+<p>&lt; groupId&gt;junit&lt; /groupId&gt; </p>
+<p>&lt; artifactId&gt;junit&lt; /artifactId&gt; </p>
+<p>&lt; version&gt;4.10&lt; /version&gt; </p>
+<p>&lt; scope&gt;test&lt; /scope&gt; </p>
+<p>&lt; /dependency&gt; </p>
+<p>&lt; dependency&gt; </p>
+<p>&lt; groupId&gt;mysql&lt; /groupId&gt; </p>
+<p>&lt; artifactId&gt;mysql-connector-java&lt; /artifactId&gt; </p>
+<p>&lt; version&gt;5.1.6&lt; /version&gt; </p>
+<p>&lt; scope&gt;runtime&lt; /scope&gt; </p>
+<p>&lt; /dependency&gt; </p>
+<p>&lt; dependency&gt; </p>
+<p>&lt; groupId&gt;log4j&lt; /groupId&gt; </p>
+<p>&lt; artifactId&gt;log4j&lt; /artifactId&gt; </p>
+<p>&lt; version&gt;1.2.12&lt; /version&gt; </p>
+<p>&lt; /dependency&gt; </p>
+<p>&lt; /dependencies&gt; </p>
+<h3 id="2-2-3-编写-User-实体类"><a href="#2-2-3-编写-User-实体类" class="headerlink" title="2.2.3 编写 User 实体类"></a><strong>2.2.3</strong> <strong>编写</strong> <strong>User</strong> <strong>实体类</strong></h3><p>/** </p>
+<p>*  </p>
+<p>* </p><p>Title: User</p> <p></p>
+<p>* </p><p>Description: 用户的实体类</p> <p></p>
+<p>* </p><p>Company: <a href="http://www.itheima.com/" target="_blank" rel="noopener">http://www.itheima.com/</a> </p> <p></p>
+<p>*/ </p>
+<p><strong>public class</strong> User <strong>implements</strong> Serializable { </p>
+<p><strong>private</strong> Integer id; </p>
+<p><strong>private</strong> String username; </p>
+<p><strong>private</strong> Date birthday; </p>
+<p><strong>private</strong> String sex; </p>
+<p><strong>private</strong> String address;</p>
+<p><strong>public</strong> Integer getId() { </p>
+<p><strong>return</strong> id; </p>
+<p>} </p>
+<p><strong>public void</strong> setId(Integer id) { </p>
+<p><strong>this</strong>.id = id; </p>
+<p>} </p>
+<p><strong>public</strong> String getUsername() { </p>
+<p><strong>return</strong> username; </p>
+<p>} </p>
+<p><strong>public void</strong> setUsername(String username) { </p>
+<p><strong>this</strong>.username = username; </p>
+<p>} </p>
+<p><strong>public</strong> Date getBirthday() { </p>
+<p><strong>return</strong> birthday; </p>
+<p>} </p>
+<p><strong>public void</strong> setBirthday(Date birthday) { </p>
+<p><strong>this</strong>.birthday = birthday; </p>
+<p>} </p>
+<p><strong>public</strong> String getSex() { </p>
+<p><strong>return</strong> sex; </p>
+<p>} </p>
+<p><strong>public void</strong> setSex(String sex) { </p>
+<p><strong>this</strong>.sex = sex; </p>
+<p>} </p>
+<p><strong>public</strong> String getAddress() { </p>
+<p><strong>return</strong> address; </p>
+<p>} </p>
+<p><strong>public void</strong> setAddress(String address) { </p>
+<p><strong>this</strong>.address = address; </p>
+<p>} </p>
+<p>@Override </p>
+<p><strong>public</strong> String toString() { </p>
+<p><strong>return</strong> “User [id=” + id + “, username=” + username + “, birthday=” + birthday </p>
+<p>+ “, sex=” + sex + “, address=” </p>
+<p>+ address + “]”; </p>
+<p>} </p>
+<p>} </p>
+<h3 id="2-2-4-编写持久层接口-IUserDao"><a href="#2-2-4-编写持久层接口-IUserDao" class="headerlink" title="2.2.4 编写持久层接口 IUserDao"></a><strong>2.2.4</strong> <strong>编写持久层接口</strong> <strong>IUserDao</strong></h3><p>IUserDao 接口就是我们的持久层接口（也可以写成 UserDao 或者 UserMapper）,具体代码如下： </p>
+<p>/** </p>
+<p>* </p>
+<p>* </p><p>Title: IUserDao</p> <p></p>
+<p>* </p><p>Description: 用户的持久层操作</p> <p></p>
+<p>* </p><p>Company: <a href="http://www.itheima.com/" target="_blank" rel="noopener">http://www.itheima.com/</a> </p> <p></p>
+<p>*/ </p>
+<p><strong>public interface</strong> IUserDao { </p>
+<p>/** </p>
+<p>* 查询所有用户 </p>
+<p>* <strong>@return</strong> </p>
+<p>*/ </p>
+<p>List&lt; User&gt; findAll(); </p>
+<p>}</p>
+<h3 id="2-2-5-编写持久层接口的映射文件-IUserDao-xml"><a href="#2-2-5-编写持久层接口的映射文件-IUserDao-xml" class="headerlink" title="2.2.5 编写持久层接口的映射文件 IUserDao.xml"></a><strong>2.2.5</strong> <strong>编写持久层接口的映射文件</strong> <strong>IUserDao.xml</strong></h3><p>   <strong>创建位置：</strong>必须和持久层接口在相同的包中。 </p>
+<p>   <strong>名称</strong>：必须以持久层接口名称命名文件名，扩展名是.xml</p>
+<p>&lt; ?xml version=*”1.0”* encoding=*”UTF-8”*?&gt; </p>
+<!DOCTYPE mapper  
+
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"><p> </p>
+<p>&lt;mapper namespace=*”com.itheima.dao.IUserDao”*&gt; </p>
+<!-- 配置查询所有操作 --> 
+
+<p>&lt;select id=*”findAll”* resultType=*”com.itheima.domain.User”*&gt; </p>
+<p>select * from user </p>
+<p>&lt; /select&gt;</p>
+<p>&lt; /mapper&gt;</p>
+<h3 id="2-2-6-编写-SqlMapConfig-xml-配置文件"><a href="#2-2-6-编写-SqlMapConfig-xml-配置文件" class="headerlink" title="2.2.6 编写 SqlMapConfig.xml 配置文件"></a><strong>2.2.6</strong> <strong>编写</strong> <strong>SqlMapConfig.xml</strong> <strong>配置文件</strong></h3><p>&lt; ?xml version=*”1.0”* encoding=*”UTF-8”*?&gt; </p>
+<!DOCTYPE configuration  
+
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+
+"http://mybatis.org/dtd/mybatis-3-config.dtd"><p> </p>
+<p>&lt; configuration&gt; </p>
+<!-- 配置 mybatis 的环境 --> 
+
+<p>&lt;environments default=*”mysql”*&gt; </p>
+<!-- 配置 mysql 的环境 --> 
+
+<p>&lt;environment id=*”mysql”*&gt; </p>
+<!-- 配置事务的类型 --> 
+
+<p>&lt;transactionManager type=*”JDBC”*&gt;&lt; /transactionManager&gt; </p>
+<!-- 配置连接数据库的信息：用的是数据源(连接池) --> 
+
+<p>&lt;dataSource type=*”POOLED”*&gt; </p>
+<p>&lt;property name=*”driver”* value=*”com.mysql.jdbc.Driver”*/&gt; </p>
+<p>&lt;property name=*”url”* value=*”jdbc:mysql://localhost:3306/ee50”*/&gt; </p>
+<p>&lt;property name=*”username”* value=*”root”*/&gt; </p>
+<p>&lt;property name=*”password”* value=*”1234”*/&gt; </p>
+<p>&lt; /dataSource&gt; </p>
+<p>&lt; /environment&gt; </p>
+<p>&lt; /environments&gt; </p>
+<!-- 告知 mybatis 映射配置的位置 --> 
+
+<p>&lt; mappers&gt; </p>
+<p>&lt;mapper resource=*”com/itheima/dao/IUserDao.xml”*/&gt; </p>
+<p>&lt; /mappers&gt; </p>
+<p>&lt; /configuration&gt; </p>
+<h3 id="2-2-7-编写测试类"><a href="#2-2-7-编写测试类" class="headerlink" title="2.2.7 编写测试类"></a><strong>2.2.7</strong> <strong>编写测试类</strong></h3><p>/** </p>
+<p>*  </p>
+<p>* </p><p>Title: MybatisTest</p> <p></p>
+<p>* </p><p>Description: 测试 mybatis 的环境</p> <p></p>
+<p>*/ </p>
+<p><strong>public class</strong> MybatisTest { </p>
+<p><strong>public static void</strong> main(String[] args)<strong>throws</strong> Exception {</p>
+<p>//1.读取配置文件 </p>
+<p>InputStream in = Resources.<em>getResourceAsStream</em>(“SqlMapConfig.xml”); </p>
+<p>//2.创建 SqlSessionFactory 的构建者对象 </p>
+<p>SqlSessionFactoryBuilder builder = <strong>new</strong> SqlSessionFactoryBuilder(); </p>
+<p>//3.使用构建者创建工厂对象 SqlSessionFactory </p>
+<p>SqlSessionFactory factory = builder.build(in); </p>
+<p>//4.使用 SqlSessionFactory 生产 SqlSession 对象 </p>
+<p>SqlSession session = factory.openSession(); </p>
+<p>//5.使用 SqlSession 创建 dao 接口的代理对象 </p>
+<p>IUserDao userDao = session.getMapper(IUserDao.<strong>class</strong>); </p>
+<p>//6.使用代理对象执行查询所有方法 </p>
+<p>List&lt; User&gt; users = userDao.findAll(); </p>
+<p><strong>for</strong>(User user : users) { </p>
+<p>System.<strong><em>out</em></strong>.println(user); </p>
+<p>} </p>
+<p>//7.释放资源 </p>
+<p>session.close(); </p>
+<p>in.close(); </p>
+<p>} </p>
+<p>}</p>
+<h2 id="2-3-小结"><a href="#2-3-小结" class="headerlink" title="2.3 小结"></a><strong>2.3</strong> <strong>小结</strong></h2><p>​    通过快速入门示例，我们发现使用 mybatis 是非常容易的一件事情，因为只需要编写 Dao 接口并且按照 </p>
+<p>mybatis 要求编写两个配置文件，就可以实现功能。远比我们之前的 jdbc 方便多了。（我们使用注解之后，将变得 更为简单，只需要编写一个 mybatis 配置文件就够了。） </p>
+
     </div>
 
     
@@ -360,6 +557,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-MyBatis简介"><span class="nav-number">1.</span> <span class="nav-text">1 MyBatis简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-MyBatis"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 MyBatis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-jdbc程序代码"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 jdbc程序代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-MyBatis的框架核心"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 MyBatis的框架核心</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Mybatis-框架快速入门"><span class="nav-number">2.</span> <span class="nav-text">2 Mybatis 框架快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Mybatis-框架开发的准备"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Mybatis 框架开发的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-官网下载-Mybatis-框架"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 官网下载 Mybatis 框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-搭建-Mybatis-开发环境"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 搭建 Mybatis 开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1创建maven工程"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1创建maven工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2添加-Mybatis-的坐标"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2添加 Mybatis 的坐标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-编写-User-实体类"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 编写 User 实体类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-编写持久层接口-IUserDao"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.2.4 编写持久层接口 IUserDao</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5-编写持久层接口的映射文件-IUserDao-xml"><span class="nav-number">2.2.5.</span> <span class="nav-text">2.2.5 编写持久层接口的映射文件 IUserDao.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-6-编写-SqlMapConfig-xml-配置文件"><span class="nav-number">2.2.6.</span> <span class="nav-text">2.2.6 编写 SqlMapConfig.xml 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-7-编写测试类"><span class="nav-number">2.2.7.</span> <span class="nav-text">2.2.7 编写测试类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-小结"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 小结</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -393,7 +592,17 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
