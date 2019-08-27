@@ -54,17 +54,61 @@
   };
 </script>
 
-  <meta name="description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+  <meta name="description" content="1 ResponseBody和RequestBody1.1 简介@ResponseBody把后台**pojo转换json对象**，返回到页面。 @RequestBody接受前台**json数据，把json数据自动封装javaBean** 1.2 使用案例:请求和响应都是json数据第一步：导入json的jar第二步：添加个json转换器 第三步：写个jsp页面，提交json请求参数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springmvc框架学习（二）">
 <meta property="og:url" content="http://yoursite.com/2019/08/26/springmvc框架学习（二）/index.html">
 <meta property="og:site_name" content="学海无涯，惟勤是岸。">
-<meta property="og:description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+<meta property="og:description" content="1 ResponseBody和RequestBody1.1 简介@ResponseBody把后台**pojo转换json对象**，返回到页面。 @RequestBody接受前台**json数据，把json数据自动封装javaBean** 1.2 使用案例:请求和响应都是json数据第一步：导入json的jar第二步：添加个json转换器 第三步：写个jsp页面，提交json请求参数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T15:31:31.452Z">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image024.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image026.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image028.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image030.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image062.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image064.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image066.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image068.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image070.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image072.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image074.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image076.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image078.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image080.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image082.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image084.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image086.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image088.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image092.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image094.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image096.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image110.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image112.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image114.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image126.jpg">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image128.jpg">
+<meta property="og:updated_time" content="2019-08-27T01:02:03.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springmvc框架学习（二）">
-<meta name="twitter:description" content="去他个鸟命!我命由我,不由天!是魔是仙,我自己决定!">
+<meta name="twitter:description" content="1 ResponseBody和RequestBody1.1 简介@ResponseBody把后台**pojo转换json对象**，返回到页面。 @RequestBody接受前台**json数据，把json数据自动封装javaBean** 1.2 使用案例:请求和响应都是json数据第一步：导入json的jar第二步：添加个json转换器 第三步：写个jsp页面，提交json请求参数">
+<meta name="twitter:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg">
   <link rel="canonical" href="http://yoursite.com/2019/08/26/springmvc框架学习（二）/">
 
 
@@ -271,6 +315,18 @@
               <time title="创建时间：2019-08-26 23:31:31" itemprop="dateCreated datePublished" datetime="2019-08-26T23:31:31+08:00">2019-08-26</time>
             </span>
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-27 09:02:03" itemprop="dateModified" datetime="2019-08-27T09:02:03+08:00">2019-08-27</time>
+              </span>
+            
+          
 
           
 
@@ -283,7 +339,320 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="1-ResponseBody和RequestBody"><a href="#1-ResponseBody和RequestBody" class="headerlink" title="1 ResponseBody和RequestBody"></a>1 ResponseBody和RequestBody</h1><h2 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h2><p>@ResponseBody把<strong>后台**</strong>pojo<strong><strong>转换json</strong></strong>对象**，返回到页面。</p>
+<p>@RequestBody接受<strong>前台**</strong>json<strong><strong>数据，把json</strong></strong>数据自动封装javaBean**</p>
+<h2 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h2><h3 id="案例-请求和响应都是json数据"><a href="#案例-请求和响应都是json数据" class="headerlink" title="案例:请求和响应都是json数据"></a>案例:请求和响应都是json数据</h3><h4 id="第一步：导入json的jar"><a href="#第一步：导入json的jar" class="headerlink" title="第一步：导入json的jar"></a>第一步：导入json的jar</h4><h4 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h4><p>添加个json转换器</p>
+<h4 id="第三步：写个jsp页面，提交json请求参数"><a href="#第三步：写个jsp页面，提交json请求参数" class="headerlink" title="第三步：写个jsp页面，提交json请求参数"></a>第三步：写个jsp页面，提交json请求参数</h4><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h4 id="第四步：后台处理"><a href="#第四步：后台处理" class="headerlink" title="第四步：后台处理"></a>第四步：后台处理</h4><p><strong>注意学生类一定要提供无参的构造方法</strong></p>
+<table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h3 id="案例-只有响应json数据"><a href="#案例-只有响应json数据" class="headerlink" title="案例:只有响应json数据"></a>案例:只有响应json数据</h3><h4 id="第一步：表单"><a href="#第一步：表单" class="headerlink" title="第一步：表单"></a>第一步：表单</h4><h4 id="第二步：后台处理"><a href="#第二步：后台处理" class="headerlink" title="第二步：后台处理"></a>第二步：后台处理</h4><h1 id="2-Springmvc多视图"><a href="#2-Springmvc多视图" class="headerlink" title="2 Springmvc多视图"></a>2 Springmvc多视图</h1><p>多视图是一个方法可以返回json/xml等格式的数据</p>
+<h2 id="第一步：导入xml格式支持的jar包"><a href="#第一步：导入xml格式支持的jar包" class="headerlink" title="第一步：导入xml格式支持的jar包"></a>第一步：导入xml格式支持的jar包</h2><p><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg" alt="img"></p>
+<h2 id="第二步：配置支持多视图"><a href="#第二步：配置支持多视图" class="headerlink" title="第二步：配置支持多视图"></a>第二步：配置支持多视图</h2><h2 id="第三步：控制器提供一个接口"><a href="#第三步：控制器提供一个接口" class="headerlink" title="第三步：控制器提供一个接口"></a>第三步：控制器提供一个接口</h2><p>注意学生对象需要声明一个注解</p>
+<table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg" alt="img"></th>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="第四步：测试"><a href="#第四步：测试" class="headerlink" title="第四步：测试"></a>第四步：测试</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image024.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image026.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h1 id="3-eclipse安装spring提示插件"><a href="#3-eclipse安装spring提示插件" class="headerlink" title="3 eclipse安装spring提示插件"></a>3 eclipse安装spring提示插件</h1><h2 id="3-1-在应用市场搜索spring-tools"><a href="#3-1-在应用市场搜索spring-tools" class="headerlink" title="3.1 在应用市场搜索spring tools"></a>3.1 在应用市场搜索spring tools</h2><p>点击Eclipse的Help 下的 Eclipse Marketplace搜索spring tools,然后红色不用勾选，点下一步安装插件</p>
+<table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image028.jpg" alt="img"></th>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image030.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="3-2-依次点开菜单-‘XML-gt-XMLFiles-gt-Editor-gt-Content-Assist’配置"><a href="#3-2-依次点开菜单-‘XML-gt-XMLFiles-gt-Editor-gt-Content-Assist’配置" class="headerlink" title="3.2 依次点开菜单 ‘XML -&gt; XMLFiles -&gt; Editor -&gt; Content Assist’配置"></a>3.2 依次点开菜单 ‘XML -&gt; XMLFiles -&gt; Editor -&gt; Content Assist’配置</h2><p>如下图：</p>
+<h2 id="3-3-使用下面两种文件打开配置文件"><a href="#3-3-使用下面两种文件打开配置文件" class="headerlink" title="3.3 使用下面两种文件打开配置文件"></a>3.3 使用下面两种文件打开配置文件</h2><p>在xml中使用. + /就会有类提示</p>
+<h1 id="4-SSM整合"><a href="#4-SSM整合" class="headerlink" title="4 SSM整合"></a>4 SSM整合</h1><p>Spring + SpringMVC + Mybatis整合</p>
+<h2 id="a：导入jar包"><a href="#a：导入jar包" class="headerlink" title="a：导入jar包"></a>a：导入jar包</h2><table>
+<thead>
+<tr>
+<th>n  <strong>Spring+ SpringMVC + MyBatis + Mybatis-spring**</strong>整合包**   n    <strong>AOP**</strong>联盟+<strong>**织入 + c3p0</strong> <strong>数据库连接池 + MySQL**</strong>连接驱动 + jstl**</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="b：创建一个springmvc文件"><a href="#b：创建一个springmvc文件" class="headerlink" title="b：创建一个springmvc文件"></a>b：创建一个springmvc文件</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`*<span class="php"><span class="meta">&lt;?</span>***xml version****=<span class="string">"1.0"</span>** **encoding****=<span class="string">"UTF-8"</span>***<span class="meta">?&gt;</span></span>*   <span class="tag">&lt;<span class="name">**beans**</span> **<span class="attr">xmlns</span>****=<span class="string">"http://www.springframework.org/schema/beans"</span>**        **<span class="attr">xmlns:</span>****<span class="attr">xsi</span>****=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>** **<span class="attr">xmlns:</span>****<span class="attr">mvc</span>****=<span class="string">"http://www.springframework.org/schema/mvc"</span>**        **<span class="attr">xmlns:</span>****<span class="attr">context</span>****=<span class="string">"http://www.springframework.org/schema/context"</span>**        **<span class="attr">xmlns:</span>****<span class="attr">aop</span>****=<span class="string">"http://www.springframework.org/schema/aop"</span>** **<span class="attr">xmlns:</span>****<span class="attr">tx</span>****=<span class="string">"http://www.springframework.org/schema/tx"</span>**        **<span class="attr">xsi</span>****<span class="attr">:schemaLocation</span>****=<span class="string">"http://www.springframework.org/schema/beans       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd       http://www.springframework.org/schema/mvc       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd       http://www.springframework.org/schema/context       http://www.springframework.org/schema/context/spring-context-3.2.xsd       http://www.springframework.org/schema/aop       http://www.springframework.org/schema/aop/spring-aop-3.2.xsd       http://www.springframework.org/schema/tx       http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"</span>**&gt;</span>        *<span class="comment">&lt;!-- 1.**配置注解扫描位置* *--&gt;</span>*     <span class="tag">&lt;<span class="name">**context****:component-scan**</span> **<span class="attr">base-package</span>****=<span class="string">"com.gyf.backoffice.web.controller"</span>** /&gt;</span>           *<span class="comment">&lt;!-- 2.**配置注解处理映射**--&gt;</span>*     <span class="tag">&lt;<span class="name">**bean**</span> **<span class="attr">class</span>****=<span class="string">"org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"</span>**/&gt;</span>        *<span class="comment">&lt;!--3.**配置适配器**--&gt;</span>*     <span class="tag">&lt;<span class="name">**bean**</span> **<span class="attr">class</span>****=<span class="string">"org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"</span>**&gt;</span>        <span class="tag">&lt;/<span class="name">**bean**</span>&gt;</span>        *<span class="comment">&lt;!-- 4.**配置**springmvc**视图解析器* *视图解析器解析的视频路径为：前缀* *+* *后缀* *--&gt;</span>*     <span class="tag">&lt;<span class="name">**bean**</span>             **<span class="attr">class</span>****=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>**&gt;</span>         <span class="tag">&lt;<span class="name">**property**</span> **<span class="attr">name</span>****=<span class="string">"prefix"</span>** **<span class="attr">value</span>****=<span class="string">"/WEB-INF/views"</span>** /&gt;</span>         <span class="tag">&lt;<span class="name">**property**</span> **<span class="attr">name</span>****=<span class="string">"suffix"</span>** **<span class="attr">value</span>****=<span class="string">".jsp"</span>** /&gt;</span>     <span class="tag">&lt;/<span class="name">**bean**</span>&gt;</span>   <span class="tag">&lt;/<span class="name">**beans**</span>&gt;</span>`</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="c：在web-xml添加springmvc配置"><a href="#c：在web-xml添加springmvc配置" class="headerlink" title="c：在web.xml添加springmvc配置"></a>c：在web.xml添加springmvc配置</h2><p>这次我们更改默认的springmvc配置文件路径</p>
+<table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><servlet>             <servlet-name>DispatcherServlet</servlet-name>             <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>             <!--   3.0的springmvc 默认加载WEB-INF下的dispatcher-servlet.xml文件 3.2的springmvc                   加载DispatcherServlet-servlet.xml文件 -->             <init-param>                  <!-- 修改黑底springmvc加载的配置文件路径 -->                  <param-name>contextConfigLocation</param-name>                  <param-value>classpath:springmvc.xml</param-value>             </init-param>             <load-on-startup>1</load-on-startup>        </servlet>        <servlet-mapping>             <servlet-name>DispatcherServlet</servlet-name>             <url-pattern>*.do</url-pattern>        </servlet-mapping></td>
+</tr>
+</tbody></table>
+<h2 id="d：先配置一个Controller跑出一个页面"><a href="#d：先配置一个Controller跑出一个页面" class="headerlink" title="d：先配置一个Controller跑出一个页面"></a>d：先配置一个Controller跑出一个页面</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg" alt="img"></th>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="e：通过MyBatis的逆向工程生成JavaBean-Mapper"><a href="#e：通过MyBatis的逆向工程生成JavaBean-Mapper" class="headerlink" title="e：通过MyBatis的逆向工程生成JavaBean/Mapper"></a>e：通过MyBatis的逆向工程生成JavaBean/Mapper</h2><p>把生成的文件导入当到项目，<strong>步骤不记得可以参数**</strong>MyBatis<strong>**的教案</strong></p>
+<h2 id="f：修改ItemsMapper-java和ItemsMapper-xml"><a href="#f：修改ItemsMapper-java和ItemsMapper-xml" class="headerlink" title="f：修改ItemsMapper.java和ItemsMapper.xml"></a>f：修改ItemsMapper.java和ItemsMapper.xml</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="g：定义Service层接口并实现"><a href="#g：定义Service层接口并实现" class="headerlink" title="g：定义Service层接口并实现"></a>g：定义Service层接口并实现</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="h：配置SqlMappingConfig-xml、mybatis"><a href="#h：配置SqlMappingConfig-xml、mybatis" class="headerlink" title="h：配置SqlMappingConfig.xml、mybatis"></a>h：配置SqlMappingConfig.xml、mybatis</h2><h2 id="i：创建spring的applicaiontContext-xml"><a href="#i：创建spring的applicaiontContext-xml" class="headerlink" title="i：创建spring的applicaiontContext.xml"></a>i：创建spring的applicaiontContext.xml</h2><h2 id="j：配置c3p0数据源和mybatis的会话工厂"><a href="#j：配置c3p0数据源和mybatis的会话工厂" class="headerlink" title="j：配置c3p0数据源和mybatis的会话工厂"></a>j：配置c3p0数据源和mybatis的会话工厂</h2><table>
+<thead>
+<tr>
+<th><!-- 1.加载db配置文件    -->        &lt;context:property-placeholder location=*”classpath:db.propert<strong>i</strong>es”<em>/&gt;            <!-- 2.配置c3p0数据源 -->        &lt;bean id=</em>“dataSource”*   class=*”com.mchange.v2.c3p0.ComboPooledDataSource”<em>&gt;             &lt;property name=</em>“driverClass”*   value=*”${jdbc.driver}”<em>/&gt;             &lt;property name=</em>“jdbcUrl”*   value=*”<strong>${</strong>jdbc.url<strong>}</strong>“<em>/&gt;             &lt;property name=</em>“user”*   value=*”<strong>${</strong>jdbc.username<strong>}</strong>“<em>/&gt;             &lt;property name=</em>“password”*   value=*”<strong>${</strong>jdbc.password<strong>}</strong>“<em>/&gt;             &lt;property name=</em>“maxPoolSize”*   value=*”30”<em>/&gt;             &lt;property name=</em>“minPoolSize”*   value=*”2”<em>/&gt;                    <!-- 3.让spring管理sqlsessionFactory -->        &lt;bean class=</em>“org.mybatis.spring.SqlSessionFactoryBean”*   id=*”sqlSessionFactoryBean”<em>&gt;             &lt;property name=</em>“dataSource”*   ref=*”dataSource”<em>/&gt;             <!--   指定配置文件位置 -->             &lt;property name=</em>“configLocation”*   value=*”classpath:<strong>S</strong>qlMapConfig.xml”<em>/&gt;                        <!-- 4.配置mapper扫描器.批量扫描创建代理对象 -->        &lt;bean class=</em>“org.mybatis.spring.mapper.MapperScannerConfigurer”<em>&gt;             &lt;property name=</em>“basePackage”*   value=*”com.gyf.backoffice.mapper”<em>/&gt;             &lt;property name=</em>“sqlSessionFactoryBeanName”*   value=*”sqlSessionFactoryBean”*/&gt;        </th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>db**</strong>文件内容**   jdbc.driver=com.mysql.jdbc.Driver   jdbc.url=jdbc:mysql://localhost:3306/mybatis   jdbc.username=root   jdbc.password=123456</td>
+</tr>
+</tbody></table>
+<h2 id="k：Web-xml配置spring容器"><a href="#k：Web-xml配置spring容器" class="headerlink" title="k：Web.xml配置spring容器"></a>k：Web.xml配置spring容器</h2><h2 id="l：添加bean的注解装配"><a href="#l：添加bean的注解装配" class="headerlink" title="l：添加bean的注解装配"></a>l：添加bean的注解装配</h2><h2 id="m：ItemsService"><a href="#m：ItemsService" class="headerlink" title="m：ItemsService"></a>m：ItemsService</h2><h2 id="n：ItemsController"><a href="#n：ItemsController" class="headerlink" title="n：ItemsController"></a>n：ItemsController</h2><p><strong>这里可以方法items/list.do**</strong>，是否可以获取数据**</p>
+<h2 id="o：事务配置"><a href="#o：事务配置" class="headerlink" title="o：事务配置"></a>o：事务配置</h2><table>
+<thead>
+<tr>
+<th><!-- 6.事务管理器 -->   &lt;<strong>bean</strong> <strong>id**</strong>=”transactionManager”<em>*   <strong>class**</strong>=”org.springframework.jdbc.datasource.DataSourceTransactionManager”<strong>&gt;        &lt;</strong>property** <strong>name**</strong>=”dataSource”**   <strong>ref**</strong>=”dataSource”<strong>/&gt;    &lt;/</strong>bean**&gt;   <!-- 6.通知   -->       &lt;tx:advice id=</em>“txAdvice”* transaction-manager=*”transactionManager”<em>&gt;           <a href="tx:attributes" target="_blank" rel="noopener">tx:attributes</a>               <!-- 传播行为 -->               &lt;tx:method name=</em>“save*“* propagation=*”REQUIRED”<em>/&gt;               &lt;tx:method name=</em>“insert*“* propagation=*”REQUIRED”<em>/&gt;               &lt;tx:method name=</em>“delete*“* propagation=*”REQUIRED”<em>/&gt;               &lt;tx:method name=</em>“update*“* propagation=*”REQUIRED”<em>/&gt;               &lt;tx:method name=</em>“find*“* propagation=*”SUPPORTS”* read-only=*”true”<em>/&gt;               &lt;tx:method name=</em>“get*“* propagation=*”SUPPORTS”* read-only=*”true”<em>/&gt;                                <!-- 7. 切面 -->       <a href="aop:config" target="_blank" rel="noopener">aop:config</a>           &lt;aop:advisor advice-ref=</em>“txAdvice”*           pointcut=*”execution(* com.gyf.backoffice.service.*.<em>(..))”</em>/&gt;       </th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*&lt;!-- 5.**配置事务管理器 --&gt;*   &lt;**bean** **id****=&quot;transactionManager&quot;** **class****=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;**&gt;     &lt;**property** **name****=&quot;dataSource&quot;** **ref****=&quot;dataSource&quot;**/&gt;   &lt;/**bean**&gt;   *&lt;!-- 6.**开启事务注解--&gt;*   &lt;**tx****:annotation-driven**&gt;&lt;/**tx****:annotation-driven**&gt;</code></td>
+</tr>
+</tbody></table>
+<h2 id="o：添加一个保存方法测试事务"><a href="#o：添加一个保存方法测试事务" class="headerlink" title="o：添加一个保存方法测试事务"></a>o：添加一个保存方法测试事务</h2><table>
+<thead>
+<tr>
+<th>service</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>controller</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h1 id="5-增删改查任务"><a href="#5-增删改查任务" class="headerlink" title="5 增删改查任务"></a>5 增删改查任务</h1><h2 id="显示商品数据"><a href="#显示商品数据" class="headerlink" title="显示商品数据"></a>显示商品数据</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image062.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Controller.java</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image064.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>Views/items/list.jsp</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image066.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="删除商品"><a href="#删除商品" class="headerlink" title="删除商品"></a>删除商品</h2><table>
+<thead>
+<tr>
+<th>service</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image068.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>controller</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image070.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="显示编辑商品页面"><a href="#显示编辑商品页面" class="headerlink" title="显示编辑商品页面"></a>显示编辑商品页面</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image072.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>controller</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image074.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>Edit.jsp</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image076.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="更新商品"><a href="#更新商品" class="headerlink" title="更新商品"></a>更新商品</h2><table>
+<thead>
+<tr>
+<th>需要在页面中隐藏一个input标签存id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image078.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>乱码，在web.xml配置</td>
+</tr>
+<tr>
+<td><!-- 配置编码过滤器  -->        <filter>             <filter-name>EncodingFilter</filter-name>             <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>             <init-param>                  <param-name>encoding</param-name>                  <param-value>UTF-8</param-value>             </init-param>        </filter>                <filter-mapping>             <filter-name>EncodingFilter</filter-name>             <url-pattern>/*</url-pattern>        </filter-mapping></td>
+</tr>
+<tr>
+<td>controller</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image080.jpg" alt="img"></td>
+</tr>
+<tr>
+<td>Service:需要改下逻辑</td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image082.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h1 id="6-文件上传"><a href="#6-文件上传" class="headerlink" title="6 文件上传"></a>6 文件上传</h1><p><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image084.jpg" alt="img"></p>
+<h2 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image086.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image088.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="Springmvc-xml配置支持文件上传"><a href="#Springmvc-xml配置支持文件上传" class="headerlink" title="Springmvc.xml配置支持文件上传"></a>Springmvc.xml配置支持文件上传</h2><h2 id="Html-JS"><a href="#Html-JS" class="headerlink" title="Html/JS"></a>Html/JS</h2><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image092.jpg" alt="img"></td>
+</tr>
+<tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image094.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><h1 id="7-Oscache页面缓存"><a href="#7-Oscache页面缓存" class="headerlink" title="7 Oscache页面缓存"></a>7 Oscache页面缓存</h1><h2 id="7-1页面缓存测试"><a href="#7-1页面缓存测试" class="headerlink" title="7.1页面缓存测试"></a>7.1页面缓存测试</h2><h3 id="导包-1"><a href="#导包-1" class="headerlink" title="导包"></a>导包</h3><p><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image096.jpg" alt="img"></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>创建一个index.jsp页面，使用时间来测试</p>
+<h3 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h3><p>缓存数据结构：map，key存储浏览器访问url，如果访问2个url不一致，缓存肯定变化。</p>
+<h4 id="缓存的作用域"><a href="#缓存的作用域" class="headerlink" title="缓存的作用域"></a>缓存的作用域</h4><p>缓存默认存储在application域当中，可更改缓存数据。</p>
+<p><strong>这样，不同浏览器访问时，缓存时间是不一样的，如果是application,**</strong>不同浏览器访问同一个路径时，时间是一样的**</p>
+<h4 id="缓存刷新时间"><a href="#缓存刷新时间" class="headerlink" title="缓存刷新时间"></a>缓存刷新时间</h4><h4 id="固定存储的Key"><a href="#固定存储的Key" class="headerlink" title="固定存储的Key"></a>固定存储的Key</h4><h4 id="缓存持久化"><a href="#缓存持久化" class="headerlink" title="缓存持久化"></a>缓存持久化</h4><p>创建oscache.properties这个配置文件必须在classpath下面：</p>
+<p>内容</p>
+<p>访问路径后会在test的application中创建缓存文件</p>
+<h1 id="8-Oscache整合ssm项目"><a href="#8-Oscache整合ssm项目" class="headerlink" title="8 Oscache整合ssm项目"></a>8 Oscache整合ssm项目</h1><p>约定：商品页面访问量特别大，给商品页面缓存。Items路径下所有请求都缓存。</p>
+<h2 id="在web-xml中配置页面缓存"><a href="#在web-xml中配置页面缓存" class="headerlink" title="在web.xml中配置页面缓存"></a>在web.xml中配置页面缓存</h2><p>第一次访问Items下面的页面，控制器方法会执行，第一次就走缓存页面</p>
+<p><strong>如图，把持久化缓存加到项目中，缓存的数据是一个页面</strong></p>
+<table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image110.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cache.persistence.class=com.opensymphony.oscache.plugins.diskpersistence.DiskPersistenceListener   cache.path=C:\test</td>
+</tr>
+</tbody></table>
+<h1 id="9-Springmvc整合freemarker"><a href="#9-Springmvc整合freemarker" class="headerlink" title="9 Springmvc整合freemarker"></a>9 Springmvc整合freemarker</h1><h2 id="简介：freemark"><a href="#简介：freemark" class="headerlink" title="简介：freemark"></a>简介：freemark</h2><p>FreeMarker是一款模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。</p>
+<p><a href="https://freemarker.apache.org/" target="_blank" rel="noopener">https://freemarker.apache.org/</a></p>
+<p><a href="http://freemarker.foofun.cn" target="_blank" rel="noopener">http://freemarker.foofun.cn</a></p>
+<p>模型引擎框架还有：<a href="https://www.thymeleaf.org/" target="_blank" rel="noopener">https://www.thymeleaf.org/</a></p>
+<h2 id="导包-2"><a href="#导包-2" class="headerlink" title="导包"></a>导包</h2><p>   <img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image112.jpg" alt="img">   <img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image114.jpg" alt="img">   </p>
+<h2 id="Springmvc配置freemark"><a href="#Springmvc配置freemark" class="headerlink" title="Springmvc配置freemark"></a>Springmvc配置freemark</h2><h2 id="写一个hello-ftl模板"><a href="#写一个hello-ftl模板" class="headerlink" title="写一个hello.ftl模板"></a>写一个hello.ftl模板</h2><h2 id="ItemsController"><a href="#ItemsController" class="headerlink" title="ItemsController"></a>ItemsController</h2><h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p>数据就通过模板引擎生成了</p>
+<h2 id="list-jsp改成list-ftl"><a href="#list-jsp改成list-ftl" class="headerlink" title="list.jsp改成list.ftl"></a>list.jsp改成list.ftl</h2><p>掌握freemark的两个表达工：</p>
+<p>赋值</p>
+<p>&lt;#assign/&gt;</p>
+<p>遍历</p>
+<p> &lt;#list xxList as xx&gt;</p>
+<p>${item.createtime?string(“yyyy-MM-dd HH:mm:ss zzzz”)}</p>
+<h1 id="10-SpringMVC的拦截器"><a href="#10-SpringMVC的拦截器" class="headerlink" title="10 SpringMVC的拦截器"></a>10 SpringMVC的拦截器</h1><p><strong>Spring Web MVC</strong> <strong>的处理器拦截器类似于Servlet</strong> <strong>开发中的过滤器Filter**</strong>，用于对处理器进行预处理和后处理**</p>
+<h2 id="登录拦截器"><a href="#登录拦截器" class="headerlink" title="登录拦截器"></a>登录拦截器</h2><h2 id="登录控制器"><a href="#登录控制器" class="headerlink" title="登录控制器"></a>登录控制器</h2><h2 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h2><table>
+<thead>
+<tr>
+<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image126.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image128.jpg" alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="登录拦截器配置"><a href="#登录拦截器配置" class="headerlink" title="登录拦截器配置"></a>登录拦截器配置</h2><p>总结拦截注意点：</p>
+<p>拦截所有的请求，使用/<strong>,有两个</strong></p>
+<p>如果拦截的路径在项目不存在，直接报错</p>
+
     </div>
 
     
@@ -360,6 +729,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-ResponseBody和RequestBody"><span class="nav-number">1.</span> <span class="nav-text">1 ResponseBody和RequestBody</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-使用"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-请求和响应都是json数据"><span class="nav-number">1.2.1.</span> <span class="nav-text">案例:请求和响应都是json数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步：导入json的jar"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">第一步：导入json的jar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步："><span class="nav-number">1.2.1.2.</span> <span class="nav-text">第二步：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三步：写个jsp页面，提交json请求参数"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">第三步：写个jsp页面，提交json请求参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四步：后台处理"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">第四步：后台处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-只有响应json数据"><span class="nav-number">1.2.2.</span> <span class="nav-text">案例:只有响应json数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步：表单"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">第一步：表单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步：后台处理"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">第二步：后台处理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Springmvc多视图"><span class="nav-number">2.</span> <span class="nav-text">2 Springmvc多视图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：导入xml格式支持的jar包"><span class="nav-number">2.1.</span> <span class="nav-text">第一步：导入xml格式支持的jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：配置支持多视图"><span class="nav-number">2.2.</span> <span class="nav-text">第二步：配置支持多视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：控制器提供一个接口"><span class="nav-number">2.3.</span> <span class="nav-text">第三步：控制器提供一个接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：测试"><span class="nav-number">2.4.</span> <span class="nav-text">第四步：测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-eclipse安装spring提示插件"><span class="nav-number">3.</span> <span class="nav-text">3 eclipse安装spring提示插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-在应用市场搜索spring-tools"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 在应用市场搜索spring tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-依次点开菜单-‘XML-gt-XMLFiles-gt-Editor-gt-Content-Assist’配置"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 依次点开菜单 ‘XML -&gt; XMLFiles -&gt; Editor -&gt; Content Assist’配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-使用下面两种文件打开配置文件"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 使用下面两种文件打开配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-SSM整合"><span class="nav-number">4.</span> <span class="nav-text">4 SSM整合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a：导入jar包"><span class="nav-number">4.1.</span> <span class="nav-text">a：导入jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b：创建一个springmvc文件"><span class="nav-number">4.2.</span> <span class="nav-text">b：创建一个springmvc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c：在web-xml添加springmvc配置"><span class="nav-number">4.3.</span> <span class="nav-text">c：在web.xml添加springmvc配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d：先配置一个Controller跑出一个页面"><span class="nav-number">4.4.</span> <span class="nav-text">d：先配置一个Controller跑出一个页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#e：通过MyBatis的逆向工程生成JavaBean-Mapper"><span class="nav-number">4.5.</span> <span class="nav-text">e：通过MyBatis的逆向工程生成JavaBean/Mapper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#f：修改ItemsMapper-java和ItemsMapper-xml"><span class="nav-number">4.6.</span> <span class="nav-text">f：修改ItemsMapper.java和ItemsMapper.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#g：定义Service层接口并实现"><span class="nav-number">4.7.</span> <span class="nav-text">g：定义Service层接口并实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#h：配置SqlMappingConfig-xml、mybatis"><span class="nav-number">4.8.</span> <span class="nav-text">h：配置SqlMappingConfig.xml、mybatis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#i：创建spring的applicaiontContext-xml"><span class="nav-number">4.9.</span> <span class="nav-text">i：创建spring的applicaiontContext.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#j：配置c3p0数据源和mybatis的会话工厂"><span class="nav-number">4.10.</span> <span class="nav-text">j：配置c3p0数据源和mybatis的会话工厂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k：Web-xml配置spring容器"><span class="nav-number">4.11.</span> <span class="nav-text">k：Web.xml配置spring容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#l：添加bean的注解装配"><span class="nav-number">4.12.</span> <span class="nav-text">l：添加bean的注解装配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#m：ItemsService"><span class="nav-number">4.13.</span> <span class="nav-text">m：ItemsService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#n：ItemsController"><span class="nav-number">4.14.</span> <span class="nav-text">n：ItemsController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#o：事务配置"><span class="nav-number">4.15.</span> <span class="nav-text">o：事务配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#o：添加一个保存方法测试事务"><span class="nav-number">4.16.</span> <span class="nav-text">o：添加一个保存方法测试事务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-增删改查任务"><span class="nav-number">5.</span> <span class="nav-text">5 增删改查任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示商品数据"><span class="nav-number">5.1.</span> <span class="nav-text">显示商品数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除商品"><span class="nav-number">5.2.</span> <span class="nav-text">删除商品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示编辑商品页面"><span class="nav-number">5.3.</span> <span class="nav-text">显示编辑商品页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新商品"><span class="nav-number">5.4.</span> <span class="nav-text">更新商品</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-文件上传"><span class="nav-number">6.</span> <span class="nav-text">6 文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导包"><span class="nav-number">6.1.</span> <span class="nav-text">导包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Springmvc-xml配置支持文件上传"><span class="nav-number">6.2.</span> <span class="nav-text">Springmvc.xml配置支持文件上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html-JS"><span class="nav-number">6.3.</span> <span class="nav-text">Html/JS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台"><span class="nav-number">6.4.</span> <span class="nav-text">后台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Oscache页面缓存"><span class="nav-number">7.</span> <span class="nav-text">7 Oscache页面缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1页面缓存测试"><span class="nav-number">7.1.</span> <span class="nav-text">7.1页面缓存测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导包-1"><span class="nav-number">7.1.1.</span> <span class="nav-text">导包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">7.1.2.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点："><span class="nav-number">7.1.3.</span> <span class="nav-text">知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存的作用域"><span class="nav-number">7.1.3.1.</span> <span class="nav-text">缓存的作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存刷新时间"><span class="nav-number">7.1.3.2.</span> <span class="nav-text">缓存刷新时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#固定存储的Key"><span class="nav-number">7.1.3.3.</span> <span class="nav-text">固定存储的Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存持久化"><span class="nav-number">7.1.3.4.</span> <span class="nav-text">缓存持久化</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Oscache整合ssm项目"><span class="nav-number">8.</span> <span class="nav-text">8 Oscache整合ssm项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在web-xml中配置页面缓存"><span class="nav-number">8.1.</span> <span class="nav-text">在web.xml中配置页面缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Springmvc整合freemarker"><span class="nav-number">9.</span> <span class="nav-text">9 Springmvc整合freemarker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介：freemark"><span class="nav-number">9.1.</span> <span class="nav-text">简介：freemark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导包-2"><span class="nav-number">9.2.</span> <span class="nav-text">导包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Springmvc配置freemark"><span class="nav-number">9.3.</span> <span class="nav-text">Springmvc配置freemark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个hello-ftl模板"><span class="nav-number">9.4.</span> <span class="nav-text">写一个hello.ftl模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ItemsController"><span class="nav-number">9.5.</span> <span class="nav-text">ItemsController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试结果"><span class="nav-number">9.6.</span> <span class="nav-text">测试结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list-jsp改成list-ftl"><span class="nav-number">9.7.</span> <span class="nav-text">list.jsp改成list.ftl</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-SpringMVC的拦截器"><span class="nav-number">10.</span> <span class="nav-text">10 SpringMVC的拦截器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录拦截器"><span class="nav-number">10.1.</span> <span class="nav-text">登录拦截器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录控制器"><span class="nav-number">10.2.</span> <span class="nav-text">登录控制器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录界面"><span class="nav-number">10.3.</span> <span class="nav-text">登录界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录拦截器配置"><span class="nav-number">10.4.</span> <span class="nav-text">登录拦截器配置</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

@@ -278,7 +278,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 22:38:53" itemprop="dateModified" datetime="2019-08-26T22:38:53+08:00">2019-08-26</time>
+                <time title="修改时间：2019-08-27 09:13:12" itemprop="dateModified" datetime="2019-08-27T09:13:12+08:00">2019-08-27</time>
               </span>
             
           
@@ -299,7 +299,7 @@
 <h2 id="1-2-Spring好处"><a href="#1-2-Spring好处" class="headerlink" title="1.2 Spring好处"></a>1.2 Spring好处</h2><p><strong>方便解耦，简化开发:</strong></p>
 <p>​    Spring就是一个大工厂，专门负责生成Bean，可以将所有对象创建和依赖关系维护由Spring管理</p>
 <p><strong>AOP编程的支持:</strong></p>
-<p>​    Spring提供面向切面编程，可以方便的实现对程序进行<strong>权限拦截</strong>、运行监控等功能</p>
+<p>​    Spring提供面向切面编程，可以方便的实现对程序进行<strong>权限拦截</strong>、<strong>运行监控</strong>等功能</p>
 <p> <strong>声明式事务的支持:</strong></p>
 <p>只需要通过配置就可以完成对事务的管理，而无需手动编程</p>
 <p><strong>方便程序的测试:</strong></p>
@@ -308,7 +308,8 @@
 <p>​     Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架（如：Struts、Hibernate、MyBatis、Quartz等）的支持</p>
 <p><strong>降低JavaEE API的使用难度 Spring:</strong></p>
 <p>​     对JavaEE开发中一些难用的API（JDBC、JavaMail、远程调webservice用等），都提供了封装，使这些API应用难度大大降低</p>
-<h2 id="1-3-Spring体系结构"><a href="#1-3-Spring体系结构" class="headerlink" title="1.3 Spring体系结构"></a>1.3 Spring体系结构</h2><p>Spring 框架是一个分层架构,,它包含一系列的功能要素并被分为大约20个模块。这些模块分为Core Container、Data Access/Integration、Web、AOP（Aspect Oriented Programming)、Instrumentation和测试部分,如下图所示：<img src="/2019/08/01/spring框架学习（一）/clip_image002.jpg" alt></p>
+<h2 id="1-3-Spring体系结构"><a href="#1-3-Spring体系结构" class="headerlink" title="1.3 Spring体系结构"></a>1.3 Spring体系结构</h2><p>Spring 框架是一个分层架构,,它包含一系列的功能要素并被分为大约20个模块。这些模块分为Core Container、Data Access/Integration、Web、AOP（Aspect Oriented Programming)、Instrumentation和测试部分,如下图所示：</p>
+<p><img src="/2019/08/01/spring框架学习（一）/clip_image002.jpg" alt></p>
 <h2 id="1-4-在项目中的架构"><a href="#1-4-在项目中的架构" class="headerlink" title="1.4 在项目中的架构"></a>1.4 在项目中的架构</h2><p>web层：Struts,SpringMVC</p>
 <p>dao层：Hibernate,mybatis</p>
 <p><img src="/2019/08/01/spring框架学习（一）/clip_image004.jpg" alt></p>
@@ -343,7 +344,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>spring-framework-3.2.0.RELEASE-dist.zip 【Spring的核心包】   spring-framework-3.0.2.RELEASE-dependencies.zip 【Spring的依赖包】</td>
+<td>spring-framework-3.2.0.RELEASE-dist.zip 【Spring的核心包】</td>
+</tr>
+<tr>
+<td>spring-framework-3.0.2.RELEASE-dependencies.zip 【Spring的依赖包】</td>
 </tr>
 </tbody></table>
 <h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>²  创建Web项目，导Spring的jar包</p>
@@ -359,7 +363,7 @@
 <td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg" alt></td>
 </tr>
 </tbody></table>
-<h3 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h3><p>²  写个简单的Service 并在main方法中调用</p>
+<h3 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h3><p> 写个简单的Service 并在main方法中调用</p>
 <table>
 <thead>
 <tr>
@@ -379,7 +383,7 @@
 <table>
 <thead>
 <tr>
-<th><strong>xsd**</strong>可以在<strong><strong>schema</strong></strong>目录中找**   <img src="/2019/08/01/spring框架学习（一）/clip_image020.jpg" alt="img"></th>
+<th>xsd可以在schema目录中找<img src="/2019/08/01/spring框架学习（一）/clip_image020.jpg" alt="img"></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -393,11 +397,11 @@
 <h2 id="2-5-DI解释"><a href="#2-5-DI解释" class="headerlink" title="2.5 DI解释"></a>2.5 DI解释</h2><p> <strong>Dependency Injection</strong> <strong>依赖注入</strong>，在Spring框架负责创建Bean对象时，动态的将依赖对象注入到Bean组件。</p>
 <h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p>在UserService中提供一个get/set的name方法，在beans.xml中通过property去注入</p>
 <p><img src="/2019/08/01/spring框架学习（一）/1566829190278.png" alt="1566829190278"><img src="/2019/08/01/spring框架学习（一）/1566829306841.png" alt="1566829306841"></p>
-<h1 id="3、加载Spring容器的三种方式"><a href="#3、加载Spring容器的三种方式" class="headerlink" title="3、加载Spring容器的三种方式"></a>3、加载Spring容器的三种方式</h1><h2 id="3-1-类路径获得配置文件"><a href="#3-1-类路径获得配置文件" class="headerlink" title="3.1 类路径获得配置文件"></a>3.1 类路径获得配置文件</h2><p>ApplicationContext context =<br>                    <strong>new</strong> ClassPathXmlApplicationContext(“com/gyf/spring/demo01/beans.xml”);</p>
-<h2 id="3-2-文件系统路径获得配置文件"><a href="#3-2-文件系统路径获得配置文件" class="headerlink" title="3.2 文件系统路径获得配置文件"></a>3.2 文件系统路径获得配置文件</h2><p><img src="/2019/08/01/spring框架学习（一）/1566829331712.png" alt="1566829331712"></p>
-<h2 id="3-3使用BeanFactory-了解"><a href="#3-3使用BeanFactory-了解" class="headerlink" title="3.3使用BeanFactory(了解)"></a>3.3使用BeanFactory(了解)</h2><p><img src="/2019/08/01/spring框架学习（一）/1566829342145.png" alt="1566829342145"></p>
-<h2 id="3-4BeanFactory和ApplicationContext对比"><a href="#3-4BeanFactory和ApplicationContext对比" class="headerlink" title="3.4BeanFactory和ApplicationContext对比"></a>3.4BeanFactory和ApplicationContext对比</h2><p>Ø  BeanFactory 采取延迟加载，第一次getBean时才会初始化Bean</p>
-<p>Ø  ApplicationContext是对BeanFactory扩展，提供了更多功能</p>
+<h1 id="3、加载Spring容器的三种方式"><a href="#3、加载Spring容器的三种方式" class="headerlink" title="3、加载Spring容器的三种方式"></a>3、加载Spring容器的三种方式</h1><h2 id="3-1-类路径获得配置文件（常用）"><a href="#3-1-类路径获得配置文件（常用）" class="headerlink" title="3.1 类路径获得配置文件（常用）"></a>3.1 类路径获得配置文件（常用）</h2><p>ApplicationContext context =<br>                    <strong>new</strong> ClassPathXmlApplicationContext(“com/gyf/spring/demo01/beans.xml”);</p>
+<h2 id="3-2-文件系统路径获得配置文件"><a href="#3-2-文件系统路径获得配置文件" class="headerlink" title="3.2 文件系统路径获得配置文件"></a>3.2 文件系统路径获得配置文件</h2><p><img src="/2019/08/01/spring框架学习（一）/1566829331712.png" alt></p>
+<h2 id="3-3使用BeanFactory-了解"><a href="#3-3使用BeanFactory-了解" class="headerlink" title="3.3使用BeanFactory(了解)"></a>3.3使用BeanFactory(了解)</h2><p><img src="/2019/08/01/spring框架学习（一）/1566829342145.png" alt></p>
+<h2 id="3-4BeanFactory和ApplicationContext对比"><a href="#3-4BeanFactory和ApplicationContext对比" class="headerlink" title="3.4BeanFactory和ApplicationContext对比"></a>3.4BeanFactory和ApplicationContext对比</h2><p> BeanFactory 采取延迟加载，第一次getBean时才会初始化Bean</p>
+<p> ApplicationContext是对BeanFactory扩展，提供了更多功能</p>
 <p>l  国际化处理</p>
 <p>l  事件传递</p>
 <p>l  <strong>Bean</strong>自动装配</p>
@@ -409,7 +413,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><!--装配bean的三种方式，所谓的装配bean就是在xml写一个bean标签--><br><br> <!-- 第一种方式: new 实现类--><br> <bean id="userService1" class="com.gyf.service.UserServiceImpl"></bean><br><br> <!-- 第二种方式：通过静态工厂方法<br/>    spring的版本过低，3.0版本,把jdk改成1.7<br/>  --><br> <bean id="userService2" class="com.gyf.service.UserSereviceFactory1" factory-method="createUserService"></bean><br><br> <!--第三种方式：通过实例工厂方法 --><br> <!-- 创建实例factory2 bean--><br> <bean id="factory2" class="com.gyf.service.UserSereviceFactory2"></bean><br><br> <bean id="userService3" factory-bean="factory2" factory-method="createUserService"></bean></td>
+<td><img src="/2019/08/01/spring框架学习（一）/1566868331593.png" alt="1566868331593"></td>
 </tr>
 <tr>
 <td>test</td>
@@ -448,7 +452,7 @@
 </tbody></table>
 <p>案例：</p>
 <p><img src="/2019/08/01/spring框架学习（一）/1566829580211.png" alt="1566829580211"><img src="/2019/08/01/spring框架学习（一）/1566829595516.png" alt="1566829595516"> </p>
-<h1 id="5、bean的生命周期【了解】"><a href="#5、bean的生命周期【了解】" class="headerlink" title="5、bean的生命周期【了解】"></a>5、bean的生命周期【了解】</h1><h2 id="生命周期图"><a href="#生命周期图" class="headerlink" title="生命周期图"></a>生命周期图</h2><p><img src="/2019/08/01/spring框架学习（一）/clip_image002-1566829616031.jpg" alt="img"></p>
+<h1 id="5、bean的生命周期【了解】"><a href="#5、bean的生命周期【了解】" class="headerlink" title="5、bean的生命周期【了解】"></a>5、bean的生命周期【了解】</h1><h2 id="生命周期图"><a href="#生命周期图" class="headerlink" title="生命周期图"></a>生命周期图</h2><p><img src="/2019/08/01/spring框架学习（一）/clip_image002-1566829616031.jpg" alt></p>
 <h2 id="生命周期图解释"><a href="#生命周期图解释" class="headerlink" title="生命周期图解释"></a>生命周期图解释</h2><p>1.instantiate bean对象实例化</p>
 <p>2.populate properties 封装属性</p>
 <p>3.如果Bean实现BeanNameAware 执行 setBeanName</p>
