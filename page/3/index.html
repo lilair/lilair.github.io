@@ -278,7 +278,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 09:13:12" itemprop="dateModified" datetime="2019-08-27T09:13:12+08:00">2019-08-27</time>
+                <time title="修改时间：2019-08-27 09:40:26" itemprop="dateModified" datetime="2019-08-27T09:40:26+08:00">2019-08-27</time>
               </span>
             
           
@@ -396,7 +396,7 @@
 <h3 id="总结：【IoC】"><a href="#总结：【IoC】" class="headerlink" title="总结：【IoC】"></a>总结：【IoC】</h3><p>1)     <strong>IoC Inverse of Control</strong> 反转控制的概念，就是将原本在程序中手动创建UserService对象的控制权，交由Spring框架管理，简单说，就是创建UserService对象控制权被反转到了Spring框架。</p>
 <h2 id="2-5-DI解释"><a href="#2-5-DI解释" class="headerlink" title="2.5 DI解释"></a>2.5 DI解释</h2><p> <strong>Dependency Injection</strong> <strong>依赖注入</strong>，在Spring框架负责创建Bean对象时，动态的将依赖对象注入到Bean组件。</p>
 <h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p>在UserService中提供一个get/set的name方法，在beans.xml中通过property去注入</p>
-<p><img src="/2019/08/01/spring框架学习（一）/1566829190278.png" alt="1566829190278"><img src="/2019/08/01/spring框架学习（一）/1566829306841.png" alt="1566829306841"></p>
+<p><img src="/2019/08/01/spring框架学习（一）/1566829190278.png" alt><img src="/2019/08/01/spring框架学习（一）/1566829306841.png" alt></p>
 <h1 id="3、加载Spring容器的三种方式"><a href="#3、加载Spring容器的三种方式" class="headerlink" title="3、加载Spring容器的三种方式"></a>3、加载Spring容器的三种方式</h1><h2 id="3-1-类路径获得配置文件（常用）"><a href="#3-1-类路径获得配置文件（常用）" class="headerlink" title="3.1 类路径获得配置文件（常用）"></a>3.1 类路径获得配置文件（常用）</h2><p>ApplicationContext context =<br>                    <strong>new</strong> ClassPathXmlApplicationContext(“com/gyf/spring/demo01/beans.xml”);</p>
 <h2 id="3-2-文件系统路径获得配置文件"><a href="#3-2-文件系统路径获得配置文件" class="headerlink" title="3.2 文件系统路径获得配置文件"></a>3.2 文件系统路径获得配置文件</h2><p><img src="/2019/08/01/spring框架学习（一）/1566829331712.png" alt></p>
 <h2 id="3-3使用BeanFactory-了解"><a href="#3-3使用BeanFactory-了解" class="headerlink" title="3.3使用BeanFactory(了解)"></a>3.3使用BeanFactory(了解)</h2><p><img src="/2019/08/01/spring框架学习（一）/1566829342145.png" alt></p>
@@ -467,35 +467,35 @@
 <h1 id="6、依赖注入Bean属性-xml"><a href="#6、依赖注入Bean属性-xml" class="headerlink" title="6、依赖注入Bean属性(xml)"></a>6、依赖注入Bean属性(xml)</h1><h2 id="6-1手动装配，使用xml配置"><a href="#6-1手动装配，使用xml配置" class="headerlink" title="6.1手动装配，使用xml配置"></a>6.1手动装配，使用xml配置</h2><h3 id="构造方法注入"><a href="#构造方法注入" class="headerlink" title="构造方法注入"></a>构造方法注入</h3><table>
 <thead>
 <tr>
-<th><img src="/2019/08/01/spring框架学习（一）/1566829755647.png" alt="1566829755647"></th>
+<th><img src="/2019/08/01/spring框架学习（一）/1566829755647.png" alt></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="/2019/08/01/spring框架学习（一）/1566829768904.png" alt="1566829768904"></td>
+<td><img src="/2019/08/01/spring框架学习（一）/1566829768904.png" alt></td>
 </tr>
 </tbody></table>
 <h3 id="属性setter方法注入"><a href="#属性setter方法注入" class="headerlink" title="属性setter方法注入"></a>属性setter方法注入</h3><p>setter方法有两种注入，一般使用第一种直观</p>
 <table>
 <thead>
 <tr>
-<th><bean id="user" class="com.gyf.spring.demo04.User"><br>        <property name="username" value="zhangsan"></property><br>        <property name="password" value="123456"></property><br></bean></th>
+<th><img src="/2019/08/01/spring框架学习（一）/1566869677518.png" alt="1566869677518"></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image056.jpg" alt="img"></td>
+<td><img src="/2019/08/01/spring框架学习（一）/clip_image056.jpg" alt="img"></td>
 </tr>
 </tbody></table>
 <h3 id="p命名空间注入【了解】"><a href="#p命名空间注入【了解】" class="headerlink" title="p命名空间注入【了解】"></a>p命名空间注入【了解】</h3><table>
 <thead>
 <tr>
-<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg" alt="img"></th>
+<th><img src="/2019/08/01/spring框架学习（一）/clip_image058.jpg" alt></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg" alt="img"></td>
+<td><img src="/2019/08/01/spring框架学习（一）/clip_image060.jpg" alt></td>
 </tr>
 <tr>
-<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image062.jpg" alt="img"></td>
+<td><img src="/2019/08/01/spring框架学习（一）/clip_image062.jpg" alt></td>
 </tr>
 </tbody></table>
 <h2 id="6-2-SpEL表达式【了解】"><a href="#6-2-SpEL表达式【了解】" class="headerlink" title="6.2 SpEL表达式【了解】"></a>6.2 SpEL表达式【了解】</h2><p>Spring 表达式</p>
@@ -510,14 +510,14 @@
 <table>
 <thead>
 <tr>
-<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image064.jpg" alt="img"></th>
+<th><img src="/2019/08/01/spring框架学习（一）/clip_image064.jpg" alt="img"></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image066.jpg" alt="img"></td>
+<td><img src="/2019/08/01/spring框架学习（一）/clip_image066.jpg" alt></td>
 </tr>
 </tbody></table>
-<p>​                                              </p>
+<p>​                                     </p>
 <h2 id="6-3-集合注入"><a href="#6-3-集合注入" class="headerlink" title="6.3 集合注入"></a>6.3 集合注入</h2><p>集合的注入都是给<property>添加子标签</property></p>
 <p>​                  数组：<array></array></p>
 <p>​                  List：<list></list></p>
@@ -530,17 +530,17 @@
 <h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><table>
 <thead>
 <tr>
-<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image068.jpg" alt="img"></th>
+<th><img src="/2019/08/01/spring框架学习（一）/clip_image068.jpg" alt></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image070.jpg" alt="img"></td>
+<td><img src="/2019/08/01/spring框架学习（一）/clip_image070.jpg" alt></td>
 </tr>
 </tbody></table>
 <h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><table>
 <thead>
 <tr>
-<th><img src="file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image072.jpg" alt="img"></th>
+<th><img src="/2019/08/01/spring框架学习（一）/clip_image072.jpg" alt></th>
 </tr>
 </thead>
 <tbody><tr>
